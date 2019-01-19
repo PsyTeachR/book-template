@@ -2,17 +2,41 @@
 
 ## Call-out Blocks
 
+### Danger
+
+<pre><code>&#96;&#96;&#96;{block, type="danger"}
+Note dangerous things that will break code.
+&#96;&#96;&#96;</code></pre>
+
 ```{block, type="danger"}
 Note dangerous things that will break code.
 ```
+
+### Warning
+
+<pre><code>&#96;&#96;&#96;{block, type="warning"}
+Warn readers.
+&#96;&#96;&#96;</code></pre>
 
 ```{block, type="warning"}
 Warn readers.
 ```
 
+### Info
+
+<pre><code>&#96;&#96;&#96;{block, type="info"}
+Give further information.
+&#96;&#96;&#96;</code></pre>
+
 ```{block, type="info"}
 Give further information.
 ```
+
+### Try
+
+<pre><code>&#96;&#96;&#96;{block, type="try"}
+Stop and try something.
+&#96;&#96;&#96;</code></pre>
 
 ```{block, type="try"}
 Stop and try something.
