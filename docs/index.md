@@ -10,8 +10,11 @@ link-citations: yes
 description: "This course is a template course. Use it to start a new book."
 ---
 
+
+
 # Overview
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
 
 ## Course Aims
 
@@ -27,23 +30,6 @@ By the end of this course students will be able to:
 * ILO 2
 * ILO 3
 
-## Call-out Blocks
-
-<div class="danger">
-<p>Note dangerous things that will break code.</p>
-</div>
-
-<div class="warning">
-<p>Warn readers.</p>
-</div>
-
-<div class="info">
-<p>Give further information.</p>
-</div>
-
-<div class="try">
-<p>Stop and try something.</p>
-</div>
 
 
 

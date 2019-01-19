@@ -20,7 +20,7 @@ You can also create these questions dynamically, using variables from your R ses
 
 
 
-- The square root of 64 is: <input class='solveme nospaces' size='1' data-answer='["8"]'/>
+- The square root of 36 is: <input class='solveme nospaces' size='1' data-answer='["6"]'/>
 
 The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE`.
 
@@ -48,7 +48,7 @@ You can set more than one possible correct answer by setting the answers as a ve
 
 - Recreate the scatterplot below, using the built-in `cars` dataset.
 
-<img src="01-webex_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="02-webex_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 
 <div class='solution'><button>I need a hint</button>

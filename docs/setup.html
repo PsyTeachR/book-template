@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Webex | Template Course</title>
+  <title>Chapter 2 Setup | Template Course</title>
   <meta name="description" content="This course is a template course. Use it to start a new book.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Webex | Template Course" />
+  <meta property="og:title" content="Chapter 2 Setup | Template Course" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Webex | Template Course" />
+  <meta name="twitter:title" content="Chapter 2 Setup | Template Course" />
   
   <meta name="twitter:description" content="This course is a template course. Use it to start a new book." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="setup.html">
-
+<link rel="prev" href="index.html">
+<link rel="next" href="webex.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -137,65 +137,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="webex" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Webex</h1>
-<p>Use the following code to install webex</p>
-<pre><code>devtools::install_github(&quot;dalejbarr/webex&quot;)</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(webex)</code></pre></div>
-<div id="fill-in-the-blanks-fitb" class="section level2">
-<h2><span class="header-section-number">3.1</span> Fill-In-The-Blanks (<code>fitb()</code>)</h2>
-<p>Create fill-in-the-blank questions using <code>fitb()</code>, providing the answer as the first argument.</p>
-<ul>
-<li>2 + 2 is <input class='solveme nospaces' size='1' data-answer='["4"]'/></li>
-</ul>
-<p>You can also create these questions dynamically, using variables from your R session.</p>
-<ul>
-<li>The square root of 36 is: <input class='solveme nospaces' size='1' data-answer='["6"]'/></li>
-</ul>
-<p>The blanks are case-sensitive; if you don’t care about case, use the argument <code>ignore_case = TRUE</code>.</p>
-<ul>
-<li>What is the letter after D? <input class='solveme nospaces ignorecase' size='1' data-answer='["E"]'/></li>
-</ul>
-<p>If you want to ignore differences in whitespace use, use the argument <code>ignore_ws = TRUE</code> and include spaces in your answer anywhere they could be acceptable..</p>
-<ul>
-<li>How do you load the tidyverse package? <input class='solveme nospaces ignorecase' size='20' data-answer='["library( tidyverse )"]'/></li>
-</ul>
-<p>You can set more than one possible correct answer by setting the answers as a vector.</p>
-<ul>
-<li>Type a vowel: <input class='solveme nospaces ignorecase' size='1' data-answer='["A","E","I","O","U"]'/></li>
-</ul>
+<div id="setup" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Setup</h1>
+<div id="call-out-blocks" class="section level2">
+<h2><span class="header-section-number">2.1</span> Call-out Blocks</h2>
+<div class="danger">
+<p>
+Note dangerous things that will break code.
+</p>
 </div>
-<div id="multiple-choice-mcq" class="section level2">
-<h2><span class="header-section-number">3.2</span> Multiple Choice (<code>mcq()</code>)</h2>
-<ul>
-<li>“Never gonna give you up, never gonna: <select class='solveme' data-answer='["let you down"]'> <option></option> <option>let you go</option> <option>turn you down</option> <option>run away</option> <option>let you down</option></select>”</li>
-<li>“I <select class='solveme' data-answer='["bless the rains"]'> <option></option> <option>bless the rains</option> <option>guess it rains</option> <option>sense the rain</option></select> down in Africa” -Toto</li>
-<li>“There’s nothing that a hundred men <select class='solveme' data-answer='["or more"]'> <option></option> <option>on Mars</option> <option>or more</option> <option>named Marv</option></select> could ever do”</li>
-</ul>
+<div class="warning">
+<p>
+Warn readers.
+</p>
 </div>
-<div id="true-or-false-torf" class="section level2">
-<h2><span class="header-section-number">3.3</span> True or False (<code>torf()</code>)</h2>
-<ul>
-<li>You can permute values in a vector using <code>sample()</code>. <select class='solveme' data-answer='["TRUE"]'> <option></option> <option>TRUE</option> <option>FALSE</option></select></li>
-</ul>
+<div class="info">
+<p>
+Give further information.
+</p>
 </div>
-<div id="hidden-solutions-and-hints-hide-and-unhide" class="section level2">
-<h2><span class="header-section-number">3.4</span> Hidden solutions and hints (<code>hide()</code> and <code>unhide()</code>)</h2>
-<ul>
-<li>Recreate the scatterplot below, using the built-in <code>cars</code> dataset.</li>
-</ul>
-<p><img src="02-webex_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<div class="solution">
-<button>
-I need a hint
-</button>
-<p><code>?plot</code></p>
-</div>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(cars, <span class="kw">plot</span>(speed, dist))</code></pre></div>
+<div class="try">
+<p>
+Stop and try something.
+</p>
 </div>
 
 </div>
@@ -287,8 +251,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="setup.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="webex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

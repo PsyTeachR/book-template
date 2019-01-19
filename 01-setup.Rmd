@@ -1,0 +1,19 @@
+# Setup
+
+## Call-out Blocks
+
+```{block, type="danger"}
+Note dangerous things that will break code.
+```
+
+```{block, type="warning"}
+Warn readers.
+```
+
+```{block, type="info"}
+Give further information.
+```
+
+```{block, type="try"}
+Stop and try something.
+```
