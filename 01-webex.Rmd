@@ -1,0 +1,64 @@
+# Webex
+
+Use the following code to install webex
+```
+devtools::install_github("dalejbarr/webex")
+```
+
+```{r}
+library(webex)
+```
+
+## Fill-In-The-Blanks (`fitb()`)
+
+Create fill-in-the-blank questions using `fitb()`, providing the answer as the first argument.
+
+- 2 + 2 is `r fitb("4")`
+
+You can also create these questions dynamically, using variables from your R session.
+
+```{r echo = FALSE}
+x <- sample(2:8, 1)
+```
+
+- The square root of `r x^2` is: `r fitb(x)`
+
+The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE`.
+
+- What is the letter after D? `r fitb("E", ignore_case = TRUE)`
+
+If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable..
+
+- How do you load the tidyverse package? `r fitb("library( tidyverse )", ignore_case = TRUE, width = "20")`
+
+You can set more than one possible correct answer by setting the answers as a vector.
+
+- Type a vowel: `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
+
+## Multiple Choice (`mcq()`)
+
+- "Never gonna give you up, never gonna: `r mcq(c("let you go", "turn you down", "run away", answer = "let you down"))`"
+- "I `r mcq(c(answer = "bless the rains", "guess it rains", "sense the rain"))` down in Africa" -Toto
+- "There's nothing that a hundred men `r mcq(c("on Mars", answer = "or more", "named Marv"))` could ever do"
+
+## True or False (`torf()`)
+
+- You can permute values in a vector using `sample()`. `r torf(TRUE)`
+
+## Hidden solutions and hints (`hide()` and `unhide()`)
+
+- Recreate the scatterplot below, using the built-in `cars` dataset.
+
+```{r echo = FALSE}
+with(cars, plot(speed, dist))
+```
+
+`r hide("I need a hint")`
+`?plot`
+`r unhide()`
+
+`r hide()`
+```{r eval = FALSE}
+with(cars, plot(speed, dist))
+```
+`r unhide()`

@@ -1,0 +1,55 @@
+--- 
+title: "Template Course"
+author: "psyTeachR"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This course is a template course. Use it to start a new book."
+---
+
+# Overview
+
+
+## Course Aims
+
+* Aim 1
+* Aim 2
+* Aim 3
+
+## Intended Learning Outcomes
+
+By the end of this course students will be able to:
+
+* ILO 1
+* ILO 2
+* ILO 3
+
+## Call-out Blocks
+
+```{block, type="danger"}
+Note dangerous things that will break code.
+```
+
+```{block, type="warning"}
+Warn readers.
+```
+
+```{block, type="info"}
+Give further information.
+```
+
+```{block, type="try"}
+Stop and try something.
+```
+
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown'
+), 'packages.bib')
+```

@@ -1,0 +1,90 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+  float: right;
+}
+
+.join {
+  height: 150px;
+  width: 200px;
+  float: right;
+  clear: right;
+}
+
+/* set styles for alert boxes */
+
+.danger, .warning, .info , .alert, .try {
+  color: black;
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+}
+
+.danger {
+  background-image: url("images/alerts/danger.svg");
+  background-color: hsl(0, 50%, 95%);
+}
+
+.warning {
+  background-image: url("images/alerts/warning.svg");
+  background-color: hsl(45, 50%, 95%);
+}
+
+.info {
+  background-image: url("images/alerts/info.svg");
+  background-color: hsl(200, 50%, 95%);
+}
+
+.try {
+  background-image: url("images/alerts/try.svg");
+  background-color: hsl(120, 50%, 95%);
+}
+
+/* set styles for code output messages */
+
+pre:not(.sourceCode) {
+  background-color: #eeeef6;
+}
+pre:not(.sourceCode) code {
+  color: grey;
+}
+
+/* webex style */
+
+/* styles for solveme */
+.solveme { border: 2px dotted red; }
+.solveme.correct { border: 2px solid blue; }
+/* styles for hidden solutions */
+.solution {
+    height: 2em;
+    overflow-y: hidden;
+    padding: 0.5em;
+}
+.solution.open {
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.solution button {
+    height: 1.5em;
+    margin-bottom: 0.5em;
+}
+.solution pre.sourceCode {
+    border-color: green;
+}
+
