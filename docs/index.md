@@ -1,7 +1,7 @@
 --- 
 title: "Template Course"
-author: "psyTeachR"
-date: "2019-01-20"
+author: "Lisa DeBruine"
+date: "2019-01-25"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -9,6 +9,8 @@ biblio-style: apalike
 link-citations: yes
 description: "This is a template. Use it to start a new course book."
 ---
+
+
 
 
 

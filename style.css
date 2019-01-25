@@ -88,3 +88,22 @@ pre:not(.sourceCode) code {
     border-color: green;
 }
 
+div.verbatim {
+  border: 1px solid grey;
+  padding: 0.25em 1em 0 1em;
+  margin-bottom: 1em;
+  font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+}
+
+div.verbatim, div.verbatim * {
+  background-color: rgb(247, 247, 247) !important;
+}
+
+div.verbatim div.sourceCode { 
+  margin: 0 !important;
+  padding: 0 !important;
+}
+div.verbatim pre.sourceCode { 
+  margin: 0 !important; 
+  padding: 0 1em !important;
+}

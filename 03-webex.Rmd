@@ -1,13 +1,16 @@
+```{r psyteachr-setup, include = FALSE}
+source("R/psyteachr_setup.R") # psyTeachR styles and functions
+source("R/my_setup.R")        # book-specific styles and functions
+```
+
 # Webex
 
-Use the following code to install webex
+Use the following code to install webex:
 ```
 devtools::install_github("dalejbarr/webex")
 ```
 
-```{r}
-library(webex)
-```
+The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex.
 
 ## Fill-In-The-Blanks (`fitb()`)
 

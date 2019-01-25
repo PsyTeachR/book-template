@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Webex | Template Course</title>
+  <title>Chapter 2 PsyTeachR Style Guide | Template Course</title>
   <meta name="description" content="This is a template. Use it to start a new course book.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Webex | Template Course" />
+  <meta property="og:title" content="Chapter 2 PsyTeachR Style Guide | Template Course" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Webex | Template Course" />
+  <meta name="twitter:title" content="Chapter 2 PsyTeachR Style Guide | Template Course" />
   
   <meta name="twitter:description" content="This is a template. Use it to start a new course book." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="psyteachr-style-guide.html">
-
+<link rel="prev" href="setup.html">
+<link rel="next" href="webex.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -168,67 +168,281 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="webex" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Webex</h1>
-<p>Use the following code to install webex:</p>
-<pre><code>devtools::install_github(&quot;dalejbarr/webex&quot;)</code></pre>
-<p>The <code>webex</code> package is called in the setup chunk, so you don’t need to call it on every page you want to use webex.</p>
-<div id="fill-in-the-blanks-fitb" class="section level2">
-<h2><span class="header-section-number">3.1</span> Fill-In-The-Blanks (<code>fitb()</code>)</h2>
-<p>Create fill-in-the-blank questions using <code>fitb()</code>, providing the answer as the first argument.</p>
+<div id="psyteachr-style-guide" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> PsyTeachR Style Guide</h1>
+<p>The following are specific recommendations to make our course materials look and act consistently to help students navigate more easily from one year to the next. These styles will be continuously evolving, so do discuss with the team if any recommendations don’t meet your needs or you want to propose new recommendations.</p>
+<div id="headers" class="section level2">
+<h2><span class="header-section-number">2.1</span> Headers</h2>
+<p>Level 1 headers (i.e., chapter titles) should be title case. The first letter of all words should be uppercase except articles, prepositions, and be verbs in the middle of the title (e.g., a, an, the, is, are in, on).</p>
+<p>Level 2 or higher headings should start with an uppercase letter and the rest of the heading should be lowercase except proper nouns (e.g., RStudio, R, psyTeachR, Niamh).</p>
+<p>Chapters should <em>usually</em> have between three and eight level 2 headers. There will obviously be exceptions, but if you consistently have more or fewer sections, think about restructuring your content.</p>
+</div>
+<div id="text-styles" class="section level2">
+<h2><span class="header-section-number">2.2</span> Text styles</h2>
 <ul>
-<li>2 + 2 is <input class='solveme nospaces' size='1' data-answer='["4"]'/></li>
-</ul>
-<p>You can also create these questions dynamically, using variables from your R session.</p>
+<li>Emphasised text should be in <em>italics</em> (e.g., This is a <em>particularly</em> fun project.)</li>
+<li>Exactly quoted names of buttons or interface objects should be <strong>bold</strong> (e.g., Under the <strong>File</strong> menu in RStudio, choose <strong>New File</strong> and <strong>R Markdown…</strong>.)</li>
+<li>Inline code should be in <code>backticks</code></li>
+<li>Specific words:
 <ul>
-<li>The square root of 49 is: <input class='solveme nospaces' size='1' data-answer='["7"]'/></li>
-</ul>
-<p>The blanks are case-sensitive; if you don’t care about case, use the argument <code>ignore_case = TRUE</code>.</p>
-<ul>
-<li>What is the letter after D? <input class='solveme nospaces ignorecase' size='1' data-answer='["E"]'/></li>
-</ul>
-<p>If you want to ignore differences in whitespace use, use the argument <code>ignore_ws = TRUE</code> and include spaces in your answer anywhere they could be acceptable..</p>
-<ul>
-<li>How do you load the tidyverse package? <input class='solveme nospaces ignorecase' size='20' data-answer='["library( tidyverse )"]'/></li>
-</ul>
-<p>You can set more than one possible correct answer by setting the answers as a vector.</p>
-<ul>
-<li>Type a vowel: <input class='solveme nospaces ignorecase' size='1' data-answer='["A","E","I","O","U"]'/></li>
+<li>RStudio</li>
+<li>R Markdown</li>
+<li>LaTeX (you don’t have to be fancy with <span class="math inline">\({\LaTeX}\)</span>)</li>
+</ul></li>
 </ul>
 </div>
-<div id="multiple-choice-mcq" class="section level2">
-<h2><span class="header-section-number">3.2</span> Multiple Choice (<code>mcq()</code>)</h2>
-<ul>
-<li>“Never gonna give you up, never gonna: <select class='solveme' data-answer='["let you down"]'> <option></option> <option>let you go</option> <option>turn you down</option> <option>run away</option> <option>let you down</option></select>”</li>
-<li>“I <select class='solveme' data-answer='["bless the rains"]'> <option></option> <option>bless the rains</option> <option>guess it rains</option> <option>sense the rain</option></select> down in Africa” -Toto</li>
-<li>“There’s nothing that a hundred men <select class='solveme' data-answer='["or more"]'> <option></option> <option>on Mars</option> <option>or more</option> <option>named Marv</option></select> could ever do”</li>
-</ul>
+<div id="vocabulary" class="section level2">
+<h2><span class="header-section-number">2.3</span> Vocabulary</h2>
+<p>There is a lot of cultural variation in what we call punctuation. For psyTeachR books, use the following conventions.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>psyTeachR Term</th>
+<th>AKA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>()</td>
+<td>(round) brackets</td>
+<td>parentheses</td>
+</tr>
+<tr class="even">
+<td>[]</td>
+<td>square brackets</td>
+<td>brackets</td>
+</tr>
+<tr class="odd">
+<td>{}</td>
+<td>curly brackets</td>
+<td>squiggly brackets</td>
+</tr>
+<tr class="even">
+<td>&lt;&gt;</td>
+<td>chevrons</td>
+<td>angled brackets / guillemets</td>
+</tr>
+<tr class="odd">
+<td>&lt;</td>
+<td>less than</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>&gt;</td>
+<td>greater than</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>&amp;</td>
+<td>ampersand</td>
+<td>“and” symbol</td>
+</tr>
+<tr class="even">
+<td>#</td>
+<td>hash</td>
+<td>pound / octothorpe</td>
+</tr>
+<tr class="odd">
+<td>/</td>
+<td>slash</td>
+<td>forward slash</td>
+</tr>
+<tr class="even">
+<td>\</td>
+<td>backslash</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>-</td>
+<td>dash</td>
+<td>hyphen / minus</td>
+</tr>
+<tr class="even">
+<td>_</td>
+<td>underscore</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>asterisk</td>
+<td>star</td>
+</tr>
+<tr class="even">
+<td>^</td>
+<td>caret</td>
+<td>power symbol</td>
+</tr>
+<tr class="odd">
+<td>~</td>
+<td>tilde</td>
+<td>twiddle / squiggle</td>
+</tr>
+<tr class="even">
+<td>=</td>
+<td>equal sign</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>double equal sign</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>period</td>
+<td>full stop / point</td>
+</tr>
+<tr class="odd">
+<td>!</td>
+<td>exclamation mark</td>
+<td>bang / not</td>
+</tr>
+<tr class="even">
+<td>?</td>
+<td>question mark</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>’</td>
+<td>single quote</td>
+<td>quote / apostrophe</td>
+</tr>
+<tr class="even">
+<td>“</td>
+<td>double quote</td>
+<td>quote</td>
+</tr>
+<tr class="odd">
+<td>|</td>
+<td>pipe</td>
+<td>vertical bar</td>
+</tr>
+<tr class="even">
+<td>,</td>
+<td>comma</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>;</td>
+<td>semi-colon</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>:</td>
+<td>colon</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>@</td>
+<td>“at” symbol</td>
+<td><a href="https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html">various hilarious regional terms</a></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="true-or-false-torf" class="section level2">
-<h2><span class="header-section-number">3.3</span> True or False (<code>torf()</code>)</h2>
-<ul>
-<li>You can permute values in a vector using <code>sample()</code>. <select class='solveme' data-answer='["TRUE"]'> <option></option> <option>TRUE</option> <option>FALSE</option></select></li>
-</ul>
+<div id="code-chunks" class="section level2">
+<h2><span class="header-section-number">2.4</span> Code chunks</h2>
+<div id="including-headers" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Including headers</h3>
+<p>If you want to show students an example of a code chunk that includes the header, add an option called <code>verbatim</code> to your code chunk and set it equal to what you want displayed inside the curly brackets. Make sure you set <code>eval</code> to false to stop the code chunk from being run.</p>
+<div class="verbatim">
+<p><code>```{r verbatim-example, eval = FALSE, verbatim = ‘r name, eval = FALSE’}</code><br></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># set eval to FALSE to prevent a code chunk from running</span>
+<span class="kw">rnorm</span>(<span class="dv">10</span>)</code></pre></div>
+<br><code>```</code>
 </div>
-<div id="hidden-solutions-and-hints-hide-and-unhide" class="section level2">
-<h2><span class="header-section-number">3.4</span> Hidden solutions and hints (<code>hide()</code> and <code>unhide()</code>)</h2>
-<ul>
-<li>Recreate the scatterplot below, using the built-in <code>cars</code> dataset.</li>
-</ul>
-<p><img src="03-webex_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<div class="solution">
-<button>
-I need a hint
-</button>
-<p><code>?plot</code></p>
+<div class="info">
+<p>
+The “verbatim” option is not standard to bookdown. It is only available if you include the code from the “R/psyteachr_setup.R” file.
+</p>
 </div>
-<div class="solution">
-<button>
-Solution
-</button>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(cars, <span class="kw">plot</span>(speed, dist))</code></pre></div>
+</div>
+</div>
+<div id="figures" class="section level2">
+<h2><span class="header-section-number">2.5</span> Figures</h2>
+<div id="r-plots" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> R Plots</h3>
+<p>Any graphs should be dynamically created in an R code block. Make sure to set <code>out.width</code>, <code>fig.align</code>, and <code>fig.cap</code> in the chunk and set <code>echo = FALSE</code>.</p>
+<div class="verbatim">
+<p><code>```{echo=FALSE, out.width=‘100%’, fig.align=‘center’, fig.cap=‘Dynamically created plot.’}</code><br></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Length, Sepal.Width, <span class="dt">color =</span> Species)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm)</code></pre></div>
+<br><code>```</code>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:img-dynamo"></span>
+<img src="02-style-guide_files/figure-html/img-dynamo-1.png" alt="Dynamically created plot." width="100%" />
+<p class="caption">
+Figure 2.1: Dynamically created plot.
+</p>
+</div>
+</div>
+<div id="images" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Images</h3>
+<p>Static images, like screenshots, should be stored in a directory called <strong>images</strong> and displayed using the <code>knitr::include_graphics</code> function in a code block.</p>
+<div class="verbatim">
+<p><code>```{r img-psyteacher-logo, echo=FALSE, out.width=“100%”, fig.align=“center”, fig.cap=“PsyTeachR Logo”}</code><br></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/psyteachr_logo.png&quot;</span>)</code></pre></div>
+<br><code>```</code>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:img-psyteacher-logo"></span>
+<img src="images/psyTeachR_logo.png" alt="PsyTeachR Logo displayed by the previous code block." width="100%" />
+<p class="caption">
+Figure 2.2: PsyTeachR Logo displayed by the previous code block.
+</p>
+</div>
+<p>You can learn more about including figures and images in the <a href="https://bookdown.org/yihui/bookdown/figures.html">Bookdown book</a>.</p>
+</div>
+</div>
+<div id="call-out-blocks" class="section level2">
+<h2><span class="header-section-number">2.6</span> Call-out Blocks</h2>
+<p>The psyTeachR course book style includes four types of <em>call-out blocks</em> that you can use to emphasise text.</p>
+<div id="danger" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Danger</h3>
+<div class="verbatim">
+<code>```{block, type=“danger”}</code><br>Note dangerous things that will break code.<br><code>```</code>
+</div>
+<div class="danger">
+<p>
+Note dangerous things that will break code.
+</p>
+</div>
+</div>
+<div id="warning" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Warning</h3>
+<div class="verbatim">
+<code>```{block, type=“warning”}</code><br>Warn readers.<br><code>```</code>
+</div>
+<div class="warning">
+<p>
+Warn readers.
+</p>
+</div>
+</div>
+<div id="info" class="section level3">
+<h3><span class="header-section-number">2.6.3</span> Info</h3>
+<div class="verbatim">
+<code>```{block, type=“info”}</code><br>Give further information.<br><code>```</code>
+</div>
+<div class="info">
+<p>
+Give further information.
+</p>
+</div>
+</div>
+<div id="try" class="section level3">
+<h3><span class="header-section-number">2.6.4</span> Try</h3>
+<div class="verbatim">
+<code>```{block, type=“try”}</code><br>Stop and try something.<br><code>```</code>
+</div>
+<div class="try">
+<p>
+Stop and try something.
+</p>
 </div>
 
+</div>
 </div>
 </div>
 <script>
@@ -318,8 +532,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="psyteachr-style-guide.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="webex.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

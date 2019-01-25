@@ -1,6 +1,6 @@
 --- 
 title: "Template Course"
-author: "psyTeachR"
+author: "Lisa DeBruine"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -10,7 +10,10 @@ link-citations: yes
 description: "This is a template. Use it to start a new course book."
 ---
 
-```{r include=FALSE}
+```{r psyteachr-setup, include = FALSE}
+source("R/psyteachr_setup.R") # psyTeachR styles and functions
+source("R/my_setup.R")        # book-specific styles and functions
+
 # automatically create a bib database for R packages
 # add any packages you want to cite here
 knitr::write_bib(c(
@@ -20,7 +23,10 @@ knitr::write_bib(c(
 # make docs directory and include .nojekyll file for github
 if (!dir.exists('docs')) dir.create('docs')
 file.create('docs/.nojekyll')
+
 ```
+
+
 
 # Overview {-}
 
