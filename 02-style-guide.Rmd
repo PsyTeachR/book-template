@@ -12,25 +12,66 @@ The following are specific recommendations to make our course materials look and
 
 Level 1 headers (i.e., chapter titles) should be title case. The first letter of all words should be uppercase except articles, prepositions, and be verbs in the middle of the title (e.g., a, an, the, is, are in, on).
 
-Level 2 or higher headings should start with an uppercase letter and the rest of the heading should be lowercase except proper nouns (e.g., RStudio, R, psyTeachR, Niamh).
+Level 2 or higher headings should start with an uppercase letter (unless they are the name of a function or package that starts with a lowercase letter: e.g., **`tidyverse`**) and the rest of the heading should be lowercase (except proper nouns: e.g., RStudio, R, psyTeachR, Niamh).
 
-Chapters should *usually* have between three and eight level 2 headers. There will obviously be exceptions, but if you consistently have more or fewer sections, think about restructuring your content.
+Chapters should **usually** have between three and eight level 2 headers. There will obviously be exceptions, but if you consistently have more or fewer sections, think about restructuring your content.
 
 
 ## Text styles
 
-* Emphasised text should be **bold** (e.g., This is a **particularly** fun project.)
-* Exactly quoted names of buttons or interface objects should be **`code bold`** (e.g., Under the **`File`** menu in RStudio, choose **`New File`** and **`R Markdown...`**.)
-* Inline code should be in `backticks`
+* Emphasised text should be **bold** (e.g., `**bold**`)
+* Avoid italics for dyslexia-friendly reading.
+* Exactly quoted names of buttons or interface objects should be **`bold code`** (e.g., ``` **`bold code`** ```)
+* Inline code should be in `backticks` (e.g., ``` `backticks` ```)
 
-Avoid italics for dyslexia-friendly reading.
-    
+
+## Colour
+
+Logo colours are from the University of Glasgow palette.
+
+* <span style="color: var(--pink);">pink: #983E82</span>
+* <span style="color: var(--orange);">orange: #E2A458</span>
+* <span style="color: var(--yellow);">yellow: #F5DC70</span>
+* <span style="color: var(--green);">green: #59935B</span>
+* <span style="color: var(--blue);">blue: #467AAC</span>
+* <span style="color: var(--purple);">purple: #61589C</span>
+
+If you are comfortable editing css and want to add styles with colour, you can add colours to css with the keywords using this pattern:
+
+```
+<span style="color: var(--purple);">Some purple text</span>
+```
+
+```{block, type="info"}
+Remember to test with the **Sepia** and **Night** themes and add additional styles for sepia (`div.color-theme-1`) and dark (`div.color-theme-2`) backgrounds. 
+```
+
+You can also access the psyTeachR colours in R from the function `psyteachr_colours()` (or `psyteachr_colors()`).
+
+```{r psyteachr-colours}
+psyteachr_colours()
+psyteachr_colours(1:3)
+c("pink", "yellow", "blue") %>% psyteachr_colours()
+```
+
+```{r plot-psyteachr-colours, fig.align='center', out.width='50%', fig.cap='Plot with psyteachr.colours'}
+tibble(
+  grp = rep(LETTERS[1:5], each = 20),
+  val = c(rnorm(20, 1), rnorm(20, 2), rnorm(20, 3), rnorm(20, 4), rnorm(20, 5))
+) %>%
+  ggplot(aes(grp, val, fill = grp)) +
+  geom_violin() +
+  scale_fill_manual(values = psyteachr_colours(1:5))
+```
+
+
+
 ## Vocabulary
 
 There is a lot of cultural variation in what we call punctuation. For psyTeachR books, use the following conventions.
 
-| Symbol | psyTeachR Term    | AKA               |
-|--------|-------------------|-------------------|
+| Symbol | psyTeachR Term    | Also Known As     |
+|:------:|:------------------|:------------------|
 | ()     | (round) brackets  | parentheses       |
 | []     | square brackets   | brackets          |
 | {}     | curly brackets    | squiggly brackets |
@@ -48,12 +89,12 @@ There is a lot of cultural variation in what we call punctuation. For psyTeachR 
 | ~      | tilde             | twiddle / squiggle|
 | =      | equal sign        |                   |
 | ==     | double equal sign |                   |
-| .      | period            | full stop / point |
+| .      | full stop         | period / point    |
 | !      | exclamation mark  | bang / not        |
 | ?      | question mark     |                   |
 | '      | single quote      | quote / apostrophe|
 | "      | double quote      | quote             |
-| \|      | pipe             | vertical bar      |
+| \|     | pipe              | vertical bar      |
 | ,      | comma             |                   |
 | ;      | semi-colon        |                   |
 | :      | colon             |                   |

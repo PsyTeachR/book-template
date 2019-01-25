@@ -25,3 +25,18 @@ knitr::knit_hooks$set(verbatim = function(before, options, envir) {
   }
 })
 
+## palette with psyTeachR logo colour
+psyteachr_colours <- function(vals = 1:6) {
+  ptrc <- c(
+    "pink" = "#983E82",
+    "orange" = "#E2A458",
+    "yellow" = "#F5DC70",
+    "green" = "#59935B",
+    "blue" = "#467AAC",
+    "purple" = "#61589C"
+  )
+  
+  unname(ptrc[vals])
+}
+psyteachr_colors <- psyteachr_colours
+

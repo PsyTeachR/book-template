@@ -20,7 +20,7 @@ For psyTeachR courses, the repository should be created by the course lead on th
 
 ### Fork the repository
 
-Our main course pages are under https://psyteachr.github.io, but you should work on your course page on a forked version in your own github account. On the **Code** tab of the new repository, click the **Fork** button.
+Our main course pages are under https://psyteachr.github.io, but you should work on your course page on a forked version in your own github account. On the **`Code`** tab of the new repository, click the **`Fork`** button.
 
 <div class="figure">
 <img src="files/images/fork.png" alt="Fork a repository from the psyTeachR account" width="100%" />
@@ -43,21 +43,21 @@ You'll see this animation for a few seconds while the repository is being forked
 
 ### Make a new RStudio project
 
-Click the green **Clone or download** button on your personal forked repository and copy the URL (use HTTPS unless you know you've set up SSH).
+Click the green **`Clone or download`** button on your personal forked repository and copy the URL (use HTTPS unless you know you've set up SSH).
 
 <div class="figure">
 <img src="files/images/clone.png" alt="Find the URL to clone" width="100%" />
 <p class="caption">(\#fig:img-clone)Find the URL to clone</p>
 </div>
 
-Under the **File** menu in RStudio, choose **New Project..** and choose **Version Control** from the list of options.
+Under the **File** menu in RStudio, choose **`New Project...`** and choose **`Version Control`** from the list of options.
 
 <div class="figure" style="text-align: center">
 <img src="files/images/version_control.png" alt="File &gt; New Project... &gt; Version Control" width="50%" />
 <p class="caption">(\#fig:img-version_control)File > New Project... > Version Control</p>
 </div>
 
-Choose **Git** from the next screen.
+Choose **`Git`** from the next screen.
 
 <div class="figure" style="text-align: center">
 <img src="files/images/git.png" alt="Choose Git" width="50%" />
@@ -121,13 +121,13 @@ language:
     chapter_name: "Chapter "
 ```
 
-Change the book_filename to the name of your repository (e.g., "ug1-practical"). You can change the chapter_name from "Chapter " to "Lab " or something else that makes sense for your course if you want.
+Change the `book_filename` to the name of your repository (e.g., "ug1-practical"). You can change the chapter_name from "Chapter " to "Lab " or something else that makes sense for your course if you want.
 
 Save and close this file.
 
 #### index.Rmd
 
-Open **index.Rmd**. The top YAML header should look like this:
+Open `index.Rmd`. The top YAML header should look like this:
 
 ```
 --- 
@@ -167,7 +167,7 @@ Output created: docs/index.html
 [1] "/Users/lisad/rproj/psyteachr/book-template/docs/index.html"
 ```
 
-The last line is the location of your new book. You can copy and paste that in a web browser to view the book. Alternatively, you can open the docs directory in the Files pane of RStudio, click on index.html, and choose `View in Web Browser`.
+The last line is the location of your new book. You can copy and paste that in a web browser to view the book. Alternatively, you can open the docs directory in the Files pane of RStudio, click on index.html, and choose **`View in Web Browser`**.
 
 <div class="figure" style="text-align: center">
 <img src="files/images/open_from_docs.png" alt="Open your book from the Files pane in RStudio." width="50%" />
@@ -176,7 +176,7 @@ The last line is the location of your new book. You can copy and paste that in a
 
 ## Adding chapters
 
-Create new chapters by creating new R Markdown files. Under the **File** menu in RStudio, choose **New File** and **R Markdown...**. Don't bother adding a title or changing any default settings; the first thing we'll do is delete all of the content.
+Create new chapters by creating new R Markdown files. Under the **`File`** menu in RStudio, choose **`New File`** and **`R Markdown...`**. Don't bother adding a title or changing any default settings; the first thing we'll do is delete all of the content.
 
 <div class="figure" style="text-align: center">
 <img src="files/images/new_rmd.png" alt="Make a new chapter in a new .Rmd file" width="100%" />
@@ -188,10 +188,14 @@ Create new chapters by creating new R Markdown files. Under the **File** menu in
 
 Every .Rmd file should start with the setup chunk to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.
 
-<pre><code>&#96;&#96;&#96;{r psyteachr-setup, include = FALSE}
+<div class='verbatim'><code>&#96;&#96;&#96;{r psyteachr-setup, include = FALSE}</code>
+
+```r
 source("R/psyteachr_setup.R") # psyTeachR styles and functions
 source("R/my_setup.R")        # book-specific styles and functions
-&#96;&#96;&#96;</code></pre>
+```
+
+<code>&#96;&#96;&#96;</code></div>
 
 If there is a package you'll need in every chapter, you can add it to `my_setup.R`. Don't edit `psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `my_setup.R` will be loaded after and overrule code in `psyteachr_setup.R` (e.g., if you want to set a different ggplot theme -- but please don't!).
 
