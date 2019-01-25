@@ -1,5 +1,5 @@
 p.caption {
-  color: #777;
+  color: #999;
   margin-top: 10px;
 }
 p code {
@@ -11,6 +11,13 @@ pre {
 }
 pre code {
   white-space: inherit;
+}
+
+strong code {
+  color: black !important;
+  font-size: 110% !important;
+  padding: 0 !important;
+  background-color: #F0F0F0 !important;
 }
 
 .logo {
@@ -33,6 +40,7 @@ pre code {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;
   background: #f5f5f5 5px center/3em no-repeat;
+  border-radius: 1em;
 }
 
 .danger {
@@ -57,8 +65,12 @@ pre code {
 
 /* set styles for code output messages */
 
-pre:not(.sourceCode) {
-  background-color: #eeeef6;
+div.sourceCode pre.sourceCode.r {
+  border: 1px solid grey !important;
+}
+
+pre {
+  background-color: #F8F8F8;
 }
 pre:not(.sourceCode) code {
   color: grey;
@@ -71,7 +83,7 @@ pre:not(.sourceCode) code {
 .solveme.correct { border: 2px solid blue; }
 /* styles for hidden solutions */
 .solution {
-    height: 2em;
+    height: 2.2em;
     overflow-y: hidden;
     padding: 0.5em;
 }
@@ -95,9 +107,14 @@ div.verbatim {
   font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
 }
 
-div.verbatim, div.verbatim * {
-  background-color: rgb(247, 247, 247) !important;
+div.verbatim div.sourceCode pre.sourceCode.r {
+  border: none !important;
 }
+
+div.verbatim, div.verbatim * {
+  background-color: #F8F8F8 !important;
+}
+div.verbatim code { display: block; }
 
 div.verbatim div.sourceCode { 
   margin: 0 !important;

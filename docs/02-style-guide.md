@@ -16,13 +16,11 @@ Chapters should *usually* have between three and eight level 2 headers. There wi
 
 ## Text styles
 
-* Emphasised text should be in *italics* (e.g., This is a *particularly* fun project.)
-* Exactly quoted names of buttons or interface objects should be **bold** (e.g., Under the **File** menu in RStudio, choose **New File** and **R Markdown...**.)
+* Emphasised text should be **bold** (e.g., This is a **particularly** fun project.)
+* Exactly quoted names of buttons or interface objects should be **`code bold`** (e.g., Under the **`File`** menu in RStudio, choose **`New File`** and **`R Markdown...`**.)
 * Inline code should be in `backticks`
-* Specific words:
-    + RStudio
-    + R Markdown
-    + LaTeX (you don't have to be fancy with ${\LaTeX}$)
+
+Avoid italics for dyslexia-friendly reading.
     
 ## Vocabulary
 
@@ -58,6 +56,11 @@ There is a lot of cultural variation in what we call punctuation. For psyTeachR 
 | :      | colon             |                   |
 | @      | "at" symbol       | [various hilarious regional terms](https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html) |
 
+### Specific words
+
+* RStudio
+* R Markdown
+* LaTeX (you don't have to be fancy with ${\LaTeX}$)
 
 ## Code chunks
 
@@ -65,14 +68,14 @@ There is a lot of cultural variation in what we call punctuation. For psyTeachR 
 
 If you want to show students an example of a code chunk that includes the header, add an option called `verbatim` to your code chunk and set it equal to what you want displayed inside the curly brackets. Make sure you set `eval` to false to stop the code chunk from being run.
 
-<div class='verbatim'><code>&#96;&#96;&#96;{r verbatim-example, eval = FALSE, verbatim = 'r name, eval = FALSE'}</code><br>
+<div class='verbatim'><code>&#96;&#96;&#96;{r verbatim-example, eval = FALSE, verbatim = 'r name, eval = FALSE'}</code>
 
 ```r
 # set eval to FALSE to prevent a code chunk from running
 rnorm(10)
 ```
 
-<br><code>&#96;&#96;&#96;</code></div>
+<code>&#96;&#96;&#96;</code></div>
 
 <div class="info">
 <p>The &quot;verbatim&quot; option is not standard to bookdown. It is only available if you include the code from the &quot;R/psyteachr_setup.R&quot; file.</p>
@@ -85,7 +88,7 @@ rnorm(10)
 
 Any graphs should be dynamically created in an R code block. Make sure to set `out.width`, `fig.align`, and `fig.cap` in the chunk and set `echo = FALSE`.
 
-<div class='verbatim'><code>&#96;&#96;&#96;{echo=FALSE, out.width='100%', fig.align='center', fig.cap='Dynamically created plot.'}</code><br>
+<div class='verbatim'><code>&#96;&#96;&#96;{echo=FALSE, out.width='100%', fig.align='center', fig.cap='Dynamically created plot.'}</code>
 
 ```r
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
@@ -93,7 +96,7 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_smooth(method = lm)
 ```
 
-<br><code>&#96;&#96;&#96;</code></div>
+<code>&#96;&#96;&#96;</code></div>
 
 <div class="figure" style="text-align: center">
 <img src="02-style-guide_files/figure-html/img-dynamo-1.png" alt="Dynamically created plot." width="100%" />
@@ -105,13 +108,13 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
 
 Static images, like screenshots, should be stored in a directory called **images** and displayed using the `knitr::include_graphics` function in a code block.
 
-<div class='verbatim'><code>&#96;&#96;&#96;{r img-psyteacher-logo, echo=FALSE, out.width="100%", fig.align="center", fig.cap="PsyTeachR Logo"}</code><br>
+<div class='verbatim'><code>&#96;&#96;&#96;{r img-psyteacher-logo, echo=FALSE, out.width="100%", fig.align="center", fig.cap="PsyTeachR Logo"}</code>
 
 ```r
 knitr::include_graphics("images/psyteachr_logo.png")
 ```
 
-<br><code>&#96;&#96;&#96;</code></div>
+<code>&#96;&#96;&#96;</code></div>
 
 <div class="figure" style="text-align: center">
 <img src="images/psyteachr_logo.png" alt="PsyTeachR Logo displayed by the previous code block." width="100%" />
@@ -127,7 +130,7 @@ The psyTeachR course book style includes four types of *call-out blocks* that yo
 
 ### Danger
 
-<div class='verbatim'><code>&#96;&#96;&#96;{block, type="danger"}</code><br>Note dangerous things that will break code.<br><code>&#96;&#96;&#96;</code></div>
+<div class='verbatim'><code>&#96;&#96;&#96;{block, type="danger"}</code>Note dangerous things that will break code.<code>&#96;&#96;&#96;</code></div>
 
 
 <div class="danger">
@@ -136,7 +139,7 @@ The psyTeachR course book style includes four types of *call-out blocks* that yo
 
 ### Warning
 
-<div class='verbatim'><code>&#96;&#96;&#96;{block, type="warning"}</code><br>Warn readers.<br><code>&#96;&#96;&#96;</code></div>
+<div class='verbatim'><code>&#96;&#96;&#96;{block, type="warning"}</code>Warn readers.<code>&#96;&#96;&#96;</code></div>
 
 <div class="warning">
 <p>Warn readers.</p>
@@ -144,7 +147,7 @@ The psyTeachR course book style includes four types of *call-out blocks* that yo
 
 ### Info
 
-<div class='verbatim'><code>&#96;&#96;&#96;{block, type="info"}</code><br>Give further information.<br><code>&#96;&#96;&#96;</code></div>
+<div class='verbatim'><code>&#96;&#96;&#96;{block, type="info"}</code>Give further information.<code>&#96;&#96;&#96;</code></div>
 
 <div class="info">
 <p>Give further information.</p>
@@ -152,7 +155,7 @@ The psyTeachR course book style includes four types of *call-out blocks* that yo
 
 ### Try
 
-<div class='verbatim'><code>&#96;&#96;&#96;{block, type="try"}</code><br>Stop and try something.<br><code>&#96;&#96;&#96;</code></div>
+<div class='verbatim'><code>&#96;&#96;&#96;{block, type="try"}</code>Stop and try something.<code>&#96;&#96;&#96;</code></div>
 
 <div class="try">
 <p>Stop and try something.</p>

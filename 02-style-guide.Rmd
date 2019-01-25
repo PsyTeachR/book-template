@@ -19,13 +19,11 @@ Chapters should *usually* have between three and eight level 2 headers. There wi
 
 ## Text styles
 
-* Emphasised text should be in *italics* (e.g., This is a *particularly* fun project.)
-* Exactly quoted names of buttons or interface objects should be **bold** (e.g., Under the **File** menu in RStudio, choose **New File** and **R Markdown...**.)
+* Emphasised text should be **bold** (e.g., This is a **particularly** fun project.)
+* Exactly quoted names of buttons or interface objects should be **`code bold`** (e.g., Under the **`File`** menu in RStudio, choose **`New File`** and **`R Markdown...`**.)
 * Inline code should be in `backticks`
-* Specific words:
-    + RStudio
-    + R Markdown
-    + LaTeX (you don't have to be fancy with ${\LaTeX}$)
+
+Avoid italics for dyslexia-friendly reading.
     
 ## Vocabulary
 
@@ -61,6 +59,11 @@ There is a lot of cultural variation in what we call punctuation. For psyTeachR 
 | :      | colon             |                   |
 | @      | "at" symbol       | [various hilarious regional terms](https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html) |
 
+### Specific words
+
+* RStudio
+* R Markdown
+* LaTeX (you don't have to be fancy with ${\LaTeX}$)
 
 ## Code chunks
 

@@ -19,8 +19,9 @@ knitr::knit_hooks$set(class = function(before, options, envir) {
 ## verbatim code chunks
 knitr::knit_hooks$set(verbatim = function(before, options, envir) {
   if(before){
-    sprintf("<div class='verbatim'><code>&#96;&#96;&#96;{%s}</code><br>", options$verbatim)
+    sprintf("<div class='verbatim'><code>&#96;&#96;&#96;{%s}</code>", options$verbatim)
   }else{
-    "<br><code>&#96;&#96;&#96;</code></div>"
+    "<code>&#96;&#96;&#96;</code></div>"
   }
 })
+

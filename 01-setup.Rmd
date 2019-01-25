@@ -181,10 +181,10 @@ knitr::include_graphics("files/images/new_rmd.png")
 
 Every .Rmd file should start with the setup chunk to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.
 
-<pre><code>&#96;&#96;&#96;{r psyteachr-setup, include = FALSE}
+```{r, eval = FALSE, verbatim = "r psyteachr-setup, include = FALSE"}
 source("R/psyteachr_setup.R") # psyTeachR styles and functions
 source("R/my_setup.R")        # book-specific styles and functions
-&#96;&#96;&#96;</code></pre>
+```
 
 If there is a package you'll need in every chapter, you can add it to `my_setup.R`. Don't edit `psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `my_setup.R` will be loaded after and overrule code in `psyteachr_setup.R` (e.g., if you want to set a different ggplot theme -- but please don't!).
 
