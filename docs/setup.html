@@ -172,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 1</span> Setup</h1>
 <div id="resources" class="section level2">
 <h2><span class="header-section-number">1.1</span> Resources</h2>
-<p>The best resource for creating a course book is the <a href="https://bookdown.org/">bookdown website</a>. Yihui Xie’s <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> book can answer most of the questions you’ll have. The guide below is just a quick start for the specific templates we’re using at UofG Psychology.</p>
+<p>The best resource for creating a course book is the <a href="https://bookdown.org/">bookdown website</a>. Yihui Xie's <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> book can answer most of the questions you'll have. The guide below is just a quick start for the specific templates we're using at UofG Psychology.</p>
 </div>
 <div id="starting-a-new-book" class="section level2">
 <h2><span class="header-section-number">1.2</span> Starting a new book</h2>
@@ -196,14 +196,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 Figure 1.1: Fork a repository from the psyTeachR account
 </p>
 </div>
-<p>If you’re a member of psyTeachR, you’ll get this interface telling you that you’ve already forked this project. You just need to choose your personal account.</p>
+<p>If you're a member of psyTeachR, you'll get this interface telling you that you've already forked this project. You just need to choose your personal account.</p>
 <div class="figure" style="text-align: center">
 <img src="files/images/already_forked.png" alt="Choose your personal account" width="50%" />
 <p class="caption">
 (#fig:img-already_forked)Choose your personal account
 </p>
 </div>
-<p>You’ll see this animation for a few seconds while the repository is being forked to your account.</p>
+<p>You'll see this animation for a few seconds while the repository is being forked to your account.</p>
 <div class="figure" style="text-align: center"><span id="fig:img-forking"></span>
 <img src="files/images/forking.png" alt="Just be patient" width="50%" />
 <p class="caption">
@@ -213,7 +213,7 @@ Figure 1.2: Just be patient
 </div>
 <div id="make-a-new-rstudio-project" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Make a new RStudio project</h3>
-<p>Click the green <strong>Clone or download</strong> button on your personal forked repository and copy the URL (use HTTPS unless you know you’ve set up SSH).</p>
+<p>Click the green <strong>Clone or download</strong> button on your personal forked repository and copy the URL (use HTTPS unless you know you've set up SSH).</p>
 <div class="figure"><span id="fig:img-clone"></span>
 <img src="files/images/clone.png" alt="Find the URL to clone" width="100%" />
 <p class="caption">
@@ -224,7 +224,7 @@ Figure 1.3: Find the URL to clone
 <div class="figure" style="text-align: center">
 <img src="files/images/version_control.png" alt="File &gt; New Project... &gt; Version Control" width="50%" />
 <p class="caption">
-(#fig:img-version_control)File &gt; New Project… &gt; Version Control
+(#fig:img-version_control)File &gt; New Project... &gt; Version Control
 </p>
 </div>
 <p>Choose <strong>Git</strong> from the next screen.</p>
@@ -269,7 +269,7 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes</code></pre>
-<p>Change “Book Template” in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.</p>
+<p>Change &quot;Book Template&quot; in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.</p>
 <p>Save and close this file.</p>
 </div>
 <div id="bookdown.yml" class="section level4">
@@ -282,7 +282,7 @@ delete_merged_file: true
 language:
   ui:
     chapter_name: &quot;Chapter &quot;</code></pre>
-<p>Change the book_filename to the name of your repository (e.g., “ug1-practical”). You can change the chapter_name from “Chapter” to “Lab” or something else that makes sense for your course if you want.</p>
+<p>Change the book_filename to the name of your repository (e.g., &quot;ug1-practical&quot;). You can change the chapter_name from &quot;Chapter &quot; to &quot;Lab &quot; or something else that makes sense for your course if you want.</p>
 <p>Save and close this file.</p>
 </div>
 <div id="index.rmd" class="section level4">
@@ -300,16 +300,16 @@ link-citations: yes
 description: &quot;This is a template. Use it to start a new course book.&quot;
 ---</code></pre>
 <p>Update the title, author, and description strings.</p>
-<p>For now, don’t change anything in the R chunk at the top.</p>
+<p>For now, don't change anything in the R chunk at the top.</p>
 <p>Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs.</p>
 <p>Save and close this file.</p>
 </div>
 </div>
 <div id="render-the-book" class="section level3">
 <h3><span class="header-section-number">1.2.6</span> Render the book</h3>
-<p>Now you’re ready to create the book. Run the following code in the console.</p>
+<p>Now you're ready to create the book. Run the following code in the console.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</code></pre></div>
-<p>You’ll see a lot of text in the console window, which should end in something that looks like:</p>
+<p>You'll see a lot of text in the console window, which should end in something that looks like:</p>
 <pre><code>Output created: docs/index.html
 [1] &quot;/Users/lisad/rproj/psyteachr/book-template/docs/index.html&quot;</code></pre>
 <p>The last line is the location of your new book. You can copy and paste that in a web browser to view the book. Alternatively, you can open the docs directory in the Files pane of RStudio, click on index.html, and choose <code>View in Web Browser</code>.</p>
@@ -323,7 +323,7 @@ description: &quot;This is a template. Use it to start a new course book.&quot;
 </div>
 <div id="adding-chapters" class="section level2">
 <h2><span class="header-section-number">1.3</span> Adding chapters</h2>
-<p>Create new chapters by creating new R Markdown files. Under the <strong>File</strong> menu in RStudio, choose <strong>New File</strong> and <strong>R Markdown…</strong>. Don’t bother adding a title or changing any default settings; the first thing we’ll do is delete all of the content.</p>
+<p>Create new chapters by creating new R Markdown files. Under the <strong>File</strong> menu in RStudio, choose <strong>New File</strong> and <strong>R Markdown...</strong>. Don't bother adding a title or changing any default settings; the first thing we'll do is delete all of the content.</p>
 <div class="figure" style="text-align: center">
 <img src="files/images/new_rmd.png" alt="Make a new chapter in a new .Rmd file" width="100%" />
 <p class="caption">
@@ -332,12 +332,12 @@ description: &quot;This is a template. Use it to start a new course book.&quot;
 </div>
 <div id="setup-r-chunk" class="section level3">
 <h3><span class="header-section-number">1.3.1</span> Setup R chunk</h3>
-<p>Every .Rmd file should start with the setup chunk to load libraries you’ll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.</p>
+<p>Every .Rmd file should start with the setup chunk to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.</p>
 <pre><code>&#96;&#96;&#96;{r psyteachr-setup, include = FALSE}
 source("R/psyteachr_setup.R") # psyTeachR styles and functions
 source("R/my_setup.R")        # book-specific styles and functions
 &#96;&#96;&#96;</code></pre>
-<p>If there is a package you’ll need in every chapter, you can add it to <code>my_setup.R</code>. Don’t edit <code>psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>my_setup.R</code> will be loaded after and overrule code in <code>psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme – but please don’t!).</p>
+<p>If there is a package you'll need in every chapter, you can add it to <code>my_setup.R</code>. Don't edit <code>psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>my_setup.R</code> will be loaded after and overrule code in <code>psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme -- but please don't!).</p>
 <p>You can also include chapter-specific packages in this chunk.</p>
 </div>
 <div id="content" class="section level3">
@@ -346,7 +346,7 @@ source("R/my_setup.R")        # book-specific styles and functions
 </div>
 <div id="rendering-a-single-chapter" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> Rendering a single chapter</h3>
-<p>After you’ve added several chapters, the whole book might take a long time to render. If you want to quickly check the formatting on a single chapter, use the following code.</p>
+<p>After you've added several chapters, the whole book might take a long time to render. If you want to quickly check the formatting on a single chapter, use the following code.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bookdown<span class="op">::</span><span class="kw">preview_chapter</span>(<span class="st">&quot;02-style-guide.Rmd&quot;</span>)</code></pre></div>
 
 </div>

@@ -170,7 +170,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="psyteachr-style-guide" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> PsyTeachR Style Guide</h1>
-<p>The following are specific recommendations to make our course materials look and act consistently to help students navigate more easily from one year to the next. These styles will be continuously evolving, so do discuss with the team if any recommendations don’t meet your needs or you want to propose new recommendations.</p>
+<p>The following are specific recommendations to make our course materials look and act consistently to help students navigate more easily from one year to the next. These styles will be continuously evolving, so do discuss with the team if any recommendations don't meet your needs or you want to propose new recommendations.</p>
 <div id="headers" class="section level2">
 <h2><span class="header-section-number">2.1</span> Headers</h2>
 <p>Level 1 headers (i.e., chapter titles) should be title case. The first letter of all words should be uppercase except articles, prepositions, and be verbs in the middle of the title (e.g., a, an, the, is, are in, on).</p>
@@ -181,13 +181,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">2.2</span> Text styles</h2>
 <ul>
 <li>Emphasised text should be in <em>italics</em> (e.g., This is a <em>particularly</em> fun project.)</li>
-<li>Exactly quoted names of buttons or interface objects should be <strong>bold</strong> (e.g., Under the <strong>File</strong> menu in RStudio, choose <strong>New File</strong> and <strong>R Markdown…</strong>.)</li>
+<li>Exactly quoted names of buttons or interface objects should be <strong>bold</strong> (e.g., Under the <strong>File</strong> menu in RStudio, choose <strong>New File</strong> and <strong>R Markdown...</strong>.)</li>
 <li>Inline code should be in <code>backticks</code></li>
 <li>Specific words:
 <ul>
 <li>RStudio</li>
 <li>R Markdown</li>
-<li>LaTeX (you don’t have to be fancy with <span class="math inline">\({\LaTeX}\)</span>)</li>
+<li>LaTeX (you don't have to be fancy with <span class="math inline">\({\LaTeX}\)</span>)</li>
 </ul></li>
 </ul>
 </div>
@@ -236,7 +236,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <tr class="odd">
 <td>&amp;</td>
 <td>ampersand</td>
-<td>“and” symbol</td>
+<td>&quot;and&quot; symbol</td>
 </tr>
 <tr class="even">
 <td>#</td>
@@ -304,12 +304,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <td></td>
 </tr>
 <tr class="odd">
-<td>’</td>
+<td>'</td>
 <td>single quote</td>
 <td>quote / apostrophe</td>
 </tr>
 <tr class="even">
-<td>“</td>
+<td>&quot;</td>
 <td>double quote</td>
 <td>quote</td>
 </tr>
@@ -335,7 +335,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 <tr class="odd">
 <td>@</td>
-<td>“at” symbol</td>
+<td>&quot;at&quot; symbol</td>
 <td><a href="https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html">various hilarious regional terms</a></td>
 </tr>
 </tbody>
@@ -347,14 +347,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">2.4.1</span> Including headers</h3>
 <p>If you want to show students an example of a code chunk that includes the header, add an option called <code>verbatim</code> to your code chunk and set it equal to what you want displayed inside the curly brackets. Make sure you set <code>eval</code> to false to stop the code chunk from being run.</p>
 <div class="verbatim">
-<p><code>```{r verbatim-example, eval = FALSE, verbatim = ‘r name, eval = FALSE’}</code><br></p>
+<p><code>```{r verbatim-example, eval = FALSE, verbatim = 'r name, eval = FALSE'}</code><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># set eval to FALSE to prevent a code chunk from running</span>
 <span class="kw">rnorm</span>(<span class="dv">10</span>)</code></pre></div>
 <br><code>```</code>
 </div>
 <div class="info">
 <p>
-The “verbatim” option is not standard to bookdown. It is only available if you include the code from the “R/psyteachr_setup.R” file.
+The &quot;verbatim&quot; option is not standard to bookdown. It is only available if you include the code from the &quot;R/psyteachr_setup.R&quot; file.
 </p>
 </div>
 </div>
@@ -365,7 +365,7 @@ The “verbatim” option is not standard to bookdown. It is only available if y
 <h3><span class="header-section-number">2.5.1</span> R Plots</h3>
 <p>Any graphs should be dynamically created in an R code block. Make sure to set <code>out.width</code>, <code>fig.align</code>, and <code>fig.cap</code> in the chunk and set <code>echo = FALSE</code>.</p>
 <div class="verbatim">
-<p><code>```{echo=FALSE, out.width=‘100%’, fig.align=‘center’, fig.cap=‘Dynamically created plot.’}</code><br></p>
+<p><code>```{echo=FALSE, out.width='100%', fig.align='center', fig.cap='Dynamically created plot.'}</code><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Length, Sepal.Width, <span class="dt">color =</span> Species)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm)</code></pre></div>
@@ -382,7 +382,7 @@ Figure 2.1: Dynamically created plot.
 <h3><span class="header-section-number">2.5.2</span> Images</h3>
 <p>Static images, like screenshots, should be stored in a directory called <strong>images</strong> and displayed using the <code>knitr::include_graphics</code> function in a code block.</p>
 <div class="verbatim">
-<p><code>```{r img-psyteacher-logo, echo=FALSE, out.width=“100%”, fig.align=“center”, fig.cap=“PsyTeachR Logo”}</code><br></p>
+<p><code>```{r img-psyteacher-logo, echo=FALSE, out.width=&quot;100%&quot;, fig.align=&quot;center&quot;, fig.cap=&quot;PsyTeachR Logo&quot;}</code><br></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/psyteachr_logo.png&quot;</span>)</code></pre></div>
 <br><code>```</code>
 </div>
@@ -401,7 +401,7 @@ Figure 2.2: PsyTeachR Logo displayed by the previous code block.
 <div id="danger" class="section level3">
 <h3><span class="header-section-number">2.6.1</span> Danger</h3>
 <div class="verbatim">
-<code>```{block, type=“danger”}</code><br>Note dangerous things that will break code.<br><code>```</code>
+<code>```{block, type=&quot;danger&quot;}</code><br>Note dangerous things that will break code.<br><code>```</code>
 </div>
 <div class="danger">
 <p>
@@ -412,7 +412,7 @@ Note dangerous things that will break code.
 <div id="warning" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> Warning</h3>
 <div class="verbatim">
-<code>```{block, type=“warning”}</code><br>Warn readers.<br><code>```</code>
+<code>```{block, type=&quot;warning&quot;}</code><br>Warn readers.<br><code>```</code>
 </div>
 <div class="warning">
 <p>
@@ -423,7 +423,7 @@ Warn readers.
 <div id="info" class="section level3">
 <h3><span class="header-section-number">2.6.3</span> Info</h3>
 <div class="verbatim">
-<code>```{block, type=“info”}</code><br>Give further information.<br><code>```</code>
+<code>```{block, type=&quot;info&quot;}</code><br>Give further information.<br><code>```</code>
 </div>
 <div class="info">
 <p>
@@ -434,7 +434,7 @@ Give further information.
 <div id="try" class="section level3">
 <h3><span class="header-section-number">2.6.4</span> Try</h3>
 <div class="verbatim">
-<code>```{block, type=“try”}</code><br>Stop and try something.<br><code>```</code>
+<code>```{block, type=&quot;try&quot;}</code><br>Stop and try something.<br><code>```</code>
 </div>
 <div class="try">
 <p>

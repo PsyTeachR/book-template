@@ -1,5 +1,6 @@
 bookdown::gitbook: 
   default: true
+  smart: false
   includes:
     after_body: webex.js
   css: style.css
