@@ -20,17 +20,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praes
 
 ## Course Aims
 
-* Aim 1;
-* Aim 2;
-* Aim 3;
+* Aim 1
+* Aim 2
+* Aim 3
 
 ## Intended Learning Outcomes
 
 By the end of this course students will be able to:
 
-* ILO 1;
-* ILO 2;
-* ILO 3;
+* ILO 1
+* ILO 2
+* ILO 3
 
 
 

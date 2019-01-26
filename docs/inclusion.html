@@ -157,10 +157,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="4" data-path="inclusion.html"><a href="inclusion.html"><i class="fa fa-check"></i><b>4</b> Inclusion</a><ul>
 <li class="chapter" data-level="4.1" data-path="inclusion.html"><a href="inclusion.html#tips-for-text-readers"><i class="fa fa-check"></i><b>4.1</b> Tips for text-readers</a></li>
-<li class="chapter" data-level="4.2" data-path="inclusion.html"><a href="inclusion.html#avoid-text-in-figures"><i class="fa fa-check"></i><b>4.2</b> Avoid text in figures</a></li>
-<li class="chapter" data-level="4.3" data-path="inclusion.html"><a href="inclusion.html#dyslexia-friendly-resources"><i class="fa fa-check"></i><b>4.3</b> Dyslexia-friendly resources</a></li>
-<li class="chapter" data-level="4.4" data-path="inclusion.html"><a href="inclusion.html#colour-1"><i class="fa fa-check"></i><b>4.4</b> Colour</a></li>
-<li class="chapter" data-level="4.5" data-path="inclusion.html"><a href="inclusion.html#sex-gender-and-sexuality"><i class="fa fa-check"></i><b>4.5</b> Sex, gender and sexuality</a></li>
+<li class="chapter" data-level="4.2" data-path="inclusion.html"><a href="inclusion.html#dyslexia-friendly-resources"><i class="fa fa-check"></i><b>4.2</b> Dyslexia-friendly resources</a></li>
+<li class="chapter" data-level="4.3" data-path="inclusion.html"><a href="inclusion.html#colour-1"><i class="fa fa-check"></i><b>4.3</b> Colour</a></li>
+<li class="chapter" data-level="4.4" data-path="inclusion.html"><a href="inclusion.html#sex-gender-and-sexuality"><i class="fa fa-check"></i><b>4.4</b> Sex, gender and sexuality</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="symbols.html"><a href="symbols.html"><i class="fa fa-check"></i><b>A</b> Symbols</a></li>
@@ -202,34 +201,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">4.1</span> Tips for text-readers</h2>
 <p>Some students need to use text readers for accessibility; others just prefer this method. Here are some tips for improving their experience from the <a href="https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf">Dyslexia Style Guide</a>.</p>
 <ul>
-<li>Put full stops after headings to make the voice drop and pause;</li>
-<li>Put semi-colons, commas, or full stops after bullet points to make a pause;</li>
-<li>Use straight quotation marks;</li>
-<li>Avoid roman numerals;</li>
+<li>Use straight quotation marks</li>
+<li>Avoid roman numerals</li>
+<li>Avoid text in figures</li>
 </ul>
-</div>
-<div id="avoid-text-in-figures" class="section level2">
-<h2><span class="header-section-number">4.2</span> Avoid text in figures</h2>
 <p>Bookdown books allow readers to change the font style, size, and background colour. This provides essential assessibility for some people, such as those with dyslexia or visual impairments. Therefore, avoid putting too much text in figures and provide descriptions of images in the figure caption.</p>
 </div>
 <div id="dyslexia-friendly-resources" class="section level2">
-<h2><span class="header-section-number">4.3</span> Dyslexia-friendly resources</h2>
+<h2><span class="header-section-number">4.2</span> Dyslexia-friendly resources</h2>
 <ul>
-<li><a href="https://www.bdadyslexia.org.uk/educator">British Dyslexia Association</a>;</li>
-<li><a href="https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf">Dyslexia Style Guide</a>;</li>
+<li><a href="https://www.bdadyslexia.org.uk/educator">British Dyslexia Association</a></li>
+<li><a href="https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf">Dyslexia Style Guide</a></li>
 </ul>
 <p>Some recommendations are highlighted below.</p>
 <ul>
-<li>Avoid underlining, block capitals, and italics -- Use bold instead;</li>
-<li>Use boxes and borders (<a href="psyteachr-style-guide.html#call-out-blocks">call-out blocks</a>) for effective emphasis;</li>
-<li>Use left-justified with ragged right edge (don't full-justify);</li>
-<li>Use bullet points and numbering rather than continuous prose;</li>
-<li>Use the active voice with concise, direct sentences;</li>
-<li>Avoid abbreviations and provide a glossary of jargon;</li>
+<li>Avoid underlining, block capitals, and italics -- Use bold instead</li>
+<li>Use boxes and borders (<a href="psyteachr-style-guide.html#call-out-blocks">call-out blocks</a>) for effective emphasis</li>
+<li>Use left-justified with ragged right edge (don't full-justify)</li>
+<li>Use bullet points and numbering rather than continuous prose</li>
+<li>Use the active voice with concise, direct sentences</li>
+<li>Avoid abbreviations and provide a glossary of jargon</li>
 </ul>
 </div>
 <div id="colour-1" class="section level2">
-<h2><span class="header-section-number">4.4</span> Colour</h2>
+<h2><span class="header-section-number">4.3</span> Colour</h2>
 <p>You can check your images for how they look to people with different types of colourblindness with the <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">Coblis Color Blindness Simulator</a>.</p>
 <p>The &quot;pink&quot; and &quot;green&quot; colours from the <a href="">psyteachr_colours()</a> function are distinguishable by people with protanopia (red-blind), deuteronopia (green-blind), and tritanopia (blue-blind) colourblindness. You can also use viridis colours with <code>ggplot2::scale_colour_viridis_d()</code> and <code>ggplot2::scale_fill_viridis_d()</code> (for discrete colours) or <code>ggplot2::scale_colour_viridis_c()</code> and <code>ggplot2::scale_fill_viridis_c()</code> (for continuous colours).</p>
 <p>In plots, add secondary indicators in addition to colour, such as text labels or shapes.</p>
@@ -253,15 +248,15 @@ Figure 4.3: Supplement point colours with shapes.
 </div>
 </div>
 <div id="sex-gender-and-sexuality" class="section level2">
-<h2><span class="header-section-number">4.5</span> Sex, gender and sexuality</h2>
+<h2><span class="header-section-number">4.4</span> Sex, gender and sexuality</h2>
 <p>When teaching about experimental design, sex always used to be my go-to example of a two-level between-subjects factor. But this can make some people feel like their very existence is being ignored. In your examples, avoid implicitly assuming heterosexuality or binary gender.</p>
 <p>If you want to suggest an in-class exercise that uses data from the students, make sure to choose something that doesn't exclude anyone.</p>
 <ul>
-<li>Pet owners/non-pet owners;</li>
-<li>Normally does/doesn't wear glasses;</li>
-<li>Can/can't juggle;</li>
-<li>Native/non-native English speakers;</li>
-<li>Born in Scotland/elsewhere;</li>
+<li>Pet owners/non-pet owners</li>
+<li>Normally does/doesn't wear glasses</li>
+<li>Can/can't juggle</li>
+<li>Native/non-native English speakers</li>
+<li>Born in Scotland/elsewhere</li>
 </ul>
 
 </div>

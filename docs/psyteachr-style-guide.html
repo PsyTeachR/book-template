@@ -157,10 +157,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="4" data-path="inclusion.html"><a href="inclusion.html"><i class="fa fa-check"></i><b>4</b> Inclusion</a><ul>
 <li class="chapter" data-level="4.1" data-path="inclusion.html"><a href="inclusion.html#tips-for-text-readers"><i class="fa fa-check"></i><b>4.1</b> Tips for text-readers</a></li>
-<li class="chapter" data-level="4.2" data-path="inclusion.html"><a href="inclusion.html#avoid-text-in-figures"><i class="fa fa-check"></i><b>4.2</b> Avoid text in figures</a></li>
-<li class="chapter" data-level="4.3" data-path="inclusion.html"><a href="inclusion.html#dyslexia-friendly-resources"><i class="fa fa-check"></i><b>4.3</b> Dyslexia-friendly resources</a></li>
-<li class="chapter" data-level="4.4" data-path="inclusion.html"><a href="inclusion.html#colour-1"><i class="fa fa-check"></i><b>4.4</b> Colour</a></li>
-<li class="chapter" data-level="4.5" data-path="inclusion.html"><a href="inclusion.html#sex-gender-and-sexuality"><i class="fa fa-check"></i><b>4.5</b> Sex, gender and sexuality</a></li>
+<li class="chapter" data-level="4.2" data-path="inclusion.html"><a href="inclusion.html#dyslexia-friendly-resources"><i class="fa fa-check"></i><b>4.2</b> Dyslexia-friendly resources</a></li>
+<li class="chapter" data-level="4.3" data-path="inclusion.html"><a href="inclusion.html#colour-1"><i class="fa fa-check"></i><b>4.3</b> Colour</a></li>
+<li class="chapter" data-level="4.4" data-path="inclusion.html"><a href="inclusion.html#sex-gender-and-sexuality"><i class="fa fa-check"></i><b>4.4</b> Sex, gender and sexuality</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="symbols.html"><a href="symbols.html"><i class="fa fa-check"></i><b>A</b> Symbols</a></li>
@@ -210,24 +209,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="text-styles" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Text styles</h3>
 <ul>
-<li>Emphasised text should be <strong>bold</strong> (e.g., <code>**bold**</code>);</li>
-<li>Avoid italics and underlining for dyslexia-friendly reading;</li>
-<li>Exactly quoted names of buttons or interface objects should be <strong><code>bold code</code></strong> (e.g., <code>**`bold code`**</code>);</li>
-<li>Inline code should be in <code>backticks</code> (e.g., <code>`backticks`</code>);</li>
-<li>Put semi-colons at the end of list items for screen readers;</li>
+<li>Emphasised text should be <strong>bold</strong> (e.g., <code>**bold**</code>)</li>
+<li>Avoid italics and underlining for dyslexia-friendly reading</li>
+<li>Exactly quoted names of buttons or interface objects should be <strong><code>bold code</code></strong> (e.g., <code>**`bold code`**</code>)</li>
+<li>Inline code should be in <code>backticks</code> (e.g., <code>`backticks`</code>)</li>
+<li>Put semi-colons at the end of list items for screen readers (the psyTeachR bookdown style does this automatically)</li>
 </ul>
 </div>
 <div id="lists" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> Lists</h3>
-<p>Lists where most of the items fit on one line should start each line with an uppercase letter (unless the first word is code where case is important), end with a semicolon (for screen readers), and there should be no blank lines between items.</p>
-<pre><code>* Item 1;
-* Item 2;
-* Item 3;</code></pre>
+<p>Lists where most of the items fit on one line should start each line with an uppercase letter (unless the first word is code where case is important) and there should be no blank lines between items.</p>
+<pre><code>* Item 1
+* Item 2
+* Item 3</code></pre>
 <ul>
-<li>Item 1;</li>
-<li>Item 2;</li>
-<li>Item 3;</li>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
 </ul>
+<div class="info">
+<p>
+The psyTeachR style sheet automatically adds semicolons to the end of each list item for screen readers.
+</p>
+</div>
 </div>
 <div id="tables" class="section level3">
 <h3><span class="header-section-number">2.1.4</span> Tables</h3>
@@ -279,21 +283,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>There is a lot of cultural variation in what we call punctuation. For psyTeachR books, use the conventions in Appendix <a href="symbols.html#symbols">A</a>.</p>
 <p>Use the following conventions for proper nouns:</p>
 <ul>
-<li>RStudio;</li>
-<li>R Markdown (this is how Yihui Xie writes it);</li>
-<li>LaTeX (you don't have to be fancy with <span class="math inline">\({\LaTeX}\)</span>);</li>
+<li>RStudio</li>
+<li>R Markdown (this is how Yihui Xie writes it)</li>
+<li>LaTeX (you don't have to be fancy with <span class="math inline">\({\LaTeX}\)</span>)</li>
 </ul>
 </div>
 <div id="colour" class="section level2">
 <h2><span class="header-section-number">2.3</span> Colour</h2>
 <p>Logo colours are from the University of Glasgow palette.</p>
 <ul>
-<li><span style="color: var(--pink);">pink: #983E82</span>;</li>
-<li><span style="color: var(--orange);">orange: #E2A458</span>;</li>
-<li><span style="color: var(--yellow);">yellow: #F5DC70</span>;</li>
-<li><span style="color: var(--green);">green: #59935B</span>;</li>
-<li><span style="color: var(--blue);">blue: #467AAC</span>;</li>
-<li><span style="color: var(--purple);">purple: #61589C</span>;</li>
+<li><span style="color: var(--pink);">pink: #983E82</span></li>
+<li><span style="color: var(--orange);">orange: #E2A458</span></li>
+<li><span style="color: var(--yellow);">yellow: #F5DC70</span></li>
+<li><span style="color: var(--green);">green: #59935B</span></li>
+<li><span style="color: var(--blue);">blue: #467AAC</span></li>
+<li><span style="color: var(--purple);">purple: #61589C</span></li>
 </ul>
 <p>If you are comfortable editing css and want to add styles with colour, you can add the theme colours to css with the keywords using this pattern:</p>
 <pre><code>* &lt;span style=&quot;color: var(--purple);&quot;&gt;Some purple text&lt;/span&gt;
@@ -332,11 +336,11 @@ Figure 2.1: Plot with psyteachr.colours
 <h3><span class="header-section-number">2.4.1</span> R Plots</h3>
 <p>Any graphs should be dynamically created in an R code block. Set <code>echo=FALSE</code> if you don't want to display the code that creates a plot. Default values are specified below; you don't have to include those unless you want to change them, but always set the <code>fig.cap</code>.</p>
 <ul>
-<li><code>out.width='100%'</code>;</li>
-<li><code>fig.align='center'</code>;</li>
-<li><code>fig.width=8</code>;</li>
-<li><code>fig.height=5</code>;</li>
-<li><code>fig.cap='**CAPTION THIS FIGURE!!**'</code>;</li>
+<li><code>out.width='100%'</code></li>
+<li><code>fig.align='center'</code></li>
+<li><code>fig.width=8</code></li>
+<li><code>fig.height=5</code></li>
+<li><code>fig.cap='**CAPTION THIS FIGURE!!**'</code></li>
 </ul>
 <div class="verbatim">
 <p><code>```{echo=FALSE, out.width='50%', fig.width=4, fig.height=2.5, fig.cap='Dynamically created plot.'}</code></p>
@@ -378,10 +382,10 @@ Figure 2.3: PsyTeachR Logo displayed by the previous code block.
 </div>
 <p>Keep panes in the default order.</p>
 <ul>
-<li>Upper left: Source;</li>
-<li>Upper right: Environment, History, Connections, Build, Git;</li>
-<li>Lower right: Files, Plots, Packages, Help, Viewer;</li>
-<li>Lower left: Console;</li>
+<li>Upper left: Source</li>
+<li>Upper right: Environment, History, Connections, Build, Git</li>
+<li>Lower right: Files, Plots, Packages, Help, Viewer</li>
+<li>Lower left: Console</li>
 </ul>
 <div class="figure" style="text-align: center">
 <img src="files/images/default_panes.png" alt="Default RStudio pane layout." width="100%" />
@@ -398,16 +402,16 @@ Figure 2.3: PsyTeachR Logo displayed by the previous code block.
 <h3><span class="header-section-number">2.5.1</span> Options</h3>
 <p>Code chunks can take several options The most common ones are explained below. <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">Learn more about code chunks</a>.</p>
 <ul>
-<li><code>eval</code>: set to <code>FALSE</code> to skip running the code;</li>
-<li><code>echo</code>: set to <code>FALSE</code> to skip displaying the code;</li>
-<li><code>include</code>: set to <code>FALSE</code> to run but show no output (e.g., code, figures, messages, warnings);</li>
-<li><code>cache</code>: set to <code>TRUE</code> if you have a code chunk that takes a long time to run. It should run if you make changes, but doesn't always. Delete your cache and render the book from scratch before you push major updates;</li>
-<li><code>results</code>:
+<li><code>eval</code>: set to <code>FALSE</code> to skip running the code</li>
+<li><code>echo</code>: set to <code>FALSE</code> to skip displaying the code</li>
+<li><code>include</code>: set to <code>FALSE</code> to run but show no output (e.g., code, figures, messages, warnings)</li>
+<li><code>cache</code>: set to <code>TRUE</code> if you have a code chunk that takes a long time to run. It should run if you make changes, but doesn't always. Delete your cache and render the book from scratch before you push major updates</li>
+<li><code>results</code>
 <ul>
-<li>&quot;hold&quot; to hold all the output pieces and display them after the code chunk (default for psyTeachR books),</li>
-<li>&quot;markup&quot; to intersperse code and output as they happen;</li>
-<li>&quot;hide&quot; to hide output,</li>
-<li>&quot;asis&quot; to write raw results (like the output of <code>knitr::kable</code>);</li>
+<li>&quot;hold&quot; to hold all the output pieces and display them after the code chunk (default for psyTeachR books)</li>
+<li>&quot;markup&quot; to intersperse code and output as they happen</li>
+<li>&quot;hide&quot; to hide output</li>
+<li>&quot;asis&quot; to write raw results (like the output of <code>knitr::kable</code>)</li>
 </ul></li>
 </ul>
 </div>

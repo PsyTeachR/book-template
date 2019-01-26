@@ -12,30 +12,26 @@ We want our resources to be accessible to everyone. This means thinking about ac
 
 Some students need to use text readers for accessibility; others just prefer this method. Here are some tips for improving their experience from the [Dyslexia Style Guide](https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf).
 
-* Put full stops after headings to make the voice drop and pause;
-* Put semi-colons, commas, or full stops after bullet points to make a pause;
-* Use straight quotation marks;
-* Avoid roman numerals;
-
-
-## Avoid text in figures
+* Use straight quotation marks
+* Avoid roman numerals
+* Avoid text in figures
 
 Bookdown books allow readers to change the font style, size, and background colour. This provides essential assessibility for some people, such as those with dyslexia or visual impairments. Therefore, avoid putting too much text in figures and provide descriptions of images in the figure caption.
 
 
 ## Dyslexia-friendly resources
 
-* [British Dyslexia Association](https://www.bdadyslexia.org.uk/educator);
-* [Dyslexia Style Guide](https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf);
+* [British Dyslexia Association](https://www.bdadyslexia.org.uk/educator)
+* [Dyslexia Style Guide](https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf)
 
 Some recommendations are highlighted below.
 
-* Avoid underlining, block capitals, and italics -- Use bold instead;
-* Use boxes and borders ([call-out blocks](#call-out-blocks)) for effective emphasis;
-* Use left-justified with ragged right edge (don't full-justify);
-* Use bullet points and numbering rather than continuous prose;
-* Use the active voice with concise, direct sentences;
-* Avoid abbreviations and provide a glossary of jargon;
+* Avoid underlining, block capitals, and italics -- Use bold instead
+* Use boxes and borders ([call-out blocks](#call-out-blocks)) for effective emphasis
+* Use left-justified with ragged right edge (don't full-justify)
+* Use bullet points and numbering rather than continuous prose
+* Use the active voice with concise, direct sentences
+* Avoid abbreviations and provide a glossary of jargon
 
 
 ## Colour
@@ -97,11 +93,11 @@ When teaching about experimental design, sex always used to be my go-to example 
 
 If you want to suggest an in-class exercise that uses data from the students, make sure to choose something that doesn't exclude anyone. 
 
-* Pet owners/non-pet owners;
-* Normally does/doesn't wear glasses;
-* Can/can't juggle;
-* Native/non-native English speakers;
-* Born in Scotland/elsewhere;
+* Pet owners/non-pet owners
+* Normally does/doesn't wear glasses
+* Can/can't juggle
+* Native/non-native English speakers
+* Born in Scotland/elsewhere
 
 
 

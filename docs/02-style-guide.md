@@ -19,25 +19,29 @@ Chapters should **usually** have between three and eight level 2 headers. There 
 
 ### Text styles
 
-* Emphasised text should be **bold** (e.g., `**bold**`);
-* Avoid italics and underlining for dyslexia-friendly reading;
-* Exactly quoted names of buttons or interface objects should be **`bold code`** (e.g., ``` **`bold code`** ```);
-* Inline code should be in `backticks` (e.g., ``` `backticks` ```);
-* Put semi-colons at the end of list items for screen readers;
+* Emphasised text should be **bold** (e.g., `**bold**`)
+* Avoid italics and underlining for dyslexia-friendly reading
+* Exactly quoted names of buttons or interface objects should be **`bold code`** (e.g., ``` **`bold code`** ```)
+* Inline code should be in `backticks` (e.g., ``` `backticks` ```)
+* Put semi-colons at the end of list items for screen readers (the psyTeachR bookdown style does this automatically)
 
 ### Lists
 
-Lists where most of the items fit on one line should start each line with an uppercase letter (unless the first word is code where case is important), end with a semicolon (for screen readers), and there should be no blank lines between items.
+Lists where most of the items fit on one line should start each line with an uppercase letter (unless the first word is code where case is important) and there should be no blank lines between items. 
 
 ```
-* Item 1;
-* Item 2;
-* Item 3;
+* Item 1
+* Item 2
+* Item 3
 ```
 
-* Item 1;
-* Item 2;
-* Item 3;
+* Item 1
+* Item 2
+* Item 3
+
+<div class="info">
+<p>The psyTeachR style sheet automatically adds semicolons to the end of each list item for screen readers.</p>
+</div>
 
 ### Tables
 
@@ -69,20 +73,20 @@ There is a lot of cultural variation in what we call punctuation. For psyTeachR 
 
 Use the following conventions for proper nouns:
 
-* RStudio;
-* R Markdown (this is how Yihui Xie writes it);
-* LaTeX (you don't have to be fancy with ${\LaTeX}$);
+* RStudio
+* R Markdown (this is how Yihui Xie writes it)
+* LaTeX (you don't have to be fancy with ${\LaTeX}$)
 
 ## Colour
 
 Logo colours are from the University of Glasgow palette.
 
-* <span style="color: var(--pink);">pink: #983E82</span>;
-* <span style="color: var(--orange);">orange: #E2A458</span>;
-* <span style="color: var(--yellow);">yellow: #F5DC70</span>;
-* <span style="color: var(--green);">green: #59935B</span>;
-* <span style="color: var(--blue);">blue: #467AAC</span>;
-* <span style="color: var(--purple);">purple: #61589C</span>;
+* <span style="color: var(--pink);">pink: #983E82</span>
+* <span style="color: var(--orange);">orange: #E2A458</span>
+* <span style="color: var(--yellow);">yellow: #F5DC70</span>
+* <span style="color: var(--green);">green: #59935B</span>
+* <span style="color: var(--blue);">blue: #467AAC</span>
+* <span style="color: var(--purple);">purple: #61589C</span>
 
 If you are comfortable editing css and want to add styles with colour, you can add the theme colours to css with the keywords using this pattern:
 
@@ -136,11 +140,11 @@ Use `\@ref(fig:chunk-name)` to link to and reference the figure number in text (
 
 Any graphs should be dynamically created in an R code block. Set `echo=FALSE` if you don't want to display the code that creates a plot. Default values are specified below; you don't have to include those unless you want to change them, but always set the `fig.cap`.
 
-* `out.width='100%'`;
-* `fig.align='center'`;
-* `fig.width=8`;
-* `fig.height=5`;
-* `fig.cap='**CAPTION THIS FIGURE!!**'`;
+* `out.width='100%'`
+* `fig.align='center'`
+* `fig.width=8`
+* `fig.height=5`
+* `fig.cap='**CAPTION THIS FIGURE!!**'`
 
 <div class='verbatim'><code>&#96;&#96;&#96;{echo=FALSE, out.width='50%', fig.width=4, fig.height=2.5, fig.cap='Dynamically created plot.'}</code>
 
@@ -187,10 +191,10 @@ You'll probably want to include some screenshots of RStudio. For consistency, ma
 
 Keep panes in the default order.
 
-* Upper left: Source;
-* Upper right: Environment, History, Connections, Build, Git;
-* Lower right: Files, Plots, Packages, Help, Viewer;
-* Lower left: Console;
+* Upper left: Source
+* Upper right: Environment, History, Connections, Build, Git
+* Lower right: Files, Plots, Packages, Help, Viewer
+* Lower left: Console
     
 <div class="figure" style="text-align: center">
 <img src="files/images/default_panes.png" alt="Default RStudio pane layout." width="100%" />
@@ -206,15 +210,15 @@ Keep panes in the default order.
 
 Code chunks can take several options The most common ones are explained below. [Learn more about code chunks](https://bookdown.org/yihui/rmarkdown/r-code.html).
 
-* `eval`: set to `FALSE` to skip running the code;
-* `echo`: set to `FALSE` to skip displaying the code;
-* `include`: set to `FALSE` to run but show no output (e.g., code, figures, messages, warnings);
-* `cache`: set to `TRUE` if you have a code chunk that takes a long time to run. It should run if you make changes, but doesn't always. Delete your cache and render the book from scratch before you push major updates;
-* `results`:
-    + "hold" to hold all the output pieces and display them after the code chunk (default for psyTeachR books),
-    + "markup" to intersperse code and output as they happen;
-    + "hide" to hide output,
-    + "asis" to write raw results (like the output of `knitr::kable`);
+* `eval`: set to `FALSE` to skip running the code
+* `echo`: set to `FALSE` to skip displaying the code
+* `include`: set to `FALSE` to run but show no output (e.g., code, figures, messages, warnings)
+* `cache`: set to `TRUE` if you have a code chunk that takes a long time to run. It should run if you make changes, but doesn't always. Delete your cache and render the book from scratch before you push major updates
+* `results`
+    + "hold" to hold all the output pieces and display them after the code chunk (default for psyTeachR books)
+    + "markup" to intersperse code and output as they happen
+    + "hide" to hide output
+    + "asis" to write raw results (like the output of `knitr::kable`)
 
 ### Including headers
 

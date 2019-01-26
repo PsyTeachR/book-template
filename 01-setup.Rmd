@@ -13,11 +13,11 @@ The best resource for creating a course book is the [bookdown website](https://b
 
 For psyTeachR courses, the repository should be created by the course lead on the [psyTeachR](https://github.com/PsyTeachR) github and have a name structure like this:
 
-* ug1-practical;
-* ug2-practical;
-* ug3-stats;
-* ug4-dissertation;
-* msc-data-skills;
+* ug1-practical
+* ug2-practical
+* ug3-stats
+* ug4-dissertation
+* msc-data-skills
 
 ### Fork the repository
 
