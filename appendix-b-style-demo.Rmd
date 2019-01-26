@@ -1,0 +1,76 @@
+```{r psyteachr-setup, include = FALSE}
+source("R/psyteachr_setup.R") # psyTeachR styles and functions
+source("R/my_setup.R")        # book-specific styles and functions
+```
+
+# Style Demo {#style-demo}
+
+Use this page to test styles if you change any defaults. Make sure to test with white, sepia and night themes.
+
+## Header 2
+
+Text with inline text styles, like **bold**, *italics* (don't use), **`bold code`**, `inline code` and [link text](#style-demo). Emojis: ❤️🧡💛💚💙💜
+
+### Header 3
+
+* **bold**
+* *italics*
+* **`bold code`**
+* `inline code`
+* [link text](#style-demo)
+
+#### Header 4
+
+##### Header 5
+
+## Chunks
+
+### Code chunk with output
+
+```{r demo-chunk}
+# nonsense function to demo code style
+
+func_var <- function(arg = FALSE) {
+  string_var <- "I'm a string"
+  int_var <- 1L
+  dbl_var <- -3.165
+  bool_var <- TRUE
+  vector_var <- 1:5
+  
+  paste(string_var, int_var, sep = " - ")
+}
+
+func_var()
+```
+
+### Code chunk with r header
+
+```{r demo-verbatim, eval=FALSE, verbatim="r libraries, include=FALSE"}
+library(tidyverse)
+```
+
+### Preformatted
+
+```
+line breaks
+    and space are
+        preserved 
+Emojis are sometimes different: ❤️🧡💛💚💙💜
+```
+### Call-out blocks
+
+```{block, type="danger"}
+`danger`: Note dangerous things that will break code.
+```
+
+```{block, type="warning"}
+`warning`: Warn readers.
+```
+
+```{block, type="info"}
+`info`: Give further information.
+```
+
+```{block, type="try"}
+`try`: Stop and try something.
+```

@@ -7,25 +7,38 @@
   --purple: #61589C; /* hsl(248, 28%, 48%) */
 }
 
-p.caption {
-  color: #999;
-  margin-top: 10px;
-}
-p code {
-  white-space: inherit;
-}
 pre {
   word-break: normal;
   word-wrap: normal;
+  border: 1px solid grey !important;
+  border-radius: 5px;
 }
+
+code {
+  border: 1px solid hsla(0, 0%, 0%, .1) !important;
+  border-radius: 5px;
+  font-size: 105% !important;
+}
+
 pre code {
-  white-space: inherit;
+  border: none !important;
+  border-radius: none;
+  font-size: 100% !important;
+}
+
+div.color-theme-2 :not(pre) code {
+  border-color: hsla(0, 0%, 100%, .1) !important;
 }
 
 strong code {
   color: black !important;
-  font-size: 110% !important;
-  padding: 2px !important;
+  padding: 0px !important;
+  background-color: inherit !important;
+  border: none !important;
+}
+
+div.color-theme-1 strong code {
+  color: hsl(30, 70%, 16%) !important;
 }
 
 div.color-theme-2 strong code {
@@ -54,52 +67,40 @@ div.color-theme-2 strong code {
   background-position: 0.5em 0.5em;
   background-size: 2.5em;
   background-repeat: no-repeat;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
 .danger {
-  background-image: url("images/alerts/danger.svg");
+  background-image: url("../images/alerts/danger.svg");
   background-color: hsla(315, 42%, 42%, .10);
   border: 1px solid var(--pink);
 }
 
 .warning {
-  background-image: url("images/alerts/warning.svg");
+  background-image: url("../images/alerts/warning.svg");
   background-color: hsla(49, 87%, 70%, .1);
   border: 1px solid var(--yellow);
 }
 
 .info {
-  background-image: url("images/alerts/info.svg");
+  background-image: url("../images/alerts/info.svg");
   background-color: hsla(209, 42%, 47%, .1);
   border: 1px solid var(--blue);
 }
 
 .try {
-  background-image: url("images/alerts/rainbow.svg");
+  background-image: url("../images/alerts/rainbow.svg");
   background-color: hsla(248, 28%, 48%, .1);
   border: 1px solid var(--purple);
   background-position: 0.5em -.25em;
 }
 
-/* set styles for code output messages */
-
-div.sourceCode pre.sourceCode.r {
-  border: 1px solid grey !important;
-}
-
-pre {
-  background-color: #F8F8F8;
-}
-pre:not(.sourceCode) code {
-  color: grey;
-}
 
 /* webex style */
 
 /* styles for solveme */
 .solveme { border: 2px dotted var(--pink); }
-.solveme.correct { border: 2px solid var(--blue); }
+.solveme.correct { border: 2px solid var(--green); }
 /* styles for hidden solutions */
 .solution {
     height: 2.2em;
@@ -115,25 +116,42 @@ pre:not(.sourceCode) code {
     height: 1.5em;
     margin-bottom: 0.5em;
 }
-.solution pre.sourceCode {
-    border-color: var(--green);
-}
+
+/* verbatim code chunks with ```{r ...} at top */
 
 div.verbatim {
   border: 1px solid grey;
   padding: 0.25em 1em 0 1em;
+  border-radius: 5px;
   margin-bottom: 1em;
   font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
 }
 
-div.verbatim div.sourceCode pre.sourceCode.r {
+div.verbatim code {
+  border: none !important;
+  font-size: 100% !important;
+  display: block;
+}
+
+div.verbatim pre.sourceCode.r {
   border: none !important;
 }
 
-div.verbatim, div.verbatim * {
-  background-color: #F8F8F8 !important;
+div.verbatim {
+  background-color: rgb(247, 247, 247) !important;
 }
-div.verbatim code { display: block; }
+
+.color-theme-1 div.verbatim {
+  background-color: rgb(253, 246, 227) !important;
+}
+
+.color-theme-2 div.verbatim {
+  background-color: rgb(45, 49, 67) !important;
+}
+
+div.verbatim * {
+  background-color: transparent !important;
+}
 
 div.verbatim div.sourceCode { 
   margin: 0 !important;

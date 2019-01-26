@@ -1,3 +1,8 @@
+```{r psyteachr-setup, include = FALSE}
+source("R/psyteachr_setup.R") # psyTeachR styles and functions
+source("R/my_setup.R")        # book-specific styles and functions
+```
+
 # Inclusion
 
 We want our resources to be accessible to everyone. This means thinking about accessibility with regards to disability, language, identity, and other characteristics. This is a work in progress; feel free to suggest additions.
@@ -33,6 +38,59 @@ Some recommendations are highlighted below.
 * Avoid abbreviations and provide a glossary of jargon;
 
 
+## Colour
+
+You can check your images for how they look to people with different types of colourblindness with the [Coblis Color Blindness Simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/).
+
+The "pink" and "green" colours from the [psyteachr_colours()]() function are distinguishable by people with protanopia (red-blind), deuteronopia (green-blind), and tritanopia (blue-blind) colourblindness. You can also use viridis colours with `ggplot2::scale_colour_viridis_d()` and `ggplot2::scale_fill_viridis_d()` (for discrete colours) or `ggplot2::scale_colour_viridis_c()` and `ggplot2::scale_fill_viridis_c()` (for continuous colours).
+
+In plots, add secondary indicators in addition to colour, such as text labels or shapes.
+
+```{r plot-text-labels, echo=FALSE, fig.height=4, fig.cap="Text labels supplement colour information."}
+
+dat <- tibble(
+  season = rep(c("winter", "summer"), each = 100),
+  intervention = rep(c("exercise", "control"), times = 100)
+) %>%
+  mutate(dv = ifelse(season == "summer", +.25, -.25) *
+              ifelse(intervention == "exercise", +.5, -.5) +
+              rnorm(200, 0, 0.5)
+  )
+
+ggplot(dat, aes(intervention, dv, fill = season)) +
+  geom_violin(alpha = 0.5) +
+  geom_boxplot(width = 0.2, 
+               position = position_dodge(width = 0.9), 
+               show.legend = FALSE) +
+  geom_text(aes(y = min(dv)-0.1, label = season), 
+            position = position_dodge(width = 0.9)) +
+  scale_fill_manual(values = psyteachr_colours(c("green", "pink")))
+
+```
+
+
+```{r plot-text-labels-facet, echo=FALSE, fig.height=4, fig.cap="Facet labels and redundant colour information."}
+
+ggplot(dat, aes(season, dv, fill = season)) +
+  geom_violin(alpha = 0.5, show.legend = FALSE) +
+  geom_boxplot(width = 0.2, 
+               position = position_dodge(width = 0.9), 
+               show.legend = FALSE) +
+  facet_grid(~intervention, labeller = label_both) +
+  scale_fill_manual(values = psyteachr_colours(c("green", "pink")))
+
+```
+
+```{r plot-shapes, echo=FALSE, fig.height=4, fig.cap="Supplement point colours with shapes."}
+
+ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species, shape = Species)) +
+  geom_point() +
+  geom_smooth(method = lm, show.legend = FALSE) +
+  scale_colour_manual(values = psyteachr_colours(c("pink", "green", "blue"))) +
+  theme(legend.position = c(.9, .8))
+
+```
+
 ## Sex, gender and sexuality
 
 When teaching about experimental design, sex always used to be my go-to example of a two-level between-subjects factor. But this can make some people feel like their very existence is being ignored. In your examples, avoid implicitly assuming heterosexuality or binary gender.
@@ -42,6 +100,8 @@ If you want to suggest an in-class exercise that uses data from the students, ma
 * Pet owners/non-pet owners;
 * Normally does/doesn't wear glasses;
 * Can/can't juggle;
+* Native/non-native English speakers;
+* Born in Scotland/elsewhere;
 
 
 

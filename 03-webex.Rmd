@@ -12,7 +12,7 @@ devtools::install_github("dalejbarr/webex")
 
 The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex.
 
-## Fill-In-The-Blanks (`fitb()`)
+## Fill-In-The-Blanks (`fitb()`) {#fitb}
 
 Create fill-in-the-blank questions using `fitb()`, providing the answer as the first argument.
 
@@ -38,21 +38,21 @@ You can set more than one possible correct answer by setting the answers as a ve
 
 - Type a vowel: `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
 
-## Multiple Choice (`mcq()`)
+## Multiple Choice (`mcq()`) {#mcq}
 
 - "Never gonna give you up, never gonna: `r mcq(c("let you go", "turn you down", "run away", answer = "let you down"))`"
-- "I `r mcq(c(answer = "bless the rains", "guess it rains", "sense the rain"))` down in Africa" -Toto
+- "I `r mcq(c(answer = "bless the rains", "guess it rains", "sense the rain"))` down in Africa"
 - "There's nothing that a hundred men `r mcq(c("on Mars", answer = "or more", "named Marv"))` could ever do"
 
-## True or False (`torf()`)
+## True or False (`torf()`) {#torf}
 
 - You can permute values in a vector using `sample()`. `r torf(TRUE)`
 
-## Hidden solutions and hints (`hide()` and `unhide()`)
+## Hidden solutions and hints (`hide()` and `unhide()`) {#hide-unhide}
 
 - Recreate the scatterplot below, using the built-in `cars` dataset.
 
-```{r echo = FALSE}
+```{r plot-cars, echo = FALSE, fig.cap="Recreate this scatterplot."}
 with(cars, plot(speed, dist))
 ```
 

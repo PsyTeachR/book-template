@@ -5,8 +5,6 @@ source("R/my_setup.R")        # book-specific styles and functions
 
 # Setup
 
-## Resources
-
 The best resource for creating a course book is the [bookdown website](https://bookdown.org/). Yihui Xie's [Bookdown](https://bookdown.org/yihui/bookdown/) book can answer most of the questions you'll have. The guide below is just a quick start for the specific templates we're using at UofG Psychology.
 
 ## Starting a new book
@@ -15,11 +13,11 @@ The best resource for creating a course book is the [bookdown website](https://b
 
 For psyTeachR courses, the repository should be created by the course lead on the [psyTeachR](https://github.com/PsyTeachR) github and have a name structure like this:
 
-* ug1-practical
-* ug2-practical
-* ug3-stats
-* ug4-dissertation
-* msc-data-skills
+* ug1-practical;
+* ug2-practical;
+* ug3-stats;
+* ug4-dissertation;
+* msc-data-skills;
 
 ### Fork the repository
 
@@ -49,7 +47,7 @@ Click the green **`Clone or download`** button on your personal forked repositor
 knitr::include_graphics("files/images/clone.png")
 ```
 
-Under the **File** menu in RStudio, choose **`New Project...`** and choose **`Version Control`** from the list of options.
+Under the **`File`** menu in RStudio, choose **`New Project...`** and choose **`Version Control`** from the list of options.
 
 ```{r img-version_control, echo=FALSE, out.width='50%', fig.align='center', fig.cap="File > New Project... > Version Control"}
 knitr::include_graphics("files/images/version_control.png")
@@ -81,11 +79,13 @@ Open `_output.yml`. It should look like this:
 ```
 bookdown::gitbook: 
   default: true
+  smart: false
   includes:
-    after_body: webex.js
-  css: style.css
+    after_body: include/webex.js
+  css: include/style.css
   config:
     toc:
+      collapse: section
       before: |
         <li><a href="./">Book Template</a></li>
       after: |
@@ -202,5 +202,9 @@ After you've added several chapters, the whole book might take a long time to re
 bookdown::preview_chapter("02-style-guide.Rmd")
 ```
 
+## Adding appendices
 
+Add appendices in the same way as chapters. Just name them following the pattern `appendix-a-name.Rmd`.
+
+The file `appendix-0.Rmd` just contains the appendix header that groups appendices together (`# (APPENDIX) Appendices {-}`). You don't need to edit this, but you can delete this file if you are not going to use appendices.
 

@@ -1,3 +1,5 @@
+
+
 # Inclusion
 
 We want our resources to be accessible to everyone. This means thinking about accessibility with regards to disability, language, identity, and other characteristics. This is a work in progress; feel free to suggest additions.
@@ -33,6 +35,30 @@ Some recommendations are highlighted below.
 * Avoid abbreviations and provide a glossary of jargon;
 
 
+## Colour
+
+You can check your images for how they look to people with different types of colourblindness with the [Coblis Color Blindness Simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/).
+
+The "pink" and "green" colours from the [psyteachr_colours()]() function are distinguishable by people with protanopia (red-blind), deuteronopia (green-blind), and tritanopia (blue-blind) colourblindness. You can also use viridis colours with `ggplot2::scale_colour_viridis_d()` and `ggplot2::scale_fill_viridis_d()` (for discrete colours) or `ggplot2::scale_colour_viridis_c()` and `ggplot2::scale_fill_viridis_c()` (for continuous colours).
+
+In plots, add secondary indicators in addition to colour, such as text labels or shapes.
+
+<div class="figure" style="text-align: center">
+<img src="04-inclusion_files/figure-html/plot-text-labels-1.png" alt="Text labels supplement colour information." width="100%" />
+<p class="caption">(\#fig:plot-text-labels)Text labels supplement colour information.</p>
+</div>
+
+
+<div class="figure" style="text-align: center">
+<img src="04-inclusion_files/figure-html/plot-text-labels-facet-1.png" alt="Facet labels and redundant colour information." width="100%" />
+<p class="caption">(\#fig:plot-text-labels-facet)Facet labels and redundant colour information.</p>
+</div>
+
+<div class="figure" style="text-align: center">
+<img src="04-inclusion_files/figure-html/plot-shapes-1.png" alt="Supplement point colours with shapes." width="100%" />
+<p class="caption">(\#fig:plot-shapes)Supplement point colours with shapes.</p>
+</div>
+
 ## Sex, gender and sexuality
 
 When teaching about experimental design, sex always used to be my go-to example of a two-level between-subjects factor. But this can make some people feel like their very existence is being ignored. In your examples, avoid implicitly assuming heterosexuality or binary gender.
@@ -42,6 +68,8 @@ If you want to suggest an in-class exercise that uses data from the students, ma
 * Pet owners/non-pet owners;
 * Normally does/doesn't wear glasses;
 * Can/can't juggle;
+* Native/non-native English speakers;
+* Born in Scotland/elsewhere;
 
 
 

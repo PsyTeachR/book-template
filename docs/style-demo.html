@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Template Course</title>
+  <title>B Style Demo | Template Course</title>
   <meta name="description" content="This is a template. Use it to start a new course book.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Template Course" />
+  <meta property="og:title" content="B Style Demo | Template Course" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Template Course" />
+  <meta name="twitter:title" content="B Style Demo | Template Course" />
   
   <meta name="twitter:description" content="This is a template. Use it to start a new course book." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
+<link rel="prev" href="symbols.html">
 
-<link rel="next" href="setup.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -195,31 +195,87 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Template Course</h1>
-<p class="author"><em>Lisa DeBruine</em></p>
-<p class="date"><em>2019-01-26</em></p>
-</div>
-<div id="overview" class="section level1 unnumbered">
-<h1>Overview</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-<div id="course-aims" class="section level2">
-<h2><span class="header-section-number">0.1</span> Course Aims</h2>
+<div id="style-demo" class="section level1">
+<h1><span class="header-section-number">B</span> Style Demo</h1>
+<p>Use this page to test styles if you change any defaults. Make sure to test with white, sepia and night themes.</p>
+<div id="header-2" class="section level2">
+<h2><span class="header-section-number">B.1</span> Header 2</h2>
+<p>Text with inline text styles, like <strong>bold</strong>, <em>italics</em> (don't use), <strong><code>bold code</code></strong>, <code>inline code</code> and <a href="style-demo.html#style-demo">link text</a>. Emojis: ❤️🧡💛💚💙💜</p>
+<div id="header-3" class="section level3">
+<h3><span class="header-section-number">B.1.1</span> Header 3</h3>
 <ul>
-<li>Aim 1;</li>
-<li>Aim 2;</li>
-<li>Aim 3;</li>
+<li><strong>bold</strong></li>
+<li><em>italics</em></li>
+<li><strong><code>bold code</code></strong></li>
+<li><code>inline code</code></li>
+<li><a href="style-demo.html#style-demo">link text</a></li>
 </ul>
+<div id="header-4" class="section level4">
+<h4><span class="header-section-number">B.1.1.1</span> Header 4</h4>
+<div id="header-5" class="section level5">
+<h5><span class="header-section-number">B.1.1.1.1</span> Header 5</h5>
 </div>
-<div id="intended-learning-outcomes" class="section level2">
-<h2><span class="header-section-number">0.2</span> Intended Learning Outcomes</h2>
-<p>By the end of this course students will be able to:</p>
-<ul>
-<li>ILO 1;</li>
-<li>ILO 2;</li>
-<li>ILO 3;</li>
-</ul>
+</div>
+</div>
+</div>
+<div id="chunks" class="section level2">
+<h2><span class="header-section-number">B.2</span> Chunks</h2>
+<div id="code-chunk-with-output" class="section level3">
+<h3><span class="header-section-number">B.2.1</span> Code chunk with output</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># nonsense function to demo code style</span>
 
+func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">arg =</span> <span class="ot">FALSE</span>) {
+  string_var &lt;-<span class="st"> &quot;I&#39;m a string&quot;</span>
+  int_var &lt;-<span class="st"> </span>1L
+  dbl_var &lt;-<span class="st"> </span><span class="op">-</span><span class="fl">3.165</span>
+  bool_var &lt;-<span class="st"> </span><span class="ot">TRUE</span>
+  vector_var &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>
+  
+  <span class="kw">paste</span>(string_var, int_var, <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span>)
+}
+
+<span class="kw">func_var</span>()</code></pre></div>
+<pre><code>## [1] &quot;I&#39;m a string - 1&quot;</code></pre>
+</div>
+<div id="code-chunk-with-r-header" class="section level3">
+<h3><span class="header-section-number">B.2.2</span> Code chunk with r header</h3>
+<div class="verbatim">
+<p><code>```{r libraries, include=FALSE}</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<code>```</code>
+</div>
+</div>
+<div id="preformatted" class="section level3">
+<h3><span class="header-section-number">B.2.3</span> Preformatted</h3>
+<pre><code>line breaks
+    and space are
+        preserved 
+Emojis are sometimes different: ❤️🧡💛💚💙💜</code></pre>
+</div>
+<div id="call-out-blocks" class="section level3">
+<h3><span class="header-section-number">B.2.4</span> Call-out blocks</h3>
+<div class="danger">
+<p>
+<code>danger</code>: Note dangerous things that will break code.
+</p>
+</div>
+<div class="warning">
+<p>
+<code>warning</code>: Warn readers.
+</p>
+</div>
+<div class="info">
+<p>
+<code>info</code>: Give further information.
+</p>
+</div>
+<div class="try">
+<p>
+<code>try</code>: Stop and try something.
+</p>
+</div>
+
+</div>
 </div>
 </div>
 <script>
@@ -309,8 +365,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
+<a href="symbols.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="setup.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

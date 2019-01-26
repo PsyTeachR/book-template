@@ -2,8 +2,6 @@
 
 # Setup
 
-## Resources
-
 The best resource for creating a course book is the [bookdown website](https://bookdown.org/). Yihui Xie's [Bookdown](https://bookdown.org/yihui/bookdown/) book can answer most of the questions you'll have. The guide below is just a quick start for the specific templates we're using at UofG Psychology.
 
 ## Starting a new book
@@ -12,17 +10,17 @@ The best resource for creating a course book is the [bookdown website](https://b
 
 For psyTeachR courses, the repository should be created by the course lead on the [psyTeachR](https://github.com/PsyTeachR) github and have a name structure like this:
 
-* ug1-practical
-* ug2-practical
-* ug3-stats
-* ug4-dissertation
-* msc-data-skills
+* ug1-practical;
+* ug2-practical;
+* ug3-stats;
+* ug4-dissertation;
+* msc-data-skills;
 
 ### Fork the repository
 
 Our main course pages are under https://psyteachr.github.io, but you should work on your course page on a forked version in your own github account. On the **`Code`** tab of the new repository, click the **`Fork`** button.
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="files/images/fork.png" alt="Fork a repository from the psyTeachR account" width="100%" />
 <p class="caption">(\#fig:img-fork)Fork a repository from the psyTeachR account</p>
 </div>
@@ -45,12 +43,12 @@ You'll see this animation for a few seconds while the repository is being forked
 
 Click the green **`Clone or download`** button on your personal forked repository and copy the URL (use HTTPS unless you know you've set up SSH).
 
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="files/images/clone.png" alt="Find the URL to clone" width="100%" />
 <p class="caption">(\#fig:img-clone)Find the URL to clone</p>
 </div>
 
-Under the **File** menu in RStudio, choose **`New Project...`** and choose **`Version Control`** from the list of options.
+Under the **`File`** menu in RStudio, choose **`New Project...`** and choose **`Version Control`** from the list of options.
 
 <div class="figure" style="text-align: center">
 <img src="files/images/version_control.png" alt="File &gt; New Project... &gt; Version Control" width="50%" />
@@ -85,11 +83,13 @@ Open `_output.yml`. It should look like this:
 ```
 bookdown::gitbook: 
   default: true
+  smart: false
   includes:
-    after_body: webex.js
-  css: style.css
+    after_body: include/webex.js
+  css: include/style.css
   config:
     toc:
+      collapse: section
       before: |
         <li><a href="./">Book Template</a></li>
       after: |
@@ -214,5 +214,9 @@ After you've added several chapters, the whole book might take a long time to re
 bookdown::preview_chapter("02-style-guide.Rmd")
 ```
 
+## Adding appendices
 
+Add appendices in the same way as chapters. Just name them following the pattern `appendix-a-name.Rmd`.
+
+The file `appendix-0.Rmd` just contains the appendix header that groups appendices together (`# (APPENDIX) Appendices {-}`). You don't need to edit this, but you can delete this file if you are not going to use appendices.
 

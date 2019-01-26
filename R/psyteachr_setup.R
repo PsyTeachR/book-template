@@ -4,23 +4,34 @@
 library(tidyverse)
 library(webex)
 
+# default knitr options
+knitr::opts_chunk$set(
+  echo       = TRUE,
+  results    = "hold",
+  out.width = '100%',
+  fig.width  = 8, 
+  fig.height = 5, 
+  fig.align = 'center',
+  fig.cap='**CAPTION THIS FIGURE!!**'
+)
+
 ## set global theme options for figures
 theme_set(theme_bw())
 
 ## set class for a chunk using class="className"
 knitr::knit_hooks$set(class = function(before, options, envir) {
-  if(before){
+  if (before) {
     sprintf("<div class = '%s'>", options$class)
-  }else{
+  } else {
     "</div>"
   }
 })
 
 ## verbatim code chunks
 knitr::knit_hooks$set(verbatim = function(before, options, envir) {
-  if(before){
+  if (before) {
     sprintf("<div class='verbatim'><code>&#96;&#96;&#96;{%s}</code>", options$verbatim)
-  }else{
+  } else {
     "<code>&#96;&#96;&#96;</code></div>"
   }
 })
