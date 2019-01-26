@@ -164,7 +164,7 @@ knitr::include_graphics("images/psyteachr_logo.png")
 You can learn more about including figures and images in the [Bookdown book](https://bookdown.org/yihui/bookdown/figures.html).
 
 
-## Call-out Blocks
+## Call-out Blocks {#call-out-blocks}
 
 The psyTeachR course book style includes four types of *call-out blocks* that you can use to emphasise text.
 
