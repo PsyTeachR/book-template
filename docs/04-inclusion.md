@@ -1,5 +1,4 @@
 
-
 # Inclusion
 
 We want our resources to be accessible to everyone. This means thinking about accessibility with regards to disability, language, identity, and other characteristics. This is a work in progress; feel free to suggest additions.

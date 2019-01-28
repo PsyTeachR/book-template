@@ -1,12 +1,13 @@
 
-
 # Style Demo {#style-demo}
 
 Use this page to test styles if you change any defaults. Make sure to test with white, sepia and night themes.
 
 ## Header 2
 
-Text with inline text styles, like **bold**, *italics* (don't use), **`bold code`**, `inline code` and [link text](#style-demo). Emojis: ❤️🧡💛💚💙💜
+Text with inline text styles, like **bold**, *italics* (don't use), **`bold code`**, `inline code`, [link text](#style-demo) and <a href="google.com" target="_blank">external link</a>. 
+
+Emojis: ❤️🧡💛💚💙💜
 
 ### Header 3
 
@@ -14,9 +15,10 @@ Text with inline text styles, like **bold**, *italics* (don't use), **`bold code
 * *italics*
 * **`bold code`**
 * `inline code`
+* <a target="_blank" href="https://debruine.github.io">external link</a>
 * [link text](#style-demo)
 
-#### Header 4
+#### Header 
 
 ##### Header 5
 
@@ -31,7 +33,7 @@ Text with inline text styles, like **bold**, *italics* (don't use), **`bold code
 func_var <- function(arg = FALSE) {
   string_var <- "I'm a string"
   int_var <- 1L
-  dbl_var <- -3.165
+  dbl_var <- -3.165 * int_var
   bool_var <- TRUE
   vector_var <- 1:5
   
@@ -39,10 +41,28 @@ func_var <- function(arg = FALSE) {
 }
 
 func_var()
+as.numeric("A")
+```
+
+```
+## Warning: NAs introduced by coercion
+```
+
+```r
+rnorm("A")
+```
+
+```
+## Warning in rnorm("A"): NAs introduced by coercion
+```
+
+```
+## Error in rnorm("A"): invalid arguments
 ```
 
 ```
 ## [1] "I'm a string - 1"
+## [1] NA
 ```
 
 ### Code chunk with r header

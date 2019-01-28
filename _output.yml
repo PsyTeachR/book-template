@@ -3,15 +3,29 @@ bookdown::gitbook:
   smart: false
   includes:
     after_body: include/webex.js
-  css: include/style.css
+  css: [include/psyteachr.css, include/style.css]
   config:
     toc:
       collapse: section
+      scroll_highlight: yes
       before: |
         <li><a href="./">Book Template</a></li>
       after: |
         <li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
     download: []
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: yes
+      twitter: yes
+      google: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

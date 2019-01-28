@@ -1,8 +1,3 @@
-```{r psyteachr-setup, include = FALSE}
-source("R/psyteachr_setup.R") # psyTeachR styles and functions
-source("R/my_setup.R")        # book-specific styles and functions
-```
-
 # Setup
 
 The best resource for creating a course book is the [bookdown website](https://bookdown.org/). Yihui Xie's [Bookdown](https://bookdown.org/yihui/bookdown/) book can answer most of the questions you'll have. The guide below is just a quick start for the specific templates we're using at UofG Psychology.
@@ -82,21 +77,36 @@ bookdown::gitbook:
   smart: false
   includes:
     after_body: include/webex.js
-  css: include/style.css
+  css: [include/psyteachr.css, include/style.css]
   config:
     toc:
       collapse: section
+      scroll_highlight: yes
       before: |
         <li><a href="./">Book Template</a></li>
       after: |
         <li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
     download: []
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: yes
+      twitter: yes
+      google: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+
 ```
 
 Change "Book Template" in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.
@@ -108,16 +118,33 @@ Save and close this file.
 Open `_bookdown.yml`. It should look like this:
 
 ```
-book_filename: "book-template"
+book_filename: "_main"
 new_session: yes
 output_dir: "docs"
+before_chapter_script: ["R/psyteachr_setup.R", "R/my_setup.R"]
 delete_merged_file: true
+clean: []
 language:
   ui:
     chapter_name: "Chapter "
+  label:
+    fig: 'Figure '
+    tab: 'Table '
+    eq: 'Equation '
+    thm: 'Theorem '
+    lem: 'Lemma '
+    cor: 'Corollary '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Definition '
+    exm: 'Example '
+    exr: 'Exercise '
+    proof: 'Proof. '
+    remark: 'Remark. '
+    solution: 'Solution. '
 ```
 
-Change the `book_filename` to the name of your repository (e.g., "ug1-practical"). You can change the chapter_name from "Chapter " to "Lab " or something else that makes sense for your course if you want.
+You can change the chapter_name from "Chapter " to "Lab " or something else that makes sense for your course if you want. Leave the labels alone unless you're translating to another language.
 
 Save and close this file.
 
@@ -177,22 +204,15 @@ knitr::include_graphics("files/images/new_rmd.png")
 ```
 
 
-### Setup R chunk
+### Automatic setup scripts
 
-Every .Rmd file should start with the setup chunk to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.
+Every .Rmd file automatically runs two scripts to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.
 
-```{r, eval = FALSE, verbatim = "r psyteachr-setup, include = FALSE"}
-source("R/psyteachr_setup.R") # psyTeachR styles and functions
-source("R/my_setup.R")        # book-specific styles and functions
-```
-
-If there is a package you'll need in every chapter, you can add it to `my_setup.R`. Don't edit `psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `my_setup.R` will be loaded after and overrule code in `psyteachr_setup.R` (e.g., if you want to set a different ggplot theme -- but please don't!).
-
-You can also include chapter-specific packages in this chunk. 
+If there is a package you'll need in every chapter, you can add it to `R/my_setup.R`. Don't edit `R/psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `R/my_setup.R` will be loaded after and overrule code in `R/psyteachr_setup.R` (e.g., if you want to set a different ggplot theme -- but please don't!).
 
 ### Content
 
-After the initial R chunk, start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.
+Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.
 
 ### Rendering a single chapter
 

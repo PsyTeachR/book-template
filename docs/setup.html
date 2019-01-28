@@ -25,7 +25,7 @@
 <meta name="author" content="Lisa DeBruine">
 
 
-<meta name="date" content="2019-01-26">
+<meta name="date" content="2019-01-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -88,6 +88,7 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
+<link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
 <link rel="stylesheet" href="include/style.css" type="text/css" />
 </head>
 
@@ -118,7 +119,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.6" data-path="setup.html"><a href="setup.html#render-the-book"><i class="fa fa-check"></i><b>1.1.6</b> Render the book</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="setup.html"><a href="setup.html#adding-chapters"><i class="fa fa-check"></i><b>1.2</b> Adding chapters</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup.html"><a href="setup.html#setup-r-chunk"><i class="fa fa-check"></i><b>1.2.1</b> Setup R chunk</a></li>
+<li class="chapter" data-level="1.2.1" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.2.1</b> Automatic setup scripts</a></li>
 <li class="chapter" data-level="1.2.2" data-path="setup.html"><a href="setup.html#content"><i class="fa fa-check"></i><b>1.2.2</b> Content</a></li>
 <li class="chapter" data-level="1.2.3" data-path="setup.html"><a href="setup.html#rendering-a-single-chapter"><i class="fa fa-check"></i><b>1.2.3</b> Rendering a single chapter</a></li>
 </ul></li>
@@ -279,35 +280,67 @@ Figure 1.4: Choose Git
   smart: false
   includes:
     after_body: include/webex.js
-  css: include/style.css
+  css: [include/psyteachr.css, include/style.css]
   config:
     toc:
       collapse: section
+      scroll_highlight: yes
       before: |
         &lt;li&gt;&lt;a href=&quot;./&quot;&gt;Book Template&lt;/a&gt;&lt;/li&gt;
       after: |
         &lt;li&gt;&lt;a href=&quot;https://psyteachr.github.io/&quot; target=&quot;blank&quot;&gt;PsyTeachR&lt;/a&gt;&lt;/li&gt;
     download: []
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: yes
+      twitter: yes
+      google: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: [&#39;facebook&#39;, &#39;google&#39;, &#39;twitter&#39;, &#39;linkedin&#39;, &#39;weibo&#39;, &#39;instapaper&#39;]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
-  keep_tex: yes</code></pre>
+  keep_tex: yes
+</code></pre>
 <p>Change &quot;Book Template&quot; in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.</p>
 <p>Save and close this file.</p>
 </div>
 <div id="bookdown.yml" class="section level4">
 <h4><span class="header-section-number">1.1.5.2</span> _bookdown.yml</h4>
 <p>Open <code>_bookdown.yml</code>. It should look like this:</p>
-<pre><code>book_filename: &quot;book-template&quot;
+<pre><code>book_filename: &quot;_main&quot;
 new_session: yes
 output_dir: &quot;docs&quot;
+before_chapter_script: [&quot;R/psyteachr_setup.R&quot;, &quot;R/my_setup.R&quot;]
 delete_merged_file: true
+clean: []
 language:
   ui:
-    chapter_name: &quot;Chapter &quot;</code></pre>
-<p>Change the <code>book_filename</code> to the name of your repository (e.g., &quot;ug1-practical&quot;). You can change the chapter_name from &quot;Chapter &quot; to &quot;Lab &quot; or something else that makes sense for your course if you want.</p>
+    chapter_name: &quot;Chapter &quot;
+  label:
+    fig: &#39;Figure &#39;
+    tab: &#39;Table &#39;
+    eq: &#39;Equation &#39;
+    thm: &#39;Theorem &#39;
+    lem: &#39;Lemma &#39;
+    cor: &#39;Corollary &#39;
+    prp: &#39;Proposition &#39;
+    cnj: &#39;Conjecture &#39;
+    def: &#39;Definition &#39;
+    exm: &#39;Example &#39;
+    exr: &#39;Exercise &#39;
+    proof: &#39;Proof. &#39;
+    remark: &#39;Remark. &#39;
+    solution: &#39;Solution. &#39;</code></pre>
+<p>You can change the chapter_name from &quot;Chapter &quot; to &quot;Lab &quot; or something else that makes sense for your course if you want. Leave the labels alone unless you're translating to another language.</p>
 <p>Save and close this file.</p>
 </div>
 <div id="index.rmd" class="section level4">
@@ -316,7 +349,7 @@ language:
 <pre><code>--- 
 title: &quot;Template Course&quot;
 author: &quot;psyTeachR&quot;
-date: &quot;2019-01-26&quot;
+date: &quot;2019-01-28&quot;
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -355,21 +388,14 @@ description: &quot;This is a template. Use it to start a new course book.&quot;
 (#fig:img-new_rmd)Make a new chapter in a new .Rmd file
 </p>
 </div>
-<div id="setup-r-chunk" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Setup R chunk</h3>
-<p>Every .Rmd file should start with the setup chunk to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.</p>
-<div class="verbatim">
-<p><code>```{r psyteachr-setup, include = FALSE}</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&quot;R/psyteachr_setup.R&quot;</span>) <span class="co"># psyTeachR styles and functions</span>
-<span class="kw">source</span>(<span class="st">&quot;R/my_setup.R&quot;</span>)        <span class="co"># book-specific styles and functions</span></code></pre></div>
-<code>```</code>
-</div>
-<p>If there is a package you'll need in every chapter, you can add it to <code>my_setup.R</code>. Don't edit <code>psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>my_setup.R</code> will be loaded after and overrule code in <code>psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme -- but please don't!).</p>
-<p>You can also include chapter-specific packages in this chunk.</p>
+<div id="automatic-setup-scripts" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Automatic setup scripts</h3>
+<p>Every .Rmd file automatically runs two scripts to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.</p>
+<p>If there is a package you'll need in every chapter, you can add it to <code>R/my_setup.R</code>. Don't edit <code>R/psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>R/my_setup.R</code> will be loaded after and overrule code in <code>R/psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme -- but please don't!).</p>
 </div>
 <div id="content" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> Content</h3>
-<p>After the initial R chunk, start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.</p>
+<p>Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.</p>
 </div>
 <div id="rendering-a-single-chapter" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Rendering a single chapter</h3>
@@ -511,7 +537,8 @@ gitbook.start({
 },
 "download": {},
 "toc": {
-"collapse": "section"
+"collapse": "section",
+"scroll_highlight": true
 }
 });
 });

@@ -1,5 +1,4 @@
 
-
 # PsyTeachR Style Guide
 
 The following are specific recommendations to make our course materials look and act consistently to help students navigate more easily from one year to the next. These styles will be continuously evolving, so do discuss with the team if any recommendations don't meet your needs or you want to propose new recommendations.

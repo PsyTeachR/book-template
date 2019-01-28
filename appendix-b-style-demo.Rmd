@@ -1,15 +1,12 @@
-```{r psyteachr-setup, include = FALSE}
-source("R/psyteachr_setup.R") # psyTeachR styles and functions
-source("R/my_setup.R")        # book-specific styles and functions
-```
-
 # Style Demo {#style-demo}
 
 Use this page to test styles if you change any defaults. Make sure to test with white, sepia and night themes.
 
 ## Header 2
 
-Text with inline text styles, like **bold**, *italics* (don't use), **`bold code`**, `inline code` and [link text](#style-demo). Emojis: ❤️🧡💛💚💙💜
+Text with inline text styles, like **bold**, *italics* (don't use), **`bold code`**, `inline code`, [link text](#style-demo) and <a href="google.com" target="_blank">external link</a>. 
+
+Emojis: ❤️🧡💛💚💙💜
 
 ### Header 3
 
@@ -17,9 +14,10 @@ Text with inline text styles, like **bold**, *italics* (don't use), **`bold code
 * *italics*
 * **`bold code`**
 * `inline code`
+* <a target="_blank" href="https://debruine.github.io">external link</a>
 * [link text](#style-demo)
 
-#### Header 4
+#### Header 
 
 ##### Header 5
 
@@ -27,13 +25,13 @@ Text with inline text styles, like **bold**, *italics* (don't use), **`bold code
 
 ### Code chunk with output
 
-```{r demo-chunk}
+```{r demo-chunk, error=TRUE}
 # nonsense function to demo code style
 
 func_var <- function(arg = FALSE) {
   string_var <- "I'm a string"
   int_var <- 1L
-  dbl_var <- -3.165
+  dbl_var <- -3.165 * int_var
   bool_var <- TRUE
   vector_var <- 1:5
   
@@ -41,6 +39,8 @@ func_var <- function(arg = FALSE) {
 }
 
 func_var()
+as.numeric("A")
+rnorm("A")
 ```
 
 ### Code chunk with r header

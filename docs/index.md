@@ -1,7 +1,8 @@
+
 --- 
 title: "Template Course"
 author: "Lisa DeBruine"
-date: "2019-01-26"
+date: "2019-01-28"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
