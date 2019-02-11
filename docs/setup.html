@@ -25,7 +25,7 @@
 <meta name="author" content="Lisa DeBruine">
 
 
-<meta name="date" content="2019-01-28">
+<meta name="date" content="2019-02-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -119,11 +119,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.6" data-path="setup.html"><a href="setup.html#render-the-book"><i class="fa fa-check"></i><b>1.1.6</b> Render the book</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="setup.html"><a href="setup.html#adding-chapters"><i class="fa fa-check"></i><b>1.2</b> Adding chapters</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.2.1</b> Automatic setup scripts</a></li>
-<li class="chapter" data-level="1.2.2" data-path="setup.html"><a href="setup.html#content"><i class="fa fa-check"></i><b>1.2.2</b> Content</a></li>
+<li class="chapter" data-level="1.2.1" data-path="setup.html"><a href="setup.html#content"><i class="fa fa-check"></i><b>1.2.1</b> Content</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setup.html"><a href="setup.html#multiple-.rmd-files-per-chapter"><i class="fa fa-check"></i><b>1.2.2</b> Multiple .Rmd files per chapter</a></li>
 <li class="chapter" data-level="1.2.3" data-path="setup.html"><a href="setup.html#rendering-a-single-chapter"><i class="fa fa-check"></i><b>1.2.3</b> Rendering a single chapter</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup.html"><a href="setup.html#adding-appendices"><i class="fa fa-check"></i><b>1.3</b> Adding appendices</a></li>
+<li class="chapter" data-level="1.4" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.4</b> Automatic setup scripts</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a><ul>
 <li class="chapter" data-level="2.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#general-styles"><i class="fa fa-check"></i><b>2.1</b> General styles</a><ul>
@@ -176,6 +177,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul></li>
 <li class="divider"></li>
+<li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+    target="blank"><img alt="Creative Commons License" 
+    style="border-width:0" 
+    src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
 <li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
 
 </ul>
@@ -221,17 +226,17 @@ Figure 1.1: Fork a repository from the psyTeachR account
 </p>
 </div>
 <p>If you're a member of psyTeachR, you'll get this interface telling you that you've already forked this project. You just need to choose your personal account.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:img-already-forked"></span>
 <img src="files/images/already_forked.png" alt="Choose your personal account" width="50%" />
 <p class="caption">
-(#fig:img-already_forked)Choose your personal account
+Figure 1.2: Choose your personal account
 </p>
 </div>
 <p>You'll see this animation for a few seconds while the repository is being forked to your account.</p>
 <div class="figure" style="text-align: center"><span id="fig:img-forking"></span>
 <img src="files/images/forking.png" alt="Just be patient" width="50%" />
 <p class="caption">
-Figure 1.2: Just be patient
+Figure 1.3: Just be patient
 </p>
 </div>
 </div>
@@ -241,28 +246,28 @@ Figure 1.2: Just be patient
 <div class="figure" style="text-align: center"><span id="fig:img-clone"></span>
 <img src="files/images/clone.png" alt="Find the URL to clone" width="100%" />
 <p class="caption">
-Figure 1.3: Find the URL to clone
+Figure 1.4: Find the URL to clone
 </p>
 </div>
 <p>Under the <strong><code>File</code></strong> menu in RStudio, choose <strong><code>New Project...</code></strong> and choose <strong><code>Version Control</code></strong> from the list of options.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:img-version-control"></span>
 <img src="files/images/version_control.png" alt="File &gt; New Project... &gt; Version Control" width="50%" />
 <p class="caption">
-(#fig:img-version_control)File &gt; New Project... &gt; Version Control
+Figure 1.5: File &gt; New Project... &gt; Version Control
 </p>
 </div>
 <p>Choose <strong><code>Git</code></strong> from the next screen.</p>
 <div class="figure" style="text-align: center"><span id="fig:img-git"></span>
 <img src="files/images/git.png" alt="Choose Git" width="50%" />
 <p class="caption">
-Figure 1.4: Choose Git
+Figure 1.6: Choose Git
 </p>
 </div>
 <p>Paste the URL you copied from your repository into the Repository URL. Keep the Project directory name the same as the repository name (it should default to this). You can Create the project as a subdirectory anywhere on your computer; I recommend making a directory to keep all your github R projects in.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:img-clone-repo"></span>
 <img src="files/images/clone_repo.png" alt="Clone your github repository to the RStudio project" width="50%" />
 <p class="caption">
-(#fig:img-clone_repo)Clone your github repository to the RStudio project
+Figure 1.7: Clone your github repository to the RStudio project
 </p>
 </div>
 </div>
@@ -279,7 +284,7 @@ Figure 1.4: Choose Git
   default: true
   smart: false
   includes:
-    after_body: include/webex.js
+    after_body: [include/footer.html, include/webex.js]
   css: [include/psyteachr.css, include/style.css]
   config:
     toc:
@@ -288,6 +293,10 @@ Figure 1.4: Choose Git
       before: |
         &lt;li&gt;&lt;a href=&quot;./&quot;&gt;Book Template&lt;/a&gt;&lt;/li&gt;
       after: |
+        &lt;li&gt;&lt;a rel=&quot;license&quot; href=&quot;https://creativecommons.org/licenses/by-sa/4.0/&quot; 
+            target=&quot;blank&quot;&gt;&lt;img alt=&quot;Creative Commons License&quot; 
+            style=&quot;border-width:0&quot; 
+            src=&quot;https://i.creativecommons.org/l/by-sa/4.0/88x31.png&quot; /&gt;&lt;/a&gt;&lt;li&gt;
         &lt;li&gt;&lt;a href=&quot;https://psyteachr.github.io/&quot; target=&quot;blank&quot;&gt;PsyTeachR&lt;/a&gt;&lt;/li&gt;
     download: []
     fontsettings:
@@ -308,8 +317,7 @@ bookdown::pdf_book:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
-  keep_tex: yes
-</code></pre>
+  keep_tex: yes</code></pre>
 <p>Change &quot;Book Template&quot; in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.</p>
 <p>Save and close this file.</p>
 </div>
@@ -349,7 +357,7 @@ language:
 <pre><code>--- 
 title: &quot;Template Course&quot;
 author: &quot;psyTeachR&quot;
-date: &quot;2019-01-28&quot;
+date: &quot;2019-02-11&quot;
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -358,7 +366,7 @@ link-citations: yes
 description: &quot;This is a template. Use it to start a new course book.&quot;
 ---</code></pre>
 <p>Update the title, author, and description strings.</p>
-<p>For now, don't change anything in the R chunk at the top.</p>
+<p>For now, don't change anything in the <code>cite-packages</code> R chunk at the top. This just automatically creates a bibliography file for the specified R packages.</p>
 <p>Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs.</p>
 <p>Save and close this file.</p>
 </div>
@@ -371,10 +379,10 @@ description: &quot;This is a template. Use it to start a new course book.&quot;
 <pre><code>Output created: docs/index.html
 [1] &quot;/Users/lisad/rproj/psyteachr/book-template/docs/index.html&quot;</code></pre>
 <p>The last line is the location of your new book. You can copy and paste that in a web browser to view the book. Alternatively, you can open the docs directory in the Files pane of RStudio, click on index.html, and choose <strong><code>View in Web Browser</code></strong>.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:img-open-from-docs"></span>
 <img src="files/images/open_from_docs.png" alt="Open your book from the Files pane in RStudio." width="50%" />
 <p class="caption">
-(#fig:img-open_from_docs)Open your book from the Files pane in RStudio.
+Figure 1.8: Open your book from the Files pane in RStudio.
 </p>
 </div>
 </div>
@@ -382,20 +390,21 @@ description: &quot;This is a template. Use it to start a new course book.&quot;
 <div id="adding-chapters" class="section level2">
 <h2><span class="header-section-number">1.2</span> Adding chapters</h2>
 <p>Create new chapters by creating new R Markdown files. Under the <strong><code>File</code></strong> menu in RStudio, choose <strong><code>New File</code></strong> and <strong><code>R Markdown...</code></strong>. Don't bother adding a title or changing any default settings; the first thing we'll do is delete all of the content.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:img-new-rmd"></span>
 <img src="files/images/new_rmd.png" alt="Make a new chapter in a new .Rmd file" width="100%" />
 <p class="caption">
-(#fig:img-new_rmd)Make a new chapter in a new .Rmd file
+Figure 1.9: Make a new chapter in a new .Rmd file
 </p>
 </div>
-<div id="automatic-setup-scripts" class="section level3">
-<h3><span class="header-section-number">1.2.1</span> Automatic setup scripts</h3>
-<p>Every .Rmd file automatically runs two scripts to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.</p>
-<p>If there is a package you'll need in every chapter, you can add it to <code>R/my_setup.R</code>. Don't edit <code>R/psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>R/my_setup.R</code> will be loaded after and overrule code in <code>R/psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme -- but please don't!).</p>
-</div>
+<p>Name the file with the chapter number and a short title all in lowercase, separated by dashes, like <code>01-getting-started.Rmd</code>. Chapters will render in alphabetical order by filename (you can specify the order in the yml, but it's a pain).</p>
 <div id="content" class="section level3">
-<h3><span class="header-section-number">1.2.2</span> Content</h3>
+<h3><span class="header-section-number">1.2.1</span> Content</h3>
 <p>Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.</p>
+</div>
+<div id="multiple-.rmd-files-per-chapter" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Multiple .Rmd files per chapter</h3>
+<p>You can break a chapter up into separate .Rmd files like <code>01.1-prep</code>, <code>01.2-in-class</code>, <code>01.3-homework</code> with a level 1 header only at the start of the first section of the chapter. If you do this, you'll get the following warning when you render the book; you can just ignore it.</p>
+<p><code>Warning message: In split_chapters(output, gitbook_page, number_sections, split_by,  :   You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?</code></p>
 </div>
 <div id="rendering-a-single-chapter" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Rendering a single chapter</h3>
@@ -407,8 +416,16 @@ description: &quot;This is a template. Use it to start a new course book.&quot;
 <h2><span class="header-section-number">1.3</span> Adding appendices</h2>
 <p>Add appendices in the same way as chapters. Just name them following the pattern <code>appendix-a-name.Rmd</code>.</p>
 <p>The file <code>appendix-0.Rmd</code> just contains the appendix header that groups appendices together (<code># (APPENDIX) Appendices {-}</code>). You don't need to edit this, but you can delete this file if you are not going to use appendices.</p>
+</div>
+<div id="automatic-setup-scripts" class="section level2">
+<h2><span class="header-section-number">1.4</span> Automatic setup scripts</h2>
+<p>Every .Rmd file automatically runs two scripts to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.</p>
+<p>If there is a package you'll need in every chapter, you can add it to <code>R/my_setup.R</code>. Don't edit <code>R/psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>R/my_setup.R</code> will be loaded after and overrule code in <code>R/psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme — but please don't!).</p>
 
 </div>
+</div>
+<div class="psyteachr_footer">
+  
 </div>
 <script>
 

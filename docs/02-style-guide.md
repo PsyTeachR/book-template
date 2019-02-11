@@ -68,7 +68,7 @@ virginica            6.588         2.974          5.552         2.026
 
 In general, use UK spelling and terminology. Use the `colour` version of functions in `ggplot2`.
 
-There is a lot of cultural variation in what we call punctuation. For psyTeachR books, use the conventions in Appendix \@ref(symbols).
+There is a lot of cultural variation in what we call punctuation and symbols. For psyTeachR books, use the conventions in Appendix \@ref(symbols).
 
 Use the following conventions for proper nouns:
 
@@ -135,6 +135,10 @@ tibble(
 
 Use `\@ref(fig:chunk-name)` to link to and reference the figure number in text (e.g., Figure \@ref(fig:img-dynamo)). You can learn more about including figures and images in the [Bookdown book](https://bookdown.org/yihui/bookdown/figures.html).
 
+<div class="danger">
+<p>The chunk label for figures can only contain alphanumeric characters (a-z, A-Z, 0-9), slashes (/), or dashes (-). Otherwise, they are not automatically numbered.</p>
+</div>
+
 ### R Plots
 
 Any graphs should be dynamically created in an R code block. Set `echo=FALSE` if you don't want to display the code that creates a plot. Default values are specified below; you don't have to include those unless you want to change them, but always set the `fig.cap`.
@@ -145,7 +149,7 @@ Any graphs should be dynamically created in an R code block. Set `echo=FALSE` if
 * `fig.height=5`
 * `fig.cap='**CAPTION THIS FIGURE!!**'`
 
-<div class='verbatim'><code>&#96;&#96;&#96;{echo=FALSE, out.width='50%', fig.width=4, fig.height=2.5, fig.cap='Dynamically created plot.'}</code>
+<div class='verbatim'><code>&#96;&#96;&#96;{echo=FALSE, out.width='75%', fig.width=6, fig.height=2.5, fig.cap='Dynamically created plot.'}</code>
 
 ```r
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
@@ -156,7 +160,7 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
 <code>&#96;&#96;&#96;</code></div>
 
 <div class="figure" style="text-align: center">
-<img src="02-style-guide_files/figure-html/img-dynamo-1.png" alt="Dynamically created plot." width="50%" />
+<img src="02-style-guide_files/figure-html/img-dynamo-1.png" alt="Dynamically created plot." width="75%" />
 <p class="caption">(\#fig:img-dynamo)Dynamically created plot.</p>
 </div>
 
@@ -181,11 +185,11 @@ knitr::include_graphics("images/psyteachr_logo.png")
 
 ### Screenshots
 
-You'll probably want to include some screenshots of RStudio. For consistency, make sure your Rstudio is set to the default editor theme (Modern edotor with Text-Mate theme and Consolas font). Set the font size to at least 18 for readability in screenshots.
+You'll probably want to include some screenshots of RStudio. For consistency, make sure your Rstudio is set to the default editor theme (Modern editor with Text-Mate theme and Consolas font). Set the font size to at least 18 for readability in screenshots.
 
 <div class="figure" style="text-align: center">
 <img src="files/images/default_editor.png" alt="Default RStudio editor settings." width="50%" />
-<p class="caption">(\#fig:img-default_editor)Default RStudio editor settings.</p>
+<p class="caption">(\#fig:img-default-editor)Default RStudio editor settings.</p>
 </div>
 
 Keep panes in the default order.
@@ -197,13 +201,17 @@ Keep panes in the default order.
     
 <div class="figure" style="text-align: center">
 <img src="files/images/default_panes.png" alt="Default RStudio pane layout." width="100%" />
-<p class="caption">(\#fig:img-default_panes)Default RStudio pane layout.</p>
+<p class="caption">(\#fig:img-default-panes)Default RStudio pane layout.</p>
 </div>
 
 
 ## Code chunks
 
 **Always name your code chunks**; this makes debugging easier and becomes the name of generated plots. You can duplicate chunk names between .Rmd files, but not within.
+
+<div class="danger">
+<p>The chunk label for tables and figures can only contain alphanumeric characters (a-z, A-Z, 0-9), slashes (/), or dashes (-). Otherwise, they are not automatically numbered. So just get into the habit of avoiding underscores.</p>
+</div>
 
 ### Options
 

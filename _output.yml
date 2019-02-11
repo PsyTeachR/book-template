@@ -2,7 +2,7 @@ bookdown::gitbook:
   default: true
   smart: false
   includes:
-    after_body: include/webex.js
+    after_body: [include/footer.html, include/webex.js]
   css: [include/psyteachr.css, include/style.css]
   config:
     toc:
@@ -11,6 +11,10 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Book Template</a></li>
       after: |
+        <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+            target="blank"><img alt="Creative Commons License" 
+            style="border-width:0" 
+            src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
         <li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
     download: []
     fontsettings:

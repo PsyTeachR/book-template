@@ -28,7 +28,7 @@ If you're a member of psyTeachR, you'll get this interface telling you that you'
 
 <div class="figure" style="text-align: center">
 <img src="files/images/already_forked.png" alt="Choose your personal account" width="50%" />
-<p class="caption">(\#fig:img-already_forked)Choose your personal account</p>
+<p class="caption">(\#fig:img-already-forked)Choose your personal account</p>
 </div>
 
 You'll see this animation for a few seconds while the repository is being forked to your account.
@@ -51,7 +51,7 @@ Under the **`File`** menu in RStudio, choose **`New Project...`** and choose **`
 
 <div class="figure" style="text-align: center">
 <img src="files/images/version_control.png" alt="File &gt; New Project... &gt; Version Control" width="50%" />
-<p class="caption">(\#fig:img-version_control)File > New Project... > Version Control</p>
+<p class="caption">(\#fig:img-version-control)File > New Project... > Version Control</p>
 </div>
 
 Choose **`Git`** from the next screen.
@@ -65,7 +65,7 @@ Paste the URL you copied from your repository into the Repository URL. Keep the 
 
 <div class="figure" style="text-align: center">
 <img src="files/images/clone_repo.png" alt="Clone your github repository to the RStudio project" width="50%" />
-<p class="caption">(\#fig:img-clone_repo)Clone your github repository to the RStudio project</p>
+<p class="caption">(\#fig:img-clone-repo)Clone your github repository to the RStudio project</p>
 </div>
 
 
@@ -84,7 +84,7 @@ bookdown::gitbook:
   default: true
   smart: false
   includes:
-    after_body: include/webex.js
+    after_body: [include/footer.html, include/webex.js]
   css: [include/psyteachr.css, include/style.css]
   config:
     toc:
@@ -93,6 +93,10 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Book Template</a></li>
       after: |
+        <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
+            target="blank"><img alt="Creative Commons License" 
+            style="border-width:0" 
+            src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
         <li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
     download: []
     fontsettings:
@@ -114,7 +118,6 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-
 ```
 
 Change "Book Template" in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.
@@ -164,7 +167,7 @@ Open `index.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2019-01-28"
+date: "2019-02-11"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -176,7 +179,7 @@ description: "This is a template. Use it to start a new course book."
 
 Update the title, author, and description strings.
 
-For now, don't change anything in the R chunk at the top.
+For now, don't change anything in the `cite-packages` R chunk at the top. This just automatically creates a bibliography file for the specified R packages.
 
 Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs.
 
@@ -202,7 +205,7 @@ The last line is the location of your new book. You can copy and paste that in a
 
 <div class="figure" style="text-align: center">
 <img src="files/images/open_from_docs.png" alt="Open your book from the Files pane in RStudio." width="50%" />
-<p class="caption">(\#fig:img-open_from_docs)Open your book from the Files pane in RStudio.</p>
+<p class="caption">(\#fig:img-open-from-docs)Open your book from the Files pane in RStudio.</p>
 </div>
 
 ## Adding chapters
@@ -211,19 +214,24 @@ Create new chapters by creating new R Markdown files. Under the **`File`** menu 
 
 <div class="figure" style="text-align: center">
 <img src="files/images/new_rmd.png" alt="Make a new chapter in a new .Rmd file" width="100%" />
-<p class="caption">(\#fig:img-new_rmd)Make a new chapter in a new .Rmd file</p>
+<p class="caption">(\#fig:img-new-rmd)Make a new chapter in a new .Rmd file</p>
 </div>
 
-
-### Automatic setup scripts
-
-Every .Rmd file automatically runs two scripts to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.
-
-If there is a package you'll need in every chapter, you can add it to `R/my_setup.R`. Don't edit `R/psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `R/my_setup.R` will be loaded after and overrule code in `R/psyteachr_setup.R` (e.g., if you want to set a different ggplot theme -- but please don't!).
+Name the file with the chapter number and a short title all in lowercase, separated by dashes, like `01-getting-started.Rmd`. Chapters will render in alphabetical order by filename (you can specify the order in the yml, but it's a pain).
 
 ### Content
 
 Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.
+
+### Multiple .Rmd files per chapter
+
+You can break a chapter up into separate .Rmd files like `01.1-prep`, `01.2-in-class`, `01.3-homework` with a level 1 header only at the start of the first section of the chapter. If you do this, you'll get the following warning when you render the book; you can just ignore it.
+
+```
+Warning message:
+In split_chapters(output, gitbook_page, number_sections, split_by,  :
+  You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?
+  ```
 
 ### Rendering a single chapter
 
@@ -239,4 +247,10 @@ bookdown::preview_chapter("02-style-guide.Rmd")
 Add appendices in the same way as chapters. Just name them following the pattern `appendix-a-name.Rmd`.
 
 The file `appendix-0.Rmd` just contains the appendix header that groups appendices together (`# (APPENDIX) Appendices {-}`). You don't need to edit this, but you can delete this file if you are not going to use appendices.
+
+## Automatic setup scripts
+
+Every .Rmd file automatically runs two scripts to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.
+
+If there is a package you'll need in every chapter, you can add it to `R/my_setup.R`. Don't edit `R/psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `R/my_setup.R` will be loaded after and overrule code in `R/psyteachr_setup.R` (e.g., if you want to set a different ggplot theme — but please don't!).
 

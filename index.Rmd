@@ -10,19 +10,12 @@ link-citations: yes
 description: "This is a template. Use it to start a new course book."
 ---
 
-```{r psyteachr-setup, include = FALSE}
-source("R/psyteachr_setup.R") # psyTeachR styles and functions
-source("R/my_setup.R")        # book-specific styles and functions
-
+```{r cite-packages, include = FALSE}
 # automatically create a bib database for R packages
 # add any packages you want to cite here
 knitr::write_bib(c(
   .packages(), 'bookdown', 'tidyverse'
 ), 'packages.bib')
-
-# make docs directory and include .nojekyll file for github
-if (!dir.exists('docs')) dir.create('docs')
-file.create('docs/.nojekyll')
 
 ```
 
@@ -45,8 +38,4 @@ By the end of this course students will be able to:
 * ILO 1
 * ILO 2
 * ILO 3
-
-
-
-
 

@@ -2,7 +2,7 @@
 --- 
 title: "Template Course"
 author: "Lisa DeBruine"
-date: "2019-01-28"
+date: "2019-02-11"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -32,8 +32,4 @@ By the end of this course students will be able to:
 * ILO 1
 * ILO 2
 * ILO 3
-
-
-
-
 

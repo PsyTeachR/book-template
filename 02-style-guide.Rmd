@@ -58,7 +58,7 @@ iris %>%
 
 In general, use UK spelling and terminology. Use the `colour` version of functions in `ggplot2`.
 
-There is a lot of cultural variation in what we call punctuation. For psyTeachR books, use the conventions in Appendix \@ref(symbols).
+There is a lot of cultural variation in what we call punctuation and symbols. For psyTeachR books, use the conventions in Appendix \@ref(symbols).
 
 Use the following conventions for proper nouns:
 
@@ -112,6 +112,10 @@ tibble(
 
 Use `\@ref(fig:chunk-name)` to link to and reference the figure number in text (e.g., Figure \@ref(fig:img-dynamo)). You can learn more about including figures and images in the [Bookdown book](https://bookdown.org/yihui/bookdown/figures.html).
 
+```{block, type="danger"}
+The chunk label for figures can only contain alphanumeric characters (a-z, A-Z, 0-9), slashes (/), or dashes (-). Otherwise, they are not automatically numbered.
+```
+
 ### R Plots
 
 Any graphs should be dynamically created in an R code block. Set `echo=FALSE` if you don't want to display the code that creates a plot. Default values are specified below; you don't have to include those unless you want to change them, but always set the `fig.cap`.
@@ -122,7 +126,7 @@ Any graphs should be dynamically created in an R code block. Set `echo=FALSE` if
 * `fig.height=5`
 * `fig.cap='**CAPTION THIS FIGURE!!**'`
 
-```{r img-ex, eval = FALSE, verbatim = "echo=FALSE, out.width='50%', fig.width=4, fig.height=2.5, fig.cap='Dynamically created plot.'"}
+```{r img-ex, eval = FALSE, verbatim = "echo=FALSE, out.width='75%', fig.width=6, fig.height=2.5, fig.cap='Dynamically created plot.'"}
 
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_point() +
@@ -130,7 +134,7 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
 
 ```
 
-```{r img-dynamo, echo=FALSE, out.width='50%', fig.width=4, fig.height=2.5, fig.cap="Dynamically created plot."}
+```{r img-dynamo, echo=FALSE, out.width='75%', fig.width=6, fig.height=2.5, fig.cap="Dynamically created plot."}
 
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_point() +
@@ -158,9 +162,9 @@ knitr::include_graphics("images/psyteachr_logo.png")
 
 ### Screenshots
 
-You'll probably want to include some screenshots of RStudio. For consistency, make sure your Rstudio is set to the default editor theme (Modern edotor with Text-Mate theme and Consolas font). Set the font size to at least 18 for readability in screenshots.
+You'll probably want to include some screenshots of RStudio. For consistency, make sure your Rstudio is set to the default editor theme (Modern editor with Text-Mate theme and Consolas font). Set the font size to at least 18 for readability in screenshots.
 
-```{r img-default_editor, echo=FALSE, out.width='50%', fig.align='center', fig.cap="Default RStudio editor settings."}
+```{r img-default-editor, echo=FALSE, out.width='50%', fig.cap="Default RStudio editor settings."}
 
 knitr::include_graphics("files/images/default_editor.png")
 
@@ -173,7 +177,7 @@ Keep panes in the default order.
 * Lower right: Files, Plots, Packages, Help, Viewer
 * Lower left: Console
     
-```{r img-default_panes, echo=FALSE, out.width='100%', fig.align='center', fig.cap="Default RStudio pane layout."}
+```{r img-default-panes, echo=FALSE, fig.cap="Default RStudio pane layout."}
 knitr::include_graphics("files/images/default_panes.png")
 ``` 
 
@@ -181,6 +185,10 @@ knitr::include_graphics("files/images/default_panes.png")
 ## Code chunks
 
 **Always name your code chunks**; this makes debugging easier and becomes the name of generated plots. You can duplicate chunk names between .Rmd files, but not within.
+
+```{block, type="danger"}
+The chunk label for tables and figures can only contain alphanumeric characters (a-z, A-Z, 0-9), slashes (/), or dashes (-). Otherwise, they are not automatically numbered. So just get into the habit of avoiding underscores.
+```
 
 ### Options
 
