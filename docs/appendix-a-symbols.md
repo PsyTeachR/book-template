@@ -31,3 +31,12 @@
 | :      | colon             |                   |
 | @      | "at" symbol       | [various hilarious regional terms](https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html) |
 
+
+<div class="figure" style="text-align: center">
+<img src="files/images/soundimals_hash.png" alt="[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names)" width="100%" />
+<p class="caption">(\#fig:img-soundimals-hash)[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names)</p>
+</div>
+
+
+
+
