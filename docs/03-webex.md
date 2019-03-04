@@ -18,7 +18,7 @@ You can also create these questions dynamically, using variables from your R ses
 
 
 
-- The square root of 16 is: <input class='solveme nospaces' size='1' data-answer='["4"]'/>
+- The square root of 25 is: <input class='solveme nospaces' size='1' data-answer='["5"]'/>
 
 The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE`.
 

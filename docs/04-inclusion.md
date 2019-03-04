@@ -34,6 +34,8 @@ Some recommendations are highlighted below.
 
 You can check your images for how they look to people with different types of colourblindness with the [Coblis Color Blindness Simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/).
 
+Desi Quintans made [dark and light colour-blind safe RStudio themes](https://github.com/DesiQuintans/Pebble-safe).
+
 The "pink" and "green" colours from the [psyteachr_colours()]() function are distinguishable by people with protanopia (red-blind), deuteronopia (green-blind), and tritanopia (blue-blind) colourblindness. You can also use viridis colours with `ggplot2::scale_colour_viridis_d()` and `ggplot2::scale_fill_viridis_d()` (for discrete colours) or `ggplot2::scale_colour_viridis_c()` and `ggplot2::scale_fill_viridis_c()` (for continuous colours).
 
 In plots, add secondary indicators in addition to colour, such as text labels or shapes.
