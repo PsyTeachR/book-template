@@ -22,7 +22,9 @@ Chapters should **usually** have between three and eight level 2 headers. There 
 * Avoid italics and underlining for dyslexia-friendly reading
 * Exactly quoted names of buttons or interface objects should be **`bold code`** (e.g., ``` **`bold code`** ```)
 * Inline code should be in `backticks` (e.g., ``` `backticks` ```)
-* Put semi-colons at the end of list items for screen readers (the psyTeachR bookdown style does this automatically)
+    * Package names should be in backticks (e.g., ``` `tidyverse` ```)
+    * Function names should be in backticks with brackets (e.g., ``` `rnorm()` ```)
+
 
 ### Lists
 
@@ -38,9 +40,6 @@ Lists where most of the items fit on one line should start each line with an upp
 * Item 2
 * Item 3
 
-<div class="info">
-<p>The psyTeachR style sheet automatically adds semicolons to the end of each list item for screen readers.</p>
-</div>
 
 ### Tables
 
@@ -280,3 +279,15 @@ The psyTeachR course book style includes four types of *call-out blocks* that yo
 <div class="try">
 <p>Stop and try something.</p>
 </div>
+
+### Code chunks inside call-out blocks
+
+If you want to put code blocks inside of a call-out block, you can't use the syntax above. Start the block with `&lt;div class="danger">` and end it with `&lt;/div>`.
+
+<pre><code>&lt;div class="danger">
+Run the code below:
+
+```r
+# my code
+```
+&lt;/div></code></pre>

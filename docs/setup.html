@@ -5,27 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 1 Setup | Template Course</title>
-  <meta name="description" content="This is a template. Use it to start a new course book.">
+  <title>Chapter 1 Setup | Book Template</title>
+  <meta name="description" content="Guide for psyTeachR course books.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 1 Setup | Template Course" />
+  <meta property="og:title" content="Chapter 1 Setup | Book Template" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a template. Use it to start a new course book." />
+  <meta property="og:description" content="Guide for psyTeachR course books." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Setup | Template Course" />
+  <meta name="twitter:title" content="Chapter 1 Setup | Book Template" />
   
-  <meta name="twitter:description" content="This is a template. Use it to start a new course book." />
+  <meta name="twitter:description" content="Guide for psyTeachR course books." />
   
 
 <meta name="author" content="Lisa DeBruine">
 
 
-<meta name="date" content="2019-03-04">
+<meta name="date" content="2019-03-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -105,10 +105,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Book Template</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#course-aims"><i class="fa fa-check"></i><b>0.1</b> Course Aims</a></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#intended-learning-outcomes"><i class="fa fa-check"></i><b>0.2</b> Intended Learning Outcomes</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
 <li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
 <li class="chapter" data-level="1.1" data-path="setup.html"><a href="setup.html#starting-a-new-book"><i class="fa fa-check"></i><b>1.1</b> Starting a new book</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="setup.html"><a href="setup.html#create-a-new-github-repository"><i class="fa fa-check"></i><b>1.1.1</b> Create a new github repository</a></li>
@@ -149,6 +146,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.6.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#warning"><i class="fa fa-check"></i><b>2.6.2</b> Warning</a></li>
 <li class="chapter" data-level="2.6.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#info"><i class="fa fa-check"></i><b>2.6.3</b> Info</a></li>
 <li class="chapter" data-level="2.6.4" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#try"><i class="fa fa-check"></i><b>2.6.4</b> Try</a></li>
+<li class="chapter" data-level="2.6.5" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#code-chunks-inside-call-out-blocks"><i class="fa fa-check"></i><b>2.6.5</b> Code chunks inside call-out blocks</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="webex.html"><a href="webex.html"><i class="fa fa-check"></i><b>3</b> Webex</a><ul>
@@ -192,7 +190,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Template Course</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Book Template</a>
           </h1>
         </div>
 
@@ -202,7 +200,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="setup" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Setup</h1>
-<p>The best resource for creating a course book is the <a href="https://bookdown.org/">bookdown website</a>. Yihui Xie's <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> book can answer most of the questions you'll have. The guide below is just a quick start for the specific templates we're using at UofG Psychology.</p>
 <div id="starting-a-new-book" class="section level2">
 <h2><span class="header-section-number">1.1</span> Starting a new book</h2>
 <div id="create-a-new-github-repository" class="section level3">
@@ -357,7 +354,7 @@ language:
 <pre><code>--- 
 title: &quot;Template Course&quot;
 author: &quot;psyTeachR&quot;
-date: &quot;2019-03-04&quot;
+date: &quot;2019-03-21&quot;
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -368,6 +365,11 @@ description: &quot;This is a template. Use it to start a new course book.&quot;
 <p>Update the title, author, and description strings.</p>
 <p>For now, don't change anything in the <code>cite-packages</code> R chunk at the top. This just automatically creates a bibliography file for the specified R packages.</p>
 <p>Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs.</p>
+<div class="info">
+<p>
+The <code>{-}</code> at the end of the overview title makes sure this chapter isn't numbered.
+</p>
+</div>
 <p>Save and close this file.</p>
 </div>
 </div>
@@ -396,15 +398,22 @@ Figure 1.8: Open your book from the Files pane in RStudio.
 Figure 1.9: Make a new chapter in a new .Rmd file
 </p>
 </div>
-<p>Name the file with the chapter number and a short title all in lowercase, separated by dashes, like <code>01-getting-started.Rmd</code>. Chapters will render in alphabetical order by filename (you can specify the order in the yml, but it's a pain).</p>
+<p>Name the file with the chapter number and a short title all in lowercase, separated by dashes, like <code>01-getting-started.Rmd</code>. Chapters will render in alphabetical order by filename (you can specify the order in the yml, but it's a pain), so all chapters need to start with a number or they'll end up in the appendix.</p>
 <div id="content" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> Content</h3>
 <p>Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.</p>
+<div class="info">
+<p>
+You can refer to any section by it's label, which is the section title with spaces changed to dashes (e.g., a section called &quot;Your first R Markdown file&quot; can be referenced as <code>#Your-first-R-Markdownfile</code>. You can set a shorter custom label for a section by adding an ID in the format <code>{#rmarkdown}</code>.
+</p>
+</div>
 </div>
 <div id="multiple-.rmd-files-per-chapter" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> Multiple .Rmd files per chapter</h3>
 <p>You can break a chapter up into separate .Rmd files like <code>01.1-prep</code>, <code>01.2-in-class</code>, <code>01.3-homework</code> with a level 1 header only at the start of the first section of the chapter. If you do this, you'll get the following warning when you render the book; you can just ignore it.</p>
-<p><code>Warning message: In split_chapters(output, gitbook_page, number_sections, split_by,  :   You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?</code></p>
+<pre><code>Warning message:
+In split_chapters(output, gitbook_page, number_sections, split_by,  :
+  You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?</code></pre>
 </div>
 <div id="rendering-a-single-chapter" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Rendering a single chapter</h3>

@@ -1,35 +1,18 @@
 
 --- 
-title: "Template Course"
+title: "Book Template"
 author: "Lisa DeBruine"
-date: "2019-03-04"
+date: "2019-03-21"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a template. Use it to start a new course book."
+description: "Guide for psyTeachR course books."
 ---
-
-
 
 
 
 # Overview {-}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-
-## Course Aims
-
-* Aim 1
-* Aim 2
-* Aim 3
-
-## Intended Learning Outcomes
-
-By the end of this course students will be able to:
-
-* ILO 1
-* ILO 2
-* ILO 3
-
+The best resource for creating a course book is the [bookdown website](https://bookdown.org/). Yihui Xie's [Bookdown](https://bookdown.org/yihui/bookdown/) book can answer most of the questions you'll have. This guide is just a quick start for the specific templates we're using at UofG Psychology.

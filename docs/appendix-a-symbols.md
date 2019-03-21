@@ -25,7 +25,8 @@
 | ?      | question mark     |                   |
 | '      | single quote      | quote / apostrophe|
 | "      | double quote      | quote             |
-| \|     | pipe              | vertical bar      |
+| %>%    | pipe              | magrittr pipe     |
+| \|     | vertical bar      | pipe              |
 | ,      | comma             |                   |
 | ;      | semi-colon        |                   |
 | :      | colon             |                   |

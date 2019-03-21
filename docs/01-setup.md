@@ -1,8 +1,6 @@
 
 # Setup
 
-The best resource for creating a course book is the [bookdown website](https://bookdown.org/). Yihui Xie's [Bookdown](https://bookdown.org/yihui/bookdown/) book can answer most of the questions you'll have. The guide below is just a quick start for the specific templates we're using at UofG Psychology.
-
 ## Starting a new book
 
 ### Create a new github repository
@@ -167,7 +165,7 @@ Open `index.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2019-03-04"
+date: "2019-03-21"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -181,7 +179,11 @@ Update the title, author, and description strings.
 
 For now, don't change anything in the `cite-packages` R chunk at the top. This just automatically creates a bibliography file for the specified R packages.
 
-Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs.
+Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs. 
+
+<div class="info">
+<p>The <code>{-}</code> at the end of the overview title makes sure this chapter isn't numbered.</p>
+</div>
 
 Save and close this file.
 
@@ -217,11 +219,15 @@ Create new chapters by creating new R Markdown files. Under the **`File`** menu 
 <p class="caption">(\#fig:img-new-rmd)Make a new chapter in a new .Rmd file</p>
 </div>
 
-Name the file with the chapter number and a short title all in lowercase, separated by dashes, like `01-getting-started.Rmd`. Chapters will render in alphabetical order by filename (you can specify the order in the yml, but it's a pain).
+Name the file with the chapter number and a short title all in lowercase, separated by dashes, like `01-getting-started.Rmd`. Chapters will render in alphabetical order by filename (you can specify the order in the yml, but it's a pain), so all chapters need to start with a number or they'll end up in the appendix.
 
 ### Content
 
 Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.
+
+<div class="info">
+<p>You can refer to any section by it's label, which is the section title with spaces changed to dashes (e.g., a section called &quot;Your first R Markdown file&quot; can be referenced as <code>#Your-first-R-Markdownfile</code>. You can set a shorter custom label for a section by adding an ID in the format <code>{#rmarkdown}</code>.</p>
+</div>
 
 ### Multiple .Rmd files per chapter
 
@@ -231,7 +237,7 @@ You can break a chapter up into separate .Rmd files like `01.1-prep`, `01.2-in-c
 Warning message:
 In split_chapters(output, gitbook_page, number_sections, split_by,  :
   You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?
-  ```
+```
 
 ### Rendering a single chapter
 

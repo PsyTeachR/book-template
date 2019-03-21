@@ -21,6 +21,9 @@ Chapters should **usually** have between three and eight level 2 headers. There 
 * Avoid italics and underlining for dyslexia-friendly reading
 * Exactly quoted names of buttons or interface objects should be **`bold code`** (e.g., ``` **`bold code`** ```)
 * Inline code should be in `backticks` (e.g., ``` `backticks` ```)
+    * Package names should be in backticks (e.g., ``` `tidyverse` ```)
+    * Function names should be in backticks with brackets (e.g., ``` `rnorm()` ```)
+
 
 ### Lists
 
@@ -257,3 +260,14 @@ Stop and try something.
 ```{block, type="try"}
 Stop and try something.
 ```
+
+### Code chunks inside call-out blocks
+
+If you want to put code blocks inside of a call-out block, you can't use the syntax above. Start the block with `&lt;div class="danger">` and end it with `&lt;/div>`.
+
+<pre><code>&lt;div class="danger">
+Run the code below:
+```{r}
+# my code
+```
+&lt;/div></code></pre>
