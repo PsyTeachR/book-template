@@ -17,9 +17,18 @@ Emojis: ❤️🧡💛💚💙💜
 * <a target="_blank" href="https://debruine.github.io">external link</a>
 * [link text](#style-demo)
 
-#### Header 
+#### Header 4
+
+```{r table-demo}
+knitr::kable(iris, caption = "The iris dataset")
+```
 
 ##### Header 5
+
+```{r table-demo-stripes}
+knitr::kable(iris, caption = "The iris dataset") %>%
+  kableExtra::kable_styling(bootstrap_options = "striped")
+```
 
 ## Chunks
 

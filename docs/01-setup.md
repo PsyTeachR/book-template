@@ -159,7 +159,7 @@ Save and close this file.
 
 #### index.Rmd
 
-Open `index.Rmd`. The top YAML header should look like this:
+Open `_index_example.Rmd`. The top YAML header should look like this:
 
 ```
 --- 
@@ -185,7 +185,7 @@ Now you can edit the overview. Replace the filler text with a description of you
 <p>The <code>{-}</code> at the end of the overview title makes sure this chapter isn't numbered.</p>
 </div>
 
-Save and close this file.
+Save this file with the name `index.Rmd`.
 
 ### Render the book
 

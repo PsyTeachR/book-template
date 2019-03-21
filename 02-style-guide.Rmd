@@ -53,6 +53,19 @@ iris %>%
 
 ```
 
+If you want to add stripes or fancy styling to your tables, install the package `kableExtra` [@R-kableExtra]. This [vignette](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) has great examples of other things you can do with table display.
+
+```{r kable-example-striped, results='asis'}
+
+iris %>%
+  group_by(Species) %>%
+  summarise_all(mean) %>%
+  knitr::kable(digits = 3, caption = "Example table with kableExtra.") %>%
+  kableExtra::kable_styling(bootstrap_options = "striped")
+
+```
+
+
 ## Word choice
 
 In general, use UK spelling and terminology. Use the `colour` version of functions in `ggplot2`.
@@ -274,7 +287,7 @@ Run the code below:
 
 ## References
 
-Include references using the bibliography key, such as `@R-base`, which provides an in-line citation like @R-base. You can aslo use square brackets to create a parenthetical citation, like `[@R-bookdown]` [@R-bookdown]. 
+Include references using the bibliography key, such as `@R-base`, which provides an in-line citation like @R-base. You can also use square brackets to create a parenthetical citation, like `[@R-bookdown]` [@R-bookdown]. 
 
 You need to add any R packages you want to cite by adding them to the code chunk in the index file and then referencing them by `@R-pckgname`.
 

@@ -63,6 +63,34 @@ setosa               5.006         3.428          1.462         0.246
 versicolor           5.936         2.770          4.260         1.326
 virginica            6.588         2.974          5.552         2.026
 
+If you want to add stripes or fancy styling to your tables, install the package `kableExtra` [@R-kableExtra]. This [vignette](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) has great examples of other things you can do with table display.
+
+
+```r
+iris %>%
+  group_by(Species) %>%
+  summarise_all(mean) %>%
+  knitr::kable(digits = 3, caption = "Example table with kableExtra.") %>%
+  kableExtra::kable_styling(bootstrap_options = "striped")
+```
+
+```
+## Warning in kableExtra::kable_styling(., bootstrap_options = "striped"):
+## Please specify format in kable. kableExtra can customize either HTML or
+## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.
+```
+
+
+
+Table: (\#tab:kable-example-striped)Example table with kableExtra.
+
+Species       Sepal.Length   Sepal.Width   Petal.Length   Petal.Width
+-----------  -------------  ------------  -------------  ------------
+setosa               5.006         3.428          1.462         0.246
+versicolor           5.936         2.770          4.260         1.326
+virginica            6.588         2.974          5.552         2.026
+
+
 ## Word choice
 
 In general, use UK spelling and terminology. Use the `colour` version of functions in `ggplot2`.
@@ -294,7 +322,7 @@ Run the code below:
 
 ## References
 
-Include references using the bibliography key, such as `@R-base`, which provides an in-line citation like @R-base. You can aslo use square brackets to create a parenthetical citation, like `[@R-bookdown]` [@R-bookdown]. 
+Include references using the bibliography key, such as `@R-base`, which provides an in-line citation like @R-base. You can also use square brackets to create a parenthetical citation, like `[@R-bookdown]` [@R-bookdown]. 
 
 You need to add any R packages you want to cite by adding them to the code chunk in the index file and then referencing them by `@R-pckgname`.
 

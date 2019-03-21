@@ -105,7 +105,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Book Template</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#updating-an-existing-book"><i class="fa fa-check"></i><b>0.1</b> Updating an existing book</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
 <li class="chapter" data-level="1.1" data-path="setup.html"><a href="setup.html#starting-a-new-book"><i class="fa fa-check"></i><b>1.1</b> Starting a new book</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="setup.html"><a href="setup.html#create-a-new-github-repository"><i class="fa fa-check"></i><b>1.1.1</b> Create a new github repository</a></li>
@@ -245,6 +247,50 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>, <span class="dt">caption =</span> <span class="st">&quot;Example table with kable.&quot;</span>)</code></pre></div>
 <table>
 <caption><span id="tab:kable-example">Table 2.1: </span>Example table with kable.</caption>
+<thead>
+<tr class="header">
+<th align="left">Species</th>
+<th align="right">Sepal.Length</th>
+<th align="right">Sepal.Width</th>
+<th align="right">Petal.Length</th>
+<th align="right">Petal.Width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">setosa</td>
+<td align="right">5.006</td>
+<td align="right">3.428</td>
+<td align="right">1.462</td>
+<td align="right">0.246</td>
+</tr>
+<tr class="even">
+<td align="left">versicolor</td>
+<td align="right">5.936</td>
+<td align="right">2.770</td>
+<td align="right">4.260</td>
+<td align="right">1.326</td>
+</tr>
+<tr class="odd">
+<td align="left">virginica</td>
+<td align="right">6.588</td>
+<td align="right">2.974</td>
+<td align="right">5.552</td>
+<td align="right">2.026</td>
+</tr>
+</tbody>
+</table>
+<p>If you want to add stripes or fancy styling to your tables, install the package <code>kableExtra</code> <span class="citation">(Zhu <a href="#ref-R-kableExtra">2019</a>)</span>. This <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">vignette</a> has great examples of other things you can do with table display.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise_all</span>(mean) <span class="op">%&gt;%</span>
+<span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>, <span class="dt">caption =</span> <span class="st">&quot;Example table with kableExtra.&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</code></pre></div>
+<pre><code>## Warning in kableExtra::kable_styling(., bootstrap_options = &quot;striped&quot;):
+## Please specify format in kable. kableExtra can customize either HTML or
+## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.</code></pre>
+<table>
+<caption><span id="tab:kable-example-striped">Table 2.2: </span>Example table with kableExtra.</caption>
 <thead>
 <tr class="header">
 <th align="left">Species</th>
@@ -504,7 +550,7 @@ Run the code below:
 </div>
 <div id="references" class="section level2">
 <h2><span class="header-section-number">2.7</span> References</h2>
-<p>Include references using the bibliography key, such as <code>@R-base</code>, which provides an in-line citation like <span class="citation">R Core Team (<a href="#ref-R-base">2018</a>)</span>. You can aslo use square brackets to create a parenthetical citation, like <code>[@R-bookdown]</code> <span class="citation">(Xie <a href="#ref-R-bookdown">2018</a>)</span>.</p>
+<p>Include references using the bibliography key, such as <code>@R-base</code>, which provides an in-line citation like <span class="citation">R Core Team (<a href="#ref-R-base">2018</a>)</span>. You can also use square brackets to create a parenthetical citation, like <code>[@R-bookdown]</code> <span class="citation">(Xie <a href="#ref-R-bookdown">2018</a>)</span>.</p>
 <p>You need to add any R packages you want to cite by adding them to the code chunk in the index file and then referencing them by <code>@R-pckgname</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># automatically create a bib database for R packages</span>
 <span class="co"># add any packages you want to cite here</span>
@@ -518,6 +564,9 @@ knitr<span class="op">::</span><span class="kw">write_bib</span>(<span class="kw
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-R-kableExtra">
+<p>Zhu, Hao. 2019. <em>KableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>.</p>
+</div>
 <div id="ref-R-base">
 <p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
 </div>
