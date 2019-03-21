@@ -21,7 +21,6 @@ Chapters should **usually** have between three and eight level 2 headers. There 
 * Avoid italics and underlining for dyslexia-friendly reading
 * Exactly quoted names of buttons or interface objects should be **`bold code`** (e.g., ``` **`bold code`** ```)
 * Inline code should be in `backticks` (e.g., ``` `backticks` ```)
-* Put semi-colons at the end of list items for screen readers (the psyTeachR bookdown style does this automatically)
 
 ### Lists
 
@@ -37,9 +36,6 @@ Lists where most of the items fit on one line should start each line with an upp
 * Item 2
 * Item 3
 
-```{block type="info"}
-The psyTeachR style sheet automatically adds semicolons to the end of each list item for screen readers.
-```
 
 ### Tables
 
