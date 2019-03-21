@@ -40,6 +40,11 @@ knitr::knit_hooks$set(verbatim = function(before, options, envir) {
   }
 })
 
+## verbatim inline R in backticks
+backtick <- function(code) {
+  paste0("<code>&#096;", code, "&#096;</code>")
+}
+
 ## palette with psyTeachR logo colour
 psyteachr_colours <- function(vals = 1:6) {
   ptrc <- c(
