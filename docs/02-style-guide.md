@@ -271,7 +271,7 @@ library(tidyverse)
 </div>
 
 
-### Verbatin=m inline backticks
+### Verbatim inline backticks
 
 Include verbatim inline r like this <code>&#096;r backtick("r 3+4")&#096;</code> to produce output like this: <code>&#096;r 3+4&#096;</code>.
 

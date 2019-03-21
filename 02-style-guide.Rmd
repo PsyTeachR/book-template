@@ -229,7 +229,7 @@ The "verbatim" option is not standard to bookdown. It is only available if you i
 ```
 
 
-### Verbatin=m inline backticks
+### Verbatim inline backticks
 
 Include verbatim inline r like this `r backtick("r backtick(\"r 3+4\")")` to produce output like this: `r backtick("r 3+4")`.
 
