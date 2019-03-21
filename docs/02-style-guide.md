@@ -291,3 +291,22 @@ Run the code below:
 # my code
 ```
 &lt;/div></code></pre>
+
+## References
+
+Include references using the bibliography key, such as `@R-base`, which provides an in-line citation like @R-base. You can aslo use square brackets to create a parenthetical citation, like `[@R-bookdown]` [@R-bookdown]. 
+
+You need to add any R packages you want to cite by adding them to the code chunk in the index file and then referencing them by `@R-pckgname`.
+
+
+```r
+# automatically create a bib database for R packages
+# add any packages you want to cite here
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'tidyverse'
+), 'packages.bib')
+```
+
+Add other references to the `book.bib` file using BibTeX format. You can export references from most reference managers in BibTeX format.
+
+[Learn more about referencing](https://bookdown.org/yihui/bookdown/citations.html).
