@@ -80,10 +80,7 @@ Use the following conventions for proper nouns:
 
 ### Glossary
 
-You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and optionally include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word", "optional short definition of the word")`. For example, common `r glossary("data type")`s are 
-`r glossary("integer", "whole numbers like 1, -10")`, 
-`r glossary("double", "numbers like -0.223, 10.324, 1e4")`, and 
-`r glossary("character", "letters or words like &ldquo;I love R&rdquo;")`.
+You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and optionally include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word")`. For example, common `r glossary("data type")`s are `r glossary("integer")`, `r glossary("double")`, and `r glossary("character")`.
 
 If you want to contribute to the glossary, fork the [github project](https://github.com/PsyTeachR/glossary), add your terms and submit a pull request, or suggest a new term at the [issues page](https://github.com/PsyTeachR/glossary/issues).
 

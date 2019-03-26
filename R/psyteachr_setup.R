@@ -51,9 +51,14 @@ glossary <- function(term, shortdef = "", link = NULL) {
   lcterm <- gsub(" ", "-", tolower(term), fixed = TRUE)
   if (is.null(link)) link <- term
   first_letter <- substr(lcterm, 1, 1)
+  url <- paste0("https://psyteachr.github.io/glossary/", first_letter)
+  if (shortdef == "") {
+    hash <- paste0("#", lcterm, " .shortdef")
+    shortdef <- xml2::read_html(url) %>% rvest::html_node(hash)
+  }
+  
   paste0("<a class='glossary' target='_blank' title='", shortdef, 
-         "' href='https://psyteachr.github.io/glossary/", 
-         first_letter, "#", lcterm, "'>", link, "</a>")
+         "' href='", url, "#", lcterm, "'>", link, "</a>")
 }
 
 ## palette with psyTeachR logo colour

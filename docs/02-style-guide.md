@@ -105,10 +105,7 @@ Use the following conventions for proper nouns:
 
 ### Glossary
 
-You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and optionally include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word", "optional short definition of the word")`. For example, common <a class='glossary' target='_blank' title='' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>s are 
-<a class='glossary' target='_blank' title='whole numbers like 1, -10' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, 
-<a class='glossary' target='_blank' title='numbers like -0.223, 10.324, 1e4' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and 
-<a class='glossary' target='_blank' title='letters or words like &ldquo;I love R&rdquo;' href='https://psyteachr.github.io/glossary/c#character'>character</a>.
+You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and optionally include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word")`. For example, common <a class='glossary' target='_blank' title='<span class="shortdef">The kind of data represented by an object.</span>' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>s are <a class='glossary' target='_blank' title='NA' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='<span class="shortdef">a real decimal number</span>' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='<span class="shortdef">A <a href="d.html#data-type">data type</a> representing <a href="s.html#string">strings</a> of text.</span>' href='https://psyteachr.github.io/glossary/c#character'>character</a>.
 
 If you want to contribute to the glossary, fork the [github project](https://github.com/PsyTeachR/glossary), add your terms and submit a pull request, or suggest a new term at the [issues page](https://github.com/PsyTeachR/glossary/issues).
 
