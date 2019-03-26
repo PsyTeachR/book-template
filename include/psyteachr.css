@@ -189,6 +189,14 @@ a[target="_blank"]::after {
   content: url("../images/icons/link_external2.svg");
 }
 
+a.glossary[target="_blank"]::after,
+.color-theme-1 a.glossary[target="_blank"]::after,
+.color-theme-2 a.glossary[target="_blank"]::after {
+  content: none;
+  margin: 0;
+}
+
+
 /* override table stripeing */
 
 .book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n) {

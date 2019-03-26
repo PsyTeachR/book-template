@@ -45,6 +45,17 @@ backtick <- function(code) {
   paste0("<code>&#096;", code, "&#096;</code>")
 }
 
+
+## link to glossary with shortdef on hover
+glossary <- function(term, shortdef = "", link = NULL) {
+  lcterm <- gsub(" ", "-", tolower(term), fixed = TRUE)
+  if (is.null(link)) link <- term
+  first_letter <- substr(lcterm, 1, 1)
+  paste0("<a class='glossary' target='_blank' title='", shortdef, 
+         "' href='https://psyteachr.github.io/glossary/", 
+         first_letter, "#", lcterm, "'>", link, "</a>")
+}
+
 ## palette with psyTeachR logo colour
 psyteachr_colours <- function(vals = 1:6) {
   ptrc <- c(
