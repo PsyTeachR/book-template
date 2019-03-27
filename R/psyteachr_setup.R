@@ -46,19 +46,45 @@ backtick <- function(code) {
 }
 
 
+myglossary <- list()
+
 ## link to glossary with shortdef on hover
-glossary <- function(term, shortdef = "", link = NULL) {
+glossary <- function(term, display = NULL, shortdef = "", link = TRUE) {
   lcterm <- gsub(" ", "-", tolower(term), fixed = TRUE)
-  if (is.null(link)) link <- term
+  if (is.null(display)) display <- term
   first_letter <- substr(lcterm, 1, 1)
   url <- paste0("https://psyteachr.github.io/glossary/", first_letter)
   if (shortdef == "") {
-    hash <- paste0("#", lcterm, " .shortdef")
-    shortdef <- xml2::read_html(url) %>% rvest::html_node(hash)
+    hash <- paste0("#", lcterm, " dfn")
+    shortdef <- xml2::read_html(url) %>% 
+      rvest::html_node(hash) %>%
+      rvest::html_text() %>%
+      gsub("\'", "&#39;", .)
   }
   
-  paste0("<a class='glossary' target='_blank' title='", shortdef, 
-         "' href='", url, "#", lcterm, "'>", link, "</a>")
+  ## add to global glossary for this book
+  myglossary[lcterm] <<- shortdef
+  
+  if (link) {
+    paste0("<a class='glossary' target='_blank' title='", shortdef, 
+         "' href='", url, "#", lcterm, "'>", display, "</a>")
+  } else {
+    paste0("<a class='glossary' title='", shortdef, "'>", display, "</a>")
+  }
+}
+
+glossary_table <- function() {
+  as.data.frame(myglossary) %>% 
+    t() %>% 
+    as.data.frame() %>%
+    rownames_to_column(var="term") %>%
+    rename("definition" = V1) %>%
+    mutate(term = paste0("<a class='glossary' target='_blank' ",
+                         "href='https://psyteachr.github.io/glossary/",
+                         substr(term, 1, 1), "#", term, "'>",
+                         gsub(".", " ", term, fixed = 1), "</a>")) %>%
+    arrange(term) %>%
+    knitr::kable(escape = FALSE)
 }
 
 ## palette with psyTeachR logo colour

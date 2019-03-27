@@ -90,6 +90,62 @@ setosa               5.006         3.428          1.462         0.246
 versicolor           5.936         2.770          4.260         1.326
 virginica            6.588         2.974          5.552         2.026
 
+## Glossary
+
+You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and automatically include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word")`. For example, common <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> are <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>.
+
+If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (`display`). You can also override the automatic short definition by providing your own in the third argument (`shortdef`). Add the argument `link = FALSE` if you just want the hover definition and not a link to the psyTeachR glossary.
+
+
+```r
+glossary("data type", 
+         display="Data Types", 
+         shortdef="My custom definition of data types", 
+         link = FALSE)
+```
+
+[1] "<a class='glossary' title='My custom definition of data types'>Data Types</a>"
+
+You can add a glossary table to the end of a chapter with the following code. It creates a table of all terms used in that chapter previous to the `glossary_table()` function.
+
+<div class='verbatim'><code>&#96;&#96;&#96;{r, echo=FALSE, results='asis'}</code>
+
+```r
+glossary_table()
+```
+
+<code>&#96;&#96;&#96;</code></div>
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#character'>character</a> </td>
+   <td style="text-align:left;"> A data type representing strings of text. </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data.type'>data type</a> </td>
+   <td style="text-align:left;"> My custom definition of data types </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a> </td>
+   <td style="text-align:left;"> A data type representing a real decimal number </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#integer'>integer</a> </td>
+   <td style="text-align:left;"> A data type representing whole numbers. </td>
+  </tr>
+</tbody>
+</table>
+
+
+
+If you want to contribute to the glossary, fork the [github project](https://github.com/PsyTeachR/glossary), add your terms and submit a pull request, or suggest a new term at the [issues page](https://github.com/PsyTeachR/glossary/issues).
 
 ## Word choice
 
@@ -103,11 +159,7 @@ Use the following conventions for proper nouns:
 * R Markdown (this is how Yihui Xie writes it)
 * LaTeX (you don't have to be fancy with ${\LaTeX}$)
 
-### Glossary
 
-You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and optionally include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word")`. For example, common <a class='glossary' target='_blank' title='<span class="shortdef">The kind of data represented by an object.</span>' href='https://psyteachr.github.io/glossary/d#data-type'>data type</a>s are <a class='glossary' target='_blank' title='NA' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='<span class="shortdef">a real decimal number</span>' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='<span class="shortdef">A <a href="d.html#data-type">data type</a> representing <a href="s.html#string">strings</a> of text.</span>' href='https://psyteachr.github.io/glossary/c#character'>character</a>.
-
-If you want to contribute to the glossary, fork the [github project](https://github.com/PsyTeachR/glossary), add your terms and submit a pull request, or suggest a new term at the [issues page](https://github.com/PsyTeachR/glossary/issues).
 
 ## Colour
 
@@ -348,3 +400,4 @@ knitr::write_bib(c(
 Add other references to the `book.bib` file using BibTeX format. You can export references from most reference managers in BibTeX format.
 
 [Learn more about referencing](https://bookdown.org/yihui/bookdown/citations.html).
+
