@@ -67,8 +67,6 @@ with(cars, plot(speed, dist))
 `?plot`
 `r unhide()`
 
-<!-- note: you could also just set webex.hide to TRUE -->
-
-```{r eval = FALSE, webex.hide="Click here to see the solution"}
+`r hide("Click here to see the solution")`
 plot(cars$speed, cars$dist)
-```
+`r unhide()`
