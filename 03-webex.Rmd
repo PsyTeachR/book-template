@@ -68,5 +68,7 @@ with(cars, plot(speed, dist))
 `r unhide()`
 
 `r hide("Click here to see the solution")`
+```{r}
 plot(cars$speed, cars$dist)
+```
 `r unhide()`

@@ -22,7 +22,7 @@ You can also create these questions dynamically, using variables from your R ses
 
 
 
-- The square root of 25 is: <input class='solveme nospaces' size='1' data-answer='["5"]'/>
+- The square root of 9 is: <input class='solveme nospaces' size='1' data-answer='["3"]'/>
 
 The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE` (e.g., `fitb("E", ignore_case = TRUE)`).
 
@@ -74,7 +74,15 @@ If the solution is an RMarkdown code chunk, instead of using `hide()` and `unhid
 
 <div class='solution'><button>Click here to see the solution</button>
 
+
+```r
 plot(cars$speed, cars$dist)
+```
+
+<div class="figure" style="text-align: center">
+<img src="03-webex_files/figure-html/unnamed-chunk-4-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-4)**CAPTION THIS FIGURE!!**</p>
+</div>
 
 </div>
 
