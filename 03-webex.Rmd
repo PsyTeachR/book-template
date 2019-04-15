@@ -13,11 +13,11 @@ If you're using webex outside of this bookdown template, such as in an rmarkdown
 
 ## Fill-In-The-Blanks (`fitb()`) {#fitb}
 
-Create fill-in-the-blank questions using `fitb()`, providing the answer as the first argument.
+Create fill-in-the-blank questions using `fitb()`, providing the answer as the first argument (e.g., `fitb("4")`).
 
 - 2 + 2 is `r fitb("4")`
 
-You can also create these questions dynamically, using variables from your R session.
+You can also create these questions dynamically, using variables from your R session (e.g., `x <- sample(2:8, 1); fitb(x)`).
 
 ```{r echo = FALSE}
 x <- sample(2:8, 1)
@@ -25,19 +25,21 @@ x <- sample(2:8, 1)
 
 - The square root of `r x^2` is: `r fitb(x)`
 
-The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE`.
+The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE` (e.g., `fitb("E", ignore_case = TRUE)`).
 
 - What is the letter after D? `r fitb("E", ignore_case = TRUE)`
 
-If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable..
+If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable (e.g., `fitb("library( tidyverse )")`).
 
-- How do you load the tidyverse package? `r fitb(c("library( tidyverse )", "library( 'tidyverse' )", "library( \"tidyverse\" )"), ignore_case = TRUE, width = "20")`
+- How do you load the tidyverse package? `r fitb(c("library( tidyverse )", "library( 'tidyverse' )", "library( \"tidyverse\" )"), ignore_case = TRUE, width = "20", regex = TRUE)`
 
-You can set more than one possible correct answer by setting the answers as a vector.
+You can set more than one possible correct answer by setting the answers as a vector (e.g., `fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`).
 
 - Type a vowel: `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
 
 ## Multiple Choice (`mcq()`) {#mcq}
+
+Make a multiple choice question by setting the first argument to `mcq()` to a vector where the answer(s) are labeled `answer` (e.g., `mcq(c("0", "3.14", answer = "42", "100", "none of the above"))`)
 
 - "Never gonna give you up, never gonna: `r mcq(c("let you go", "turn you down", "run away", answer = "let you down"))`"
 - "I `r mcq(c(answer = "bless the rains", "guess it rains", "sense the rain"))` down in Africa"
@@ -45,9 +47,15 @@ You can set more than one possible correct answer by setting the answers as a ve
 
 ## True or False (`torf()`) {#torf}
 
+You can make a quick true-of-false option using `torf()` (e.g., `torf(FALSE)`).
+
 - You can permute values in a vector using `sample()`. `r torf(TRUE)`
 
 ## Hidden solutions and hints (`hide()` and `unhide()`) {#hide-unhide}
+
+You can fence off a solution area that will be hidden behind a button using `hide()` before the solution and `unhide()` after, each as inline R code.  Pass the text you want to appear on the button to the `hide()` function.
+
+If the solution is an RMarkdown code chunk, instead of using `hide()` and `unhide()`, simply set the `webex.hide` chunk option to TRUE, or set it to the string you wish to display on the button.
 
 - Recreate the scatterplot below, using the built-in `cars` dataset.
 
@@ -59,8 +67,8 @@ with(cars, plot(speed, dist))
 `?plot`
 `r unhide()`
 
-`r hide()`
-```{r eval = FALSE}
-with(cars, plot(speed, dist))
+<!-- note: you could also just set webex.hide to TRUE -->
+
+```{r eval = FALSE, webex.hide="Click here to see the solution"}
+plot(cars$speed, cars$dist)
 ```
-`r unhide()`

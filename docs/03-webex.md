@@ -14,29 +14,31 @@ The `webex` package is called in the setup chunk, so you don't need to call it o
 
 ## Fill-In-The-Blanks (`fitb()`) {#fitb}
 
-Create fill-in-the-blank questions using `fitb()`, providing the answer as the first argument.
+Create fill-in-the-blank questions using `fitb()`, providing the answer as the first argument (e.g., `fitb("4")`).
 
 - 2 + 2 is <input class='solveme nospaces' size='1' data-answer='["4"]'/>
 
-You can also create these questions dynamically, using variables from your R session.
+You can also create these questions dynamically, using variables from your R session (e.g., `x <- sample(2:8, 1); fitb(x)`).
 
 
 
-- The square root of 64 is: <input class='solveme nospaces' size='1' data-answer='["8"]'/>
+- The square root of 49 is: <input class='solveme nospaces' size='1' data-answer='["7"]'/>
 
-The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE`.
+The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE` (e.g., `fitb("E", ignore_case = TRUE)`).
 
 - What is the letter after D? <input class='solveme nospaces ignorecase' size='1' data-answer='["E"]'/>
 
-If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable..
+If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable (e.g., `fitb("library( tidyverse )")`).
 
-- How do you load the tidyverse package? <input class='solveme nospaces ignorecase' size='20' data-answer='["library( tidyverse )","library( &apos;tidyverse&apos; )","library( \"tidyverse\" )"]'/>
+- How do you load the tidyverse package? <input class='solveme nospaces ignorecase regex' size='20' data-answer='["library( tidyverse )","library( &apos;tidyverse&apos; )","library( \"tidyverse\" )"]'/>
 
-You can set more than one possible correct answer by setting the answers as a vector.
+You can set more than one possible correct answer by setting the answers as a vector (e.g., `fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`).
 
 - Type a vowel: <input class='solveme nospaces ignorecase' size='1' data-answer='["A","E","I","O","U"]'/>
 
 ## Multiple Choice (`mcq()`) {#mcq}
+
+Make a multiple choice question by setting the first argument to `mcq()` to a vector where the answer(s) are labeled `answer` (e.g., `mcq(c("0", "3.14", answer = "42", "100", "none of the above"))`)
 
 - "Never gonna give you up, never gonna: <select class='solveme' data-answer='["let you down"]'> <option></option> <option>let you go</option> <option>turn you down</option> <option>run away</option> <option>let you down</option></select>"
 - "I <select class='solveme' data-answer='["bless the rains"]'> <option></option> <option>bless the rains</option> <option>guess it rains</option> <option>sense the rain</option></select> down in Africa"
@@ -44,9 +46,15 @@ You can set more than one possible correct answer by setting the answers as a ve
 
 ## True or False (`torf()`) {#torf}
 
+You can make a quick true-of-false option using `torf()` (e.g., `torf(FALSE)`).
+
 - You can permute values in a vector using `sample()`. <select class='solveme' data-answer='["TRUE"]'> <option></option> <option>TRUE</option> <option>FALSE</option></select>
 
 ## Hidden solutions and hints (`hide()` and `unhide()`) {#hide-unhide}
+
+You can fence off a solution area that will be hidden behind a button using `hide()` before the solution and `unhide()` after, each as inline R code.  Pass the text you want to appear on the button to the `hide()` function.
+
+If the solution is an RMarkdown code chunk, instead of using `hide()` and `unhide()`, simply set the `webex.hide` chunk option to TRUE, or set it to the string you wish to display on the button.
 
 - Recreate the scatterplot below, using the built-in `cars` dataset.
 
@@ -63,13 +71,9 @@ You can set more than one possible correct answer by setting the answers as a ve
 </div>
 
 
-
-<div class='solution'><button>Solution</button>
+<!-- note: you could also just set webex.hide to TRUE -->
 
 
 ```r
-with(cars, plot(speed, dist))
+plot(cars$speed, cars$dist)
 ```
-
-</div>
-
