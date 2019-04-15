@@ -1,6 +1,6 @@
 # Webex
 
-Use the following code to install webex:
+Use the following code to install [webex](https://github.com/psyteachr/webex):
 ```
 devtools::install_github("psyteachr/webex")
 ```
