@@ -3,10 +3,14 @@
 
 Use the following code to install webex:
 ```
-devtools::install_github("dalejbarr/webex")
+devtools::install_github("psyteachr/webex")
 ```
 
-The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex.
+The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex. 
+
+<div class="info">
+<p>If you're using webex outside of this bookdown template, such as in an rmarkdown webpage, you will need to set the output type to <code>webex::webex_default</code> in the yaml header in order to import the css and javascript files. To create a file from the webex template in RStudio, click <strong><code>File -&gt; New File... -&gt; RMarkdown</code></strong> and in the dialog box that appears, select <strong><code>From Template</code></strong> and choose <strong><code>Web Exercises</code></strong>.</p>
+</div>
 
 ## Fill-In-The-Blanks (`fitb()`) {#fitb}
 
@@ -18,7 +22,7 @@ You can also create these questions dynamically, using variables from your R ses
 
 
 
-- The square root of 16 is: <input class='solveme nospaces' size='1' data-answer='["4"]'/>
+- The square root of 36 is: <input class='solveme nospaces' size='1' data-answer='["6"]'/>
 
 The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE`.
 
@@ -26,7 +30,7 @@ The blanks are case-sensitive; if you don't care about case, use the argument `i
 
 If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable..
 
-- How do you load the tidyverse package? <input class='solveme nospaces ignorecase' size='20' data-answer='["library( tidyverse )"]'/>
+- How do you load the tidyverse package? <input class='solveme nospaces ignorecase' size='20' data-answer='["library( tidyverse )","library( &apos;tidyverse&apos; )","library( \"tidyverse\" )"]'/>
 
 You can set more than one possible correct answer by setting the answers as a vector.
 

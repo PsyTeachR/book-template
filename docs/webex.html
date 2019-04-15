@@ -25,7 +25,7 @@
 <meta name="author" content="Lisa DeBruine">
 
 
-<meta name="date" content="2019-03-27">
+<meta name="date" content="2019-04-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -206,8 +206,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="webex" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Webex</h1>
 <p>Use the following code to install webex:</p>
-<pre><code>devtools::install_github(&quot;dalejbarr/webex&quot;)</code></pre>
+<pre><code>devtools::install_github(&quot;psyteachr/webex&quot;)</code></pre>
 <p>The <code>webex</code> package is called in the setup chunk, so you don't need to call it on every page you want to use webex.</p>
+<div class="info">
+<p>
+If you're using webex outside of this bookdown template, such as in an rmarkdown webpage, you will need to set the output type to <code>webex::webex_default</code> in the yaml header in order to import the css and javascript files. To create a file from the webex template in RStudio, click <strong><code>File -&gt; New File... -&gt; RMarkdown</code></strong> and in the dialog box that appears, select <strong><code>From Template</code></strong> and choose <strong><code>Web Exercises</code></strong>.
+</p>
+</div>
 <div id="fitb" class="section level2">
 <h2><span class="header-section-number">3.1</span> Fill-In-The-Blanks (<code>fitb()</code>)</h2>
 <p>Create fill-in-the-blank questions using <code>fitb()</code>, providing the answer as the first argument.</p>
@@ -216,7 +221,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>You can also create these questions dynamically, using variables from your R session.</p>
 <ul>
-<li>The square root of 16 is: <input class='solveme nospaces' size='1' data-answer='["4"]'/></li>
+<li>The square root of 36 is: <input class='solveme nospaces' size='1' data-answer='["6"]'/></li>
 </ul>
 <p>The blanks are case-sensitive; if you don't care about case, use the argument <code>ignore_case = TRUE</code>.</p>
 <ul>
@@ -224,7 +229,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>If you want to ignore differences in whitespace use, use the argument <code>ignore_ws = TRUE</code> and include spaces in your answer anywhere they could be acceptable..</p>
 <ul>
-<li>How do you load the tidyverse package? <input class='solveme nospaces ignorecase' size='20' data-answer='["library( tidyverse )"]'/></li>
+<li>How do you load the tidyverse package? <input class='solveme nospaces ignorecase' size='20' data-answer='["library( tidyverse )","library( &apos;tidyverse&apos; )","library( \"tidyverse\" )"]'/></li>
 </ul>
 <p>You can set more than one possible correct answer by setting the answers as a vector.</p>
 <ul>

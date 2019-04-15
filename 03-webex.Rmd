@@ -2,10 +2,14 @@
 
 Use the following code to install webex:
 ```
-devtools::install_github("dalejbarr/webex")
+devtools::install_github("psyteachr/webex")
 ```
 
-The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex.
+The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex. 
+
+```{block, type = "info"}
+If you're using webex outside of this bookdown template, such as in an rmarkdown webpage, you will need to set the output type to `webex::webex_default` in the yaml header in order to import the css and javascript files. To create a file from the webex template in RStudio, click **`File -> New File... -> RMarkdown`** and in the dialog box that appears, select **`From Template`** and choose **`Web Exercises`**.
+```
 
 ## Fill-In-The-Blanks (`fitb()`) {#fitb}
 
@@ -27,7 +31,7 @@ The blanks are case-sensitive; if you don't care about case, use the argument `i
 
 If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable..
 
-- How do you load the tidyverse package? `r fitb("library( tidyverse )", ignore_case = TRUE, width = "20")`
+- How do you load the tidyverse package? `r fitb(c("library( tidyverse )", "library( 'tidyverse' )", "library( \"tidyverse\" )"), ignore_case = TRUE, width = "20")`
 
 You can set more than one possible correct answer by setting the answers as a vector.
 
