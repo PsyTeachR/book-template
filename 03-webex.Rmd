@@ -1,8 +1,8 @@
 # Webex
 
-Use the following code to install [webex](https://github.com/psyteachr/webex):
+Use the following code to install [webex](https://github.com/psyteachr/webex) from CRAN:
 ```
-devtools::install_github("psyteachr/webex")
+install.packages("webex")
 ```
 
 The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex. 

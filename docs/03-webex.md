@@ -1,9 +1,9 @@
 
 # Webex
 
-Use the following code to install [webex](https://github.com/psyteachr/webex):
+Use the following code to install [webex](https://github.com/psyteachr/webex) from CRAN:
 ```
-devtools::install_github("psyteachr/webex")
+install.packages("webex")
 ```
 
 The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex. 
@@ -22,7 +22,7 @@ You can also create these questions dynamically, using variables from your R ses
 
 
 
-- The square root of 9 is: <input class='solveme nospaces' size='1' data-answer='["3"]'/>
+- The square root of 64 is: <input class='solveme nospaces' size='1' data-answer='["8"]'/>
 
 The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE` (e.g., `fitb("E", ignore_case = TRUE)`).
 
