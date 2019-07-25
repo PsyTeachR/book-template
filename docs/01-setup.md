@@ -165,7 +165,7 @@ Open `_index_example.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2019-05-13"
+date: "2019-07-25"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -182,7 +182,7 @@ For now, don't change anything in the `cite-packages` R chunk at the top. This j
 Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs. 
 
 <div class="info">
-<p>The <code>{-}</code> at the end of the overview title makes sure this chapter isn't numbered.</p>
+<p>The <code>{-}</code> at the end of the overview title makes sure this chapter isn’t numbered.</p>
 </div>
 
 Save this file with the name `index.Rmd`.
@@ -226,7 +226,7 @@ Name the file with the chapter number and a short title all in lowercase, separa
 Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.
 
 <div class="info">
-<p>You can refer to any section by it's label, which is the section title with spaces changed to dashes (e.g., a section called &quot;Your first R Markdown file&quot; can be referenced as <code>#Your-first-R-Markdownfile</code>. You can set a shorter custom label for a section by adding an ID in the format <code>{#rmarkdown}</code>.</p>
+<p>You can refer to any section by it’s label, which is the section title with spaces changed to dashes (e.g., a section called “Your first R Markdown file” can be referenced as <code>#Your-first-R-Markdownfile</code>. You can set a shorter custom label for a section by adding an ID in the format <code>{#rmarkdown}</code>.</p>
 </div>
 
 ### Multiple .Rmd files per chapter

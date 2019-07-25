@@ -129,7 +129,7 @@ glossary_table()
    <td style="text-align:left;"> A data type representing strings of text. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data.type'>data type</a> </td>
+   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data-type'>data-type</a> </td>
    <td style="text-align:left;"> My custom definition of data types </td>
   </tr>
   <tr>
@@ -325,7 +325,7 @@ library(tidyverse)
 <code>&#96;&#96;&#96;</code></div>
 
 <div class="info">
-<p>The &quot;verbatim&quot; option is not standard to bookdown. It is only available if you include the code from the &quot;R/psyteachr_setup.R&quot; file.</p>
+<p>The “verbatim” option is not standard to bookdown. It is only available if you include the code from the “R/psyteachr_setup.R” file.</p>
 </div>
 
 

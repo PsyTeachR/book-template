@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Style Demo | Book Template</title>
-  <meta name="description" content="Guide for psyTeachR course books.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Guide for psyTeachR course books." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Style Demo | Book Template" />
   <meta property="og:type" content="book" />
@@ -22,14 +21,14 @@
   <meta name="twitter:description" content="Guide for psyTeachR course books." />
   
 
-<meta name="author" content="Lisa DeBruine">
+<meta name="author" content="Lisa DeBruine" />
 
 
-<meta name="date" content="2019-05-13">
+<meta name="date" content="2019-07-25" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="symbols.html">
@@ -51,41 +50,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
@@ -176,7 +200,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="B.2.1" data-path="style-demo.html"><a href="style-demo.html#code-chunk-with-output"><i class="fa fa-check"></i><b>B.2.1</b> Code chunk with output</a></li>
 <li class="chapter" data-level="B.2.2" data-path="style-demo.html"><a href="style-demo.html#code-chunk-with-r-header"><i class="fa fa-check"></i><b>B.2.2</b> Code chunk with r header</a></li>
 <li class="chapter" data-level="B.2.3" data-path="style-demo.html"><a href="style-demo.html#preformatted"><i class="fa fa-check"></i><b>B.2.3</b> Preformatted</a></li>
-<li class="chapter" data-level="B.2.4" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#call-out-blocks"><i class="fa fa-check"></i><b>B.2.4</b> Call-out blocks</a></li>
+<li class="chapter" data-level="B.2.4" data-path="style-demo.html"><a href="style-demo.html#call-out-blocks-1"><i class="fa fa-check"></i><b>B.2.4</b> Call-out blocks</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -208,7 +232,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Use this page to test styles if you change any defaults. Make sure to test with white, sepia and night themes.</p>
 <div id="header-2" class="section level2">
 <h2><span class="header-section-number">B.1</span> Header 2</h2>
-<p>Text with inline text styles, like <strong>bold</strong>, <em>italics</em> (don't use), <strong><code>bold code</code></strong>, <code>inline code</code>, <a href="style-demo.html#style-demo">link text</a> and <a href="google.com" target="_blank">external link</a>.</p>
+<p>Text with inline text styles, like <strong>bold</strong>, <em>italics</em> (don’t use), <strong><code>bold code</code></strong>, <code>inline code</code>, <a href="style-demo.html#style-demo">link text</a> and <a href="google.com" target="_blank">external link</a>.</p>
 <p>Emojis: ❤️🧡💛💚💙💜</p>
 <div id="header-3" class="section level3">
 <h3><span class="header-section-number">B.1.1</span> Header 3</h3>
@@ -222,7 +246,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <div id="header-4" class="section level4">
 <h4><span class="header-section-number">B.1.1.1</span> Header 4</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</a></code></pre></div>
 <table>
 <caption><span id="tab:table-demo">Table B.1: </span>The iris dataset</caption>
 <thead>
@@ -1289,8 +1313,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </table>
 <div id="header-5" class="section level5">
 <h5><span class="header-section-number">B.1.1.1.1</span> Header 5</h5>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</a></code></pre></div>
 <pre><code>## Warning in kableExtra::kable_styling(., bootstrap_options = &quot;striped&quot;):
 ## Please specify format in kable. kableExtra can customize either HTML or
 ## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.</code></pre>
@@ -2366,22 +2390,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">B.2</span> Chunks</h2>
 <div id="code-chunk-with-output" class="section level3">
 <h3><span class="header-section-number">B.2.1</span> Code chunk with output</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># nonsense function to demo code style</span>
-
-func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">arg =</span> <span class="ot">FALSE</span>) {
-  string_var &lt;-<span class="st"> &quot;I&#39;m a string&quot;</span>
-  int_var &lt;-<span class="st"> </span>1L
-  dbl_var &lt;-<span class="st"> </span><span class="op">-</span><span class="fl">3.165</span> <span class="op">*</span><span class="st"> </span>int_var
-  bool_var &lt;-<span class="st"> </span><span class="ot">TRUE</span>
-  vector_var &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>
-  
-  <span class="kw">paste</span>(string_var, int_var, <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span>)
-}
-
-<span class="kw">func_var</span>()
-<span class="kw">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># nonsense function to demo code style</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">arg =</span> <span class="ot">FALSE</span>) {</a>
+<a class="sourceLine" id="cb27-4" data-line-number="4">  string_var &lt;-<span class="st"> &quot;I&#39;m a string&quot;</span></a>
+<a class="sourceLine" id="cb27-5" data-line-number="5">  int_var &lt;-<span class="st"> </span>1L</a>
+<a class="sourceLine" id="cb27-6" data-line-number="6">  dbl_var &lt;-<span class="st"> </span><span class="fl">-3.165</span> <span class="op">*</span><span class="st"> </span>int_var</a>
+<a class="sourceLine" id="cb27-7" data-line-number="7">  bool_var &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb27-8" data-line-number="8">  vector_var &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb27-9" data-line-number="9">  </a>
+<a class="sourceLine" id="cb27-10" data-line-number="10">  <span class="kw">paste</span>(string_var, int_var, <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span>)</a>
+<a class="sourceLine" id="cb27-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb27-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="kw">func_var</span>()</a>
+<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="kw">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</a></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="st">&quot;A&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">rnorm</span>(<span class="st">&quot;A&quot;</span>)</a></code></pre></div>
 <pre><code>## Warning in rnorm(&quot;A&quot;): NAs introduced by coercion</code></pre>
 <pre><code>## Error in rnorm(&quot;A&quot;): invalid arguments</code></pre>
 <pre><code>## [1] &quot;I&#39;m a string - 1&quot;
@@ -2391,7 +2415,7 @@ func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span cl
 <h3><span class="header-section-number">B.2.2</span> Code chunk with r header</h3>
 <div class="verbatim">
 <p><code>```{r libraries, include=FALSE}</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <code>```</code>
 </div>
 </div>
@@ -2402,7 +2426,7 @@ func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span cl
         preserved 
 Emojis are sometimes different: ❤️🧡💛💚💙💜</code></pre>
 </div>
-<div id="call-out-blocks" class="section level3">
+<div id="call-out-blocks-1" class="section level3">
 <h3><span class="header-section-number">B.2.4</span> Call-out blocks</h3>
 <div class="danger">
 <p>
@@ -2427,13 +2451,13 @@ Emojis are sometimes different: ❤️🧡💛💚💙💜</code></pre>
 
 <div id="refs" class="references">
 <div>
-<p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
 </div>
 <div>
-<p>Xie, Yihui. 2018. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
+<p>Xie, Yihui. 2019. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 <div>
-<p>Zhu, Hao. 2019. <em>KableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra" class="uri">https://CRAN.R-project.org/package=kableExtra</a>.</p>
+<p>Zhu, Hao. 2019. <em>KableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.</p>
 </div>
 </div>
 </div>
@@ -2601,7 +2625,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
