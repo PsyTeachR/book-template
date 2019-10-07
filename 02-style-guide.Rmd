@@ -24,6 +24,9 @@ Chapters should **usually** have between three and eight level 2 headers. There 
     * Package names should be in backticks (e.g., ``` `tidyverse` ```)
     * Function names should be in backticks with brackets (e.g., ``` `rnorm()` ```)
 
+### Links
+
+Links to pages in the psyteachr site should be normal internal links (e.g., `[link text]&lpar;url)`. If you are linking to an external resource, use the following style: `[link text]&lpar;url){target="_blank"}` to create a link that looks and behaves like this: [RStudio](https://rstudio.com/){target="_blank"}.
 
 ### Lists
 

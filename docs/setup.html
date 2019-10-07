@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Setup | Book Template</title>
   <meta name="description" content="Guide for psyTeachR course books." />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Setup | Book Template" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Lisa DeBruine" />
 
 
-<meta name="date" content="2019-07-25" />
+<meta name="date" content="2019-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="psyteachr-style-guide.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="psyteachr-style-guide.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -153,8 +153,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#general-styles"><i class="fa fa-check"></i><b>2.1</b> General styles</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#headers"><i class="fa fa-check"></i><b>2.1.1</b> Headers</a></li>
 <li class="chapter" data-level="2.1.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#text-styles"><i class="fa fa-check"></i><b>2.1.2</b> Text styles</a></li>
-<li class="chapter" data-level="2.1.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#lists"><i class="fa fa-check"></i><b>2.1.3</b> Lists</a></li>
-<li class="chapter" data-level="2.1.4" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#tables"><i class="fa fa-check"></i><b>2.1.4</b> Tables</a></li>
+<li class="chapter" data-level="2.1.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#links"><i class="fa fa-check"></i><b>2.1.3</b> Links</a></li>
+<li class="chapter" data-level="2.1.4" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#lists"><i class="fa fa-check"></i><b>2.1.4</b> Lists</a></li>
+<li class="chapter" data-level="2.1.5" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#tables"><i class="fa fa-check"></i><b>2.1.5</b> Tables</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#glossary"><i class="fa fa-check"></i><b>2.2</b> Glossary</a></li>
 <li class="chapter" data-level="2.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#word-choice"><i class="fa fa-check"></i><b>2.3</b> Word choice</a></li>
@@ -383,7 +384,7 @@ language:
 <pre><code>--- 
 title: &quot;Template Course&quot;
 author: &quot;psyTeachR&quot;
-date: &quot;2019-07-25&quot;
+date: &quot;2019-10-07&quot;
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -626,8 +627,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
