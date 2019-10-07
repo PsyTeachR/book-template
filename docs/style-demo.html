@@ -47,6 +47,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -209,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     target="blank"><img alt="Creative Commons License" 
     style="border-width:0" 
     src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
-<li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
+<li><a href="https://psyteachr.github.io/books" target="blank">PsyTeachR Books</a></li>
 
 </ul>
 
@@ -247,7 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div id="header-4" class="section level4">
 <h4><span class="header-section-number">B.1.1.1</span> Header 4</h4>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</a></code></pre></div>
 <table>
 <caption><span id="tab:table-demo">Table B.1: </span>The iris dataset</caption>
 <thead>
@@ -1314,8 +1315,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <div id="header-5" class="section level5">
 <h5><span class="header-section-number">B.1.1.1.1</span> Header 5</h5>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb25-2" data-line-number="2"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</a></code></pre></div>
 <pre><code>## Warning in kableExtra::kable_styling(., bootstrap_options = &quot;striped&quot;):
 ## Please specify format in kable. kableExtra can customize either HTML or
 ## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.</code></pre>
@@ -2391,22 +2392,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">B.2</span> Chunks</h2>
 <div id="code-chunk-with-output" class="section level3">
 <h3><span class="header-section-number">B.2.1</span> Code chunk with output</h3>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co"># nonsense function to demo code style</span></a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">arg =</span> <span class="ot">FALSE</span>) {</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">  string_var &lt;-<span class="st"> &quot;I&#39;m a string&quot;</span></a>
-<a class="sourceLine" id="cb27-5" data-line-number="5">  int_var &lt;-<span class="st"> </span>1L</a>
-<a class="sourceLine" id="cb27-6" data-line-number="6">  dbl_var &lt;-<span class="st"> </span><span class="fl">-3.165</span> <span class="op">*</span><span class="st"> </span>int_var</a>
-<a class="sourceLine" id="cb27-7" data-line-number="7">  bool_var &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb27-8" data-line-number="8">  vector_var &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb27-9" data-line-number="9">  </a>
-<a class="sourceLine" id="cb27-10" data-line-number="10">  <span class="kw">paste</span>(string_var, int_var, <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span>)</a>
-<a class="sourceLine" id="cb27-11" data-line-number="11">}</a>
-<a class="sourceLine" id="cb27-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb27-13" data-line-number="13"><span class="kw">func_var</span>()</a>
-<a class="sourceLine" id="cb27-14" data-line-number="14"><span class="kw">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="co"># nonsense function to demo code style</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">arg =</span> <span class="ot">FALSE</span>) {</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">  string_var &lt;-<span class="st"> &quot;I&#39;m a string&quot;</span></a>
+<a class="sourceLine" id="cb26-5" data-line-number="5">  int_var &lt;-<span class="st"> </span>1L</a>
+<a class="sourceLine" id="cb26-6" data-line-number="6">  dbl_var &lt;-<span class="st"> </span><span class="fl">-3.165</span> <span class="op">*</span><span class="st"> </span>int_var</a>
+<a class="sourceLine" id="cb26-7" data-line-number="7">  bool_var &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb26-8" data-line-number="8">  vector_var &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb26-9" data-line-number="9">  </a>
+<a class="sourceLine" id="cb26-10" data-line-number="10">  <span class="kw">paste</span>(string_var, int_var, <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span>)</a>
+<a class="sourceLine" id="cb26-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb26-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb26-13" data-line-number="13"><span class="kw">func_var</span>()</a>
+<a class="sourceLine" id="cb26-14" data-line-number="14"><span class="kw">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</a></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">rnorm</span>(<span class="st">&quot;A&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">rnorm</span>(<span class="st">&quot;A&quot;</span>)</a></code></pre></div>
 <pre><code>## Warning in rnorm(&quot;A&quot;): NAs introduced by coercion</code></pre>
 <pre><code>## Error in rnorm(&quot;A&quot;): invalid arguments</code></pre>
 <pre><code>## [1] &quot;I&#39;m a string - 1&quot;
@@ -2416,7 +2417,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">B.2.2</span> Code chunk with r header</h3>
 <div class="verbatim">
 <p><code>```{r libraries, include=FALSE}</code></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <code>```</code>
 </div>
 </div>
