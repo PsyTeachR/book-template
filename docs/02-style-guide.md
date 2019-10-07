@@ -70,25 +70,45 @@ If you want to add stripes or fancy styling to your tables, install the package 
 iris %>%
   group_by(Species) %>%
   summarise_all(mean) %>%
-  knitr::kable(digits = 3, caption = "Example table with kableExtra.") %>%
+  knitr::kable(digits = 3, format = "html", caption = "Example table with kableExtra.") %>%
   kableExtra::kable_styling(bootstrap_options = "striped")
 ```
 
-```
-## Warning in kableExtra::kable_styling(., bootstrap_options = "striped"):
-## Please specify format in kable. kableExtra can customize either HTML or
-## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.
-```
-
-
-
-Table: (\#tab:kable-example-striped)Example table with kableExtra.
-
-Species       Sepal.Length   Sepal.Width   Petal.Length   Petal.Width
------------  -------------  ------------  -------------  ------------
-setosa               5.006         3.428          1.462         0.246
-versicolor           5.936         2.770          4.260         1.326
-virginica            6.588         2.974          5.552         2.026
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:kable-example-striped)Example table with kableExtra.</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Species </th>
+   <th style="text-align:right;"> Sepal.Length </th>
+   <th style="text-align:right;"> Sepal.Width </th>
+   <th style="text-align:right;"> Petal.Length </th>
+   <th style="text-align:right;"> Petal.Width </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> setosa </td>
+   <td style="text-align:right;"> 5.006 </td>
+   <td style="text-align:right;"> 3.428 </td>
+   <td style="text-align:right;"> 1.462 </td>
+   <td style="text-align:right;"> 0.246 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> versicolor </td>
+   <td style="text-align:right;"> 5.936 </td>
+   <td style="text-align:right;"> 2.770 </td>
+   <td style="text-align:right;"> 4.260 </td>
+   <td style="text-align:right;"> 1.326 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> virginica </td>
+   <td style="text-align:right;"> 6.588 </td>
+   <td style="text-align:right;"> 2.974 </td>
+   <td style="text-align:right;"> 5.552 </td>
+   <td style="text-align:right;"> 2.026 </td>
+  </tr>
+</tbody>
+</table>
 
 ## Glossary
 
@@ -325,7 +345,7 @@ library(tidyverse)
 <code>&#96;&#96;&#96;</code></div>
 
 <div class="info">
-<p>The “verbatim” option is not standard to bookdown. It is only available if you include the code from the “R/psyteachr_setup.R” file.</p>
+<p>The &quot;verbatim&quot; option is not standard to bookdown. It is only available if you include the code from the &quot;R/psyteachr_setup.R&quot; file.</p>
 </div>
 
 

@@ -2,7 +2,7 @@
 --- 
 title: "Book Template"
 author: "Lisa DeBruine"
-date: "2019-07-25"
+date: "2019-10-07"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

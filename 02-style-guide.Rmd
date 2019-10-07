@@ -60,7 +60,7 @@ If you want to add stripes or fancy styling to your tables, install the package 
 iris %>%
   group_by(Species) %>%
   summarise_all(mean) %>%
-  knitr::kable(digits = 3, caption = "Example table with kableExtra.") %>%
+  knitr::kable(digits = 3, format = "html", caption = "Example table with kableExtra.") %>%
   kableExtra::kable_styling(bootstrap_options = "striped")
 
 ```
