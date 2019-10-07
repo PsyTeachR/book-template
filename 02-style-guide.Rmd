@@ -26,7 +26,7 @@ Chapters should **usually** have between three and eight level 2 headers. There 
 
 ### Links
 
-Links to pages in the psyteachr site should be normal internal links (e.g., `[link text]&lpar;url)`. If you are linking to an external resource, use the following style: `[link text]&lpar;url){target="_blank"}` to create a link that looks and behaves like this: [RStudio](https://rstudio.com/){target="_blank"}.
+Links to pages in the psyteachr site should be normal internal links (e.g., `[link text](url)`. If you are linking to an external resource, use the following style: `[link text](url){target="_blank"}` to create a link that looks and behaves like this: [RStudio](https://rstudio.com/){target="_blank"}.
 
 ### Lists
 
