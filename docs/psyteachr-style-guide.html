@@ -47,6 +47,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -209,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     target="blank"><img alt="Creative Commons License" 
     style="border-width:0" 
     src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
-<li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
+<li><a href="https://psyteachr.github.io/books" target="blank">PsyTeachR Books</a></li>
 
 </ul>
 
@@ -315,43 +316,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">iris <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(Species) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise_all</span>(mean) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>, <span class="dt">caption =</span> <span class="st">&quot;Example table with kableExtra.&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">3</span>, <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;Example table with kableExtra.&quot;</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb10-5" data-line-number="5"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</a></code></pre></div>
-<pre><code>## Warning in kableExtra::kable_styling(., bootstrap_options = &quot;striped&quot;):
-## Please specify format in kable. kableExtra can customize either HTML or
-## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.</code></pre>
-<table>
-<caption><span id="tab:kable-example-striped">Table 2.2: </span>Example table with kableExtra.</caption>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:kable-example-striped">Table 2.2: </span>Example table with kableExtra.
+</caption>
 <thead>
-<tr class="header">
-<th align="left">Species</th>
-<th align="right">Sepal.Length</th>
-<th align="right">Sepal.Width</th>
-<th align="right">Petal.Length</th>
-<th align="right">Petal.Width</th>
+<tr>
+<th style="text-align:left;">
+Species
+</th>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">setosa</td>
-<td align="right">5.006</td>
-<td align="right">3.428</td>
-<td align="right">1.462</td>
-<td align="right">0.246</td>
+<tr>
+<td style="text-align:left;">
+setosa
+</td>
+<td style="text-align:right;">
+5.006
+</td>
+<td style="text-align:right;">
+3.428
+</td>
+<td style="text-align:right;">
+1.462
+</td>
+<td style="text-align:right;">
+0.246
+</td>
 </tr>
-<tr class="even">
-<td align="left">versicolor</td>
-<td align="right">5.936</td>
-<td align="right">2.770</td>
-<td align="right">4.260</td>
-<td align="right">1.326</td>
+<tr>
+<td style="text-align:left;">
+versicolor
+</td>
+<td style="text-align:right;">
+5.936
+</td>
+<td style="text-align:right;">
+2.770
+</td>
+<td style="text-align:right;">
+4.260
+</td>
+<td style="text-align:right;">
+1.326
+</td>
 </tr>
-<tr class="odd">
-<td align="left">virginica</td>
-<td align="right">6.588</td>
-<td align="right">2.974</td>
-<td align="right">5.552</td>
-<td align="right">2.026</td>
+<tr>
+<td style="text-align:left;">
+virginica
+</td>
+<td style="text-align:right;">
+6.588
+</td>
+<td style="text-align:right;">
+2.974
+</td>
+<td style="text-align:right;">
+5.552
+</td>
+<td style="text-align:right;">
+2.026
+</td>
 </tr>
 </tbody>
 </table>
@@ -361,15 +401,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.2</span> Glossary</h2>
 <p>You can use the glossary function to automatically link to a term in the <a href="https://psyteachr.github.io/glossary/">psyTeachR glossary</a> and automatically include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: <code>glossary(&quot;word&quot;)</code>. For example, common <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> are <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>.</p>
 <p>If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (<code>display</code>). You can also override the automatic short definition by providing your own in the third argument (<code>shortdef</code>). Add the argument <code>link = FALSE</code> if you just want the hover definition and not a link to the psyTeachR glossary.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">glossary</span>(<span class="st">&quot;data type&quot;</span>, </a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">         <span class="dt">display=</span><span class="st">&quot;Data Types&quot;</span>, </a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">         <span class="dt">shortdef=</span><span class="st">&quot;My custom definition of data types&quot;</span>, </a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">         <span class="dt">link =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">glossary</span>(<span class="st">&quot;data type&quot;</span>, </a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">         <span class="dt">display=</span><span class="st">&quot;Data Types&quot;</span>, </a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">         <span class="dt">shortdef=</span><span class="st">&quot;My custom definition of data types&quot;</span>, </a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">         <span class="dt">link =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <p>[1] “<a class='glossary' title='My custom definition of data types'>Data Types</a>”</p>
 <p>You can add a glossary table to the end of a chapter with the following code. It creates a table of all terms used in that chapter previous to the <code>glossary_table()</code> function.</p>
 <div class="verbatim">
 <p><code>```{r, echo=FALSE, results=‘asis’}</code></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">glossary_table</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">glossary_table</span>()</a></code></pre></div>
 <code>```</code>
 </div>
 <table>
@@ -451,20 +491,20 @@ Remember to test your materials with the <strong>Sepia</strong> and <strong>Nigh
 </p>
 </div>
 <p>You can also access the psyTeachR colours in R from the function <code>psyteachr_colours()</code> (or <code>psyteachr_colors()</code>).</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">psyteachr_colours</span>()    <span class="co"># gives all 6 colours</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="kw">psyteachr_colours</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="co"># specify colours by number</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="kw">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;blue&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># specify by name</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">  </span><span class="kw">psyteachr_colours</span>()           <span class="co"># Lisa loves pipes</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">psyteachr_colours</span>()    <span class="co"># gives all 6 colours</span></a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">psyteachr_colours</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="co"># specify colours by number</span></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"><span class="kw">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;blue&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># specify by name</span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span><span class="kw">psyteachr_colours</span>()           <span class="co"># Lisa loves pipes</span></a></code></pre></div>
 <pre><code>## [1] &quot;#983E82&quot; &quot;#E2A458&quot; &quot;#F5DC70&quot; &quot;#59935B&quot; &quot;#467AAC&quot; &quot;#61589C&quot;
 ## [1] &quot;#983E82&quot; &quot;#E2A458&quot; &quot;#F5DC70&quot;
 ## [1] &quot;#983E82&quot; &quot;#F5DC70&quot; &quot;#467AAC&quot;</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">tibble</span>(</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">  <span class="dt">grp =</span> <span class="kw">rep</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>], <span class="dt">each =</span> <span class="dv">20</span>),</a>
-<a class="sourceLine" id="cb17-3" data-line-number="3">  <span class="dt">val =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">each =</span> <span class="dv">20</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span><span class="op">*</span><span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb17-4" data-line-number="4">) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(grp, val, <span class="dt">fill =</span> grp)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb17-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">psyteachr_colours</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">tibble</span>(</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2">  <span class="dt">grp =</span> <span class="kw">rep</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>], <span class="dt">each =</span> <span class="dv">20</span>),</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">  <span class="dt">val =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">each =</span> <span class="dv">20</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span><span class="op">*</span><span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(grp, val, <span class="dt">fill =</span> grp)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="st">  </span><span class="kw">geom_violin</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">psyteachr_colours</span>())</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:plot-psyteachr-colours"></span>
 <img src="02-style-guide_files/figure-html/plot-psyteachr-colours-1.png" alt="Plot with psyteachr.colours" width="50%" />
 <p class="caption">
@@ -492,9 +532,9 @@ The chunk label for figures can only contain alphanumeric characters (a-z, A-Z, 
 </ul>
 <div class="verbatim">
 <p><code>```{echo=FALSE, out.width=‘75%’, fig.width=6, fig.height=2.5, fig.cap=‘Dynamically created plot.’}</code></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Length, Sepal.Width, <span class="dt">color =</span> Species)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw">ggplot</span>(iris, <span class="kw">aes</span>(Sepal.Length, Sepal.Width, <span class="dt">color =</span> Species)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm)</a></code></pre></div>
 <code>```</code>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:img-dynamo"></span>
@@ -509,7 +549,7 @@ Figure 2.2: Dynamically created plot.
 <p>Static images, like screenshots, should be stored in a directory called <strong>images</strong> and displayed using the <code>knitr::include_graphics</code> function in a code block.</p>
 <div class="verbatim">
 <p><code>```{r img-psyteacher-logo, echo=FALSE, fig.cap=“PsyTeachR Logo”}</code></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/psyteachr_logo.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/psyteachr_logo.png&quot;</span>)</a></code></pre></div>
 <code>```</code>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:img-psyteacher-logo"></span>
@@ -573,7 +613,7 @@ The chunk label for tables and figures can only contain alphanumeric characters 
 <p>If you want to show students an example of a code chunk that includes the header, add an option called <code>verbatim</code> to your code chunk and set it equal to what you want displayed inside the curly brackets. Make sure you set <code>eval=FALSE</code> to stop the code chunk from being run.</p>
 <div class="verbatim">
 <p><code>```{r verbatim-example, eval = FALSE, verbatim = ‘r chunk-name, messages=FALSE’}</code></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 <code>```</code>
 </div>
 <div class="info">
@@ -650,11 +690,11 @@ Run the code below:
 <h2><span class="header-section-number">2.8</span> References</h2>
 <p>Include references using the bibliography key, such as <code>@R-base</code>, which provides an in-line citation like <span class="citation">R Core Team (<a href="#ref-R-base">2019</a>)</span>. You can also use square brackets to create a parenthetical citation, like <code>[@R-bookdown]</code> <span class="citation">(Xie <a href="#ref-R-bookdown">2019</a>)</span>.</p>
 <p>You need to add any R packages you want to cite by adding them to the code chunk in the index file and then referencing them by <code>@R-pckgname</code>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="co"># automatically create a bib database for R packages</span></a>
-<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="co"># add any packages you want to cite here</span></a>
-<a class="sourceLine" id="cb21-3" data-line-number="3">knitr<span class="op">::</span><span class="kw">write_bib</span>(<span class="kw">c</span>(</a>
-<a class="sourceLine" id="cb21-4" data-line-number="4">  <span class="kw">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;tidyverse&#39;</span></a>
-<a class="sourceLine" id="cb21-5" data-line-number="5">), <span class="st">&#39;packages.bib&#39;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co"># automatically create a bib database for R packages</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="co"># add any packages you want to cite here</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">knitr<span class="op">::</span><span class="kw">write_bib</span>(<span class="kw">c</span>(</a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">  <span class="kw">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;tidyverse&#39;</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">), <span class="st">&#39;packages.bib&#39;</span>)</a></code></pre></div>
 <p>Add other references to the <code>book.bib</code> file using BibTeX format. You can export references from most reference managers in BibTeX format.</p>
 <p><a href="https://bookdown.org/yihui/bookdown/citations.html">Learn more about referencing</a>.</p>
 
