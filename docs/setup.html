@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Setup | Book Template</title>
   <meta name="description" content="Guide for psyTeachR course books." />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Setup | Book Template" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Lisa DeBruine" />
 
 
-<meta name="date" content="2019-10-07" />
+<meta name="date" content="2020-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -40,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -146,9 +149,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.1" data-path="setup.html"><a href="setup.html#content"><i class="fa fa-check"></i><b>1.2.1</b> Content</a></li>
 <li class="chapter" data-level="1.2.2" data-path="setup.html"><a href="setup.html#multiple-.rmd-files-per-chapter"><i class="fa fa-check"></i><b>1.2.2</b> Multiple .Rmd files per chapter</a></li>
 <li class="chapter" data-level="1.2.3" data-path="setup.html"><a href="setup.html#rendering-a-single-chapter"><i class="fa fa-check"></i><b>1.2.3</b> Rendering a single chapter</a></li>
+<li class="chapter" data-level="1.2.4" data-path="setup.html"><a href="setup.html#adding-appendices"><i class="fa fa-check"></i><b>1.2.4</b> Adding appendices</a></li>
+<li class="chapter" data-level="1.2.5" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.2.5</b> Automatic setup scripts</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="setup.html"><a href="setup.html#adding-appendices"><i class="fa fa-check"></i><b>1.3</b> Adding appendices</a></li>
-<li class="chapter" data-level="1.4" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.4</b> Automatic setup scripts</a></li>
+<li class="chapter" data-level="1.3" data-path="setup.html"><a href="setup.html#publishing-your-book"><i class="fa fa-check"></i><b>1.3</b> Publishing your book</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a><ul>
 <li class="chapter" data-level="2.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#general-styles"><i class="fa fa-check"></i><b>2.1</b> General styles</a><ul>
@@ -379,13 +383,41 @@ language:
 <p>You can change the chapter_name from “Chapter” to “Lab” or something else that makes sense for your course if you want. Leave the labels alone unless you’re translating to another language.</p>
 <p>Save and close this file.</p>
 </div>
+<div id="zenodo.json" class="section level4">
+<h4><span class="header-section-number">1.1.5.3</span> .zenodo.json</h4>
+<p>Open <code>.zenodo.json</code>. If you can’t see this file, you need to change your settings to be able to see invisible files (that start with <code>.</code>). In RStudio, go to the <strong><code>Files</code></strong> pane, click on <strong><code>More</code></strong>, and choose <strong><code>Show Hidden Files</code></strong>.</p>
+<p>Edit the file to make it applicable to your book. You can add more authors to the “creators” list. Update the version and publication date each time you <a href="#doi">update the DOI</a>. We follow the version numbering scheme for <a href="http://r-pkgs.had.co.nz/description.html#version" target="_blank">R packages</a>. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0.</p>
+<pre><code>{
+    &quot;description&quot;: &quot;The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.&quot;, 
+    &quot;license&quot;: &quot;cc-by-sa&quot;, 
+    &quot;title&quot;: &quot;PsyTeachR Book Template&quot;, 
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;upload_type&quot;: &quot;software&quot;, 
+    &quot;publication_date&quot;: &quot;2020-05-12&quot;, 
+    &quot;creators&quot;: [
+        {
+            &quot;name&quot;: &quot;Lisa DeBruine&quot;,
+            &quot;affiliation&quot;: &quot;University of Glasgow&quot;,
+            &quot;orcid&quot;: &quot;0000-0002-7523-5539&quot;
+        }
+    ], 
+    &quot;access_right&quot;: &quot;open&quot;, 
+    &quot;related_identifiers&quot;: [
+        {
+            &quot;scheme&quot;: &quot;url&quot;, 
+            &quot;identifier&quot;: &quot;https://PsyTeachR.github.io/book-template/&quot;, 
+            &quot;relation&quot;: &quot;isSupplementTo&quot;
+        }
+    ]
+}</code></pre>
+</div>
 <div id="index.rmd" class="section level4">
-<h4><span class="header-section-number">1.1.5.3</span> index.Rmd</h4>
+<h4><span class="header-section-number">1.1.5.4</span> index.Rmd</h4>
 <p>Open <code>_index_example.Rmd</code>. The top YAML header should look like this:</p>
 <pre><code>--- 
 title: &quot;Template Course&quot;
 author: &quot;psyTeachR&quot;
-date: &quot;2019-10-07&quot;
+date: &quot;2020-05-12&quot;
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -407,7 +439,7 @@ The <code>{-}</code> at the end of the overview title makes sure this chapter is
 <div id="render-the-book" class="section level3">
 <h3><span class="header-section-number">1.1.6</span> Render the book</h3>
 <p>Now you’re ready to create the book. Run the following code in the console.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</a></code></pre></div>
 <p>You’ll see a lot of text in the console window, which should end in something that looks like:</p>
 <pre><code>Output created: docs/index.html
 [1] &quot;/Users/lisad/rproj/psyteachr/book-template/docs/index.html&quot;</code></pre>
@@ -449,18 +481,39 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <div id="rendering-a-single-chapter" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Rendering a single chapter</h3>
 <p>After you’ve added several chapters, the whole book might take a long time to render. If you want to quickly check the formatting on a single chapter, use the following code.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">preview_chapter</span>(<span class="st">&quot;02-style-guide.Rmd&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">preview_chapter</span>(<span class="st">&quot;02-style-guide.Rmd&quot;</span>)</a></code></pre></div>
 </div>
-</div>
-<div id="adding-appendices" class="section level2">
-<h2><span class="header-section-number">1.3</span> Adding appendices</h2>
+<div id="adding-appendices" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Adding appendices</h3>
 <p>Add appendices in the same way as chapters. Just name them following the pattern <code>appendix-a-name.Rmd</code>.</p>
 <p>The file <code>appendix-0.Rmd</code> just contains the appendix header that groups appendices together (<code># (APPENDIX) Appendices {-}</code>). You don’t need to edit this, but you can delete this file if you are not going to use appendices.</p>
 </div>
-<div id="automatic-setup-scripts" class="section level2">
-<h2><span class="header-section-number">1.4</span> Automatic setup scripts</h2>
+<div id="automatic-setup-scripts" class="section level3">
+<h3><span class="header-section-number">1.2.5</span> Automatic setup scripts</h3>
 <p>Every .Rmd file automatically runs two scripts to load libraries you’ll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.</p>
-<p>If there is a package you’ll need in every chapter, you can create a file called <code>R/my_setup.R</code>. Don’t edit <code>R/psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>R/my_setup.R</code> will be loaded after and overrule code in <code>R/psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme — but please don’t!).</p>
+<p>If there is a package you’ll need in every chapter, you can create a file called <code>R/my_setup.R</code>. Don’t edit <code>R/psyteachr_setup.R</code>; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in <code>R/my_setup.R</code> will be loaded after and overrule code in <code>R/psyteachr_setup.R</code> (e.g., if you want to set a different ggplot theme — but please don’t unless you have a good reason!).</p>
+</div>
+</div>
+<div id="publishing-your-book" class="section level2">
+<h2><span class="header-section-number">1.3</span> Publishing your book</h2>
+<ol style="list-style-type: decimal">
+<li>Render the book with <code>bookdown::render_book(&quot;index.Rmd&quot;)</code></li>
+<li>Commit your changes</li>
+</ol>
+<ul>
+<li>(you can do this from the command line if you’re comfortable with git)</li>
+<li>in the <strong><code>Git</code></strong> paneselect all files,</li>
+<li>click one checkbox under <strong><code>Staged</code></strong> to check them all</li>
+<li>click the <strong><code>Commit</code></strong> button</li>
+<li>write a commit message describing the changes you made</li>
+<li>click the <strong><code>Commit</code></strong> button</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Push your changes to GitHub</li>
+</ol>
+<ul>
+<li>click the <strong><code>Push</code></strong> button</li>
+</ul>
 
 </div>
 </div>
@@ -580,11 +633,13 @@ window.onload = function() {
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -592,12 +647,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"google": false
 },
 "fontsettings": {
 "theme": "white",
@@ -609,6 +664,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

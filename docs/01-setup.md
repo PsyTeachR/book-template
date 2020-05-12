@@ -1,4 +1,3 @@
-
 # Setup
 
 ## Starting a new book
@@ -157,6 +156,38 @@ You can change the chapter_name from "Chapter " to "Lab " or something else that
 
 Save and close this file.
 
+#### .zenodo.json
+
+Open `.zenodo.json`. If you can't see this file, you need to change your settings to be able to see invisible files (that start with `.`). In RStudio, go to the **`Files`** pane, click on **`More`**, and choose **`Show Hidden Files`**.
+
+Edit the file to make it applicable to your book. You can add more authors to the "creators" list. Update the version and publication date each time you [update the DOI](#doi). We follow the version numbering scheme for [R packages](http://r-pkgs.had.co.nz/description.html#version){target="_blank"}. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0. 
+
+```
+{
+    "description": "The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.", 
+    "license": "cc-by-sa", 
+    "title": "PsyTeachR Book Template", 
+    "version": "1.0.0",
+    "upload_type": "software", 
+    "publication_date": "2020-05-12", 
+    "creators": [
+        {
+            "name": "Lisa DeBruine",
+            "affiliation": "University of Glasgow",
+            "orcid": "0000-0002-7523-5539"
+        }
+    ], 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://PsyTeachR.github.io/book-template/", 
+            "relation": "isSupplementTo"
+        }
+    ]
+}
+```
+
 #### index.Rmd
 
 Open `_index_example.Rmd`. The top YAML header should look like this:
@@ -165,7 +196,7 @@ Open `_index_example.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2019-10-07"
+date: "2020-05-12"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -248,15 +279,27 @@ After you've added several chapters, the whole book might take a long time to re
 bookdown::preview_chapter("02-style-guide.Rmd")
 ```
 
-## Adding appendices
+### Adding appendices
 
 Add appendices in the same way as chapters. Just name them following the pattern `appendix-a-name.Rmd`.
 
 The file `appendix-0.Rmd` just contains the appendix header that groups appendices together (`# (APPENDIX) Appendices {-}`). You don't need to edit this, but you can delete this file if you are not going to use appendices.
 
-## Automatic setup scripts
+### Automatic setup scripts
 
 Every .Rmd file automatically runs two scripts to load libraries you'll probably use on every page and set consistent styles for figures across books. The code is located in separate files, so you can make updates in a single place that affect every chapter.
 
-If there is a package you'll need in every chapter, you can create a file called `R/my_setup.R`. Don't edit `R/psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `R/my_setup.R` will be loaded after and overrule code in `R/psyteachr_setup.R` (e.g., if you want to set a different ggplot theme — but please don't!).
+If there is a package you'll need in every chapter, you can create a file called `R/my_setup.R`. Don't edit `R/psyteachr_setup.R`; this file is likely to need periodic updating and it is easier to just replace it than to figure out what changes you made. Any code in `R/my_setup.R` will be loaded after and overrule code in `R/psyteachr_setup.R` (e.g., if you want to set a different ggplot theme — but please don't unless you have a good reason!).
 
+## Publishing your book
+
+1. Render the book with `bookdown::render_book("index.Rmd")`
+2. Commit your changes
+  * (you can do this from the command line if you're comfortable with git)
+  * in the **`Git`** paneselect all files,
+  * click one checkbox under **`Staged`** to check them all
+  * click the **`Commit`** button 
+  * write a commit message describing the changes you made
+  * click the **`Commit`** button
+3. Push your changes to GitHub
+  * click the **`Push`** button 

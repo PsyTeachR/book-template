@@ -18,6 +18,8 @@ Bookdown books allow readers to change the font style, size, and background colo
 
 * [British Dyslexia Association](https://www.bdadyslexia.org.uk/educator)
 * [Dyslexia Style Guide](https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf)
+* [Dyslexia and Coding](https://datacarpentry.org/blog/2017/09/coding-and-dyslexia) (Data Carpentry blog post)
+
 
 Some recommendations are highlighted below.
 

@@ -1,0 +1,23 @@
+{
+    "description": "The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.", 
+    "license": "cc-by-sa", 
+    "title": "PsyTeachR Book Template", 
+    "version": "1.0.0",
+    "upload_type": "software", 
+    "publication_date": "2020-05-12", 
+    "creators": [
+        {
+            "name": "Lisa DeBruine",
+            "affiliation": "University of Glasgow",
+            "orcid": "0000-0002-7523-5539"
+        }
+    ], 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://PsyTeachR.github.io/book-template/", 
+            "relation": "isSupplementTo"
+        }
+    ]
+}

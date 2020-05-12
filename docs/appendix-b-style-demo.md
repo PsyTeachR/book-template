@@ -1,4 +1,3 @@
-
 # Style Demo {#style-demo}
 
 Use this page to test styles if you change any defaults. Make sure to test with white, sepia and night themes.
@@ -191,9 +190,9 @@ knitr::kable(iris, caption = "The iris dataset") %>%
 ```
 
 ```
-## Warning in kableExtra::kable_styling(., bootstrap_options = "striped"):
-## Please specify format in kable. kableExtra can customize either HTML or
-## LaTeX outputs. See https://haozhu233.github.io/kableExtra/ for details.
+## Warning in kableExtra::kable_styling(., bootstrap_options = "striped"): Please
+## specify format in kable. kableExtra can customize either HTML or LaTeX outputs.
+## See https://haozhu233.github.io/kableExtra/ for details.
 ```
 
 

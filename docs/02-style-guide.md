@@ -1,4 +1,3 @@
-
 # PsyTeachR Style Guide
 
 The following are specific recommendations to make our course materials look and act consistently to help students navigate more easily from one year to the next. These styles will be continuously evolving, so do discuss with the team if any recommendations don't meet your needs or you want to propose new recommendations.
@@ -266,6 +265,11 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
 ```
 
 <code>&#96;&#96;&#96;</code></div>
+
+
+```
+## `geom_smooth()` using formula 'y ~ x'
+```
 
 <div class="figure" style="text-align: center">
 <img src="02-style-guide_files/figure-html/img-dynamo-1.png" alt="Dynamically created plot." width="75%" />

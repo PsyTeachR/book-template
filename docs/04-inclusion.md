@@ -1,4 +1,3 @@
-
 # Inclusion
 
 We want our resources to be accessible to everyone. This means thinking about accessibility with regards to disability, language, identity, and other characteristics. This is a work in progress; feel free to suggest additions.
@@ -19,6 +18,8 @@ Bookdown books allow readers to change the font style, size, and background colo
 
 * [British Dyslexia Association](https://www.bdadyslexia.org.uk/educator)
 * [Dyslexia Style Guide](https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf)
+* [Dyslexia and Coding](https://datacarpentry.org/blog/2017/09/coding-and-dyslexia) (Data Carpentry blog post)
+
 
 Some recommendations are highlighted below.
 
@@ -50,6 +51,11 @@ In plots, add secondary indicators in addition to colour, such as text labels or
 <img src="04-inclusion_files/figure-html/plot-text-labels-facet-1.png" alt="Facet labels and redundant colour information." width="100%" />
 <p class="caption">(\#fig:plot-text-labels-facet)Facet labels and redundant colour information.</p>
 </div>
+
+
+```
+## `geom_smooth()` using formula 'y ~ x'
+```
 
 <div class="figure" style="text-align: center">
 <img src="04-inclusion_files/figure-html/plot-shapes-1.png" alt="Supplement point colours with shapes." width="100%" />

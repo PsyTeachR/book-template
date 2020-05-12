@@ -1,4 +1,3 @@
-
 # Webex
 
 Use the following code to install [webex](https://github.com/psyteachr/webex) from CRAN:
@@ -22,7 +21,7 @@ You can also create these questions dynamically, using variables from your R ses
 
 
 
-- The square root of 49 is: <input class='solveme nospaces' size='1' data-answer='["7"]'/>
+- The square root of 4 is: <input class='solveme nospaces' size='1' data-answer='["2"]'/>
 
 The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE` (e.g., `fitb("E", ignore_case = TRUE)`).
 
@@ -80,8 +79,8 @@ plot(cars$speed, cars$dist)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="03-webex_files/figure-html/unnamed-chunk-4-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-4)**CAPTION THIS FIGURE!!**</p>
+<img src="03-webex_files/figure-html/unnamed-chunk-3-1.png" alt="**CAPTION THIS FIGURE!!**" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-3)**CAPTION THIS FIGURE!!**</p>
 </div>
 
 </div>
