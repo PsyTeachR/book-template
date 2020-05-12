@@ -153,6 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.5" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.2.5</b> Automatic setup scripts</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup.html"><a href="setup.html#publishing-your-book"><i class="fa fa-check"></i><b>1.3</b> Publishing your book</a></li>
+<li class="chapter" data-level="1.4" data-path="setup.html"><a href="setup.html#doi"><i class="fa fa-check"></i><b>1.4</b> Getting a DOI</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a><ul>
 <li class="chapter" data-level="2.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#general-styles"><i class="fa fa-check"></i><b>2.1</b> General styles</a><ul>
@@ -386,7 +387,7 @@ language:
 <div id="zenodo.json" class="section level4">
 <h4><span class="header-section-number">1.1.5.3</span> .zenodo.json</h4>
 <p>Open <code>.zenodo.json</code>. If you can’t see this file, you need to change your settings to be able to see invisible files (that start with <code>.</code>). In RStudio, go to the <strong><code>Files</code></strong> pane, click on <strong><code>More</code></strong>, and choose <strong><code>Show Hidden Files</code></strong>.</p>
-<p>Edit the file to make it applicable to your book. You can add more authors to the “creators” list. Update the version and publication date each time you <a href="#doi">update the DOI</a>. We follow the version numbering scheme for <a href="http://r-pkgs.had.co.nz/description.html#version" target="_blank">R packages</a>. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0.</p>
+<p>Edit the file to make it applicable to your book. You can add more authors to the “creators” list. Update the version and publication date each time you <a href="setup.html#doi">update the DOI</a>. We follow the version numbering scheme for <a href="http://r-pkgs.had.co.nz/description.html#version" target="_blank">R packages</a>. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0.</p>
 <pre><code>{
     &quot;description&quot;: &quot;The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.&quot;, 
     &quot;license&quot;: &quot;cc-by-sa&quot;, 
@@ -498,22 +499,58 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <h2><span class="header-section-number">1.3</span> Publishing your book</h2>
 <ol style="list-style-type: decimal">
 <li>Render the book with <code>bookdown::render_book(&quot;index.Rmd&quot;)</code></li>
-<li>Commit your changes</li>
-</ol>
+<li>Commit your changes
 <ul>
 <li>(you can do this from the command line if you’re comfortable with git)</li>
-<li>in the <strong><code>Git</code></strong> paneselect all files,</li>
-<li>click one checkbox under <strong><code>Staged</code></strong> to check them all</li>
-<li>click the <strong><code>Commit</code></strong> button</li>
-<li>write a commit message describing the changes you made</li>
-<li>click the <strong><code>Commit</code></strong> button</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Push your changes to GitHub</li>
-</ol>
+<li>In the <strong><code>Git</code></strong> paneselect all files,</li>
+<li>Click one checkbox under <strong><code>Staged</code></strong> to check them all</li>
+<li>Click the <strong><code>Commit</code></strong> button</li>
+<li>Write a commit message describing the changes you made</li>
+<li>Click the <strong><code>Commit</code></strong> button</li>
+</ul></li>
+<li>Push your changes to GitHub
 <ul>
-<li>click the <strong><code>Push</code></strong> button</li>
-</ul>
+<li>click the <strong><code>Push</code></strong> button with the green up arrow</li>
+</ul></li>
+<li>Set up GitHub Pages
+<ul>
+<li>This only needs to be done once per repository</li>
+<li>Go to the repository on GitHub</li>
+<li>Click on the <strong><code>Settings</code></strong> tab</li>
+<li>Scroll down to <strong><code>GitHub Pages</code></strong></li>
+<li>Change Source to “master branch /docs folder”</li>
+<li>If the page refreshes, scroll back down to <strong><code>GitHub Pages</code></strong> and you should see a green bar with “Your site is published at <a href="https://xxxxxx.github.io/repo-name/" class="uri">https://xxxxxx.github.io/repo-name/</a>”</li>
+<li>Click on the link to see your book</li>
+<li>It will usually take a few minutes for your files to be copied over to the web server, so refresh a few times</li>
+</ul></li>
+</ol>
+</div>
+<div id="doi" class="section level2">
+<h2><span class="header-section-number">1.4</span> Getting a DOI</h2>
+<p>You can gve your book a DOI using <a href="https://zenodo.org" target="_blank">Zenodo</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Make sure the <code>.zenodo.json</code> file is up to date</li>
+<li>Log into <a href="https://zenodo.org" target="_blank">Zenodo</a> using your github account</li>
+<li>Go to <a href="https://zenodo.org/account/settings/github/" target="_blank">GitHub Settings</a> and follow the instructions to access your github account and enable the relevant repository
+<ul>
+<li>Flip the switch to turn on Zenodo for your repository</li>
+<li>Go to that repository on github.com</li>
+<li>Click <strong><code>releases</code></strong></li>
+<li>Click the <strong><code>Create a new release</code></strong> button</li>
+<li>Add the version number, title, and description. Make sure they are consistent with the info in <code>.zenodo.json</code></li>
+<li>You don’t need to attach any files or binaries</li>
+<li>Check “This is a pre-release” if you are just setting up your DOI and this version isn’t complete</li>
+<li>Click the <strong><code>Publish release</code></strong> button</li>
+</ul></li>
+<li>Add your badge
+<ul>
+<li>Go back to Zenodo and click on the DOI to get the badge.</li>
+<li>Copy the HTML version</li>
+<li>Open <code>_output.yml</code> and add the HTML badge as follows:
+<code>before: |     &lt;li&gt;&lt;a href=&quot;./&quot;&gt;Book Template&lt;/a&gt;&lt;/li&gt;     &lt;li&gt;&lt;a href=&quot;https://zenodo.org/badge/latestdoi/000000000&quot;&gt;&lt;img src=&quot;https://zenodo.org/badge/000000000.svg&quot; alt=&quot;DOI&quot;&gt;&lt;/a&gt;&lt;/li&gt;</code></li>
+<li>You can also add the citation to a README file for your repository and anywhere else you like.</li>
+</ul></li>
+</ol>
 
 </div>
 </div>
