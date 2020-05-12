@@ -156,38 +156,6 @@ You can change the chapter_name from "Chapter " to "Lab " or something else that
 
 Save and close this file.
 
-#### .zenodo.json
-
-Open `.zenodo.json`. If you can't see this file, you need to change your settings to be able to see invisible files (that start with `.`). In RStudio, go to the **`Files`** pane, click on **`More`**, and choose **`Show Hidden Files`**.
-
-Edit the file to make it applicable to your book. You can add more authors to the "creators" list. Update the version and publication date each time you [update the DOI](#doi). We follow the version numbering scheme for [R packages](http://r-pkgs.had.co.nz/description.html#version){target="_blank"}. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0. 
-
-```
-{
-    "description": "The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.", 
-    "license": "cc-by-sa", 
-    "title": "PsyTeachR Book Template", 
-    "version": "1.0.0",
-    "upload_type": "software", 
-    "publication_date": "2020-05-12", 
-    "creators": [
-        {
-            "name": "Lisa DeBruine",
-            "affiliation": "University of Glasgow",
-            "orcid": "0000-0002-7523-5539"
-        }
-    ], 
-    "access_right": "open", 
-    "related_identifiers": [
-        {
-            "scheme": "url", 
-            "identifier": "https://PsyTeachR.github.io/book-template/", 
-            "relation": "isSupplementTo"
-        }
-    ]
-}
-```
-
 #### index.Rmd
 
 Open `_index_example.Rmd`. The top YAML header should look like this:
@@ -317,9 +285,42 @@ If there is a package you'll need in every chapter, you can create a file called
 
 You can gve your book a DOI using [Zenodo](https://zenodo.org){target="_blank"}. 
 
-1. Make sure the `.zenodo.json` file is up to date
-2. Log into [Zenodo](https://zenodo.org){target="_blank"} using your github account
-3. Go to [GitHub Settings](https://zenodo.org/account/settings/github/){target="_blank"} and follow the instructions to access your github account and enable the relevant repository 
+#### .zenodo.json {#zenodo}
+
+Open `.zenodo.json`. If you can't see this file, you need to change your settings to be able to see invisible files (that start with `.`). In RStudio, go to the **`Files`** pane, click on **`More`**, and choose **`Show Hidden Files`**.
+
+Edit the file to make it applicable to your book. You can add more authors to the "creators" list. Update the version and publication date each time you [update the DOI](#doi). We follow the version numbering scheme for [R packages](http://r-pkgs.had.co.nz/description.html#version){target="_blank"}. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0. 
+
+```
+{
+    "description": "The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.", 
+    "license": "cc-by-sa", 
+    "title": "PsyTeachR Book Template", 
+    "version": "1.0.0",
+    "upload_type": "software", 
+    "publication_date": "2020-05-12", 
+    "creators": [
+        {
+            "name": "Lisa DeBruine",
+            "affiliation": "University of Glasgow",
+            "orcid": "0000-0002-7523-5539"
+        }
+    ], 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://PsyTeachR.github.io/book-template/", 
+            "relation": "isSupplementTo"
+        }
+    ]
+}
+```
+
+### Setting up a DOI for the first time
+
+1. Log into [Zenodo](https://zenodo.org){target="_blank"} using your github account
+2. Go to [GitHub Settings](https://zenodo.org/account/settings/github/){target="_blank"} and follow the instructions to access your github account and enable the relevant repository 
     * Flip the switch to turn on Zenodo for your repository
     * Go to that repository on github.com
     * Click **`releases`**
@@ -328,7 +329,7 @@ You can gve your book a DOI using [Zenodo](https://zenodo.org){target="_blank"}.
     * You don't need to attach any files or binaries
     * Check "This is a pre-release" if you are just setting up your DOI and this version isn't complete
     * Click the **`Publish release`** button
-4. Add your badge
+3. Add your badge
     * Go back to Zenodo and click on the DOI to get the badge. 
     * Copy the HTML version
     * Open `_output.yml` and add the HTML badge as follows:
@@ -338,3 +339,11 @@ You can gve your book a DOI using [Zenodo](https://zenodo.org){target="_blank"}.
           <li><a href="https://zenodo.org/badge/latestdoi/000000000"><img src="https://zenodo.org/badge/000000000.svg" alt="DOI"></a></li>
         ```
     * You can also add the citation to a README file for your repository and anywhere else you like.
+    
+### Updating your book
+
+You only need to do this when you are publishing a new major version, such as adding new chapters or big revisions between years.
+
+* Make sure the `.zenodo.json` file is up to date
+* Create a new release on GitHub
+* Go to Zenodo to get your updated DOI and badge (or you can just use the all-versions DOI rather than the version-specific one)

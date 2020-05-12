@@ -154,7 +154,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.5" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.2.5</b> Automatic setup scripts</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup.html"><a href="setup.html#publishing-your-book"><i class="fa fa-check"></i><b>1.3</b> Publishing your book</a></li>
-<li class="chapter" data-level="1.4" data-path="setup.html"><a href="setup.html#doi"><i class="fa fa-check"></i><b>1.4</b> Getting a DOI</a></li>
+<li class="chapter" data-level="1.4" data-path="setup.html"><a href="setup.html#doi"><i class="fa fa-check"></i><b>1.4</b> Getting a DOI</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="setup.html"><a href="setup.html#setting-up-a-doi-for-the-first-time"><i class="fa fa-check"></i><b>1.4.1</b> Setting up a DOI for the first time</a></li>
+<li class="chapter" data-level="1.4.2" data-path="setup.html"><a href="setup.html#updating-your-book"><i class="fa fa-check"></i><b>1.4.2</b> Updating your book</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a><ul>
 <li class="chapter" data-level="2.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#general-styles"><i class="fa fa-check"></i><b>2.1</b> General styles</a><ul>
@@ -385,36 +388,8 @@ language:
 <p>You can change the chapter_name from “Chapter” to “Lab” or something else that makes sense for your course if you want. Leave the labels alone unless you’re translating to another language.</p>
 <p>Save and close this file.</p>
 </div>
-<div id="zenodo.json" class="section level4">
-<h4><span class="header-section-number">1.1.5.3</span> .zenodo.json</h4>
-<p>Open <code>.zenodo.json</code>. If you can’t see this file, you need to change your settings to be able to see invisible files (that start with <code>.</code>). In RStudio, go to the <strong><code>Files</code></strong> pane, click on <strong><code>More</code></strong>, and choose <strong><code>Show Hidden Files</code></strong>.</p>
-<p>Edit the file to make it applicable to your book. You can add more authors to the “creators” list. Update the version and publication date each time you <a href="setup.html#doi">update the DOI</a>. We follow the version numbering scheme for <a href="http://r-pkgs.had.co.nz/description.html#version" target="_blank">R packages</a>. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0.</p>
-<pre><code>{
-    &quot;description&quot;: &quot;The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.&quot;, 
-    &quot;license&quot;: &quot;cc-by-sa&quot;, 
-    &quot;title&quot;: &quot;PsyTeachR Book Template&quot;, 
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;upload_type&quot;: &quot;software&quot;, 
-    &quot;publication_date&quot;: &quot;2020-05-12&quot;, 
-    &quot;creators&quot;: [
-        {
-            &quot;name&quot;: &quot;Lisa DeBruine&quot;,
-            &quot;affiliation&quot;: &quot;University of Glasgow&quot;,
-            &quot;orcid&quot;: &quot;0000-0002-7523-5539&quot;
-        }
-    ], 
-    &quot;access_right&quot;: &quot;open&quot;, 
-    &quot;related_identifiers&quot;: [
-        {
-            &quot;scheme&quot;: &quot;url&quot;, 
-            &quot;identifier&quot;: &quot;https://PsyTeachR.github.io/book-template/&quot;, 
-            &quot;relation&quot;: &quot;isSupplementTo&quot;
-        }
-    ]
-}</code></pre>
-</div>
 <div id="index.rmd" class="section level4">
-<h4><span class="header-section-number">1.1.5.4</span> index.Rmd</h4>
+<h4><span class="header-section-number">1.1.5.3</span> index.Rmd</h4>
 <p>Open <code>_index_example.Rmd</code>. The top YAML header should look like this:</p>
 <pre><code>--- 
 title: &quot;Template Course&quot;
@@ -441,7 +416,7 @@ The <code>{-}</code> at the end of the overview title makes sure this chapter is
 <div id="render-the-book" class="section level3">
 <h3><span class="header-section-number">1.1.6</span> Render the book</h3>
 <p>Now you’re ready to create the book. Run the following code in the console.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</a></code></pre></div>
 <p>You’ll see a lot of text in the console window, which should end in something that looks like:</p>
 <pre><code>Output created: docs/index.html
 [1] &quot;/Users/lisad/rproj/psyteachr/book-template/docs/index.html&quot;</code></pre>
@@ -483,7 +458,7 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <div id="rendering-a-single-chapter" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Rendering a single chapter</h3>
 <p>After you’ve added several chapters, the whole book might take a long time to render. If you want to quickly check the formatting on a single chapter, use the following code.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">preview_chapter</span>(<span class="st">&quot;02-style-guide.Rmd&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">preview_chapter</span>(<span class="st">&quot;02-style-guide.Rmd&quot;</span>)</a></code></pre></div>
 </div>
 <div id="adding-appendices" class="section level3">
 <h3><span class="header-section-number">1.2.4</span> Adding appendices</h3>
@@ -529,8 +504,37 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <div id="doi" class="section level2">
 <h2><span class="header-section-number">1.4</span> Getting a DOI</h2>
 <p>You can gve your book a DOI using <a href="https://zenodo.org" target="_blank">Zenodo</a>.</p>
+<div id="zenodo" class="section level4">
+<h4><span class="header-section-number">1.4.0.1</span> .zenodo.json</h4>
+<p>Open <code>.zenodo.json</code>. If you can’t see this file, you need to change your settings to be able to see invisible files (that start with <code>.</code>). In RStudio, go to the <strong><code>Files</code></strong> pane, click on <strong><code>More</code></strong>, and choose <strong><code>Show Hidden Files</code></strong>.</p>
+<p>Edit the file to make it applicable to your book. You can add more authors to the “creators” list. Update the version and publication date each time you <a href="setup.html#doi">update the DOI</a>. We follow the version numbering scheme for <a href="http://r-pkgs.had.co.nz/description.html#version" target="_blank">R packages</a>. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0.</p>
+<pre><code>{
+    &quot;description&quot;: &quot;The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.&quot;, 
+    &quot;license&quot;: &quot;cc-by-sa&quot;, 
+    &quot;title&quot;: &quot;PsyTeachR Book Template&quot;, 
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;upload_type&quot;: &quot;software&quot;, 
+    &quot;publication_date&quot;: &quot;2020-05-12&quot;, 
+    &quot;creators&quot;: [
+        {
+            &quot;name&quot;: &quot;Lisa DeBruine&quot;,
+            &quot;affiliation&quot;: &quot;University of Glasgow&quot;,
+            &quot;orcid&quot;: &quot;0000-0002-7523-5539&quot;
+        }
+    ], 
+    &quot;access_right&quot;: &quot;open&quot;, 
+    &quot;related_identifiers&quot;: [
+        {
+            &quot;scheme&quot;: &quot;url&quot;, 
+            &quot;identifier&quot;: &quot;https://PsyTeachR.github.io/book-template/&quot;, 
+            &quot;relation&quot;: &quot;isSupplementTo&quot;
+        }
+    ]
+}</code></pre>
+</div>
+<div id="setting-up-a-doi-for-the-first-time" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Setting up a DOI for the first time</h3>
 <ol style="list-style-type: decimal">
-<li>Make sure the <code>.zenodo.json</code> file is up to date</li>
 <li>Log into <a href="https://zenodo.org" target="_blank">Zenodo</a> using your github account</li>
 <li>Go to <a href="https://zenodo.org/account/settings/github/" target="_blank">GitHub Settings</a> and follow the instructions to access your github account and enable the relevant repository
 <ul>
@@ -552,7 +556,17 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <li>You can also add the citation to a README file for your repository and anywhere else you like.</li>
 </ul></li>
 </ol>
+</div>
+<div id="updating-your-book" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Updating your book</h3>
+<p>You only need to do this when you are publishing a new major version, such as adding new chapters or big revisions between years.</p>
+<ul>
+<li>Make sure the <code>.zenodo.json</code> file is up to date</li>
+<li>Create a new release on GitHub</li>
+<li>Go to Zenodo to get your updated DOI and badge (or you can just use the all-versions DOI rather than the version-specific one)</li>
+</ul>
 
+</div>
 </div>
 </div>
 <div class="psyteachr_footer">
