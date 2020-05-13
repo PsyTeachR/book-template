@@ -24,7 +24,7 @@
 <meta name="author" content="Lisa DeBruine" />
 
 
-<meta name="date" content="2020-05-12" />
+<meta name="date" content="2020-05-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -394,7 +394,7 @@ language:
 <pre><code>--- 
 title: &quot;Template Course&quot;
 author: &quot;psyTeachR&quot;
-date: &quot;2020-05-12&quot;
+date: &quot;2020-05-13&quot;
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -507,7 +507,7 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <div id="zenodo" class="section level4">
 <h4><span class="header-section-number">1.4.0.1</span> .zenodo.json</h4>
 <p>Open <code>.zenodo.json</code>. If you can’t see this file, you need to change your settings to be able to see invisible files (that start with <code>.</code>). In RStudio, go to the <strong><code>Files</code></strong> pane, click on <strong><code>More</code></strong>, and choose <strong><code>Show Hidden Files</code></strong>.</p>
-<p>Edit the file to make it applicable to your book. You can add more authors to the “creators” list. Update the version and publication date each time you <a href="setup.html#doi">update the DOI</a>. We follow the version numbering scheme for <a href="http://r-pkgs.had.co.nz/description.html#version" target="_blank">R packages</a>. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0.</p>
+<p>Edit the file to make it applicable to your book. You can add more authors to the “creators” list. Update the version and publication date each time you update the DOI. We follow the version numbering scheme for <a href="http://r-pkgs.had.co.nz/description.html#version" target="_blank">R packages</a>. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0.</p>
 <pre><code>{
     &quot;description&quot;: &quot;The 2019-2020 version of the course book template for the Institute of Neuroscience and Psychology at the University of Glasgow.&quot;, 
     &quot;license&quot;: &quot;cc-by-sa&quot;, 
@@ -520,6 +520,11 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
             &quot;name&quot;: &quot;Lisa DeBruine&quot;,
             &quot;affiliation&quot;: &quot;University of Glasgow&quot;,
             &quot;orcid&quot;: &quot;0000-0002-7523-5539&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Phil McAleer&quot;,
+            &quot;affiliation&quot;: &quot;University of Glasgow&quot;,
+            &quot;orcid&quot;: &quot;0000-0002-4523-2097&quot;
         }
     ], 
     &quot;access_right&quot;: &quot;open&quot;, 
@@ -542,14 +547,14 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <li>Go to that repository on github.com</li>
 <li>Click <strong><code>releases</code></strong></li>
 <li>Click the <strong><code>Create a new release</code></strong> button</li>
-<li>Add the version number, title, and description. Make sure they are consistent with the info in <code>.zenodo.json</code></li>
+<li>Make sure the tag version, title, and description are consistent with the version, title, and description in <code>.zenodo.json</code></li>
 <li>You don’t need to attach any files or binaries</li>
 <li>Check “This is a pre-release” if you are just setting up your DOI and this version isn’t complete</li>
 <li>Click the <strong><code>Publish release</code></strong> button</li>
 </ul></li>
 <li>Add your badge
 <ul>
-<li>Go back to Zenodo and click on the DOI to get the badge.</li>
+<li>Go back to Zenodo and click on the DOI to get the badge. If it’s yellow, then Zenodo is still processing your updates, so wait a minute and refresh until it turns green</li>
 <li>Copy the HTML version</li>
 <li>Open <code>_output.yml</code> and add the HTML badge as follows:
 <code>before: |     &lt;li&gt;&lt;a href=&quot;./&quot;&gt;Book Template&lt;/a&gt;&lt;/li&gt;     &lt;li&gt;&lt;a href=&quot;https://zenodo.org/badge/latestdoi/000000000&quot;&gt;&lt;img src=&quot;https://zenodo.org/badge/000000000.svg&quot; alt=&quot;DOI&quot;&gt;&lt;/a&gt;&lt;/li&gt;</code></li>

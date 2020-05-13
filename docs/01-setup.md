@@ -164,7 +164,7 @@ Open `_index_example.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2020-05-12"
+date: "2020-05-13"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -289,7 +289,7 @@ You can gve your book a DOI using [Zenodo](https://zenodo.org){target="_blank"}.
 
 Open `.zenodo.json`. If you can't see this file, you need to change your settings to be able to see invisible files (that start with `.`). In RStudio, go to the **`Files`** pane, click on **`More`**, and choose **`Show Hidden Files`**.
 
-Edit the file to make it applicable to your book. You can add more authors to the "creators" list. Update the version and publication date each time you [update the DOI](#doi). We follow the version numbering scheme for [R packages](http://r-pkgs.had.co.nz/description.html#version){target="_blank"}. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0. 
+Edit the file to make it applicable to your book. You can add more authors to the "creators" list. Update the version and publication date each time you update the DOI. We follow the version numbering scheme for [R packages](http://r-pkgs.had.co.nz/description.html#version){target="_blank"}. In-prep (beta) versions should have version numbers starting with 0.0.9000, and the first full release should be 1.0.0. 
 
 ```
 {
@@ -304,6 +304,11 @@ Edit the file to make it applicable to your book. You can add more authors to th
             "name": "Lisa DeBruine",
             "affiliation": "University of Glasgow",
             "orcid": "0000-0002-7523-5539"
+        },
+        {
+            "name": "Phil McAleer",
+            "affiliation": "University of Glasgow",
+            "orcid": "0000-0002-4523-2097"
         }
     ], 
     "access_right": "open", 
@@ -325,12 +330,12 @@ Edit the file to make it applicable to your book. You can add more authors to th
     * Go to that repository on github.com
     * Click **`releases`**
     * Click the **`Create a new release`** button
-    * Add the version number, title, and description. Make sure they are consistent with the info in `.zenodo.json`
+    * Make sure the tag version, title, and description are consistent with the version, title, and description in `.zenodo.json`
     * You don't need to attach any files or binaries
     * Check "This is a pre-release" if you are just setting up your DOI and this version isn't complete
     * Click the **`Publish release`** button
 3. Add your badge
-    * Go back to Zenodo and click on the DOI to get the badge. 
+    * Go back to Zenodo and click on the DOI to get the badge. If it's yellow, then Zenodo is still processing your updates, so wait a minute and refresh until it turns green
     * Copy the HTML version
     * Open `_output.yml` and add the HTML badge as follows:
         ```
