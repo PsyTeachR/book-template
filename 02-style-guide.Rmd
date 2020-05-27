@@ -194,7 +194,7 @@ knitr::include_graphics("images/psyteachr_logo.png")
 
 ```{r img-psyteacher-logo, echo=FALSE, fig.cap="PsyTeachR Logo displayed by the previous code block."}
 
-knitr::include_graphics("images/psyteachr_logo.png")
+knitr::include_graphics("images/psyTeachR_logo.png")
 
 ```
 
