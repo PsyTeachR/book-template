@@ -169,6 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5.5" data-path="setup.html"><a href="setup.html#render-the-book-1"><i class="fa fa-check"></i><b>1.5.5</b> Render the book</a></li>
 <li class="chapter" data-level="1.5.6" data-path="setup.html"><a href="setup.html#install-your-package"><i class="fa fa-check"></i><b>1.5.6</b> Install your package</a></li>
 <li class="chapter" data-level="1.5.7" data-path="setup.html"><a href="setup.html#add-datasets"><i class="fa fa-check"></i><b>1.5.7</b> Add datasets</a></li>
+<li class="chapter" data-level="1.5.8" data-path="setup.html"><a href="setup.html#add-shiny-apps"><i class="fa fa-check"></i><b>1.5.8</b> Add Shiny Apps</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a><ul>
@@ -653,7 +654,7 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <h3><span class="header-section-number">1.5.5</span> Render the book</h3>
 <p>Render your book and copy the content of <code>docs</code> (the online version) to <code>inst/book</code> (the offline package version).</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="setup.html#cb12-1"></a><span class="co"># render a chapter or the whole book</span></span>
-<span id="cb12-2"><a href="setup.html#cb12-2"></a>bookdown<span class="op">::</span><span class="kw">preview_chapter</span>(<span class="st">&quot;01-intro.Rmd&quot;</span>)</span>
+<span id="cb12-2"><a href="setup.html#cb12-2"></a>bookdown<span class="op">::</span><span class="kw">preview_chapter</span>(<span class="st">&quot;01-setup.Rmd&quot;</span>)</span>
 <span id="cb12-3"><a href="setup.html#cb12-3"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</span>
 <span id="cb12-4"><a href="setup.html#cb12-4"></a></span>
 <span id="cb12-5"><a href="setup.html#cb12-5"></a><span class="co"># copies docs dir to inst/book</span></span>
@@ -746,6 +747,27 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <span id="cb16-20"><a href="setup.html#cb16-20"></a>             <span class="st">&quot;Country Codes&quot;</span>, </span>
 <span id="cb16-21"><a href="setup.html#cb16-21"></a>             <span class="st">&quot;Multiple country, subregion, and region codes for 249 countries.</span><span class="ch">\n</span><span class="st">From https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes&quot;</span>, itemdesc, <span class="dt">source =</span> <span class="st">&quot;https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv&quot;</span>)</span></code></pre></div>
 <p>This will create a new file in the <code>R</code> directory called <code>country_codes.R</code> that contains your dataset description. Add it to the package documentation by running <code>devtools::document()</code>.</p>
+</div>
+<div id="add-shiny-apps" class="section level3">
+<h3><span class="header-section-number">1.5.8</span> Add Shiny Apps</h3>
+<p>You can add shiny apps to you package easily. Just put any app directories in <code>inst/app</code> and add the following code to a new file <code>R/app.R</code> (replacing “YOUR.PACKAGE.NAME”).</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="setup.html#cb17-1"></a><span class="co">#&#39; Launch Shiny App</span></span>
+<span id="cb17-2"><a href="setup.html#cb17-2"></a><span class="co">#&#39;</span></span>
+<span id="cb17-3"><a href="setup.html#cb17-3"></a><span class="co">#&#39; @param name The name of the app to run</span></span>
+<span id="cb17-4"><a href="setup.html#cb17-4"></a><span class="co">#&#39; @param ... arguments to pass to shiny::runApp</span></span>
+<span id="cb17-5"><a href="setup.html#cb17-5"></a><span class="co">#&#39;</span></span>
+<span id="cb17-6"><a href="setup.html#cb17-6"></a><span class="co">#&#39; @export</span></span>
+<span id="cb17-7"><a href="setup.html#cb17-7"></a><span class="co">#&#39;</span></span>
+<span id="cb17-8"><a href="setup.html#cb17-8"></a>app &lt;-<span class="st"> </span><span class="cf">function</span>(name, ...) {</span>
+<span id="cb17-9"><a href="setup.html#cb17-9"></a>  appDir &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="kw">paste0</span>(<span class="st">&quot;apps/&quot;</span>, name), <span class="dt">package =</span> <span class="st">&quot;YOUR.PACKAGE.NAME&quot;</span>)</span>
+<span id="cb17-10"><a href="setup.html#cb17-10"></a>  <span class="cf">if</span> (appDir <span class="op">==</span><span class="st"> &quot;&quot;</span>) <span class="kw">stop</span>(<span class="st">&quot;The shiny app &quot;</span>, name, <span class="st">&quot; does not exist&quot;</span>)</span>
+<span id="cb17-11"><a href="setup.html#cb17-11"></a>  shiny<span class="op">::</span><span class="kw">runApp</span>(appDir, ...)</span>
+<span id="cb17-12"><a href="setup.html#cb17-12"></a>}</span></code></pre></div>
+<p>Make sure you add shiny and any other packages used in your shiny app as dependencies. Document to add the <code>app()</code> function and install the updated package.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="setup.html#cb18-1"></a>usethis<span class="op">::</span><span class="kw">use_package</span>(<span class="st">&quot;shiny&quot;</span>)</span>
+<span id="cb18-2"><a href="setup.html#cb18-2"></a>usethis<span class="op">::</span><span class="kw">use_package</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span>
+<span id="cb18-3"><a href="setup.html#cb18-3"></a>devtools<span class="op">::</span><span class="kw">document</span>()</span>
+<span id="cb18-4"><a href="setup.html#cb18-4"></a>devtools<span class="op">::</span><span class="kw">install</span>()</span></code></pre></div>
 
 </div>
 </div>
@@ -913,20 +935,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

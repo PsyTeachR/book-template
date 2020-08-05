@@ -437,7 +437,7 @@ Render your book and copy the content of `docs` (the online version) to `inst/bo
 
 ```r
 # render a chapter or the whole book
-bookdown::preview_chapter("01-intro.Rmd")
+bookdown::preview_chapter("01-setup.Rmd")
 bookdown::render_book("index.Rmd")
 
 # copies docs dir to inst/book
@@ -549,6 +549,38 @@ make_dataset("country_codes",
 ```
 
 This will create a new file in the `R` directory called `country_codes.R` that contains your dataset description. Add it to the package documentation by running `devtools::document()`. 
+
+### Add Shiny Apps
+
+You can add shiny apps to you package easily. Just put any app directories in `inst/app` and add the following code to a new file `R/app.R` (replacing "YOUR.PACKAGE.NAME").
+
+
+```r
+#' Launch Shiny App
+#'
+#' @param name The name of the app to run
+#' @param ... arguments to pass to shiny::runApp
+#'
+#' @export
+#'
+app <- function(name, ...) {
+  appDir <- system.file(paste0("apps/", name), package = "YOUR.PACKAGE.NAME")
+  if (appDir == "") stop("The shiny app ", name, " does not exist")
+  shiny::runApp(appDir, ...)
+}
+```
+
+Make sure you add shiny and any other packages used in your shiny app as dependencies. Document to add the `app()` function and install the updated package.
+
+
+```r
+usethis::use_package("shiny")
+usethis::use_package("shinydashboard")
+devtools::document()
+devtools::install()
+```
+
+
 
 
 
