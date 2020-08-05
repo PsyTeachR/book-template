@@ -552,7 +552,7 @@ This will create a new file in the `R` directory called `country_codes.R` that c
 
 ### Add Shiny Apps
 
-You can add shiny apps to you package easily. Just put any app directories in `inst/app` and add the following code to a new file `R/app.R` (replacing "YOUR.PACKAGE.NAME").
+You can add shiny apps to you package easily. Just put any app directories in `inst/apps` and add the following code to a new file `R/app.R` (replacing "YOUR.PACKAGE.NAME").
 
 
 ```r
