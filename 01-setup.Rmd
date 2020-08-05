@@ -413,7 +413,7 @@ This is a function to open the local copy of the book in a web browser. Make a f
 #'
 book <- function() {
   file <- system.file("book", "index.html", package = "YOURPACKAGENAME")
-  utils::browseURL(file, browser = )
+  utils::browseURL(file)
 }
 ```
 
