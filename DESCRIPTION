@@ -1,0 +1,22 @@
+Package: book.template
+Title: psyTeachR Course Book Guide
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Lisa",
+           family = "DeBruine",
+           role = c("aut", "cre"),
+           email = "lisa.debruine@glasgow.ac.uk",
+           comment = c(ORCID = "0000-0002-7523-5539"))
+Description: A quick start for the specific templates we're using at UofG Psychology.
+License: CC BY 4.0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    dplyr,
+    tidyr,
+    ggplot2
+Depends: 
+    tidyverse,
+    R (>= 2.10)

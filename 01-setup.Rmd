@@ -341,3 +341,201 @@ You only need to do this when you are publishing a new major version, such as ad
 * Make sure the `.zenodo.json` file is up to date
 * Create a new release on GitHub
 * Go to Zenodo to get your updated DOI and badge (or you can just use the all-versions DOI rather than the version-specific one)
+
+## Converting to a package
+
+You can convert your book to a package to gain a few advantages:
+
+1. Students can access the course book offline
+2. You can include all packages to be used in the course as dependencies so they are all downloaded with the book package
+3. You can include datasets for the course
+4. You can include any other resources, such as template files
+
+If you already have a book set up like above, follow these steps to convert it to a package:
+
+### Package Infrastructure
+
+Run the following code to create some of the package infrastructure. You can do everything manually, but I like to use the extremely helpful package `usethis`.
+
+```{r, eval = FALSE}
+
+# create a package DESCRIPTION file
+usethis::use_description(check_name = FALSE)
+
+# add license (change psyTeachR to main author)
+usethis::use_ccby_license("psyTeachR")
+
+# create the directory where the local copy of the book will go
+dir.create("inst/book", recursive = TRUE)
+
+# ignore book files when building the package
+usethis::use_build_ignore("_bookdown_files")
+usethis::use_build_ignore("files")
+usethis::use_build_ignore("include")
+usethis::use_build_ignore("images")
+usethis::use_build_ignore("^.*\\.Rproj$", escape = FALSE)
+usethis::use_build_ignore("^.*\\.Rmd$", escape = FALSE)
+usethis::use_build_ignore("^.*\\.yml$", escape = FALSE)
+usethis::use_build_ignore("^.*\\.bib$", escape = FALSE)
+usethis::use_build_ignore("^.*\\.tex$", escape = FALSE)
+usethis::use_build_ignore("^.*\\.rds$", escape = FALSE)
+```
+
+### Edit the DESCRIPTION file
+
+The package name has a few rules:
+
+* Contain only ASCII letters, numbers, and '.'
+* Have at least two characters
+* Start with a letter
+* Not end with '.'
+
+### Add packages 
+
+Add any CRAN packages you want included with your package. If you want to add tidyverse, you need to add it with `type = "depends"` and it will load automatically when you load this package.
+
+```{r, eval = FALSE}
+usethis::use_package("dplyr")
+usethis::use_package("tidyr")
+usethis::use_package("ggplot2")
+usethis::use_package("tidyverse", type = "depends")
+```
+
+### Add a book function
+
+This is a function to open the local copy of the book in a web browser. Make a file called `R/book.R` and include the following code (replacing the relevant items with your course and package names).
+
+```{r, eval = FALSE}
+#' Open the {YOUR COURSE NAME} book
+#'
+#' @return NULL
+#' @export
+#'
+book <- function() {
+  file <- system.file("book", "index.html", package = "YOURPACKAGENAME")
+  utils::browseURL(file, browser = )
+}
+```
+
+### Render the book
+
+Render your book and copy the content of `docs` (the online version) to `inst/book` (the offline package version).
+
+```{r, eval = FALSE}
+# render a chapter or the whole book
+bookdown::preview_chapter("01-intro.Rmd")
+bookdown::render_book("index.Rmd")
+
+# copies docs dir to inst/book
+R.utils::copyDirectory(
+  from = "docs", 
+  to = "inst/book", 
+  overwrite = TRUE, 
+  recursive = TRUE)
+```
+
+### Install your package
+
+```{r, eval = FALSE}
+# updates your documentation and 
+# makes new functions/datasets available
+devtools::document() 
+
+# install the updated package
+devtools::install()
+
+# load your package
+library("your.package.name")
+
+# open the book
+book()
+```
+
+### Add datasets
+
+To add datasets, add a `data_raw` directory and edit the file `DATASET.R` to prep your datasets. Here's an example:
+
+```{r, eval = FALSE}
+usethis::use_data_raw()
+
+## code to prepare `DATASET` dataset goes here
+
+factorial_2w2b <- faux::sim_design(
+  within = list(time = c(am = "Day", pm = "Night")),
+  between = list(pet = c(dog = "Dog Owner", cat = "Cat Owner")),
+  n = 25, mu = list(am = c(10, 12), pm = c(12, 14)), 
+  sd = 5, r = 0.5, plot = FALSE)
+
+usethis::use_data(factorial_2w2b, overwrite = TRUE)
+
+
+```
+
+You can set up the documentation by hand following the instructions at <https://r-pkgs.org/data.html> or use the following script to set up datasets from .csv or .xls files.
+
+```{r, eval = FALSE}
+# function for creating dataset descriptions in Roxygen
+make_dataset <- function(dataname, title, desc, itemdesc = list(), filetype = "csv", source = "", write = TRUE) {
+  
+  # read data and save to data directory
+  datafile <- paste0("data-raw/", dataname, ".", filetype)
+  if (filetype == "csv") {
+    data <- readr::read_csv(datafile, col_types = readr::cols())
+  } else if (filetype == "xls") {
+    data <- readxl::read_xls(datafile)
+  }
+  # this is awkward, but devtools::document won't work unless the saved data has the name you intend to use for it
+  dat <- list()
+  dat[[dataname]] <- data
+  list2env(dat, envir = environment())
+  e <- paste0("usethis::use_data(", dataname, ", overwrite = TRUE)")
+  eval(parse(text = e))
+
+  # create Roxygen description
+  items <- paste0("#'    \\item{", names(itemdesc), "}{", itemdesc, "}")
+  
+  s <- sprintf("# %s ----\n#' %s\n#'\n#' %s\n#'\n#' @format A data frame with %d rows and %d variables:\n#' \\describe{\n%s\n#' }\n#' @source \\url{%s}\n\"%s\"\n\n",
+               dataname, title, 
+               gsub("\n+", "\n#'\n#' ", desc), 
+               nrow(data), ncol(data),
+               paste(items, collapse = "\n"),
+               source, dataname
+  )
+  if (!isFALSE(write)) write(s, paste0("R/", dataname, ".R"))
+  invisible(s)
+}
+```
+
+After you set up the function above at the top of your `DATASET.R` file, you can add datasets as below (either from files you've added to `data-raw` or by creating and saving CSV files (e.g., using faux).
+
+```{r, eval = FALSE}
+# add country codes dataset
+ccodes <- read_csv("https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv")
+write_csv(ccodes, "data-raw/country_codes.csv")
+
+itemdesc <- list(
+  "name" = "Full country name",
+  "alpha-2" = "2-character country code",
+  "alpha-3" = "3-character country code",
+  "country-code" = "3-digit country code",
+  "iso_3166-2" = "ISO code",
+  "region" = "World region",
+  "sub-region" = "Sub-region",
+  "intermediate-region" = "Intermediate region",
+  "region-code" = "World region code",
+  "sub-region-code" = "Sub-region code",
+  "intermediate-region-code" = "Intermediate region code"
+)
+
+make_dataset("country_codes", 
+             "Country Codes", 
+             "Multiple country, subregion, and region codes for 249 countries.\nFrom https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes", itemdesc, source = "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv")
+```
+
+This will create a new file in the `R` directory called `country_codes.R` that contains your dataset description. Add it to the package documentation by running `devtools::document()`. 
+
+
+
+
+
+

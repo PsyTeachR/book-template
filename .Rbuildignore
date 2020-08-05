@@ -1,0 +1,14 @@
+^LICENSE\.md$
+^book$
+^_bookdown_files$
+^files$
+^include$
+^images$
+^data-raw$
+^.*\.Rproj$
+^.*\.Rmd$
+^.*\.yml$
+^.*\.bib$
+^.*\.tex$
+^.*\.rds$
+^\.Rproj\.user$
