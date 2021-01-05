@@ -52,11 +52,6 @@ In plots, add secondary indicators in addition to colour, such as text labels or
 <p class="caption">(\#fig:plot-text-labels-facet)Facet labels and redundant colour information.</p>
 </div>
 
-
-```
-## `geom_smooth()` using formula 'y ~ x'
-```
-
 <div class="figure" style="text-align: center">
 <img src="04-inclusion_files/figure-html/plot-shapes-1.png" alt="Supplement point colours with shapes." width="100%" />
 <p class="caption">(\#fig:plot-shapes)Supplement point colours with shapes.</p>

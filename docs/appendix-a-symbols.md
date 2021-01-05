@@ -30,6 +30,7 @@
 | ;      | semi-colon        |                   |
 | :      | colon             |                   |
 | @      | "at" symbol       | [various hilarious regional terms](https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html) |
+| ...    | `glossary("ellipsis")`| dots     |
 
 
 <div class="figure" style="text-align: center">

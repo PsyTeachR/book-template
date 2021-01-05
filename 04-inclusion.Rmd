@@ -80,7 +80,7 @@ ggplot(dat, aes(season, dv, fill = season)) +
 
 ggplot(iris, aes(Sepal.Width, Sepal.Length, colour = Species, shape = Species)) +
   geom_point() +
-  geom_smooth(method = lm, show.legend = FALSE) +
+  geom_smooth(method = lm, formula = y~x, show.legend = FALSE) +
   scale_colour_manual(values = psyteachr_colours(c("pink", "green", "blue"))) +
   theme(legend.position = c(.9, .8))
 

@@ -169,7 +169,7 @@ Any graphs should be dynamically created in an R code block. Set `echo=FALSE` if
 
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_point() +
-  geom_smooth(method = lm)
+  geom_smooth(method = lm, formula = y~x)
 
 ```
 
@@ -177,7 +177,7 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
 
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_point() +
-  geom_smooth(method = lm)
+  geom_smooth(method = lm, formula = y~x)
 
 ```
 

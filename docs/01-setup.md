@@ -164,7 +164,7 @@ Open `_index_example.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2020-08-05"
+date: "2021-01-05"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -403,7 +403,7 @@ The package name has a few rules:
 
 ### Add packages 
 
-Add any CRAN packages you want included with your package. If you want to add tidyverse, you need to add it with `type = "depends"` and it will load automatically when you load this package.
+Add any CRAN packages you want included with your package.
 
 
 ```r
@@ -412,6 +412,10 @@ usethis::use_package("tidyr")
 usethis::use_package("ggplot2")
 usethis::use_package("tidyverse", type = "depends")
 ```
+
+<div class="warning">
+<p>If you want to add tidyverse, you need to add it with <code>type = "depends"</code> and it will load automatically when you load this package. However, this can cause a lot of problems when installing the package, so I would not recommend it.</p>
+</div>
 
 ### Add a book function
 

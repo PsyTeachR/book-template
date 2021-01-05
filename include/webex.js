@@ -30,15 +30,17 @@ solveme_func = function(e) {
   if (cl.contains("nospaces")) {
     my_answer = my_answer.replace(/ /g, "");
   }
+  console.log(this.classList);
   
   if (my_answer !== "" & real_answers.includes(my_answer)) {
     cl.add("correct");
   } else {
     cl.remove("correct");
   }
+  console.log(this.classList);
 
   // match numeric answers within a specified tolerance
-  if(this.dataset.tol){
+  if(this.dataset.tol > 0){
     var tol = JSON.parse(this.dataset.tol);  
     var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
     if (matches.reduce((a, b) => a + b, 0) > 0) {
@@ -47,6 +49,7 @@ solveme_func = function(e) {
       cl.remove("correct");
     }  
   }
+  console.log(this.classList);
 
   // added regex bit
   if (cl.contains("regex")){
@@ -55,6 +58,8 @@ solveme_func = function(e) {
       cl.add("correct");
     }  
   }
+  
+  console.log(this.classList);
   
   update_total_correct();
 }
