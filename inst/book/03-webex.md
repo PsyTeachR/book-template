@@ -21,7 +21,7 @@ You can also create these questions dynamically, using variables from your R ses
 
 
 
-- The square root of 25 is: <input name='q_2' class='solveme nospaces  ' data-tol='0' size='1' data-answer='["5"]' />
+- The square root of 64 is: <input name='q_2' class='solveme nospaces  ' data-tol='0' size='1' data-answer='["8"]' />
 
 The blanks are case-sensitive; if you don't care about case, use the argument `ignore_case = TRUE` (e.g., `fitb("E", ignore_case = TRUE)`).
 

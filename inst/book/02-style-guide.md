@@ -261,15 +261,10 @@ Any graphs should be dynamically created in an R code block. Set `echo=FALSE` if
 ```r
 ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
   geom_point() +
-  geom_smooth(method = lm)
+  geom_smooth(method = lm, formula = y~x)
 ```
 
 <code>&#96;&#96;&#96;</code></div>
-
-
-```
-## `geom_smooth()` using formula 'y ~ x'
-```
 
 <div class="figure" style="text-align: center">
 <img src="02-style-guide_files/figure-html/img-dynamo-1.png" alt="Dynamically created plot." width="75%" />

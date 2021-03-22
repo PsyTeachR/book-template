@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A Symbols | Book Template</title>
   <meta name="description" content="Guide for psyTeachR course books." />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A Symbols | Book Template" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Lisa DeBruine" />
 
 
-<meta name="date" content="2020-08-05" />
+<meta name="date" content="2021-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,7 @@
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -169,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5.5" data-path="setup.html"><a href="setup.html#render-the-book-1"><i class="fa fa-check"></i><b>1.5.5</b> Render the book</a></li>
 <li class="chapter" data-level="1.5.6" data-path="setup.html"><a href="setup.html#install-your-package"><i class="fa fa-check"></i><b>1.5.6</b> Install your package</a></li>
 <li class="chapter" data-level="1.5.7" data-path="setup.html"><a href="setup.html#add-datasets"><i class="fa fa-check"></i><b>1.5.7</b> Add datasets</a></li>
+<li class="chapter" data-level="1.5.8" data-path="setup.html"><a href="setup.html#add-shiny-apps"><i class="fa fa-check"></i><b>1.5.8</b> Add Shiny Apps</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a><ul>
@@ -210,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="inclusion.html"><a href="inclusion.html"><i class="fa fa-check"></i><b>4</b> Inclusion</a><ul>
 <li class="chapter" data-level="4.1" data-path="inclusion.html"><a href="inclusion.html#tips-for-text-readers"><i class="fa fa-check"></i><b>4.1</b> Tips for text-readers</a></li>
 <li class="chapter" data-level="4.2" data-path="inclusion.html"><a href="inclusion.html#dyslexia-friendly-resources"><i class="fa fa-check"></i><b>4.2</b> Dyslexia-friendly resources</a></li>
-<li class="chapter" data-level="4.3" data-path="inclusion.html"><a href="inclusion.html#colour-1"><i class="fa fa-check"></i><b>4.3</b> Colour</a></li>
+<li class="chapter" data-level="4.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#colour"><i class="fa fa-check"></i><b>4.3</b> Colour</a></li>
 <li class="chapter" data-level="4.4" data-path="inclusion.html"><a href="inclusion.html#sex-gender-and-sexuality"><i class="fa fa-check"></i><b>4.4</b> Sex, gender and sexuality</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -223,7 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="B.2.1" data-path="style-demo.html"><a href="style-demo.html#code-chunk-with-output"><i class="fa fa-check"></i><b>B.2.1</b> Code chunk with output</a></li>
 <li class="chapter" data-level="B.2.2" data-path="style-demo.html"><a href="style-demo.html#code-chunk-with-r-header"><i class="fa fa-check"></i><b>B.2.2</b> Code chunk with r header</a></li>
 <li class="chapter" data-level="B.2.3" data-path="style-demo.html"><a href="style-demo.html#preformatted"><i class="fa fa-check"></i><b>B.2.3</b> Preformatted</a></li>
-<li class="chapter" data-level="B.2.4" data-path="style-demo.html"><a href="style-demo.html#call-out-blocks-1"><i class="fa fa-check"></i><b>B.2.4</b> Call-out blocks</a></li>
+<li class="chapter" data-level="B.2.4" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#call-out-blocks"><i class="fa fa-check"></i><b>B.2.4</b> Call-out blocks</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -401,6 +403,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">“at” symbol</td>
 <td align="left"><a href="https://www.theguardian.com/notesandqueries/query/0,5753,-1773,00.html">various hilarious regional terms</a></td>
 </tr>
+<tr class="odd">
+<td align="center">…</td>
+<td align="left"><code>glossary("ellipsis")</code></td>
+<td align="left">dots</td>
+</tr>
 </tbody>
 </table>
 <div class="figure" style="text-align: center"><span id="fig:img-soundimals-hash"></span>
@@ -446,15 +453,17 @@ solveme_func = function(e) {
   if (cl.contains("nospaces")) {
     my_answer = my_answer.replace(/ /g, "");
   }
+  console.log(this.classList);
   
   if (my_answer !== "" & real_answers.includes(my_answer)) {
     cl.add("correct");
   } else {
     cl.remove("correct");
   }
+  console.log(this.classList);
 
   // match numeric answers within a specified tolerance
-  if(this.dataset.tol){
+  if(this.dataset.tol > 0){
     var tol = JSON.parse(this.dataset.tol);  
     var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
     if (matches.reduce((a, b) => a + b, 0) > 0) {
@@ -463,6 +472,7 @@ solveme_func = function(e) {
       cl.remove("correct");
     }  
   }
+  console.log(this.classList);
 
   // added regex bit
   if (cl.contains("regex")){
@@ -471,6 +481,8 @@ solveme_func = function(e) {
       cl.add("correct");
     }  
   }
+  
+  console.log(this.classList);
   
   update_total_correct();
 }

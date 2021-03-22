@@ -81,6 +81,7 @@ bookdown::gitbook:
   default: true
   smart: false
   includes:
+    in_header: include/header.html
     after_body: [include/footer.html, include/webex.js]
   css: [include/psyteachr.css, include/style.css]
   config:
@@ -118,6 +119,26 @@ bookdown::pdf_book:
 ```
 
 Change "Book Template" in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.
+
+Save and close this file.
+
+#### header.html
+
+The header include information for displaying your website on social media The shortcut icon creates the favicon that you see in the tab bar or a web browser. 
+
+Open `include/header.html`. It should look like this:
+
+```
+<meta property="og:title" content="psyTeachR Book Template">
+<meta property="og:description" content="Guide for psyTeachR course books.">
+<meta property="og:image" content="https://psyteachr.github.io/images/twitter/psyteachr.png">
+<meta property="og:url" content="https://psyteachr.github.io/book-template/">
+<meta property="twitter:card" content="summary_large_image">
+
+<link rel="shortcut icon" href="https://psyteachr.github.io/images/logo.png">
+```
+
+Change the content of each item to something relevant to your book. You can check that this is properly configured after you publish you website by putting the URL in the [Twitter Validator](https://cards-dev.twitter.com/validator){target="_blank"} or the [FaceBook Validator](https://developers.facebook.com/tools/debug/){target="_blank"}.
 
 Save and close this file.
 
@@ -164,7 +185,7 @@ Open `_index_example.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2020-08-05"
+date: "2021-03-22"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -403,7 +424,7 @@ The package name has a few rules:
 
 ### Add packages 
 
-Add any CRAN packages you want included with your package. If you want to add tidyverse, you need to add it with `type = "depends"` and it will load automatically when you load this package.
+Add any CRAN packages you want included with your package.
 
 
 ```r
@@ -412,6 +433,10 @@ usethis::use_package("tidyr")
 usethis::use_package("ggplot2")
 usethis::use_package("tidyverse", type = "depends")
 ```
+
+<div class="warning">
+<p>If you want to add tidyverse, you need to add it with <code>type = "depends"</code> and it will load automatically when you load this package. However, this can cause a lot of problems when installing the package, so I would not recommend it.</p>
+</div>
 
 ### Add a book function
 
