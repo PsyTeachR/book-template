@@ -1,3 +1,6 @@
+_bookdown_files/
+_main.rds
+
 *.Rproj
 */.DS_Store
 .DS_Store
