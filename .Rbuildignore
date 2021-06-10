@@ -12,3 +12,6 @@
 ^.*\.tex$
 ^.*\.rds$
 ^\.Rproj\.user$
+^_process\.R$
+^docs$
+^\.zenodo\.json$

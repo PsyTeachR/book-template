@@ -65,6 +65,14 @@ Paste the URL you copied from your repository into the Repository URL. Keep the 
 <p class="caption">(\#fig:img-clone-repo)Clone your github repository to the RStudio project</p>
 </div>
 
+### Update packages
+
+The books assume you have the following packages:
+
+* tidyverse
+* bookdown (>= 0.22)
+* webex (>= 0.9.2)
+* glossary (`devtools::install_github("psyteachr/glossary")`)
 
 ### Download the template
 
@@ -80,10 +88,11 @@ Open `_output.yml`. It should look like this:
 bookdown::gitbook: 
   default: true
   smart: false
+  df_print: kable
   includes:
     in_header: include/header.html
     after_body: [include/footer.html, include/webex.js]
-  css: [include/psyteachr.css, include/style.css]
+  css: [include/psyteachr.css, include/webex.css, include/style.css]
   config:
     toc:
       collapse: section
@@ -185,7 +194,7 @@ Open `_index_example.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2021-03-22"
+date: "2021-06-10"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -431,7 +440,7 @@ Add any CRAN packages you want included with your package.
 usethis::use_package("dplyr")
 usethis::use_package("tidyr")
 usethis::use_package("ggplot2")
-usethis::use_package("tidyverse", type = "depends")
+# usethis::use_package("tidyverse", type = "depends")
 ```
 
 <div class="warning">

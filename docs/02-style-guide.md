@@ -45,7 +45,28 @@ Lists where most of the items fit on one line should start each line with an upp
 
 ### Tables
 
-Use `knitr::kable()` to output tibbles as a table. Set `results='asis'` in the code chunk header. Set the caption in the `caption` argument to `kable` and use `\@ref(tab:chunk-name)` to reference the table (e.g., Table \@ref(tab:kable-example)).
+You no longer need to use `kable()` to have nice tables in the books. This was fixed by setting `df_print: kable` in the `_output.yml` file. Just print your table directly, without setting `results='asis'` in the chunk header.
+
+
+```r
+data.frame(
+  Letters = LETTERS[1:3],
+  Numbers = 1:3
+)
+```
+
+<div class="kable-table">
+
+|Letters | Numbers|
+|:-------|-------:|
+|A       |       1|
+|B       |       2|
+|C       |       3|
+
+</div>
+
+
+However, you still need to use `knitr::kable()` to get tables with a caption. Set `results='asis'` in the code chunk header. Set the caption in the `caption` argument to `kable` and use `\@ref(tab:chunk-name)` to reference the table (e.g., Table \@ref(tab:kable-example)).
 
 
 ```r
@@ -72,11 +93,11 @@ If you want to add stripes or fancy styling to your tables, install the package 
 iris %>%
   group_by(Species) %>%
   summarise_all(mean) %>%
-  knitr::kable(digits = 3, format = "html", caption = "Example table with kableExtra.") %>%
-  kableExtra::kable_styling(bootstrap_options = "striped")
+  kableExtra::kable(digits = 3, format = "html", caption = "Example table with kableExtra.") %>%
+  kableExtra::column_spec(1, width = "10em", color = "dodgerblue")
 ```
 
-<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<table>
 <caption>(\#tab:kable-example-striped)Example table with kableExtra.</caption>
  <thead>
   <tr>
@@ -89,21 +110,21 @@ iris %>%
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> setosa </td>
+   <td style="text-align:left;width: 10em; color: dodgerblue !important;"> setosa </td>
    <td style="text-align:right;"> 5.006 </td>
    <td style="text-align:right;"> 3.428 </td>
    <td style="text-align:right;"> 1.462 </td>
    <td style="text-align:right;"> 0.246 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> versicolor </td>
+   <td style="text-align:left;width: 10em; color: dodgerblue !important;"> versicolor </td>
    <td style="text-align:right;"> 5.936 </td>
    <td style="text-align:right;"> 2.770 </td>
    <td style="text-align:right;"> 4.260 </td>
    <td style="text-align:right;"> 1.326 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> virginica </td>
+   <td style="text-align:left;width: 10em; color: dodgerblue !important;"> virginica </td>
    <td style="text-align:right;"> 6.588 </td>
    <td style="text-align:right;"> 2.974 </td>
    <td style="text-align:right;"> 5.552 </td>
@@ -116,19 +137,19 @@ iris %>%
 
 You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and automatically include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word")`. For example, common <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> are <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>.
 
-If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (`display`). You can also override the automatic short definition by providing your own in the third argument (`shortdef`). Add the argument `link = FALSE` if you just want the hover definition and not a link to the psyTeachR glossary.
+If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (`display`). You can also override the automatic short definition by providing your own in the third argument (`def`). Add the argument `link = FALSE` if you just want the hover definition and not a link to the psyTeachR glossary.
 
 
 ```r
 glossary("data type", 
-         display="Data Types", 
-         shortdef="My custom definition of data types", 
+         display = "Data Types", 
+         def = "My custom definition of data types", 
          link = FALSE)
 ```
 
 [1] "<a class='glossary' title='My custom definition of data types'>Data Types</a>"
 
-You can add a glossary table to the end of a chapter with the following code. It creates a table of all terms used in that chapter previous to the `glossary_table()` function.
+You can add a glossary table to the end of a chapter with the following code. It creates a table of all terms used in that chapter previous to the `glossary_table()` function. It uses `kableExtra()`, so if you use it in a code chunk, set `results='asis'`.
 
 <div class='verbatim'><code>&#96;&#96;&#96;{r, echo=FALSE, results='asis'}</code>
 

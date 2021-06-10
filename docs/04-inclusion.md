@@ -11,14 +11,19 @@ Some students need to use text readers for accessibility; others just prefer thi
 * Avoid roman numerals
 * Avoid text in figures
 
-Bookdown books allow readers to change the font style, size, and background colour. This provides essential assessibility for some people, such as those with dyslexia or visual impairments. Therefore, avoid putting too much text in figures and provide descriptions of images in the figure caption.
+Bookdown books allow readers to change the font style, size, and background colour. This provides essential accessibility for some people, such as those with dyslexia or visual impairments. Therefore, avoid putting too much text in figures and provide descriptions of images in the figure caption.
 
+## Resources for blind coders
+
+* [BrailleR](https://github.com/ajrgodfrey/BrailleR): a collection of tools to make use of R a happier experience for blind people
+* [Statistical Software from a Blind Person’s Perspective](https://journal.r-project.org/archive/2013/RJ-2013-007/RJ-2013-007.pdf)
 
 ## Dyslexia-friendly resources
 
 * [British Dyslexia Association](https://www.bdadyslexia.org.uk/educator)
 * [Dyslexia Style Guide](https://www.bdadyslexia.org.uk/common/ckeditor/filemanager/userfiles/Dyslexia_Style_Guide_2018-final.pdf)
-* [Dyslexia and Coding](https://datacarpentry.org/blog/2017/09/coding-and-dyslexia) (Data Carpentry blog post)
+* [Dyslexia and Coding](https://datacarpentry.org/blog/2017/09/coding-and-dyslexia): Data Carpentry blog post
+* [fcuk](https://cran.r-project.org/web/packages/fcuk/vignettes/fcuk.html): A package designed to help people with clumsy fingers
 
 
 Some recommendations are highlighted below.

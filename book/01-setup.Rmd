@@ -58,6 +58,14 @@ Paste the URL you copied from your repository into the Repository URL. Keep the 
 knitr::include_graphics("files/images/clone_repo.png")
 ```
 
+### Update packages
+
+The books assume you have the following packages:
+
+* tidyverse
+* bookdown (>= 0.22)
+* webex (>= 0.9.2)
+* glossary (`devtools::install_github("psyteachr/glossary")`)
 
 ### Download the template
 
@@ -73,10 +81,11 @@ Open `_output.yml`. It should look like this:
 bookdown::gitbook: 
   default: true
   smart: false
+  df_print: kable
   includes:
     in_header: include/header.html
     after_body: [include/footer.html, include/webex.js]
-  css: [include/psyteachr.css, include/style.css]
+  css: [include/psyteachr.css, include/webex.css, include/style.css]
   config:
     toc:
       collapse: section
@@ -419,7 +428,7 @@ Add any CRAN packages you want included with your package.
 usethis::use_package("dplyr")
 usethis::use_package("tidyr")
 usethis::use_package("ggplot2")
-usethis::use_package("tidyverse", type = "depends")
+# usethis::use_package("tidyverse", type = "depends")
 ```
 
 ```{block, type = "warning"}

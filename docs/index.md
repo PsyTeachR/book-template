@@ -1,7 +1,7 @@
 --- 
 title: "Book Template"
 author: "Lisa DeBruine"
-date: "2021-03-22"
+date: "2021-06-10"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -18,4 +18,21 @@ The best resource for creating a course book is the [bookdown website](https://b
 
 ## Updating an existing book
 
-Download the [psyTeachR Bookdown Course Template](files/book-template.zip), unzip it, and copy all the files to your existing project, overwriting any files. Check `_index_example.Rmd` for anything that might need to be updated in your existing `index.Rmd` file.
+Download the [psyTeachR Bookdown Course Template](files/book-template.zip), unzip it, and copy the files to your existing project, overwriting any files (see the list below for exceptions). Check `_index_example.Rmd` for anything that might need to be updated in your existing `index.Rmd` file.
+
+Some files will have been customised for your book. Check if those files need updated, but don't overwrite them.
+
+* `_output.yml`: you will have customised the `config: before:` and `config: after:` sections for your book title
+* `_bookdown/yml`: you may have customised the `output_dir`
+* `include/header.html`: this contains info for Twitter sharing that you've probably customised
+* `include/footer.html`: you may have customised this footer, but it's usually blank
+
+
+## Updating webex
+
+Version 0.22 of bookdown caused a conflict with webex, which has been fixed in version 0.9.2, now on CRAN. After you update webex, you need to follow the procedure above to update the existing book. The files that specifically need to change are:
+
+* `_output.yml` (`df_print:` and `css:` lines)
+* `include/psyteachr.css` (replace)
+* `include/webex.css` (new)
+* `include/webex.js` (replace)

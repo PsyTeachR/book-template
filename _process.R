@@ -14,5 +14,5 @@ R.utils::copyDirectory(
   overwrite = TRUE, 
   recursive = TRUE)
 
-unlink("inst/book/.nojekyll")
-unlink("inst/book/docs/.nojekyll")
+unlink("../inst/book/.nojekyll")
+unlink("../docs/.nojekyll")

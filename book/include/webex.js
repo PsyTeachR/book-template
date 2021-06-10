@@ -1,15 +1,15 @@
 <script>
 
-/* update total correct if #total_correct exists */
+/* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
-  if (t = document.getElementById("total_correct")) {
+  if (t = document.getElementById("webex-total_correct")) {
     t.innerHTML =
-      document.getElementsByClassName("correct").length + " of " +
-      document.getElementsByClassName("solveme").length + " correct";
+      document.getElementsByClassName("webex-correct").length + " of " +
+      document.getElementsByClassName("webex-solveme").length + " correct";
   }
 }
 
-/* solution button toggling function */
+/* webex-solution button toggling function */
 b_func = function() {
   var cl = this.parentElement.classList;
   if (cl.contains('open')) {
@@ -28,38 +28,33 @@ solveme_func = function(e) {
     my_answer = my_answer.toLowerCase();
   }
   if (cl.contains("nospaces")) {
-    my_answer = my_answer.replace(/ /g, "");
+    my_answer = my_answer.replace(/ /g, "")
   }
-  console.log(this.classList);
   
   if (my_answer !== "" & real_answers.includes(my_answer)) {
-    cl.add("correct");
+    cl.add("webex-correct");
   } else {
-    cl.remove("correct");
+    cl.remove("webex-correct");
   }
-  console.log(this.classList);
 
   // match numeric answers within a specified tolerance
   if(this.dataset.tol > 0){
     var tol = JSON.parse(this.dataset.tol);  
     var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
     if (matches.reduce((a, b) => a + b, 0) > 0) {
-      cl.add("correct");
+      cl.add("webex-correct");
     } else {
-      cl.remove("correct");
+      cl.remove("webex-correct");
     }  
   }
-  console.log(this.classList);
 
   // added regex bit
   if (cl.contains("regex")){
     answer_regex = RegExp(real_answers.join("|"))
     if (answer_regex.test(my_answer)) {
-      cl.add("correct");
+      cl.add("webex-correct");
     }  
   }
-  
-  console.log(this.classList);
   
   update_total_correct();
 }
@@ -69,13 +64,13 @@ window.onload = function() {
   var buttons = document.getElementsByTagName("button");
 
   for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].parentElement.classList.contains('solution')) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
       buttons[i].onclick = b_func;
     }
   }
   
-  /* set up solveme inputs */
-  var solveme = document.getElementsByClassName("solveme");
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
 
   for (var i = 0; i < solveme.length; i++) {
     /* make sure input boxes don't auto-anything */

@@ -1,6 +1,6 @@
 Package: book.template
 Title: psyTeachR Course Book Guide
-Version: 0.0.0.9000
+Version: 1.1.0
 Authors@R: 
     person(given = "Lisa",
            family = "DeBruine",
@@ -16,7 +16,11 @@ RoxygenNote: 7.1.1
 Imports: 
     dplyr,
     tidyr,
-    ggplot2
+    ggplot2,
+    glossary,
+    shiny,
+    webex (>= 0.9.2)
+Remotes:
+    psyteachr/glossary
 Depends: 
-    tidyverse,
     R (>= 2.10)

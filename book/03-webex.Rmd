@@ -5,6 +5,10 @@ Use the following code to install [webex](https://github.com/psyteachr/webex) fr
 install.packages("webex")
 ```
 
+```{block, type = "warning"}
+If you're using bookdown 0.22, you need to use webex version 0.9.2 or above to avoid an error when you use the `hide()` function.
+```
+
 The `webex` package is called in the setup chunk, so you don't need to call it on every page you want to use webex. 
 
 ```{block, type = "info"}
@@ -31,11 +35,16 @@ The blanks are case-sensitive; if you don't care about case, use the argument `i
 
 If you want to ignore differences in whitespace use, use the argument `ignore_ws = TRUE` and include spaces in your answer anywhere they could be acceptable (e.g., `fitb("library( tidyverse )")`).
 
-- How do you load the tidyverse package? `r fitb(c("library( tidyverse )", "library( 'tidyverse' )", "library( \"tidyverse\" )"), ignore_case = TRUE, width = "20", regex = TRUE)`
+- How do you load the tidyverse package? `r fitb(c("library( tidyverse )", "library( 'tidyverse' )", "library( \"tidyverse\" )"), ignore_ws = TRUE, width = "20")`
 
 You can set more than one possible correct answer by setting the answers as a vector (e.g., `fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`).
 
 - Type a vowel: `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
+
+You can use regular expressions to test answers against more complex rules (e.g., `fitb("^[a-zA-Z]{3}$", width = 3, regex = TRUE)`),.
+
+- Type any 3 letters: `r fitb("^[a-zA-Z]{3}$", width = 3, regex = TRUE)`
+
 
 ## Multiple Choice (`mcq()`) {#mcq}
 

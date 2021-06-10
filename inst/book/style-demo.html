@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Style Demo | Book Template</title>
   <meta name="description" content="Guide for psyTeachR course books." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Style Demo | Book Template" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Lisa DeBruine" />
 
 
-<meta name="date" content="2021-01-05" />
+<meta name="date" content="2021-06-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="symbols.html"/>
 
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,32 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<meta property="og:title" content="psyTeachR Book Template">
+<meta property="og:description" content="Guide for psyTeachR course books.">
+<meta property="og:image" content="https://psyteachr.github.io/images/twitter/psyteachr.png">
+<meta property="og:url" content="https://psyteachr.github.io/book-template/">
+<meta property="twitter:card" content="summary_large_image">
+
+<link rel="shortcut icon" href="https://psyteachr.github.io/images/logo.png">
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +96,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -120,7 +129,31 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="include/psyteachr.css" type="text/css" />
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
 <link rel="stylesheet" href="include/style.css" type="text/css" />
 </head>
 
@@ -138,19 +171,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://zenodo.org/badge/latestdoi/166559207"><img src="https://zenodo.org/badge/166559207.svg" alt="DOI"></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a>
+<ul>
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#updating-an-existing-book"><i class="fa fa-check"></i><b>0.1</b> Updating an existing book</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#updating-webex"><i class="fa fa-check"></i><b>0.2</b> Updating webex</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
-<li class="chapter" data-level="1.1" data-path="setup.html"><a href="setup.html#starting-a-new-book"><i class="fa fa-check"></i><b>1.1</b> Starting a new book</a><ul>
+<li class="chapter" data-level="1" data-path="setup.html"><a href="setup.html"><i class="fa fa-check"></i><b>1</b> Setup</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="setup.html"><a href="setup.html#starting-a-new-book"><i class="fa fa-check"></i><b>1.1</b> Starting a new book</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="setup.html"><a href="setup.html#create-a-new-github-repository"><i class="fa fa-check"></i><b>1.1.1</b> Create a new github repository</a></li>
 <li class="chapter" data-level="1.1.2" data-path="setup.html"><a href="setup.html#fork-the-repository"><i class="fa fa-check"></i><b>1.1.2</b> Fork the repository</a></li>
 <li class="chapter" data-level="1.1.3" data-path="setup.html"><a href="setup.html#make-a-new-rstudio-project"><i class="fa fa-check"></i><b>1.1.3</b> Make a new RStudio project</a></li>
-<li class="chapter" data-level="1.1.4" data-path="setup.html"><a href="setup.html#download-the-template"><i class="fa fa-check"></i><b>1.1.4</b> Download the template</a></li>
-<li class="chapter" data-level="1.1.5" data-path="setup.html"><a href="setup.html#edit-the-template"><i class="fa fa-check"></i><b>1.1.5</b> Edit the template</a></li>
-<li class="chapter" data-level="1.1.6" data-path="setup.html"><a href="setup.html#render-the-book"><i class="fa fa-check"></i><b>1.1.6</b> Render the book</a></li>
+<li class="chapter" data-level="1.1.4" data-path="setup.html"><a href="setup.html#update-packages"><i class="fa fa-check"></i><b>1.1.4</b> Update packages</a></li>
+<li class="chapter" data-level="1.1.5" data-path="setup.html"><a href="setup.html#download-the-template"><i class="fa fa-check"></i><b>1.1.5</b> Download the template</a></li>
+<li class="chapter" data-level="1.1.6" data-path="setup.html"><a href="setup.html#edit-the-template"><i class="fa fa-check"></i><b>1.1.6</b> Edit the template</a></li>
+<li class="chapter" data-level="1.1.7" data-path="setup.html"><a href="setup.html#render-the-book"><i class="fa fa-check"></i><b>1.1.7</b> Render the book</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="setup.html"><a href="setup.html#adding-chapters"><i class="fa fa-check"></i><b>1.2</b> Adding chapters</a><ul>
+<li class="chapter" data-level="1.2" data-path="setup.html"><a href="setup.html#adding-chapters"><i class="fa fa-check"></i><b>1.2</b> Adding chapters</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="setup.html"><a href="setup.html#content"><i class="fa fa-check"></i><b>1.2.1</b> Content</a></li>
 <li class="chapter" data-level="1.2.2" data-path="setup.html"><a href="setup.html#multiple-.rmd-files-per-chapter"><i class="fa fa-check"></i><b>1.2.2</b> Multiple .Rmd files per chapter</a></li>
 <li class="chapter" data-level="1.2.3" data-path="setup.html"><a href="setup.html#rendering-a-single-chapter"><i class="fa fa-check"></i><b>1.2.3</b> Rendering a single chapter</a></li>
@@ -158,11 +197,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.5" data-path="setup.html"><a href="setup.html#automatic-setup-scripts"><i class="fa fa-check"></i><b>1.2.5</b> Automatic setup scripts</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup.html"><a href="setup.html#publishing-your-book"><i class="fa fa-check"></i><b>1.3</b> Publishing your book</a></li>
-<li class="chapter" data-level="1.4" data-path="setup.html"><a href="setup.html#doi"><i class="fa fa-check"></i><b>1.4</b> Getting a DOI</a><ul>
+<li class="chapter" data-level="1.4" data-path="setup.html"><a href="setup.html#doi"><i class="fa fa-check"></i><b>1.4</b> Getting a DOI</a>
+<ul>
 <li class="chapter" data-level="1.4.1" data-path="setup.html"><a href="setup.html#setting-up-a-doi-for-the-first-time"><i class="fa fa-check"></i><b>1.4.1</b> Setting up a DOI for the first time</a></li>
 <li class="chapter" data-level="1.4.2" data-path="setup.html"><a href="setup.html#updating-your-book"><i class="fa fa-check"></i><b>1.4.2</b> Updating your book</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="setup.html"><a href="setup.html#converting-to-a-package"><i class="fa fa-check"></i><b>1.5</b> Converting to a package</a><ul>
+<li class="chapter" data-level="1.5" data-path="setup.html"><a href="setup.html#converting-to-a-package"><i class="fa fa-check"></i><b>1.5</b> Converting to a package</a>
+<ul>
 <li class="chapter" data-level="1.5.1" data-path="setup.html"><a href="setup.html#package-infrastructure"><i class="fa fa-check"></i><b>1.5.1</b> Package Infrastructure</a></li>
 <li class="chapter" data-level="1.5.2" data-path="setup.html"><a href="setup.html#edit-the-description-file"><i class="fa fa-check"></i><b>1.5.2</b> Edit the DESCRIPTION file</a></li>
 <li class="chapter" data-level="1.5.3" data-path="setup.html"><a href="setup.html#add-packages"><i class="fa fa-check"></i><b>1.5.3</b> Add packages</a></li>
@@ -173,8 +214,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5.8" data-path="setup.html"><a href="setup.html#add-shiny-apps"><i class="fa fa-check"></i><b>1.5.8</b> Add Shiny Apps</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a><ul>
-<li class="chapter" data-level="2.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#general-styles"><i class="fa fa-check"></i><b>2.1</b> General styles</a><ul>
+<li class="chapter" data-level="2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html"><i class="fa fa-check"></i><b>2</b> PsyTeachR Style Guide</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#general-styles"><i class="fa fa-check"></i><b>2.1</b> General styles</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#headers"><i class="fa fa-check"></i><b>2.1.1</b> Headers</a></li>
 <li class="chapter" data-level="2.1.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#text-styles"><i class="fa fa-check"></i><b>2.1.2</b> Text styles</a></li>
 <li class="chapter" data-level="2.1.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#links"><i class="fa fa-check"></i><b>2.1.3</b> Links</a></li>
@@ -184,17 +227,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#glossary"><i class="fa fa-check"></i><b>2.2</b> Glossary</a></li>
 <li class="chapter" data-level="2.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#word-choice"><i class="fa fa-check"></i><b>2.3</b> Word choice</a></li>
 <li class="chapter" data-level="2.4" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#colour"><i class="fa fa-check"></i><b>2.4</b> Colour</a></li>
-<li class="chapter" data-level="2.5" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#figures"><i class="fa fa-check"></i><b>2.5</b> Figures</a><ul>
+<li class="chapter" data-level="2.5" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#figures"><i class="fa fa-check"></i><b>2.5</b> Figures</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#r-plots"><i class="fa fa-check"></i><b>2.5.1</b> R Plots</a></li>
 <li class="chapter" data-level="2.5.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#images"><i class="fa fa-check"></i><b>2.5.2</b> Images</a></li>
 <li class="chapter" data-level="2.5.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#screenshots"><i class="fa fa-check"></i><b>2.5.3</b> Screenshots</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#code-chunks"><i class="fa fa-check"></i><b>2.6</b> Code chunks</a><ul>
+<li class="chapter" data-level="2.6" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#code-chunks"><i class="fa fa-check"></i><b>2.6</b> Code chunks</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#options"><i class="fa fa-check"></i><b>2.6.1</b> Options</a></li>
 <li class="chapter" data-level="2.6.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#including-headers"><i class="fa fa-check"></i><b>2.6.2</b> Including headers</a></li>
 <li class="chapter" data-level="2.6.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#verbatim-inline-backticks"><i class="fa fa-check"></i><b>2.6.3</b> Verbatim inline backticks</a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#call-out-blocks"><i class="fa fa-check"></i><b>2.7</b> Call-out Blocks</a><ul>
+<li class="chapter" data-level="2.7" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#call-out-blocks"><i class="fa fa-check"></i><b>2.7</b> Call-out Blocks</a>
+<ul>
 <li class="chapter" data-level="2.7.1" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#danger"><i class="fa fa-check"></i><b>2.7.1</b> Danger</a></li>
 <li class="chapter" data-level="2.7.2" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#warning"><i class="fa fa-check"></i><b>2.7.2</b> Warning</a></li>
 <li class="chapter" data-level="2.7.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#info"><i class="fa fa-check"></i><b>2.7.3</b> Info</a></li>
@@ -203,29 +249,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.8" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#references"><i class="fa fa-check"></i><b>2.8</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="webex.html"><a href="webex.html"><i class="fa fa-check"></i><b>3</b> Webex</a><ul>
+<li class="chapter" data-level="3" data-path="webex.html"><a href="webex.html"><i class="fa fa-check"></i><b>3</b> Webex</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="webex.html"><a href="webex.html#fitb"><i class="fa fa-check"></i><b>3.1</b> Fill-In-The-Blanks (<code>fitb()</code>)</a></li>
 <li class="chapter" data-level="3.2" data-path="webex.html"><a href="webex.html#mcq"><i class="fa fa-check"></i><b>3.2</b> Multiple Choice (<code>mcq()</code>)</a></li>
 <li class="chapter" data-level="3.3" data-path="webex.html"><a href="webex.html#torf"><i class="fa fa-check"></i><b>3.3</b> True or False (<code>torf()</code>)</a></li>
 <li class="chapter" data-level="3.4" data-path="webex.html"><a href="webex.html#hide-unhide"><i class="fa fa-check"></i><b>3.4</b> Hidden solutions and hints (<code>hide()</code> and <code>unhide()</code>)</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="inclusion.html"><a href="inclusion.html"><i class="fa fa-check"></i><b>4</b> Inclusion</a><ul>
+<li class="chapter" data-level="4" data-path="inclusion.html"><a href="inclusion.html"><i class="fa fa-check"></i><b>4</b> Inclusion</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="inclusion.html"><a href="inclusion.html#tips-for-text-readers"><i class="fa fa-check"></i><b>4.1</b> Tips for text-readers</a></li>
-<li class="chapter" data-level="4.2" data-path="inclusion.html"><a href="inclusion.html#dyslexia-friendly-resources"><i class="fa fa-check"></i><b>4.2</b> Dyslexia-friendly resources</a></li>
-<li class="chapter" data-level="4.3" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#colour"><i class="fa fa-check"></i><b>4.3</b> Colour</a></li>
-<li class="chapter" data-level="4.4" data-path="inclusion.html"><a href="inclusion.html#sex-gender-and-sexuality"><i class="fa fa-check"></i><b>4.4</b> Sex, gender and sexuality</a></li>
+<li class="chapter" data-level="4.2" data-path="inclusion.html"><a href="inclusion.html#resources-for-blind-coders"><i class="fa fa-check"></i><b>4.2</b> Resources for blind coders</a></li>
+<li class="chapter" data-level="4.3" data-path="inclusion.html"><a href="inclusion.html#dyslexia-friendly-resources"><i class="fa fa-check"></i><b>4.3</b> Dyslexia-friendly resources</a></li>
+<li class="chapter" data-level="4.4" data-path="inclusion.html"><a href="inclusion.html#colour-1"><i class="fa fa-check"></i><b>4.4</b> Colour</a></li>
+<li class="chapter" data-level="4.5" data-path="inclusion.html"><a href="inclusion.html#sex-gender-and-sexuality"><i class="fa fa-check"></i><b>4.5</b> Sex, gender and sexuality</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="symbols.html"><a href="symbols.html"><i class="fa fa-check"></i><b>A</b> Symbols</a></li>
-<li class="chapter" data-level="B" data-path="style-demo.html"><a href="style-demo.html"><i class="fa fa-check"></i><b>B</b> Style Demo</a><ul>
-<li class="chapter" data-level="B.1" data-path="style-demo.html"><a href="style-demo.html#header-2"><i class="fa fa-check"></i><b>B.1</b> Header 2</a><ul>
+<li class="chapter" data-level="B" data-path="style-demo.html"><a href="style-demo.html"><i class="fa fa-check"></i><b>B</b> Style Demo</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="style-demo.html"><a href="style-demo.html#header-2"><i class="fa fa-check"></i><b>B.1</b> Header 2</a>
+<ul>
 <li class="chapter" data-level="B.1.1" data-path="style-demo.html"><a href="style-demo.html#header-3"><i class="fa fa-check"></i><b>B.1.1</b> Header 3</a></li>
 </ul></li>
-<li class="chapter" data-level="B.2" data-path="style-demo.html"><a href="style-demo.html#chunks"><i class="fa fa-check"></i><b>B.2</b> Chunks</a><ul>
+<li class="chapter" data-level="B.2" data-path="style-demo.html"><a href="style-demo.html#chunks"><i class="fa fa-check"></i><b>B.2</b> Chunks</a>
+<ul>
 <li class="chapter" data-level="B.2.1" data-path="style-demo.html"><a href="style-demo.html#code-chunk-with-output"><i class="fa fa-check"></i><b>B.2.1</b> Code chunk with output</a></li>
 <li class="chapter" data-level="B.2.2" data-path="style-demo.html"><a href="style-demo.html#code-chunk-with-r-header"><i class="fa fa-check"></i><b>B.2.2</b> Code chunk with r header</a></li>
 <li class="chapter" data-level="B.2.3" data-path="style-demo.html"><a href="style-demo.html#preformatted"><i class="fa fa-check"></i><b>B.2.3</b> Preformatted</a></li>
-<li class="chapter" data-level="B.2.4" data-path="psyteachr-style-guide.html"><a href="psyteachr-style-guide.html#call-out-blocks"><i class="fa fa-check"></i><b>B.2.4</b> Call-out blocks</a></li>
+<li class="chapter" data-level="B.2.4" data-path="style-demo.html"><a href="style-demo.html#call-out-blocks-1"><i class="fa fa-check"></i><b>B.2.4</b> Call-out blocks</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -252,14 +304,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="style-demo" class="section level1">
+<div id="style-demo" class="section level1" number="6">
 <h1><span class="header-section-number">B</span> Style Demo</h1>
 <p>Use this page to test styles if you change any defaults. Make sure to test with white, sepia and night themes.</p>
-<div id="header-2" class="section level2">
+<div id="header-2" class="section level2" number="6.1">
 <h2><span class="header-section-number">B.1</span> Header 2</h2>
 <p>Text with inline text styles, like <strong>bold</strong>, <em>italics</em> (don’t use), <strong><code>bold code</code></strong>, <code>inline code</code>, <a href="style-demo.html#style-demo">link text</a> and <a href="google.com" target="_blank">external link</a>.</p>
 <p>Emojis: ❤️🧡💛💚💙💜</p>
-<div id="header-3" class="section level3">
+<div id="header-3" class="section level3" number="6.1.1">
 <h3><span class="header-section-number">B.1.1</span> Header 3</h3>
 <ul>
 <li><strong>bold</strong></li>
@@ -269,9 +321,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a target="_blank" href="https://debruine.github.io">external link</a></li>
 <li><a href="style-demo.html#style-demo">link text</a></li>
 </ul>
-<div id="header-4" class="section level4">
+<div id="header-4" class="section level4" number="6.1.1.1">
 <h4><span class="header-section-number">B.1.1.1</span> Header 4</h4>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="style-demo.html#cb34-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="style-demo.html#cb36-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris, <span class="at">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</span></code></pre></div>
 <table>
 <caption><span id="tab:table-demo">Table B.1: </span>The iris dataset</caption>
 <thead>
@@ -1336,10 +1388,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div id="header-5" class="section level5">
+<div id="header-5" class="section level5" number="6.1.1.1.1">
 <h5><span class="header-section-number">B.1.1.1.1</span> Header 5</h5>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="style-demo.html#cb35-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(iris, <span class="dt">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb35-2"><a href="style-demo.html#cb35-2"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="style-demo.html#cb37-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris, <span class="at">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="style-demo.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</span></code></pre></div>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:table-demo-stripes">Table B.2: </span>The iris dataset
@@ -3920,47 +3972,47 @@ virginica
 </div>
 </div>
 </div>
-<div id="chunks" class="section level2">
+<div id="chunks" class="section level2" number="6.2">
 <h2><span class="header-section-number">B.2</span> Chunks</h2>
-<div id="code-chunk-with-output" class="section level3">
+<div id="code-chunk-with-output" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">B.2.1</span> Code chunk with output</h3>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="style-demo.html#cb36-1"></a><span class="co"># nonsense function to demo code style</span></span>
-<span id="cb36-2"><a href="style-demo.html#cb36-2"></a></span>
-<span id="cb36-3"><a href="style-demo.html#cb36-3"></a>func_var &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">arg =</span> <span class="ot">FALSE</span>) {</span>
-<span id="cb36-4"><a href="style-demo.html#cb36-4"></a>  string_var &lt;-<span class="st"> &quot;I&#39;m a string&quot;</span></span>
-<span id="cb36-5"><a href="style-demo.html#cb36-5"></a>  int_var &lt;-<span class="st"> </span>1L</span>
-<span id="cb36-6"><a href="style-demo.html#cb36-6"></a>  dbl_var &lt;-<span class="st"> </span><span class="fl">-3.165</span> <span class="op">*</span><span class="st"> </span>int_var</span>
-<span id="cb36-7"><a href="style-demo.html#cb36-7"></a>  bool_var &lt;-<span class="st"> </span><span class="ot">TRUE</span></span>
-<span id="cb36-8"><a href="style-demo.html#cb36-8"></a>  vector_var &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span>
-<span id="cb36-9"><a href="style-demo.html#cb36-9"></a>  </span>
-<span id="cb36-10"><a href="style-demo.html#cb36-10"></a>  <span class="kw">paste</span>(string_var, int_var, <span class="dt">sep =</span> <span class="st">&quot; - &quot;</span>)</span>
-<span id="cb36-11"><a href="style-demo.html#cb36-11"></a>}</span>
-<span id="cb36-12"><a href="style-demo.html#cb36-12"></a></span>
-<span id="cb36-13"><a href="style-demo.html#cb36-13"></a><span class="kw">func_var</span>()</span>
-<span id="cb36-14"><a href="style-demo.html#cb36-14"></a><span class="kw">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="style-demo.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nonsense function to demo code style</span></span>
+<span id="cb38-2"><a href="style-demo.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="style-demo.html#cb38-3" aria-hidden="true" tabindex="-1"></a>func_var <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">arg =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb38-4"><a href="style-demo.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  string_var <span class="ot">&lt;-</span> <span class="st">&quot;I&#39;m a string&quot;</span></span>
+<span id="cb38-5"><a href="style-demo.html#cb38-5" aria-hidden="true" tabindex="-1"></a>  int_var <span class="ot">&lt;-</span> 1L</span>
+<span id="cb38-6"><a href="style-demo.html#cb38-6" aria-hidden="true" tabindex="-1"></a>  dbl_var <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.165</span> <span class="sc">*</span> int_var</span>
+<span id="cb38-7"><a href="style-demo.html#cb38-7" aria-hidden="true" tabindex="-1"></a>  bool_var <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb38-8"><a href="style-demo.html#cb38-8" aria-hidden="true" tabindex="-1"></a>  vector_var <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb38-9"><a href="style-demo.html#cb38-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb38-10"><a href="style-demo.html#cb38-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(string_var, int_var, <span class="at">sep =</span> <span class="st">&quot; - &quot;</span>)</span>
+<span id="cb38-11"><a href="style-demo.html#cb38-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-12"><a href="style-demo.html#cb38-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-13"><a href="style-demo.html#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="fu">func_var</span>()</span>
+<span id="cb38-14"><a href="style-demo.html#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="style-demo.html#cb38-1"></a><span class="kw">rnorm</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="style-demo.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in rnorm(&quot;A&quot;): NAs introduced by coercion</code></pre>
 <pre><code>## Error in rnorm(&quot;A&quot;): invalid arguments</code></pre>
 <pre><code>## [1] &quot;I&#39;m a string - 1&quot;
 ## [1] NA</code></pre>
 </div>
-<div id="code-chunk-with-r-header" class="section level3">
+<div id="code-chunk-with-r-header" class="section level3" number="6.2.2">
 <h3><span class="header-section-number">B.2.2</span> Code chunk with r header</h3>
 <div class="verbatim">
 <p><code>```{r libraries, include=FALSE}</code></p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="style-demo.html#cb42-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="style-demo.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <code>```</code>
 </div>
 </div>
-<div id="preformatted" class="section level3">
+<div id="preformatted" class="section level3" number="6.2.3">
 <h3><span class="header-section-number">B.2.3</span> Preformatted</h3>
 <pre><code>line breaks
     and space are
         preserved 
 Emojis are sometimes different: ❤️🧡💛💚💙💜</code></pre>
 </div>
-<div id="call-out-blocks" class="section level3">
+<div id="call-out-blocks-1" class="section level3" number="6.2.4">
 <h3><span class="header-section-number">B.2.4</span> Call-out blocks</h3>
 <div class="danger">
 <p>
@@ -3983,15 +4035,15 @@ Emojis are sometimes different: ❤️🧡💛💚💙💜</code></pre>
 </p>
 </div>
 
-<div id="refs" class="references">
-<div>
-<p>R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
-<div>
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.</p>
+<div class="csl-entry">
+Xie, Yihui. 2021. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
 </div>
-<div>
-<p>Zhu, Hao. 2020. <em>KableExtra: Construct Complex Table with Kable and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.</p>
+<div class="csl-entry">
+Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with Kable and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
 </div>
 </div>
 </div>
@@ -4002,16 +4054,16 @@ Emojis are sometimes different: ❤️🧡💛💚💙💜</code></pre>
 </div>
 <script>
 
-/* update total correct if #total_correct exists */
+/* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
-  if (t = document.getElementById("total_correct")) {
+  if (t = document.getElementById("webex-total_correct")) {
     t.innerHTML =
-      document.getElementsByClassName("correct").length + " of " +
-      document.getElementsByClassName("solveme").length + " correct";
+      document.getElementsByClassName("webex-correct").length + " of " +
+      document.getElementsByClassName("webex-solveme").length + " correct";
   }
 }
 
-/* solution button toggling function */
+/* webex-solution button toggling function */
 b_func = function() {
   var cl = this.parentElement.classList;
   if (cl.contains('open')) {
@@ -4030,38 +4082,33 @@ solveme_func = function(e) {
     my_answer = my_answer.toLowerCase();
   }
   if (cl.contains("nospaces")) {
-    my_answer = my_answer.replace(/ /g, "");
+    my_answer = my_answer.replace(/ /g, "")
   }
-  console.log(this.classList);
   
   if (my_answer !== "" & real_answers.includes(my_answer)) {
-    cl.add("correct");
+    cl.add("webex-correct");
   } else {
-    cl.remove("correct");
+    cl.remove("webex-correct");
   }
-  console.log(this.classList);
 
   // match numeric answers within a specified tolerance
   if(this.dataset.tol > 0){
     var tol = JSON.parse(this.dataset.tol);  
     var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
     if (matches.reduce((a, b) => a + b, 0) > 0) {
-      cl.add("correct");
+      cl.add("webex-correct");
     } else {
-      cl.remove("correct");
+      cl.remove("webex-correct");
     }  
   }
-  console.log(this.classList);
 
   // added regex bit
   if (cl.contains("regex")){
     answer_regex = RegExp(real_answers.join("|"))
     if (answer_regex.test(my_answer)) {
-      cl.add("correct");
+      cl.add("webex-correct");
     }  
   }
-  
-  console.log(this.classList);
   
   update_total_correct();
 }
@@ -4071,13 +4118,13 @@ window.onload = function() {
   var buttons = document.getElementsByTagName("button");
 
   for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].parentElement.classList.contains('solution')) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
       buttons[i].onclick = b_func;
     }
   }
   
-  /* set up solveme inputs */
-  var solveme = document.getElementsByClassName("solveme");
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
 
   for (var i = 0; i < solveme.length; i++) {
     /* make sure input boxes don't auto-anything */
@@ -4136,6 +4183,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
 "google": false
 },
