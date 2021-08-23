@@ -1,5 +1,5 @@
 zip_template <- function() {
-  files <- c("book/_index.example.Rmd",
+  files <- c("book/_index_example.Rmd",
              "book/_bookdown.yml",
              "book/_output.yml",
              "book/appendix-0.Rmd",
