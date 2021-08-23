@@ -10,30 +10,30 @@
 
   <meta property="og:title" content="Chapter 4 Inclusion | Book Template" />
   <meta property="og:type" content="book" />
-  
-  
+  <meta property="og:url" content="https://psyteachr.github.io/book-template" />
+  <meta property="og:image" content="https://psyteachr.github.io/book-template/images/logo.png" />
   <meta property="og:description" content="Guide for psyTeachR course books." />
-  
+  <meta name="github-repo" content="psyteachr/book-template" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 Inclusion | Book Template" />
   
   <meta name="twitter:description" content="Guide for psyTeachR course books." />
-  
+  <meta name="twitter:image" content="https://psyteachr.github.io/book-template/images/logo.png" />
 
 <meta name="author" content="Lisa DeBruine" />
 
 
-<meta name="date" content="2021-07-15" />
+<meta name="date" content="2021-08-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="prev" href="webex.html"/>
 <link rel="next" href="symbols.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,13 +55,15 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<meta property="og:title" content="psyTeachR Book Template">
-<meta property="og:description" content="Guide for psyTeachR course books.">
-<meta property="og:image" content="https://psyteachr.github.io/images/twitter/psyteachr.png">
-<meta property="og:url" content="https://psyteachr.github.io/book-template/">
-<meta property="twitter:card" content="summary_large_image">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<link rel="shortcut icon" href="https://psyteachr.github.io/images/logo.png">
+  gtag('config', 'G-6NP3MF25W3');
+</script>
 
 
 <style type="text/css">
@@ -182,11 +184,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="setup.html"><a href="setup.html#create-a-new-github-repository"><i class="fa fa-check"></i><b>1.1.1</b> Create a new github repository</a></li>
 <li class="chapter" data-level="1.1.2" data-path="setup.html"><a href="setup.html#fork-the-repository"><i class="fa fa-check"></i><b>1.1.2</b> Fork the repository</a></li>
-<li class="chapter" data-level="1.1.3" data-path="setup.html"><a href="setup.html#make-a-new-rstudio-project"><i class="fa fa-check"></i><b>1.1.3</b> Make a new RStudio project</a></li>
-<li class="chapter" data-level="1.1.4" data-path="setup.html"><a href="setup.html#update-packages"><i class="fa fa-check"></i><b>1.1.4</b> Update packages</a></li>
-<li class="chapter" data-level="1.1.5" data-path="setup.html"><a href="setup.html#download-the-template"><i class="fa fa-check"></i><b>1.1.5</b> Download the template</a></li>
-<li class="chapter" data-level="1.1.6" data-path="setup.html"><a href="setup.html#edit-the-template"><i class="fa fa-check"></i><b>1.1.6</b> Edit the template</a></li>
-<li class="chapter" data-level="1.1.7" data-path="setup.html"><a href="setup.html#render-the-book"><i class="fa fa-check"></i><b>1.1.7</b> Render the book</a></li>
+<li class="chapter" data-level="1.1.3" data-path="setup.html"><a href="setup.html#update-packages"><i class="fa fa-check"></i><b>1.1.3</b> Update packages</a></li>
+<li class="chapter" data-level="1.1.4" data-path="setup.html"><a href="setup.html#download-the-template"><i class="fa fa-check"></i><b>1.1.4</b> Download the template</a></li>
+<li class="chapter" data-level="1.1.5" data-path="setup.html"><a href="setup.html#edit-the-template"><i class="fa fa-check"></i><b>1.1.5</b> Edit the template</a></li>
+<li class="chapter" data-level="1.1.6" data-path="setup.html"><a href="setup.html#render"><i class="fa fa-check"></i><b>1.1.6</b> Render the book</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="setup.html"><a href="setup.html#adding-chapters"><i class="fa fa-check"></i><b>1.2</b> Adding chapters</a>
 <ul>
@@ -208,7 +209,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.5.2" data-path="setup.html"><a href="setup.html#edit-the-description-file"><i class="fa fa-check"></i><b>1.5.2</b> Edit the DESCRIPTION file</a></li>
 <li class="chapter" data-level="1.5.3" data-path="setup.html"><a href="setup.html#add-packages"><i class="fa fa-check"></i><b>1.5.3</b> Add packages</a></li>
 <li class="chapter" data-level="1.5.4" data-path="setup.html"><a href="setup.html#add-a-book-function"><i class="fa fa-check"></i><b>1.5.4</b> Add a book function</a></li>
-<li class="chapter" data-level="1.5.5" data-path="setup.html"><a href="setup.html#render-the-book-1"><i class="fa fa-check"></i><b>1.5.5</b> Render the book</a></li>
+<li class="chapter" data-level="1.5.5" data-path="setup.html"><a href="setup.html#render-the-book"><i class="fa fa-check"></i><b>1.5.5</b> Render the book</a></li>
 <li class="chapter" data-level="1.5.6" data-path="setup.html"><a href="setup.html#install-your-package"><i class="fa fa-check"></i><b>1.5.6</b> Install your package</a></li>
 <li class="chapter" data-level="1.5.7" data-path="setup.html"><a href="setup.html#add-datasets"><i class="fa fa-check"></i><b>1.5.7</b> Add datasets</a></li>
 <li class="chapter" data-level="1.5.8" data-path="setup.html"><a href="setup.html#add-shiny-apps"><i class="fa fa-check"></i><b>1.5.8</b> Add Shiny Apps</a></li>
@@ -334,9 +335,9 @@ div.csl-indent {
 </ul>
 <p>Some recommendations are highlighted below.</p>
 <ul>
-<li>Avoid underlining, block capitals, and italics – Use bold instead</li>
+<li>Avoid underlining, block capitals, and italics -- Use bold instead</li>
 <li>Use boxes and borders (<a href="psyteachr-style-guide.html#call-out-blocks">call-out blocks</a>) for effective emphasis</li>
-<li>Use left-justified with ragged right edge (don’t full-justify)</li>
+<li>Use left-justified with ragged right edge (don't full-justify)</li>
 <li>Use bullet points and numbering rather than continuous prose</li>
 <li>Use the active voice with concise, direct sentences</li>
 <li>Avoid abbreviations and provide a glossary of jargon</li>
@@ -346,7 +347,7 @@ div.csl-indent {
 <h2><span class="header-section-number">4.4</span> Colour</h2>
 <p>You can check your images for how they look to people with different types of colourblindness with the <a href="https://www.color-blindness.com/coblis-color-blindness-simulator/">Coblis Color Blindness Simulator</a>.</p>
 <p>Desi Quintans made <a href="https://github.com/DesiQuintans/Pebble-safe">dark and light colour-blind safe RStudio themes</a>.</p>
-<p>The “pink” and “green” colours from the <a href="">psyteachr_colours()</a> function are distinguishable by people with protanopia (red-blind), deuteronopia (green-blind), and tritanopia (blue-blind) colourblindness. You can also use viridis colours with <code>ggplot2::scale_colour_viridis_d()</code> and <code>ggplot2::scale_fill_viridis_d()</code> (for discrete colours) or <code>ggplot2::scale_colour_viridis_c()</code> and <code>ggplot2::scale_fill_viridis_c()</code> (for continuous colours).</p>
+<p>The "pink" and "green" colours from the <a href="">psyteachr_colours()</a> function are distinguishable by people with protanopia (red-blind), deuteronopia (green-blind), and tritanopia (blue-blind) colourblindness. You can also use viridis colours with <code>ggplot2::scale_colour_viridis_d()</code> and <code>ggplot2::scale_fill_viridis_d()</code> (for discrete colours) or <code>ggplot2::scale_colour_viridis_c()</code> and <code>ggplot2::scale_fill_viridis_c()</code> (for continuous colours).</p>
 <p>In plots, add secondary indicators in addition to colour, such as text labels or shapes.</p>
 <div class="figure" style="text-align: center"><span id="fig:plot-text-labels"></span>
 <img src="04-inclusion_files/figure-html/plot-text-labels-1.png" alt="Text labels supplement colour information." width="100%" />
@@ -370,11 +371,11 @@ Figure 4.3: Supplement point colours with shapes.
 <div id="sex-gender-and-sexuality" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Sex, gender and sexuality</h2>
 <p>When teaching about experimental design, sex always used to be my go-to example of a two-level between-subjects factor. But this can make some people feel like their very existence is being ignored. In your examples, avoid implicitly assuming heterosexuality or binary gender.</p>
-<p>If you want to suggest an in-class exercise that uses data from the students, make sure to choose something that doesn’t exclude anyone.</p>
+<p>If you want to suggest an in-class exercise that uses data from the students, make sure to choose something that doesn't exclude anyone.</p>
 <ul>
 <li>Pet owners/non-pet owners</li>
-<li>Normally does/doesn’t wear glasses</li>
-<li>Can/can’t juggle</li>
+<li>Normally does/doesn't wear glasses</li>
+<li>Can/can't juggle</li>
 <li>Native/non-native English speakers</li>
 <li>Born in Scotland/elsewhere</li>
 </ul>

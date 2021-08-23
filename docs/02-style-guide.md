@@ -135,7 +135,7 @@ iris %>%
 
 ## Glossary
 
-You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and automatically include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word")`. For example, common <a class='glossary' target='_blank' title='' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> are <a class='glossary' target='_blank' title='' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='' href='https://psyteachr.github.io/glossary/c#character'>character</a>.
+You can use the glossary function to automatically link to a term in the [psyTeachR glossary](https://psyteachr.github.io/glossary/) and automatically include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: `glossary("word")`. For example, common <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> are <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>.
 
 If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (`display`). You can also override the automatic short definition by providing your own in the third argument (`def`). Add the argument `link = FALSE` if you just want the hover definition and not a link to the psyTeachR glossary.
 
@@ -168,20 +168,20 @@ glossary_table()
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#character'>character</a> </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing strings of text. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data-type'>data-type</a> </td>
+   <td style="text-align:left;"> [data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> My custom definition of data types </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a> </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing a real decimal number </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#integer'>integer</a> </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [integer](https://psyteachr.github.io/glossary/i.html#integer){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing whole numbers. </td>
   </tr>
 </tbody>
 </table>
@@ -368,7 +368,7 @@ library(tidyverse)
 <code>&#96;&#96;&#96;</code></div>
 
 <div class="info">
-<p>The “verbatim” option is not standard to bookdown. It is only available if you include the code from the “R/psyteachr_setup.R” file.</p>
+<p>The "verbatim" option is not standard to bookdown. It is only available if you include the code from the "R/psyteachr_setup.R" file.</p>
 </div>
 
 
