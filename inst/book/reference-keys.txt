@@ -1,10 +1,3 @@
-fig:img-fork
-fig:img-already-forked
-fig:img-forking
-fig:img-clone
-fig:img-version-control
-fig:img-git
-fig:img-clone-repo
 fig:img-open-from-docs
 fig:img-new-rmd
 tab:kable-example
@@ -28,7 +21,6 @@ setup
 starting-a-new-book
 create-a-new-github-repository
 fork-the-repository
-make-a-new-rstudio-project
 update-packages
 download-the-template
 edit-the-template
@@ -36,7 +28,8 @@ output.yml
 header.html
 bookdown.yml
 index.rmd
-render-the-book
+logos
+render
 adding-chapters
 content
 multiple-.rmd-files-per-chapter
@@ -53,7 +46,7 @@ package-infrastructure
 edit-the-description-file
 add-packages
 add-a-book-function
-render-the-book-1
+render-the-book
 install-your-package
 add-datasets
 add-shiny-apps

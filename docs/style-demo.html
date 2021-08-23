@@ -324,7 +324,7 @@ div.csl-indent {
 </ul>
 <div id="header-4" class="section level4" number="6.1.1.1">
 <h4><span class="header-section-number">B.1.1.1</span> Header 4</h4>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="style-demo.html#cb41-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris, <span class="at">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="style-demo.html#cb44-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris, <span class="at">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>)</span></code></pre></div>
 <table>
 <caption><span id="tab:table-demo">Table B.1: </span>The iris dataset</caption>
 <thead>
@@ -1391,8 +1391,8 @@ div.csl-indent {
 </table>
 <div id="header-5" class="section level5" number="6.1.1.1.1">
 <h5><span class="header-section-number">B.1.1.1.1</span> Header 5</h5>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="style-demo.html#cb42-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris, <span class="at">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb42-2"><a href="style-demo.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="style-demo.html#cb45-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris, <span class="at">caption =</span> <span class="st">&quot;The iris dataset&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="style-demo.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">&quot;striped&quot;</span>)</span></code></pre></div>
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:table-demo-stripes">Table B.2: </span>The iris dataset
@@ -3977,22 +3977,22 @@ virginica
 <h2><span class="header-section-number">B.2</span> Chunks</h2>
 <div id="code-chunk-with-output" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">B.2.1</span> Code chunk with output</h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="style-demo.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nonsense function to demo code style</span></span>
-<span id="cb43-2"><a href="style-demo.html#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="style-demo.html#cb43-3" aria-hidden="true" tabindex="-1"></a>func_var <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">arg =</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb43-4"><a href="style-demo.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  string_var <span class="ot">&lt;-</span> <span class="st">&quot;I&#39;m a string&quot;</span></span>
-<span id="cb43-5"><a href="style-demo.html#cb43-5" aria-hidden="true" tabindex="-1"></a>  int_var <span class="ot">&lt;-</span> 1L</span>
-<span id="cb43-6"><a href="style-demo.html#cb43-6" aria-hidden="true" tabindex="-1"></a>  dbl_var <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.165</span> <span class="sc">*</span> int_var</span>
-<span id="cb43-7"><a href="style-demo.html#cb43-7" aria-hidden="true" tabindex="-1"></a>  bool_var <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb43-8"><a href="style-demo.html#cb43-8" aria-hidden="true" tabindex="-1"></a>  vector_var <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb43-9"><a href="style-demo.html#cb43-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-10"><a href="style-demo.html#cb43-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(string_var, int_var, <span class="at">sep =</span> <span class="st">&quot; - &quot;</span>)</span>
-<span id="cb43-11"><a href="style-demo.html#cb43-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb43-12"><a href="style-demo.html#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-13"><a href="style-demo.html#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="fu">func_var</span>()</span>
-<span id="cb43-14"><a href="style-demo.html#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="style-demo.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nonsense function to demo code style</span></span>
+<span id="cb46-2"><a href="style-demo.html#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="style-demo.html#cb46-3" aria-hidden="true" tabindex="-1"></a>func_var <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">arg =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb46-4"><a href="style-demo.html#cb46-4" aria-hidden="true" tabindex="-1"></a>  string_var <span class="ot">&lt;-</span> <span class="st">&quot;I&#39;m a string&quot;</span></span>
+<span id="cb46-5"><a href="style-demo.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  int_var <span class="ot">&lt;-</span> 1L</span>
+<span id="cb46-6"><a href="style-demo.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  dbl_var <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">3.165</span> <span class="sc">*</span> int_var</span>
+<span id="cb46-7"><a href="style-demo.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  bool_var <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb46-8"><a href="style-demo.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  vector_var <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb46-9"><a href="style-demo.html#cb46-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-10"><a href="style-demo.html#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(string_var, int_var, <span class="at">sep =</span> <span class="st">&quot; - &quot;</span>)</span>
+<span id="cb46-11"><a href="style-demo.html#cb46-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb46-12"><a href="style-demo.html#cb46-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-13"><a href="style-demo.html#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="fu">func_var</span>()</span>
+<span id="cb46-14"><a href="style-demo.html#cb46-14" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="style-demo.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="style-demo.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="st">&quot;A&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in rnorm(&quot;A&quot;): NAs introduced by coercion</code></pre>
 <pre><code>## Error in rnorm(&quot;A&quot;): invalid arguments</code></pre>
 <pre><code>## [1] &quot;I&#39;m a string - 1&quot;
@@ -4002,7 +4002,7 @@ virginica
 <h3><span class="header-section-number">B.2.2</span> Code chunk with r header</h3>
 <div class="verbatim">
 <p><code>```{r libraries, include=FALSE}</code></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="style-demo.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="style-demo.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <code>```</code>
 </div>
 </div>

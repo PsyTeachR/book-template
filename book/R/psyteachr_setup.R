@@ -21,6 +21,10 @@ knitr::opts_chunk$set(
 ## set global theme options for figures
 theme_set(theme_bw())
 
+# make docs directory and include .nojekyll file for github
+if (!dir.exists('../docs')) dir.create('../docs')
+file.create('../docs/.nojekyll')
+
 ## set class for a chunk using class="className"
 knitr::knit_hooks$set(class = function(before, options, envir) {
   if (before) {

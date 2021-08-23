@@ -319,25 +319,36 @@ div.csl-indent {
 <p>You can do this on the github site, or through the code below.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="setup.html#cb1-1" aria-hidden="true" tabindex="-1"></a>myrepo <span class="ot">&lt;-</span> <span class="st">&quot;ads-v1&quot;</span></span>
 <span id="cb1-2"><a href="setup.html#cb1-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_project</span>(myrepo)</span></code></pre></div>
-<p>A new project will open, type the next two commands in the console in that project.</p>
+<p>A new project will open, type the next commands in the console in that project.</p>
 <p>Set up git. You will need to choose the "Yes" option twice.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="setup.html#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code></pre></div>
+<p>Make sure the .gitignore file is set to ignore potentially private info.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="setup.html#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code></pre></div>
 <p>Add this to the psyTeachR github. This should prompt you to commit changes and open up the github page on your web browser.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="setup.html#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>(<span class="st">&quot;psyteachr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="setup.html#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>(<span class="st">&quot;psyteachr&quot;</span>)</span></code></pre></div>
+<p>Set up the website (GitHub Pages).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="setup.html#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_pages</span>(</span>
+<span id="cb5-2"><a href="setup.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">branch =</span> usethis<span class="sc">::</span><span class="fu">git_branch_default</span>(), </span>
+<span id="cb5-3"><a href="setup.html#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;/docs&quot;</span>)</span></code></pre></div>
+<div class="warning">
 <p>Contact Lisa or Dale to update the redirect from the base name (e.g. "pyteachr.github.io/dataskills/") to the new version.</p>
+</div>
 </div>
 <div id="fork-the-repository" class="section level3" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> Fork the repository</h3>
 <p>Our main course pages are under <a href="https://psyteachr.github.io" class="uri">https://psyteachr.github.io</a>, but you should work on your course page on a forked version in your own github account.</p>
 <p>The code below deletes "ads-v1" from your working directory, forks the repository ads-v1 from psyteachr to your own, and makes a local copy in your working directory. Set the <code>destdir</code> argument to save it elsewhere.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="setup.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># delete local repository</span></span>
-<span id="cb4-2"><a href="setup.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(myrepo, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-3"><a href="setup.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="setup.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># fork the psyTeachR repo to your github</span></span>
-<span id="cb4-5"><a href="setup.html#cb4-5" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_from_github</span>(</span>
-<span id="cb4-6"><a href="setup.html#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">repo_spec =</span> <span class="fu">paste0</span>(<span class="st">&quot;psyteachr/&quot;</span>, myrepo), </span>
-<span id="cb4-7"><a href="setup.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">fork =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>Continue working in this new project.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="setup.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># delete local repository</span></span>
+<span id="cb6-2"><a href="setup.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(myrepo, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-3"><a href="setup.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="setup.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># fork the psyTeachR repo to your github</span></span>
+<span id="cb6-5"><a href="setup.html#cb6-5" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_from_github</span>(</span>
+<span id="cb6-6"><a href="setup.html#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">repo_spec =</span> <span class="fu">paste0</span>(<span class="st">&quot;psyteachr/&quot;</span>, myrepo), </span>
+<span id="cb6-7"><a href="setup.html#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">fork =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Continue working in this new project, set up the website (GitHub Pages).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="setup.html#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github_pages</span>(</span>
+<span id="cb7-2"><a href="setup.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">branch =</span> usethis<span class="sc">::</span><span class="fu">git_branch_default</span>(), </span>
+<span id="cb7-3"><a href="setup.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;/docs&quot;</span>)</span></code></pre></div>
 </div>
 <div id="update-packages" class="section level3" number="1.1.3">
 <h3><span class="header-section-number">1.1.3</span> Update packages</h3>
@@ -352,7 +363,9 @@ div.csl-indent {
 <div id="download-the-template" class="section level3" number="1.1.4">
 <h3><span class="header-section-number">1.1.4</span> Download the template</h3>
 <p>Download the <a href="files/book.zip">psyTeachR Bookdown Course Template</a> to your computer, unzip it, and move the files into your new RStudio project inside a directory called "book".</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="setup.html#cb5-1" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">unzip</span>(<span class="st">&quot;book.zip&quot;</span>, <span class="at">exdir =</span> myrepo)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="setup.html#cb8-1" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">tempfile</span>()</span>
+<span id="cb8-2"><a href="setup.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">&quot;https://psyteachr.github.io/book-template/files/book.zip&quot;</span>,temp)</span>
+<span id="cb8-3"><a href="setup.html#cb8-3" aria-hidden="true" tabindex="-1"></a>utils<span class="sc">::</span><span class="fu">unzip</span>(<span class="st">&quot;book.zip&quot;</span>, <span class="at">exdir =</span> myrepo)</span></code></pre></div>
 </div>
 <div id="edit-the-template" class="section level3" number="1.1.5">
 <h3><span class="header-section-number">1.1.5</span> Edit the template</h3>
@@ -494,9 +507,9 @@ The <code>{-}</code> at the end of the overview title makes sure this chapter is
 <div id="render" class="section level3" number="1.1.6">
 <h3><span class="header-section-number">1.1.6</span> Render the book</h3>
 <p>Now you're ready to create the book. Run the following code in the console. This code lets you keep the book files in a subdirectory and render without changing working directories. <code>browseURL</code> opens the results in a browser.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="setup.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseURL</span>(</span>
-<span id="cb10-2"><a href="setup.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  xfun<span class="sc">::</span><span class="fu">in_dir</span>(<span class="st">&quot;book&quot;</span>, bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>))</span>
-<span id="cb10-3"><a href="setup.html#cb10-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="setup.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseURL</span>(</span>
+<span id="cb13-2"><a href="setup.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  xfun<span class="sc">::</span><span class="fu">in_dir</span>(<span class="st">&quot;book&quot;</span>, bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>))</span>
+<span id="cb13-3"><a href="setup.html#cb13-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>You'll see a lot of text in the console window, which should end in something that looks like:</p>
 <pre><code>Output created: ../docs/index.html</code></pre>
 <p>You can open the docs directory in the Files pane of RStudio, click on index.html, and choose <strong><code>View in Web Browser</code></strong>.</p>
@@ -537,9 +550,9 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <div id="rendering-a-single-chapter" class="section level3" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> Rendering a single chapter</h3>
 <p>After you've added several chapters, the whole book might take a long time to render. If you want to quickly check the formatting on a single chapter, use the following code.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="setup.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseURL</span>(</span>
-<span id="cb13-2"><a href="setup.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  xfun<span class="sc">::</span><span class="fu">in_dir</span>(<span class="st">&quot;book&quot;</span>, bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;02-style-guide.Rmd&quot;</span>))</span>
-<span id="cb13-3"><a href="setup.html#cb13-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="setup.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseURL</span>(</span>
+<span id="cb16-2"><a href="setup.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  xfun<span class="sc">::</span><span class="fu">in_dir</span>(<span class="st">&quot;book&quot;</span>, bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;02-style-guide.Rmd&quot;</span>))</span>
+<span id="cb16-3"><a href="setup.html#cb16-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="adding-appendices" class="section level3" number="1.2.4">
 <h3><span class="header-section-number">1.2.4</span> Adding appendices</h3>
@@ -665,26 +678,26 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <div id="package-infrastructure" class="section level3" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> Package Infrastructure</h3>
 <p>Run the following code to create some of the package infrastructure. You can do everything manually, but I like to use the extremely helpful package <code>usethis</code>.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="setup.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a package DESCRIPTION file</span></span>
-<span id="cb15-2"><a href="setup.html#cb15-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_description</span>(<span class="at">check_name =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-3"><a href="setup.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="setup.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add license (change psyTeachR to main author)</span></span>
-<span id="cb15-5"><a href="setup.html#cb15-5" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_ccby_license</span>(<span class="st">&quot;psyTeachR&quot;</span>)</span>
-<span id="cb15-6"><a href="setup.html#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="setup.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create the directory where the local copy of the book will go</span></span>
-<span id="cb15-8"><a href="setup.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;inst/book&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-9"><a href="setup.html#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="setup.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ignore book files when building the package</span></span>
-<span id="cb15-11"><a href="setup.html#cb15-11" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;_bookdown_files&quot;</span>)</span>
-<span id="cb15-12"><a href="setup.html#cb15-12" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;files&quot;</span>)</span>
-<span id="cb15-13"><a href="setup.html#cb15-13" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;include&quot;</span>)</span>
-<span id="cb15-14"><a href="setup.html#cb15-14" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;images&quot;</span>)</span>
-<span id="cb15-15"><a href="setup.html#cb15-15" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.Rproj$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-16"><a href="setup.html#cb15-16" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.Rmd$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-17"><a href="setup.html#cb15-17" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.yml$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-18"><a href="setup.html#cb15-18" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.bib$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-19"><a href="setup.html#cb15-19" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.tex$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-20"><a href="setup.html#cb15-20" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.rds$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="setup.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a package DESCRIPTION file</span></span>
+<span id="cb18-2"><a href="setup.html#cb18-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_description</span>(<span class="at">check_name =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-3"><a href="setup.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="setup.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add license (change psyTeachR to main author)</span></span>
+<span id="cb18-5"><a href="setup.html#cb18-5" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_ccby_license</span>(<span class="st">&quot;psyTeachR&quot;</span>)</span>
+<span id="cb18-6"><a href="setup.html#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="setup.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create the directory where the local copy of the book will go</span></span>
+<span id="cb18-8"><a href="setup.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;inst/book&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-9"><a href="setup.html#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="setup.html#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ignore book files when building the package</span></span>
+<span id="cb18-11"><a href="setup.html#cb18-11" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;_bookdown_files&quot;</span>)</span>
+<span id="cb18-12"><a href="setup.html#cb18-12" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;files&quot;</span>)</span>
+<span id="cb18-13"><a href="setup.html#cb18-13" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;include&quot;</span>)</span>
+<span id="cb18-14"><a href="setup.html#cb18-14" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;images&quot;</span>)</span>
+<span id="cb18-15"><a href="setup.html#cb18-15" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.Rproj$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-16"><a href="setup.html#cb18-16" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.Rmd$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-17"><a href="setup.html#cb18-17" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.yml$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-18"><a href="setup.html#cb18-18" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.bib$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-19"><a href="setup.html#cb18-19" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.tex$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-20"><a href="setup.html#cb18-20" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>(<span class="st">&quot;^.*</span><span class="sc">\\</span><span class="st">.rds$&quot;</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="edit-the-description-file" class="section level3" number="1.5.2">
 <h3><span class="header-section-number">1.5.2</span> Edit the DESCRIPTION file</h3>
@@ -699,10 +712,10 @@ In split_chapters(output, gitbook_page, number_sections, split_by,  :
 <div id="add-packages" class="section level3" number="1.5.3">
 <h3><span class="header-section-number">1.5.3</span> Add packages</h3>
 <p>Add any CRAN packages you want included with your package.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="setup.html#cb16-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
-<span id="cb16-2"><a href="setup.html#cb16-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
-<span id="cb16-3"><a href="setup.html#cb16-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb16-4"><a href="setup.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># usethis::use_package(&quot;tidyverse&quot;, type = &quot;depends&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="setup.html#cb19-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb19-2"><a href="setup.html#cb19-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;tidyr&quot;</span>)</span>
+<span id="cb19-3"><a href="setup.html#cb19-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb19-4"><a href="setup.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># usethis::use_package(&quot;tidyverse&quot;, type = &quot;depends&quot;)</span></span></code></pre></div>
 <div class="warning">
 <p>
 If you want to add tidyverse, you need to add it with <code>type = "depends"</code> and it will load automatically when you load this package. However, this can cause a lot of problems when installing the package, so I would not recommend it.
@@ -712,134 +725,134 @@ If you want to add tidyverse, you need to add it with <code>type = "depends"</co
 <div id="add-a-book-function" class="section level3" number="1.5.4">
 <h3><span class="header-section-number">1.5.4</span> Add a book function</h3>
 <p>This is a function to open the local copy of the book in a web browser. Make a file called <code>R/book.R</code> and include the following code (replacing the relevant items with your course and package names).</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="setup.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Open the {YOUR COURSE NAME} book</span></span>
-<span id="cb17-2"><a href="setup.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb17-3"><a href="setup.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return NULL</span></span>
-<span id="cb17-4"><a href="setup.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
-<span id="cb17-5"><a href="setup.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb17-6"><a href="setup.html#cb17-6" aria-hidden="true" tabindex="-1"></a>book <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb17-7"><a href="setup.html#cb17-7" aria-hidden="true" tabindex="-1"></a>  file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;book&quot;</span>, <span class="st">&quot;index.html&quot;</span>, <span class="at">package =</span> <span class="st">&quot;YOURPACKAGENAME&quot;</span>)</span>
-<span id="cb17-8"><a href="setup.html#cb17-8" aria-hidden="true" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">browseURL</span>(file)</span>
-<span id="cb17-9"><a href="setup.html#cb17-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="setup.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Open the {YOUR COURSE NAME} book</span></span>
+<span id="cb20-2"><a href="setup.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb20-3"><a href="setup.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return NULL</span></span>
+<span id="cb20-4"><a href="setup.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb20-5"><a href="setup.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb20-6"><a href="setup.html#cb20-6" aria-hidden="true" tabindex="-1"></a>book <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb20-7"><a href="setup.html#cb20-7" aria-hidden="true" tabindex="-1"></a>  file <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;book&quot;</span>, <span class="st">&quot;index.html&quot;</span>, <span class="at">package =</span> <span class="st">&quot;YOURPACKAGENAME&quot;</span>)</span>
+<span id="cb20-8"><a href="setup.html#cb20-8" aria-hidden="true" tabindex="-1"></a>  utils<span class="sc">::</span><span class="fu">browseURL</span>(file)</span>
+<span id="cb20-9"><a href="setup.html#cb20-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="render-the-book" class="section level3" number="1.5.5">
 <h3><span class="header-section-number">1.5.5</span> Render the book</h3>
 <p>Render your book and copy the content of <code>docs</code> (the online version) to <code>inst/book</code> (the offline package version).</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="setup.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># render a chapter or the whole book</span></span>
-<span id="cb18-2"><a href="setup.html#cb18-2" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;01-setup.Rmd&quot;</span>)</span>
-<span id="cb18-3"><a href="setup.html#cb18-3" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</span>
-<span id="cb18-4"><a href="setup.html#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="setup.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># copies docs dir to inst/book</span></span>
-<span id="cb18-6"><a href="setup.html#cb18-6" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">copyDirectory</span>(</span>
-<span id="cb18-7"><a href="setup.html#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="st">&quot;docs&quot;</span>, </span>
-<span id="cb18-8"><a href="setup.html#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">to =</span> <span class="st">&quot;inst/book&quot;</span>, </span>
-<span id="cb18-9"><a href="setup.html#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb18-10"><a href="setup.html#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="setup.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># render a chapter or the whole book</span></span>
+<span id="cb21-2"><a href="setup.html#cb21-2" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;01-setup.Rmd&quot;</span>)</span>
+<span id="cb21-3"><a href="setup.html#cb21-3" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</span>
+<span id="cb21-4"><a href="setup.html#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="setup.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># copies docs dir to inst/book</span></span>
+<span id="cb21-6"><a href="setup.html#cb21-6" aria-hidden="true" tabindex="-1"></a>R.utils<span class="sc">::</span><span class="fu">copyDirectory</span>(</span>
+<span id="cb21-7"><a href="setup.html#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> <span class="st">&quot;docs&quot;</span>, </span>
+<span id="cb21-8"><a href="setup.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">to =</span> <span class="st">&quot;inst/book&quot;</span>, </span>
+<span id="cb21-9"><a href="setup.html#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb21-10"><a href="setup.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="install-your-package" class="section level3" number="1.5.6">
 <h3><span class="header-section-number">1.5.6</span> Install your package</h3>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="setup.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># updates your documentation and </span></span>
-<span id="cb19-2"><a href="setup.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># makes new functions/datasets available</span></span>
-<span id="cb19-3"><a href="setup.html#cb19-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>() </span>
-<span id="cb19-4"><a href="setup.html#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="setup.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install the updated package</span></span>
-<span id="cb19-6"><a href="setup.html#cb19-6" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span>
-<span id="cb19-7"><a href="setup.html#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="setup.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># load your package</span></span>
-<span id="cb19-9"><a href="setup.html#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;your.package.name&quot;</span>)</span>
-<span id="cb19-10"><a href="setup.html#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="setup.html#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># open the book</span></span>
-<span id="cb19-12"><a href="setup.html#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="fu">book</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="setup.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># updates your documentation and </span></span>
+<span id="cb22-2"><a href="setup.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># makes new functions/datasets available</span></span>
+<span id="cb22-3"><a href="setup.html#cb22-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>() </span>
+<span id="cb22-4"><a href="setup.html#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="setup.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install the updated package</span></span>
+<span id="cb22-6"><a href="setup.html#cb22-6" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span>
+<span id="cb22-7"><a href="setup.html#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="setup.html#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># load your package</span></span>
+<span id="cb22-9"><a href="setup.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;your.package.name&quot;</span>)</span>
+<span id="cb22-10"><a href="setup.html#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="setup.html#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># open the book</span></span>
+<span id="cb22-12"><a href="setup.html#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="fu">book</span>()</span></code></pre></div>
 </div>
 <div id="add-datasets" class="section level3" number="1.5.7">
 <h3><span class="header-section-number">1.5.7</span> Add datasets</h3>
 <p>To add datasets, add a <code>data_raw</code> directory and edit the file <code>DATASET.R</code> to prep your datasets. Here's an example:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="setup.html#cb20-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>()</span>
-<span id="cb20-2"><a href="setup.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="setup.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="do">## code to prepare `DATASET` dataset goes here</span></span>
-<span id="cb20-4"><a href="setup.html#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="setup.html#cb20-5" aria-hidden="true" tabindex="-1"></a>factorial_2w2b <span class="ot">&lt;-</span> faux<span class="sc">::</span><span class="fu">sim_design</span>(</span>
-<span id="cb20-6"><a href="setup.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">within =</span> <span class="fu">list</span>(<span class="at">time =</span> <span class="fu">c</span>(<span class="at">am =</span> <span class="st">&quot;Day&quot;</span>, <span class="at">pm =</span> <span class="st">&quot;Night&quot;</span>)),</span>
-<span id="cb20-7"><a href="setup.html#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">between =</span> <span class="fu">list</span>(<span class="at">pet =</span> <span class="fu">c</span>(<span class="at">dog =</span> <span class="st">&quot;Dog Owner&quot;</span>, <span class="at">cat =</span> <span class="st">&quot;Cat Owner&quot;</span>)),</span>
-<span id="cb20-8"><a href="setup.html#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">25</span>, <span class="at">mu =</span> <span class="fu">list</span>(<span class="at">am =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>), <span class="at">pm =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">14</span>)), </span>
-<span id="cb20-9"><a href="setup.html#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="fl">0.5</span>, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-10"><a href="setup.html#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-11"><a href="setup.html#cb20-11" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(factorial_2w2b, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="setup.html#cb23-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data_raw</span>()</span>
+<span id="cb23-2"><a href="setup.html#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="setup.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="do">## code to prepare `DATASET` dataset goes here</span></span>
+<span id="cb23-4"><a href="setup.html#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="setup.html#cb23-5" aria-hidden="true" tabindex="-1"></a>factorial_2w2b <span class="ot">&lt;-</span> faux<span class="sc">::</span><span class="fu">sim_design</span>(</span>
+<span id="cb23-6"><a href="setup.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">within =</span> <span class="fu">list</span>(<span class="at">time =</span> <span class="fu">c</span>(<span class="at">am =</span> <span class="st">&quot;Day&quot;</span>, <span class="at">pm =</span> <span class="st">&quot;Night&quot;</span>)),</span>
+<span id="cb23-7"><a href="setup.html#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">between =</span> <span class="fu">list</span>(<span class="at">pet =</span> <span class="fu">c</span>(<span class="at">dog =</span> <span class="st">&quot;Dog Owner&quot;</span>, <span class="at">cat =</span> <span class="st">&quot;Cat Owner&quot;</span>)),</span>
+<span id="cb23-8"><a href="setup.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">25</span>, <span class="at">mu =</span> <span class="fu">list</span>(<span class="at">am =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>), <span class="at">pm =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">14</span>)), </span>
+<span id="cb23-9"><a href="setup.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="fl">0.5</span>, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb23-10"><a href="setup.html#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="setup.html#cb23-11" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_data</span>(factorial_2w2b, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>You can set up the documentation by hand following the instructions at <a href="https://r-pkgs.org/data.html" class="uri">https://r-pkgs.org/data.html</a> or use the following script to set up datasets from .csv or .xls files.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="setup.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function for creating dataset descriptions in Roxygen</span></span>
-<span id="cb21-2"><a href="setup.html#cb21-2" aria-hidden="true" tabindex="-1"></a>make_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(dataname, title, desc, <span class="at">itemdesc =</span> <span class="fu">list</span>(), <span class="at">filetype =</span> <span class="st">&quot;csv&quot;</span>, <span class="at">source =</span> <span class="st">&quot;&quot;</span>, <span class="at">write =</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb21-3"><a href="setup.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-4"><a href="setup.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read data and save to data directory</span></span>
-<span id="cb21-5"><a href="setup.html#cb21-5" aria-hidden="true" tabindex="-1"></a>  datafile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;data-raw/&quot;</span>, dataname, <span class="st">&quot;.&quot;</span>, filetype)</span>
-<span id="cb21-6"><a href="setup.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (filetype <span class="sc">==</span> <span class="st">&quot;csv&quot;</span>) {</span>
-<span id="cb21-7"><a href="setup.html#cb21-7" aria-hidden="true" tabindex="-1"></a>    data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(datafile, <span class="at">col_types =</span> readr<span class="sc">::</span><span class="fu">cols</span>())</span>
-<span id="cb21-8"><a href="setup.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (filetype <span class="sc">==</span> <span class="st">&quot;xls&quot;</span>) {</span>
-<span id="cb21-9"><a href="setup.html#cb21-9" aria-hidden="true" tabindex="-1"></a>    data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xls</span>(datafile)</span>
-<span id="cb21-10"><a href="setup.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb21-11"><a href="setup.html#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># this is awkward, but devtools::document won&#39;t work unless the saved data has the name you intend to use for it</span></span>
-<span id="cb21-12"><a href="setup.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb21-13"><a href="setup.html#cb21-13" aria-hidden="true" tabindex="-1"></a>  dat[[dataname]] <span class="ot">&lt;-</span> data</span>
-<span id="cb21-14"><a href="setup.html#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list2env</span>(dat, <span class="at">envir =</span> <span class="fu">environment</span>())</span>
-<span id="cb21-15"><a href="setup.html#cb21-15" aria-hidden="true" tabindex="-1"></a>  e <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;usethis::use_data(&quot;</span>, dataname, <span class="st">&quot;, overwrite = TRUE)&quot;</span>)</span>
-<span id="cb21-16"><a href="setup.html#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text =</span> e))</span>
-<span id="cb21-17"><a href="setup.html#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-18"><a href="setup.html#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create Roxygen description</span></span>
-<span id="cb21-19"><a href="setup.html#cb21-19" aria-hidden="true" tabindex="-1"></a>  items <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;#&#39;    </span><span class="sc">\\</span><span class="st">item{&quot;</span>, <span class="fu">names</span>(itemdesc), <span class="st">&quot;}{&quot;</span>, itemdesc, <span class="st">&quot;}&quot;</span>)</span>
-<span id="cb21-20"><a href="setup.html#cb21-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb21-21"><a href="setup.html#cb21-21" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;# %s ----</span><span class="sc">\n</span><span class="st">#&#39; %s</span><span class="sc">\n</span><span class="st">#&#39;</span><span class="sc">\n</span><span class="st">#&#39; %s</span><span class="sc">\n</span><span class="st">#&#39;</span><span class="sc">\n</span><span class="st">#&#39; @format A data frame with %d rows and %d variables:</span><span class="sc">\n</span><span class="st">#&#39; </span><span class="sc">\\</span><span class="st">describe{</span><span class="sc">\n</span><span class="st">%s</span><span class="sc">\n</span><span class="st">#&#39; }</span><span class="sc">\n</span><span class="st">#&#39; @source </span><span class="sc">\\</span><span class="st">url{%s}</span><span class="sc">\n\&quot;</span><span class="st">%s</span><span class="sc">\&quot;\n\n</span><span class="st">&quot;</span>,</span>
-<span id="cb21-22"><a href="setup.html#cb21-22" aria-hidden="true" tabindex="-1"></a>               dataname, title, </span>
-<span id="cb21-23"><a href="setup.html#cb21-23" aria-hidden="true" tabindex="-1"></a>               <span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">+&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">#&#39;</span><span class="sc">\n</span><span class="st">#&#39; &quot;</span>, desc), </span>
-<span id="cb21-24"><a href="setup.html#cb21-24" aria-hidden="true" tabindex="-1"></a>               <span class="fu">nrow</span>(data), <span class="fu">ncol</span>(data),</span>
-<span id="cb21-25"><a href="setup.html#cb21-25" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste</span>(items, <span class="at">collapse =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>),</span>
-<span id="cb21-26"><a href="setup.html#cb21-26" aria-hidden="true" tabindex="-1"></a>               source, dataname</span>
-<span id="cb21-27"><a href="setup.html#cb21-27" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb21-28"><a href="setup.html#cb21-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">isFALSE</span>(write)) <span class="fu">write</span>(s, <span class="fu">paste0</span>(<span class="st">&quot;R/&quot;</span>, dataname, <span class="st">&quot;.R&quot;</span>))</span>
-<span id="cb21-29"><a href="setup.html#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">invisible</span>(s)</span>
-<span id="cb21-30"><a href="setup.html#cb21-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="setup.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function for creating dataset descriptions in Roxygen</span></span>
+<span id="cb24-2"><a href="setup.html#cb24-2" aria-hidden="true" tabindex="-1"></a>make_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(dataname, title, desc, <span class="at">itemdesc =</span> <span class="fu">list</span>(), <span class="at">filetype =</span> <span class="st">&quot;csv&quot;</span>, <span class="at">source =</span> <span class="st">&quot;&quot;</span>, <span class="at">write =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb24-3"><a href="setup.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-4"><a href="setup.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read data and save to data directory</span></span>
+<span id="cb24-5"><a href="setup.html#cb24-5" aria-hidden="true" tabindex="-1"></a>  datafile <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;data-raw/&quot;</span>, dataname, <span class="st">&quot;.&quot;</span>, filetype)</span>
+<span id="cb24-6"><a href="setup.html#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (filetype <span class="sc">==</span> <span class="st">&quot;csv&quot;</span>) {</span>
+<span id="cb24-7"><a href="setup.html#cb24-7" aria-hidden="true" tabindex="-1"></a>    data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(datafile, <span class="at">col_types =</span> readr<span class="sc">::</span><span class="fu">cols</span>())</span>
+<span id="cb24-8"><a href="setup.html#cb24-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (filetype <span class="sc">==</span> <span class="st">&quot;xls&quot;</span>) {</span>
+<span id="cb24-9"><a href="setup.html#cb24-9" aria-hidden="true" tabindex="-1"></a>    data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xls</span>(datafile)</span>
+<span id="cb24-10"><a href="setup.html#cb24-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb24-11"><a href="setup.html#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># this is awkward, but devtools::document won&#39;t work unless the saved data has the name you intend to use for it</span></span>
+<span id="cb24-12"><a href="setup.html#cb24-12" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb24-13"><a href="setup.html#cb24-13" aria-hidden="true" tabindex="-1"></a>  dat[[dataname]] <span class="ot">&lt;-</span> data</span>
+<span id="cb24-14"><a href="setup.html#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list2env</span>(dat, <span class="at">envir =</span> <span class="fu">environment</span>())</span>
+<span id="cb24-15"><a href="setup.html#cb24-15" aria-hidden="true" tabindex="-1"></a>  e <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;usethis::use_data(&quot;</span>, dataname, <span class="st">&quot;, overwrite = TRUE)&quot;</span>)</span>
+<span id="cb24-16"><a href="setup.html#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text =</span> e))</span>
+<span id="cb24-17"><a href="setup.html#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="setup.html#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create Roxygen description</span></span>
+<span id="cb24-19"><a href="setup.html#cb24-19" aria-hidden="true" tabindex="-1"></a>  items <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;#&#39;    </span><span class="sc">\\</span><span class="st">item{&quot;</span>, <span class="fu">names</span>(itemdesc), <span class="st">&quot;}{&quot;</span>, itemdesc, <span class="st">&quot;}&quot;</span>)</span>
+<span id="cb24-20"><a href="setup.html#cb24-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-21"><a href="setup.html#cb24-21" aria-hidden="true" tabindex="-1"></a>  s <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;# %s ----</span><span class="sc">\n</span><span class="st">#&#39; %s</span><span class="sc">\n</span><span class="st">#&#39;</span><span class="sc">\n</span><span class="st">#&#39; %s</span><span class="sc">\n</span><span class="st">#&#39;</span><span class="sc">\n</span><span class="st">#&#39; @format A data frame with %d rows and %d variables:</span><span class="sc">\n</span><span class="st">#&#39; </span><span class="sc">\\</span><span class="st">describe{</span><span class="sc">\n</span><span class="st">%s</span><span class="sc">\n</span><span class="st">#&#39; }</span><span class="sc">\n</span><span class="st">#&#39; @source </span><span class="sc">\\</span><span class="st">url{%s}</span><span class="sc">\n\&quot;</span><span class="st">%s</span><span class="sc">\&quot;\n\n</span><span class="st">&quot;</span>,</span>
+<span id="cb24-22"><a href="setup.html#cb24-22" aria-hidden="true" tabindex="-1"></a>               dataname, title, </span>
+<span id="cb24-23"><a href="setup.html#cb24-23" aria-hidden="true" tabindex="-1"></a>               <span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">+&quot;</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">#&#39;</span><span class="sc">\n</span><span class="st">#&#39; &quot;</span>, desc), </span>
+<span id="cb24-24"><a href="setup.html#cb24-24" aria-hidden="true" tabindex="-1"></a>               <span class="fu">nrow</span>(data), <span class="fu">ncol</span>(data),</span>
+<span id="cb24-25"><a href="setup.html#cb24-25" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste</span>(items, <span class="at">collapse =</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>),</span>
+<span id="cb24-26"><a href="setup.html#cb24-26" aria-hidden="true" tabindex="-1"></a>               source, dataname</span>
+<span id="cb24-27"><a href="setup.html#cb24-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb24-28"><a href="setup.html#cb24-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">isFALSE</span>(write)) <span class="fu">write</span>(s, <span class="fu">paste0</span>(<span class="st">&quot;R/&quot;</span>, dataname, <span class="st">&quot;.R&quot;</span>))</span>
+<span id="cb24-29"><a href="setup.html#cb24-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">invisible</span>(s)</span>
+<span id="cb24-30"><a href="setup.html#cb24-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>After you set up the function above at the top of your <code>DATASET.R</code> file, you can add datasets as below (either from files you've added to <code>data-raw</code> or by creating and saving CSV files (e.g., using faux).</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="setup.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add country codes dataset</span></span>
-<span id="cb22-2"><a href="setup.html#cb22-2" aria-hidden="true" tabindex="-1"></a>ccodes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv&quot;</span>)</span>
-<span id="cb22-3"><a href="setup.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(ccodes, <span class="st">&quot;data-raw/country_codes.csv&quot;</span>)</span>
-<span id="cb22-4"><a href="setup.html#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="setup.html#cb22-5" aria-hidden="true" tabindex="-1"></a>itemdesc <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb22-6"><a href="setup.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;name&quot;</span> <span class="ot">=</span> <span class="st">&quot;Full country name&quot;</span>,</span>
-<span id="cb22-7"><a href="setup.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;alpha-2&quot;</span> <span class="ot">=</span> <span class="st">&quot;2-character country code&quot;</span>,</span>
-<span id="cb22-8"><a href="setup.html#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;alpha-3&quot;</span> <span class="ot">=</span> <span class="st">&quot;3-character country code&quot;</span>,</span>
-<span id="cb22-9"><a href="setup.html#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;country-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;3-digit country code&quot;</span>,</span>
-<span id="cb22-10"><a href="setup.html#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;iso_3166-2&quot;</span> <span class="ot">=</span> <span class="st">&quot;ISO code&quot;</span>,</span>
-<span id="cb22-11"><a href="setup.html#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;region&quot;</span> <span class="ot">=</span> <span class="st">&quot;World region&quot;</span>,</span>
-<span id="cb22-12"><a href="setup.html#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;sub-region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Sub-region&quot;</span>,</span>
-<span id="cb22-13"><a href="setup.html#cb22-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;intermediate-region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intermediate region&quot;</span>,</span>
-<span id="cb22-14"><a href="setup.html#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;region-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;World region code&quot;</span>,</span>
-<span id="cb22-15"><a href="setup.html#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;sub-region-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;Sub-region code&quot;</span>,</span>
-<span id="cb22-16"><a href="setup.html#cb22-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;intermediate-region-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intermediate region code&quot;</span></span>
-<span id="cb22-17"><a href="setup.html#cb22-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb22-18"><a href="setup.html#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-19"><a href="setup.html#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="fu">make_dataset</span>(<span class="st">&quot;country_codes&quot;</span>, </span>
-<span id="cb22-20"><a href="setup.html#cb22-20" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Country Codes&quot;</span>, </span>
-<span id="cb22-21"><a href="setup.html#cb22-21" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Multiple country, subregion, and region codes for 249 countries.</span><span class="sc">\n</span><span class="st">From https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes&quot;</span>, itemdesc, <span class="at">source =</span> <span class="st">&quot;https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="setup.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add country codes dataset</span></span>
+<span id="cb25-2"><a href="setup.html#cb25-2" aria-hidden="true" tabindex="-1"></a>ccodes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv&quot;</span>)</span>
+<span id="cb25-3"><a href="setup.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(ccodes, <span class="st">&quot;data-raw/country_codes.csv&quot;</span>)</span>
+<span id="cb25-4"><a href="setup.html#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="setup.html#cb25-5" aria-hidden="true" tabindex="-1"></a>itemdesc <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb25-6"><a href="setup.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;name&quot;</span> <span class="ot">=</span> <span class="st">&quot;Full country name&quot;</span>,</span>
+<span id="cb25-7"><a href="setup.html#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;alpha-2&quot;</span> <span class="ot">=</span> <span class="st">&quot;2-character country code&quot;</span>,</span>
+<span id="cb25-8"><a href="setup.html#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;alpha-3&quot;</span> <span class="ot">=</span> <span class="st">&quot;3-character country code&quot;</span>,</span>
+<span id="cb25-9"><a href="setup.html#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;country-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;3-digit country code&quot;</span>,</span>
+<span id="cb25-10"><a href="setup.html#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;iso_3166-2&quot;</span> <span class="ot">=</span> <span class="st">&quot;ISO code&quot;</span>,</span>
+<span id="cb25-11"><a href="setup.html#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;region&quot;</span> <span class="ot">=</span> <span class="st">&quot;World region&quot;</span>,</span>
+<span id="cb25-12"><a href="setup.html#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;sub-region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Sub-region&quot;</span>,</span>
+<span id="cb25-13"><a href="setup.html#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;intermediate-region&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intermediate region&quot;</span>,</span>
+<span id="cb25-14"><a href="setup.html#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;region-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;World region code&quot;</span>,</span>
+<span id="cb25-15"><a href="setup.html#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;sub-region-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;Sub-region code&quot;</span>,</span>
+<span id="cb25-16"><a href="setup.html#cb25-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;intermediate-region-code&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intermediate region code&quot;</span></span>
+<span id="cb25-17"><a href="setup.html#cb25-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-18"><a href="setup.html#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="setup.html#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="fu">make_dataset</span>(<span class="st">&quot;country_codes&quot;</span>, </span>
+<span id="cb25-20"><a href="setup.html#cb25-20" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Country Codes&quot;</span>, </span>
+<span id="cb25-21"><a href="setup.html#cb25-21" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Multiple country, subregion, and region codes for 249 countries.</span><span class="sc">\n</span><span class="st">From https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes&quot;</span>, itemdesc, <span class="at">source =</span> <span class="st">&quot;https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv&quot;</span>)</span></code></pre></div>
 <p>This will create a new file in the <code>R</code> directory called <code>country_codes.R</code> that contains your dataset description. Add it to the package documentation by running <code>devtools::document()</code>.</p>
 </div>
 <div id="add-shiny-apps" class="section level3" number="1.5.8">
 <h3><span class="header-section-number">1.5.8</span> Add Shiny Apps</h3>
 <p>You can add shiny apps to you package easily. Just put any app directories in <code>inst/apps</code> and add the following code to a new file <code>R/app.R</code> (replacing "YOUR.PACKAGE.NAME").</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="setup.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Launch Shiny App</span></span>
-<span id="cb23-2"><a href="setup.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb23-3"><a href="setup.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param name The name of the app to run</span></span>
-<span id="cb23-4"><a href="setup.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param ... arguments to pass to shiny::runApp</span></span>
-<span id="cb23-5"><a href="setup.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb23-6"><a href="setup.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
-<span id="cb23-7"><a href="setup.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
-<span id="cb23-8"><a href="setup.html#cb23-8" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="cf">function</span>(name, ...) {</span>
-<span id="cb23-9"><a href="setup.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  appDir <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="fu">paste0</span>(<span class="st">&quot;apps/&quot;</span>, name), <span class="at">package =</span> <span class="st">&quot;YOUR.PACKAGE.NAME&quot;</span>)</span>
-<span id="cb23-10"><a href="setup.html#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (appDir <span class="sc">==</span> <span class="st">&quot;&quot;</span>) <span class="fu">stop</span>(<span class="st">&quot;The shiny app &quot;</span>, name, <span class="st">&quot; does not exist&quot;</span>)</span>
-<span id="cb23-11"><a href="setup.html#cb23-11" aria-hidden="true" tabindex="-1"></a>  shiny<span class="sc">::</span><span class="fu">runApp</span>(appDir, ...)</span>
-<span id="cb23-12"><a href="setup.html#cb23-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="setup.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Launch Shiny App</span></span>
+<span id="cb26-2"><a href="setup.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb26-3"><a href="setup.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param name The name of the app to run</span></span>
+<span id="cb26-4"><a href="setup.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param ... arguments to pass to shiny::runApp</span></span>
+<span id="cb26-5"><a href="setup.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb26-6"><a href="setup.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @export</span></span>
+<span id="cb26-7"><a href="setup.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb26-8"><a href="setup.html#cb26-8" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="cf">function</span>(name, ...) {</span>
+<span id="cb26-9"><a href="setup.html#cb26-9" aria-hidden="true" tabindex="-1"></a>  appDir <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="fu">paste0</span>(<span class="st">&quot;apps/&quot;</span>, name), <span class="at">package =</span> <span class="st">&quot;YOUR.PACKAGE.NAME&quot;</span>)</span>
+<span id="cb26-10"><a href="setup.html#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (appDir <span class="sc">==</span> <span class="st">&quot;&quot;</span>) <span class="fu">stop</span>(<span class="st">&quot;The shiny app &quot;</span>, name, <span class="st">&quot; does not exist&quot;</span>)</span>
+<span id="cb26-11"><a href="setup.html#cb26-11" aria-hidden="true" tabindex="-1"></a>  shiny<span class="sc">::</span><span class="fu">runApp</span>(appDir, ...)</span>
+<span id="cb26-12"><a href="setup.html#cb26-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Make sure you add shiny and any other packages used in your shiny app as dependencies. Document to add the <code>app()</code> function and install the updated package.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="setup.html#cb24-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;shiny&quot;</span>)</span>
-<span id="cb24-2"><a href="setup.html#cb24-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span>
-<span id="cb24-3"><a href="setup.html#cb24-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
-<span id="cb24-4"><a href="setup.html#cb24-4" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="setup.html#cb27-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;shiny&quot;</span>)</span>
+<span id="cb27-2"><a href="setup.html#cb27-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">&quot;shinydashboard&quot;</span>)</span>
+<span id="cb27-3"><a href="setup.html#cb27-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">document</span>()</span>
+<span id="cb27-4"><a href="setup.html#cb27-4" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>()</span></code></pre></div>
 
 </div>
 </div>

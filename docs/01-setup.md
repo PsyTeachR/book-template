@@ -18,13 +18,20 @@ myrepo <- "ads-v1"
 usethis::create_project(myrepo)
 ```
 
-A new project will open, type the next two commands in the console in that project.
+A new project will open, type the next commands in the console in that project.
 
 Set up git. You will need to choose the "Yes" option twice.
 
 
 ```r
 usethis::use_git()
+```
+
+Make sure the .gitignore file is set to ignore potentially private info.
+
+
+```r
+usethis::git_vaccinate()
 ```
 
 Add this to the psyTeachR github. This should prompt you to commit changes and open up the github page on your web browser.
@@ -34,7 +41,20 @@ Add this to the psyTeachR github. This should prompt you to commit changes and o
 usethis::use_github("psyteachr")
 ```
 
+Set up the website (GitHub Pages).
+
+
+```r
+usethis::use_github_pages(
+  branch = usethis::git_branch_default(), 
+  path = "/docs")
+```
+
+
+::: {.warning data-latex=""}
 Contact Lisa or Dale to update the redirect from the base name (e.g. "pyteachr.github.io/dataskills/") to the new version.
+:::
+
 
 ### Fork the repository
 
@@ -53,7 +73,14 @@ usethis::create_from_github(
   fork = TRUE)
 ```
 
-Continue working in this new project.
+Continue working in this new project, set up the website (GitHub Pages).
+
+
+```r
+usethis::use_github_pages(
+  branch = usethis::git_branch_default(), 
+  path = "/docs")
+```
 
 
 ### Update packages
@@ -71,6 +98,8 @@ Download the [psyTeachR Bookdown Course Template](files/book.zip) to your comput
 
 
 ```r
+temp <- tempfile()
+download.file("https://psyteachr.github.io/book-template/files/book.zip",temp)
 utils::unzip("book.zip", exdir = myrepo)
 ```
 
@@ -542,8 +571,7 @@ usethis::use_data(factorial_2w2b, overwrite = TRUE)
 
 You can set up the documentation by hand following the instructions at <https://r-pkgs.org/data.html> or use the following script to set up datasets from .csv or .xls files.
 
-
-```r
+``` r
 # function for creating dataset descriptions in Roxygen
 make_dataset <- function(dataname, title, desc, itemdesc = list(), filetype = "csv", source = "", write = TRUE) {
   

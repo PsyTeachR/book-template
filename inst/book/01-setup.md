@@ -6,64 +6,82 @@
 
 For psyTeachR courses, the repository should be created by the course lead on the [psyTeachR](https://github.com/PsyTeachR) github and have a name structure like this:
 
-* ug1-practical
-* ug2-practical
-* ug3-stats
-* ug4-dissertation
-* msc-data-skills
+* dataskills-v1
+* dataskills-v2
+
+
+You can do this on the github site, or through the code below.
+
+
+```r
+myrepo <- "ads-v1"
+usethis::create_project(myrepo)
+```
+
+A new project will open, type the next commands in the console in that project.
+
+Set up git. You will need to choose the "Yes" option twice.
+
+
+```r
+usethis::use_git()
+```
+
+Make sure the .gitignore file is set to ignore potentially private info.
+
+
+```r
+usethis::git_vaccinate()
+```
+
+Add this to the psyTeachR github. This should prompt you to commit changes and open up the github page on your web browser.
+
+
+```r
+usethis::use_github("psyteachr")
+```
+
+Set up the website (GitHub Pages).
+
+
+```r
+usethis::use_github_pages(
+  branch = usethis::git_branch_default(), 
+  path = "/docs")
+```
+
+
+::: {.warning data-latex=""}
+Contact Lisa or Dale to update the redirect from the base name (e.g. "pyteachr.github.io/dataskills/") to the new version.
+:::
+
 
 ### Fork the repository
 
-Our main course pages are under https://psyteachr.github.io, but you should work on your course page on a forked version in your own github account. On the **`Code`** tab of the new repository, click the **`Fork`** button.
+Our main course pages are under https://psyteachr.github.io, but you should work on your course page on a forked version in your own github account. 
 
-<div class="figure" style="text-align: center">
-<img src="files/images/fork.png" alt="Fork a repository from the psyTeachR account" width="100%" />
-<p class="caption">(\#fig:img-fork)Fork a repository from the psyTeachR account</p>
-</div>
+The code below deletes "ads-v1" from your working directory, forks the repository ads-v1 from psyteachr to your own, and makes a local copy in your working directory. Set the `destdir` argument to save it elsewhere.
 
-If you're a member of psyTeachR, you'll get this interface telling you that you've already forked this project. You just need to choose your personal account.
 
-<div class="figure" style="text-align: center">
-<img src="files/images/already_forked.png" alt="Choose your personal account" width="50%" />
-<p class="caption">(\#fig:img-already-forked)Choose your personal account</p>
-</div>
+```r
+# delete local repository
+unlink(myrepo, recursive = TRUE)
 
-You'll see this animation for a few seconds while the repository is being forked to your account.
+# fork the psyTeachR repo to your github
+usethis::create_from_github(
+  repo_spec = paste0("psyteachr/", myrepo), 
+  fork = TRUE)
+```
 
-<div class="figure" style="text-align: center">
-<img src="files/images/forking.png" alt="Just be patient" width="50%" />
-<p class="caption">(\#fig:img-forking)Just be patient</p>
-</div>
+Continue working in this new project, set up the website (GitHub Pages).
 
-### Make a new RStudio project
 
-Click the green **`Clone or download`** button on your personal forked repository and copy the URL (use HTTPS unless you know you've set up SSH).
+```r
+usethis::use_github_pages(
+  branch = usethis::git_branch_default(), 
+  path = "/docs")
+```
 
-<div class="figure" style="text-align: center">
-<img src="files/images/clone.png" alt="Find the URL to clone" width="100%" />
-<p class="caption">(\#fig:img-clone)Find the URL to clone</p>
-</div>
-
-Under the **`File`** menu in RStudio, choose **`New Project...`** and choose **`Version Control`** from the list of options.
-
-<div class="figure" style="text-align: center">
-<img src="files/images/version_control.png" alt="File &gt; New Project... &gt; Version Control" width="50%" />
-<p class="caption">(\#fig:img-version-control)File > New Project... > Version Control</p>
-</div>
-
-Choose **`Git`** from the next screen.
-
-<div class="figure" style="text-align: center">
-<img src="files/images/git.png" alt="Choose Git" width="50%" />
-<p class="caption">(\#fig:img-git)Choose Git</p>
-</div>
-
-Paste the URL you copied from your repository into the Repository URL. Keep the Project directory name the same as the repository name (it should default to this). You can Create the project as a subdirectory anywhere on your computer; I recommend making a directory to keep all your github R projects in.
-
-<div class="figure" style="text-align: center">
-<img src="files/images/clone_repo.png" alt="Clone your github repository to the RStudio project" width="50%" />
-<p class="caption">(\#fig:img-clone-repo)Clone your github repository to the RStudio project</p>
-</div>
 
 ### Update packages
 
@@ -76,7 +94,15 @@ The books assume you have the following packages:
 
 ### Download the template
 
-Download the [psyTeachR Bookdown Course Template](files/book-template.zip) to you computer, unzip it, and move the files into the directory of your new RStudio project.
+Download the [psyTeachR Bookdown Course Template](files/book.zip) to your computer, unzip it, and move the files into your new RStudio project inside a directory called "book".
+
+
+```r
+temp <- tempfile()
+download.file("https://psyteachr.github.io/book-template/files/book.zip",temp)
+utils::unzip("book.zip", exdir = myrepo)
+```
+
 
 ### Edit the template
 
@@ -87,7 +113,7 @@ Open `_output.yml`. It should look like this:
 ```
 bookdown::gitbook: 
   default: true
-  smart: false
+  md_extensions: -smart
   df_print: kable
   includes:
     in_header: include/header.html
@@ -99,12 +125,13 @@ bookdown::gitbook:
       scroll_highlight: yes
       before: |
         <li><a href="./">Book Template</a></li>
+        <li><a href="https://zenodo.org/badge/latestdoi/166559207"><img src="https://zenodo.org/badge/166559207.svg" alt="DOI"></a></li>
       after: |
         <li><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" 
             target="blank"><img alt="Creative Commons License" 
             style="border-width:0" 
-            src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><li>
-        <li><a href="https://psyteachr.github.io/" target="blank">PsyTeachR</a></li>
+            src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></li>
+        <li><a href="https://psyteachr.github.io/books" target="blank">PsyTeachR Books</a></li>
     download: []
     fontsettings:
       theme: white
@@ -121,10 +148,15 @@ bookdown::gitbook:
       all: ['facebook', 'google', 'twitter', 'linkedin', 'weibo', 'instapaper']
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
+    in_header: include/preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+bookdown::epub_book:
+  stylesheet: [include/epub.css]
+  cover_image: images/logo.png
+  toc: true
+  toc_depth: 2
 ```
 
 Change "Book Template" in the config:toc:before: section to the name of your book. This is the text readers will see at the top of your table of contents that brings them back to the start of the book.
@@ -133,21 +165,21 @@ Save and close this file.
 
 #### header.html
 
-The header include information for displaying your website on social media The shortcut icon creates the favicon that you see in the tab bar or a web browser. 
-
 Open `include/header.html`. It should look like this:
 
 ```
-<meta property="og:title" content="psyTeachR Book Template">
-<meta property="og:description" content="Guide for psyTeachR course books.">
-<meta property="og:image" content="https://psyteachr.github.io/images/twitter/psyteachr.png">
-<meta property="og:url" content="https://psyteachr.github.io/book-template/">
-<meta property="twitter:card" content="summary_large_image">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<link rel="shortcut icon" href="https://psyteachr.github.io/images/logo.png">
+  gtag('config', 'G-6NP3MF25W3');
+</script>
 ```
 
-Change the content of each item to something relevant to your book. You can check that this is properly configured after you publish you website by putting the URL in the [Twitter Validator](https://cards-dev.twitter.com/validator){target="_blank"} or the [FaceBook Validator](https://developers.facebook.com/tools/debug/){target="_blank"}.
+Update the google Analytics Tracking ID (or delete this text) if your book isn't in the psyteachr.github.io domain.
 
 Save and close this file.
 
@@ -194,45 +226,62 @@ Open `_index_example.Rmd`. The top YAML header should look like this:
 --- 
 title: "Template Course"
 author: "psyTeachR"
-date: "2021-06-10"
+date: "2021-08-23"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "This is a template. Use it to start a new course book."
+url: "https://psyteachr.github.io/template-v1"
+github-repo: "psyteachr/template-v1"
+cover-image: "images/logo.png"
+apple-touch-icon: "images/apple-touch-icon.png"
+apple-touch-icon-size: 180
+favicon: "images/favicon.ico"
 ---
 ```
 
-Update the title, author, and description strings.
+Update the title, author, and description strings. Make sure the url and github-repo match your new repository.
+
+We'll set up the images for the cover-image, apple-touch-icon and favicon in the next section. Delete these lines if you don't want social media images.
 
 For now, don't change anything in the `cite-packages` R chunk at the top. This just automatically creates a bibliography file for the specified R packages.
 
 Now you can edit the overview. Replace the filler text with a description of your course and fill in the course aims and ILOs. 
 
 <div class="info">
-<p>The <code>{-}</code> at the end of the overview title makes sure this chapter isn’t numbered.</p>
+<p>The <code>{-}</code> at the end of the overview title makes sure this chapter isn't numbered.</p>
 </div>
 
 Save this file with the name `index.Rmd`.
 
-### Render the book
+#### Logos
 
-Now you're ready to create the book. Run the following code in the console.
+Save a logo image at "images/logo.png".  This is the image that will be shown when people share your site on social media.
+
+Upload your logo to the [Favicon Convertor](https://favicon.io/favicon-converter/) to create the little icon that shows in the toolbar of web browsers and the apple-touch icon. Add "favicon.ico" and "apple-touch-icon.png" to the images directory.
+
+You can check that this is properly configured after you publish you website by putting the URL in the [Twitter Validator](https://cards-dev.twitter.com/validator){target="_blank"} or the [FaceBook Validator](https://developers.facebook.com/tools/debug/){target="_blank"}.
+
+### Render the book {#render}
+
+Now you're ready to create the book. Run the following code in the console. This code lets you keep the book files in a subdirectory and render without changing working directories. `browseURL` opens the results in a browser.
 
 
 ```r
-bookdown::render_book("index.Rmd")
+browseURL(
+  xfun::in_dir("book", bookdown::render_book("index.Rmd", "bookdown::gitbook"))
+)
 ```
 
 You'll see a lot of text in the console window, which should end in something that looks like:
 
 ```
-Output created: docs/index.html
-[1] "/Users/lisad/rproj/psyteachr/book-template/docs/index.html"
+Output created: ../docs/index.html
 ```
 
-The last line is the location of your new book. You can copy and paste that in a web browser to view the book. Alternatively, you can open the docs directory in the Files pane of RStudio, click on index.html, and choose **`View in Web Browser`**.
+You can open the docs directory in the Files pane of RStudio, click on index.html, and choose **`View in Web Browser`**.
 
 <div class="figure" style="text-align: center">
 <img src="files/images/open_from_docs.png" alt="Open your book from the Files pane in RStudio." width="50%" />
@@ -255,7 +304,7 @@ Name the file with the chapter number and a short title all in lowercase, separa
 Start your chapter with a level 1 header. This will be the chapter title. You can then continue to write your chapter in R Markdown.
 
 <div class="info">
-<p>You can refer to any section by it’s label, which is the section title with spaces changed to dashes (e.g., a section called “Your first R Markdown file” can be referenced as <code>#Your-first-R-Markdownfile</code>. You can set a shorter custom label for a section by adding an ID in the format <code>{#rmarkdown}</code>.</p>
+<p>You can refer to any section by it's label, which is the section title with spaces changed to dashes (e.g., a section called "Your first R Markdown file" can be referenced as <code>#Your-first-R-Markdownfile</code>. You can set a shorter custom label for a section by adding an ID in the format <code>{#rmarkdown}</code>.</p>
 </div>
 
 ### Multiple .Rmd files per chapter
@@ -274,7 +323,9 @@ After you've added several chapters, the whole book might take a long time to re
 
 
 ```r
-bookdown::preview_chapter("02-style-guide.Rmd")
+browseURL(
+  xfun::in_dir("book", bookdown::preview_chapter("02-style-guide.Rmd"))
+)
 ```
 
 ### Adding appendices
@@ -291,18 +342,17 @@ If there is a package you'll need in every chapter, you can create a file called
 
 ## Publishing your book
 
-1. Render the book with `bookdown::render_book("index.Rmd")`
-2. Commit your changes
-    * (you can do this from the command line if you're comfortable with git)
-    * In the **`Git`** paneselect all files,
+1. [Render the book](#render)
+2. Commit your changes (you can do this from the command line if you're comfortable with git)
+    * In the **`Git`** pane, select all files,
     * Click one checkbox under **`Staged`** to check them all
     * Click the **`Commit`** button 
     * Write a commit message describing the changes you made
     * Click the **`Commit`** button
 3. Push your changes to GitHub
     * click the **`Push`** button with the green up arrow
-4. Set up GitHub Pages
-    * This only needs to be done once per repository
+4. Set up GitHub Pages (This only needs to be done once per repository)
+    * run the code `usethis::use_github_pages(branch = usethis::git_branch_default(), path = "/docs")` and choose your forked repo, or...
     * Go to the repository on GitHub
     * Click on the **`Settings`** tab
     * Scroll down to **`GitHub Pages`**
@@ -521,8 +571,7 @@ usethis::use_data(factorial_2w2b, overwrite = TRUE)
 
 You can set up the documentation by hand following the instructions at <https://r-pkgs.org/data.html> or use the following script to set up datasets from .csv or .xls files.
 
-
-```r
+``` r
 # function for creating dataset descriptions in Roxygen
 make_dataset <- function(dataname, title, desc, itemdesc = list(), filetype = "csv", source = "", write = TRUE) {
   

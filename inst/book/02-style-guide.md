@@ -168,19 +168,19 @@ glossary_table()
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/c#character'>character</a> </td>
+   <td style="text-align:left;"> [character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> A data type representing strings of text. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#data-type'>data-type</a> </td>
+   <td style="text-align:left;"> [data type](https://psyteachr.github.io/glossary/d.html#data-type){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> My custom definition of data types </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/d#double'>double</a> </td>
+   <td style="text-align:left;"> [double](https://psyteachr.github.io/glossary/d.html#double){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> A data type representing a real decimal number </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> <a class='glossary' target='_blank' href='https://psyteachr.github.io/glossary/i#integer'>integer</a> </td>
+   <td style="text-align:left;"> [integer](https://psyteachr.github.io/glossary/i.html#integer){class="glossary" target="_blank"} </td>
    <td style="text-align:left;"> A data type representing whole numbers. </td>
   </tr>
 </tbody>
@@ -368,7 +368,7 @@ library(tidyverse)
 <code>&#96;&#96;&#96;</code></div>
 
 <div class="info">
-<p>The “verbatim” option is not standard to bookdown. It is only available if you include the code from the “R/psyteachr_setup.R” file.</p>
+<p>The "verbatim" option is not standard to bookdown. It is only available if you include the code from the "R/psyteachr_setup.R" file.</p>
 </div>
 
 

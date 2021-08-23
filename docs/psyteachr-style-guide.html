@@ -349,10 +349,10 @@ div.csl-indent {
 <div id="tables" class="section level3" number="2.1.5">
 <h3><span class="header-section-number">2.1.5</span> Tables</h3>
 <p>You no longer need to use <code>kable()</code> to have nice tables in the books. This was fixed by setting <code>df_print: kable</code> in the <code>_output.yml</code> file. Just print your table directly, without setting <code>results='asis'</code> in the chunk header.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="psyteachr-style-guide.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
-<span id="cb26-2"><a href="psyteachr-style-guide.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Letters =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
-<span id="cb26-3"><a href="psyteachr-style-guide.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Numbers =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
-<span id="cb26-4"><a href="psyteachr-style-guide.html#cb26-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="psyteachr-style-guide.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb29-2"><a href="psyteachr-style-guide.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Letters =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>],</span>
+<span id="cb29-3"><a href="psyteachr-style-guide.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Numbers =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb29-4"><a href="psyteachr-style-guide.html#cb29-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -378,10 +378,10 @@ div.csl-indent {
 </table>
 </div>
 <p>However, you still need to use <code>knitr::kable()</code> to get tables with a caption. Set <code>results='asis'</code> in the code chunk header. Set the caption in the <code>caption</code> argument to <code>kable</code> and use <code>\@ref(tab:chunk-name)</code> to reference the table (e.g., Table <a href="psyteachr-style-guide.html#tab:kable-example">2.1</a>).</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="psyteachr-style-guide.html#cb27-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
-<span id="cb27-2"><a href="psyteachr-style-guide.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb27-3"><a href="psyteachr-style-guide.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_all</span>(mean) <span class="sc">%&gt;%</span></span>
-<span id="cb27-4"><a href="psyteachr-style-guide.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">&quot;Example table with kable.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="psyteachr-style-guide.html#cb30-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="psyteachr-style-guide.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="psyteachr-style-guide.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_all</span>(mean) <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="psyteachr-style-guide.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">caption =</span> <span class="st">&quot;Example table with kable.&quot;</span>)</span></code></pre></div>
 <table>
 <caption><span id="tab:kable-example">Table 2.1: </span>Example table with kable.</caption>
 <thead>
@@ -418,11 +418,11 @@ div.csl-indent {
 </tbody>
 </table>
 <p>If you want to add stripes or fancy styling to your tables, install the package <code>kableExtra</code> <span class="citation">(<a href="#ref-R-kableExtra" role="doc-biblioref">Zhu 2021</a>)</span>. This <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">vignette</a> has great examples of other things you can do with table display.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="psyteachr-style-guide.html#cb28-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="psyteachr-style-guide.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb28-3"><a href="psyteachr-style-guide.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_all</span>(mean) <span class="sc">%&gt;%</span></span>
-<span id="cb28-4"><a href="psyteachr-style-guide.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Example table with kableExtra.&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-5"><a href="psyteachr-style-guide.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">width =</span> <span class="st">&quot;10em&quot;</span>, <span class="at">color =</span> <span class="st">&quot;dodgerblue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="psyteachr-style-guide.html#cb31-1" aria-hidden="true" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="psyteachr-style-guide.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="psyteachr-style-guide.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_all</span>(mean) <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a href="psyteachr-style-guide.html#cb31-4" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Example table with kableExtra.&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-5"><a href="psyteachr-style-guide.html#cb31-5" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">width =</span> <span class="st">&quot;10em&quot;</span>, <span class="at">color =</span> <span class="st">&quot;dodgerblue&quot;</span>)</span></code></pre></div>
 <table>
 <caption>
 <span id="tab:kable-example-striped">Table 2.2: </span>Example table with kableExtra.
@@ -506,15 +506,15 @@ virginica
 <h2><span class="header-section-number">2.2</span> Glossary</h2>
 <p>You can use the glossary function to automatically link to a term in the <a href="https://psyteachr.github.io/glossary/">psyTeachR glossary</a> and automatically include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: <code>glossary("word")</code>. For example, common <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> are <a class='glossary' target='_blank' title='A data type representing whole numbers.' href='https://psyteachr.github.io/glossary/i#integer'>integer</a>, <a class='glossary' target='_blank' title='A data type representing a real decimal number' href='https://psyteachr.github.io/glossary/d#double'>double</a>, and <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a>.</p>
 <p>If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (<code>display</code>). You can also override the automatic short definition by providing your own in the third argument (<code>def</code>). Add the argument <code>link = FALSE</code> if you just want the hover definition and not a link to the psyTeachR glossary.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="psyteachr-style-guide.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary</span>(<span class="st">&quot;data type&quot;</span>, </span>
-<span id="cb29-2"><a href="psyteachr-style-guide.html#cb29-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">display =</span> <span class="st">&quot;Data Types&quot;</span>, </span>
-<span id="cb29-3"><a href="psyteachr-style-guide.html#cb29-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">def =</span> <span class="st">&quot;My custom definition of data types&quot;</span>, </span>
-<span id="cb29-4"><a href="psyteachr-style-guide.html#cb29-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">link =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="psyteachr-style-guide.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary</span>(<span class="st">&quot;data type&quot;</span>, </span>
+<span id="cb32-2"><a href="psyteachr-style-guide.html#cb32-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">display =</span> <span class="st">&quot;Data Types&quot;</span>, </span>
+<span id="cb32-3"><a href="psyteachr-style-guide.html#cb32-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">def =</span> <span class="st">&quot;My custom definition of data types&quot;</span>, </span>
+<span id="cb32-4"><a href="psyteachr-style-guide.html#cb32-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">link =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>[1] "<a class='glossary' title='My custom definition of data types'>Data Types</a>"</p>
 <p>You can add a glossary table to the end of a chapter with the following code. It creates a table of all terms used in that chapter previous to the <code>glossary_table()</code> function. It uses <code>kableExtra()</code>, so if you use it in a code chunk, set <code>results='asis'</code>.</p>
 <div class="verbatim">
 <p><code>```{r, echo=FALSE, results='asis'}</code></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="psyteachr-style-guide.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_table</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="psyteachr-style-guide.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_table</span>()</span></code></pre></div>
 <code>```</code>
 </div>
 <table>
@@ -596,20 +596,20 @@ Remember to test your materials with the <strong>Sepia</strong> and <strong>Nigh
 </p>
 </div>
 <p>You can also access the psyTeachR colours in R from the function <code>psyteachr_colours()</code> (or <code>psyteachr_colors()</code>).</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="psyteachr-style-guide.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">psyteachr_colours</span>()    <span class="co"># gives all 6 colours</span></span>
-<span id="cb32-2"><a href="psyteachr-style-guide.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">psyteachr_colours</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="co"># specify colours by number</span></span>
-<span id="cb32-3"><a href="psyteachr-style-guide.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;blue&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># specify by name</span></span>
-<span id="cb32-4"><a href="psyteachr-style-guide.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">psyteachr_colours</span>()           <span class="co"># Lisa loves pipes</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="psyteachr-style-guide.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">psyteachr_colours</span>()    <span class="co"># gives all 6 colours</span></span>
+<span id="cb35-2"><a href="psyteachr-style-guide.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">psyteachr_colours</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="co"># specify colours by number</span></span>
+<span id="cb35-3"><a href="psyteachr-style-guide.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">&quot;pink&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;blue&quot;</span>) <span class="sc">%&gt;%</span> <span class="co"># specify by name</span></span>
+<span id="cb35-4"><a href="psyteachr-style-guide.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">psyteachr_colours</span>()           <span class="co"># Lisa loves pipes</span></span></code></pre></div>
 <pre><code>## [1] &quot;#983E82&quot; &quot;#E2A458&quot; &quot;#F5DC70&quot; &quot;#59935B&quot; &quot;#467AAC&quot; &quot;#61589C&quot;
 ## [1] &quot;#983E82&quot; &quot;#E2A458&quot; &quot;#F5DC70&quot;
 ## [1] &quot;#983E82&quot; &quot;#F5DC70&quot; &quot;#467AAC&quot;</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="psyteachr-style-guide.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
-<span id="cb34-2"><a href="psyteachr-style-guide.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">grp =</span> <span class="fu">rep</span>(LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">each =</span> <span class="dv">20</span>),</span>
-<span id="cb34-3"><a href="psyteachr-style-guide.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">val =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">each =</span> <span class="dv">20</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span><span class="sc">*</span><span class="dv">6</span>)</span>
-<span id="cb34-4"><a href="psyteachr-style-guide.html#cb34-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb34-5"><a href="psyteachr-style-guide.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(grp, val, <span class="at">fill =</span> grp)) <span class="sc">+</span></span>
-<span id="cb34-6"><a href="psyteachr-style-guide.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb34-7"><a href="psyteachr-style-guide.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">psyteachr_colours</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="psyteachr-style-guide.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb37-2"><a href="psyteachr-style-guide.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">grp =</span> <span class="fu">rep</span>(LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">each =</span> <span class="dv">20</span>),</span>
+<span id="cb37-3"><a href="psyteachr-style-guide.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">val =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">each =</span> <span class="dv">20</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span><span class="sc">*</span><span class="dv">6</span>)</span>
+<span id="cb37-4"><a href="psyteachr-style-guide.html#cb37-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-5"><a href="psyteachr-style-guide.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(grp, val, <span class="at">fill =</span> grp)) <span class="sc">+</span></span>
+<span id="cb37-6"><a href="psyteachr-style-guide.html#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb37-7"><a href="psyteachr-style-guide.html#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">psyteachr_colours</span>())</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:plot-psyteachr-colours"></span>
 <img src="02-style-guide_files/figure-html/plot-psyteachr-colours-1.png" alt="Plot with psyteachr.colours" width="50%" />
 <p class="caption">
@@ -637,9 +637,9 @@ The chunk label for figures can only contain alphanumeric characters (a-z, A-Z, 
 </ul>
 <div class="verbatim">
 <p><code>```{echo=FALSE, out.width='75%', fig.width=6, fig.height=2.5, fig.cap='Dynamically created plot.'}</code></p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="psyteachr-style-guide.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb35-2"><a href="psyteachr-style-guide.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb35-3"><a href="psyteachr-style-guide.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="psyteachr-style-guide.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Sepal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb38-2"><a href="psyteachr-style-guide.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb38-3"><a href="psyteachr-style-guide.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x)</span></code></pre></div>
 <code>```</code>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:img-dynamo"></span>
@@ -654,7 +654,7 @@ Figure 2.2: Dynamically created plot.
 <p>Static images, like screenshots, should be stored in a directory called <strong>images</strong> and displayed using the <code>knitr::include_graphics</code> function in a code block.</p>
 <div class="verbatim">
 <p><code>```{r img-psyteacher-logo, echo=FALSE, fig.cap="PsyTeachR Logo"}</code></p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="psyteachr-style-guide.html#cb36-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/psyteachr_logo.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="psyteachr-style-guide.html#cb39-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;images/psyteachr_logo.png&quot;</span>)</span></code></pre></div>
 <code>```</code>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:img-psyteacher-logo"></span>
@@ -718,7 +718,7 @@ The chunk label for tables and figures can only contain alphanumeric characters 
 <p>If you want to show students an example of a code chunk that includes the header, add an option called <code>verbatim</code> to your code chunk and set it equal to what you want displayed inside the curly brackets. Make sure you set <code>eval=FALSE</code> to stop the code chunk from being run.</p>
 <div class="verbatim">
 <p><code>```{r verbatim-example, eval = FALSE, verbatim = 'r chunk-name, messages=FALSE'}</code></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="psyteachr-style-guide.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="psyteachr-style-guide.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <code>```</code>
 </div>
 <div class="info">
@@ -795,11 +795,11 @@ Run the code below:
 <h2><span class="header-section-number">2.8</span> References</h2>
 <p>Include references using the bibliography key, such as <code>@R-base</code>, which provides an in-line citation like <span class="citation"><a href="#ref-R-base" role="doc-biblioref">R Core Team</a> (<a href="#ref-R-base" role="doc-biblioref">2021</a>)</span>. You can also use square brackets to create a parenthetical citation, like <code>[@R-bookdown]</code> <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2021</a>)</span>.</p>
 <p>You need to add any R packages you want to cite by adding them to the code chunk in the index file and then referencing them by <code>@R-pckgname</code>.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="psyteachr-style-guide.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># automatically create a bib database for R packages</span></span>
-<span id="cb38-2"><a href="psyteachr-style-guide.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add any packages you want to cite here</span></span>
-<span id="cb38-3"><a href="psyteachr-style-guide.html#cb38-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="fu">c</span>(</span>
-<span id="cb38-4"><a href="psyteachr-style-guide.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;tidyverse&#39;</span></span>
-<span id="cb38-5"><a href="psyteachr-style-guide.html#cb38-5" aria-hidden="true" tabindex="-1"></a>), <span class="st">&#39;packages.bib&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="psyteachr-style-guide.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># automatically create a bib database for R packages</span></span>
+<span id="cb41-2"><a href="psyteachr-style-guide.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># add any packages you want to cite here</span></span>
+<span id="cb41-3"><a href="psyteachr-style-guide.html#cb41-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="fu">c</span>(</span>
+<span id="cb41-4"><a href="psyteachr-style-guide.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">.packages</span>(), <span class="st">&#39;bookdown&#39;</span>, <span class="st">&#39;tidyverse&#39;</span></span>
+<span id="cb41-5"><a href="psyteachr-style-guide.html#cb41-5" aria-hidden="true" tabindex="-1"></a>), <span class="st">&#39;packages.bib&#39;</span>)</span></code></pre></div>
 <p>Add other references to the <code>book.bib</code> file using BibTeX format. You can export references from most reference managers in BibTeX format.</p>
 <p><a href="https://bookdown.org/yihui/bookdown/citations.html">Learn more about referencing</a>.</p>
 
